@@ -40,122 +40,44 @@
 5. 🧪 **高质量** - 完整的测试覆盖和错误处理
 6. ⚡ **Go 1.25** - 使用最新 Go 特性（迭代器、性能优化）
 
-## 🆕 v1.1.0 新特性
+## 🌟 最新特性
 
-### **Go 1.25 分页迭代器**
+### v1.3.0 - 云原生可观测性 (2025-10-03)
 
-所有 27 个分页 API 现在支持 Go 1.25 迭代器，用户代码减少 70%：
+- 📊 **OpenTelemetry** - 分布式追踪，兼容 Jaeger/Zipkin
+- 📈 **Prometheus** - 标准指标导出，Grafana 就绪
+- 🔍 **完整可观测性** - 日志 + 追踪 + 指标
 
-```go
-// 之前：手动处理分页（繁琐）
-nextToken := ""
-for {
-    result, _ := client.Orders.GetOrders(ctx, &Query{NextToken: nextToken})
-    for _, order := range result.Orders {
-        process(order)
-    }
-    if result.NextToken == "" { break }
-    nextToken = result.NextToken
-}
+### v1.2.0 - 企业级可靠性
 
-// 现在：自动分页（简洁）
-for order, err := range ordersClient.IterateOrders(ctx, query) {
-    if err != nil { return err }
-    process(order)
-}
-```
+- 🪵 **结构化日志** - Zap 集成
+- 🔌 **熔断器** - Circuit Breaker 防止级联失败
+- ⚡ **JSON 优化** - 性能提升 3-5 倍
+- 📦 **大文件传输** - 流式上传/下载
 
-**支持的 API**：Orders, Reports, Feeds, Catalog Items, FBA Inventory, Finances, 所有 Vendor API 等 27 个
+### v1.1.0 - Go 1.25 增强
 
-### **自动报告解密**
+- 🔁 **自动分页迭代器** - 27 个 API 支持，代码减少 70%
+- 🔓 **自动报告解密** - AES-256-CBC 一键解密
+- 🚀 **生产级示例** - SQS 订单同步等
 
-Reports API 现在自动处理报告下载和解密：
-
-```go
-// 一行代码获取解密后的报告
-decrypted, err := reportsClient.GetReportDocumentDecrypted(ctx, reportDocumentID)
-
-// 直接使用数据（CSV/TSV/JSON）
-fmt.Println(string(decrypted))
-```
-
-### **生产级示例**
-
-新增完整的生产级示例代码：
-- `examples/patterns/order-sync-sqs/` - SQS 订单实时同步服务
-- `examples/iterators/` - 迭代器使用示例
-- `examples/report-decryption/` - 报告解密示例
-
-所有示例都可以直接运行或复制到项目中使用。
-
-## 🆕 v1.2.0 新特性
-
-### **企业级可靠性和性能**
-
-v1.2.0 增强了生产环境的可靠性和性能：
-
-- 🪵 **结构化日志 (Zap)** - 生产级日志系统，支持日志级别、格式化、脱敏
-- 🔌 **熔断器 (Circuit Breaker)** - 防止级联失败，3 状态自动恢复
-- ✅ **参数验证** - 声明式配置验证，友好错误提示
-- ⚡ **JSON 优化** - json-iterator，性能提升 3-5 倍
-- 📦 **大文件传输** - 流式上传/下载，适用于大型 Feed 和 Report
-
-```go
-// 结构化日志
-logger := logging.NewZapLogger(logging.ProductionConfig())
-client := spapi.NewClient(..., spapi.WithLogger(logger))
-
-// 熔断器
-breaker := circuit.NewBreaker(circuit.Config{
-    MaxFailures: 5,
-    Timeout:     30 * time.Second,
-})
-```
-
-## 🆕 v1.3.0 新特性
-
-### **云原生可观测性**
-
-v1.3.0 完善了企业级监控和追踪能力：
-
-- 📊 **OpenTelemetry 追踪** - 分布式追踪，兼容 Jaeger/Zipkin/Tempo
-- 📈 **Prometheus 指标** - 标准指标导出，Grafana 开箱即用
-- 🔍 **完整可观测性** - 日志 + 追踪 + 指标三位一体
-
-```go
-// OpenTelemetry 追踪
-import "go.opentelemetry.io/otel"
-
-tracer := otel.Tracer("sp-api")
-// 自动追踪所有 HTTP 请求
-
-// Prometheus 指标
-metrics := prometheus.NewMetrics("spapi")
-// 自动收集：请求数、延迟、错误率、速率限制等
-```
+📖 **详细说明**: [完整功能清单](docs/FEATURES.md) | [更新日志](CHANGELOG.md)
 
 ## 📚 文档
 
-### 设计文档
-- [架构设计](docs/ARCHITECTURE.md) - 系统架构和设计决策
-- [项目结构](docs/PROJECT_STRUCTURE.md) - 目录结构和组织方式
-- [API 追踪策略](docs/API_TRACKING.md) - 如何追踪和同步官方 API 更新
+| 类型 | 文档 | 说明 |
+|------|------|------|
+| 🚀 **快速入门** | [快速开始示例](examples/) | 10+ 可运行示例 |
+| 📖 **功能指南** | [完整功能清单](docs/FEATURES.md) | 38 项功能详解 |
+| 📖 **功能指南** | [分页迭代器](docs/PAGINATION_GUIDE.md) | Go 1.25 迭代器 |
+| 📖 **功能指南** | [报告解密](docs/REPORT_DECRYPTION.md) | AES-256 解密 |
+| 📖 **功能指南** | [Grantless 操作](docs/GRANTLESS_OPERATIONS_GUIDE.md) | 无需授权 API |
+| 🏗️ **架构设计** | [系统架构](docs/ARCHITECTURE.md) | 设计决策 |
+| 👨‍💻 **开发指南** | [开发规范](docs/DEVELOPMENT.md) | 开发流程 |
+| 👨‍💻 **开发指南** | [代码风格](docs/CODE_STYLE.md) | Go 编码规范 |
+| 🤝 **贡献** | [贡献指南](docs/CONTRIBUTING.md) | 如何提交 PR |
 
-### 开发指南
-- [开发规范](docs/DEVELOPMENT.md) - 开发流程和强制性规范
-- [代码风格](docs/CODE_STYLE.md) - 代码风格和命名规范
-- [贡献指南](docs/CONTRIBUTING.md) - 如何参与项目开发
-
-### 功能指南
-- [功能清单](docs/FEATURES.md) - 完整功能列表和状态
-- [分页迭代器指南](docs/PAGINATION_GUIDE.md) - Go 1.25 迭代器使用指南
-- [报告解密指南](docs/REPORT_DECRYPTION.md) - 自动解密加密报告
-- [Grantless 操作指南](docs/GRANTLESS_OPERATIONS_GUIDE.md) - Grantless 操作的详细说明
-- [指标监控指南](docs/METRICS_GUIDE.md) - 可观测性和监控配置
-
-### 参考资料
-- [版本追踪](docs/VERSION_TRACKING.md) - SDK 和官方文档版本历史
-- [官方 SP-API 文档](https://developer-docs.amazon.com/sp-api/docs/) - 唯一权威来源
+📌 **官方文档**: [Amazon SP-API 文档](https://developer-docs.amazon.com/sp-api/docs/)
 
 ## 🚀 快速开始
 
@@ -241,38 +163,14 @@ defer client.Close()
 
 本 SDK 完整支持 **57 个 Amazon SP-API 版本**，包括：
 
-### 核心业务 API
-- **Orders** - 订单管理
-- **Feeds** - 数据上传和处理
-- **Reports** - 报告生成和下载
-- **Catalog Items** - 商品目录查询
-- **Listings Items** - 商品列表管理
+- 🛒 **核心业务**: Orders, Feeds, Reports, Catalog Items, Listings
+- 📦 **库存物流**: FBA Inventory, Fulfillment, Merchant Fulfillment, Shipping
+- 💰 **定价财务**: Product Pricing, Fees, Finances, Seller Wallet  
+- 📢 **通知消息**: Notifications, Messaging, Solicitations
+- 🏭 **Vendor API**: Direct Fulfillment 全系列, Orders, Invoices, Shipments
+- ⚡ **高级功能**: A+ Content, Replenishment, AWD, Data Kiosk 等
 
-### 库存与物流 API
-- **FBA Inventory** - FBA 库存管理
-- **Fulfillment Inbound/Outbound** - 入库和出库管理
-- **Merchant Fulfillment** - 卖家配送
-- **Shipping** - 物流服务
-
-### 定价与财务 API
-- **Product Pricing** - 商品定价
-- **Product Fees** - 费用估算
-- **Finances** - 财务报告
-- **Seller Wallet** - 钱包管理
-
-### 通知与消息 API
-- **Notifications** - 通知订阅
-- **Messaging** - 买家消息
-- **Solicitations** - 评论请求
-
-### Vendor API（完整支持）
-- Vendor Direct Fulfillment 系列（Inventory, Orders, Payments, Shipping, Transactions）
-- Vendor Orders, Invoices, Shipments
-
-### 高级功能 API
-- A+ Content, Replenishment, AWD, Customer Feedback, Data Kiosk, Easy Ship, 等
-
-**📋 完整列表**: 查看 [pkg/spapi/](pkg/spapi/) 目录查看所有 57 个 API 版本
+**📋 完整列表**: [pkg/spapi/](pkg/spapi/) 目录 | **🤖 自动监控**: 每日检测官方 API 更新
 
 ## 🧪 测试
 
