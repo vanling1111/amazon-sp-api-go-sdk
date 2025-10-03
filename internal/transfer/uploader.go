@@ -110,8 +110,8 @@ func NewUploader(config *UploaderConfig) *Uploader {
 
 // Upload 上传文件到指定 URL。
 //
-// 对于小文件（< chunkSize），直接上传。
-// 对于大文件，自动分片上传（TODO: v1.3.0 实现）。
+// 当前实现：直接上传整个文件（适用于大部分场景）。
+// 未来优化：分片并发上传（计划于 v2.0.0，用于超大文件 500MB+）。
 //
 // 参数:
 //   - ctx: 请求上下文
@@ -207,8 +207,8 @@ func (r *simpleReader) Read(p []byte) (n int, err error) {
 //	    },
 //	)
 func (u *Uploader) UploadWithProgress(ctx context.Context, url string, reader io.Reader, contentType string, size int64, onProgress ProgressFunc) error {
-	// TODO: 实现真正的进度追踪
-	// 当前简化版本：直接上传
+	// 当前实现：上传完成后报告 100% 进度
+	// 未来优化：实时进度追踪（计划于 v2.0.0）
 
 	err := u.Upload(ctx, url, reader, contentType, size)
 

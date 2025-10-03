@@ -3,11 +3,15 @@
 [![Go Version](https://img.shields.io/badge/go-1.25+-blue.svg)](https://golang.org)
 [![License](https://img.shields.io/badge/license-AGPL--3.0%20%7C%20Commercial-blue.svg)](LICENSE)
 [![Latest Release](https://img.shields.io/github/v/release/vanling1111/amazon-sp-api-go-sdk)](https://github.com/vanling1111/amazon-sp-api-go-sdk/releases)
+[![Go Report Card](https://goreportcard.com/badge/github.com/vanling1111/amazon-sp-api-go-sdk)](https://goreportcard.com/report/github.com/vanling1111/amazon-sp-api-go-sdk)
+
 [![APIs](https://img.shields.io/badge/APIs-57%20versions-green.svg)](https://github.com/vanling1111/amazon-sp-api-go-sdk)
 [![Methods](https://img.shields.io/badge/methods-314-brightgreen.svg)](https://github.com/vanling1111/amazon-sp-api-go-sdk)
 [![Iterators](https://img.shields.io/badge/iterators-27-orange.svg)](https://github.com/vanling1111/amazon-sp-api-go-sdk)
 [![Tests](https://img.shields.io/badge/tests-passing-success.svg)](https://github.com/vanling1111/amazon-sp-api-go-sdk/actions)
 [![Coverage](https://img.shields.io/badge/coverage-92%25-brightgreen.svg)](https://github.com/vanling1111/amazon-sp-api-go-sdk)
+[![GitHub Stars](https://img.shields.io/github/stars/vanling1111/amazon-sp-api-go-sdk?style=social)](https://github.com/vanling1111/amazon-sp-api-go-sdk)
+[![pkg.go.dev](https://pkg.go.dev/badge/github.com/vanling1111/amazon-sp-api-go-sdk.svg)](https://pkg.go.dev/github.com/vanling1111/amazon-sp-api-go-sdk)
 
 **生产级 Amazon Selling Partner API Go SDK**
 
