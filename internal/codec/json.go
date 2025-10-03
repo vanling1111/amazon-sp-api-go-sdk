@@ -9,10 +9,14 @@ package codec
 
 import (
 	"bytes"
-	"encoding/json"
 	"fmt"
 	"io"
+
+	jsoniter "github.com/json-iterator/go"
 )
+
+// json 使用 json-iterator 替代标准库（3-5倍性能提升）
+var json = jsoniter.ConfigCompatibleWithStandardLibrary
 
 // Encoder 表示 JSON 编码器。
 //
