@@ -5,14 +5,14 @@
 // Amazon SP-API Go SDK is dual-licensed:
 //
 // 1. GNU Affero General Public License v3.0 (AGPL-3.0) for open source use
-//    - Free for personal, educational, and open source projects
-//    - Your project must also be open sourced under AGPL-3.0
-//    - See: https://www.gnu.org/licenses/agpl-3.0.html
+//   - Free for personal, educational, and open source projects
+//   - Your project must also be open sourced under AGPL-3.0
+//   - See: https://www.gnu.org/licenses/agpl-3.0.html
 //
 // 2. Commercial License for proprietary/commercial use
-//    - Required for any commercial, enterprise, or proprietary use
-//    - Allows closed source distribution
-//    - Contact: vanling1111@gmail.com
+//   - Required for any commercial, enterprise, or proprietary use
+//   - Allows closed source distribution
+//   - Contact: vanling1111@gmail.com
 //
 // Unless you have obtained a commercial license, this file is licensed
 // under AGPL-3.0. By using this software, you agree to comply with the
@@ -111,10 +111,11 @@ type Handler func(ctx context.Context, req *http.Request) (*http.Response, error
 //   - *Client: HTTP 传输客户端实例
 //
 // 示例:
-//   client := transport.NewClient(
-//       "https://sellingpartnerapi-na.amazon.com",
-//       nil, // 使用默认配置
-//   )
+//
+//	client := transport.NewClient(
+//	    "https://sellingpartnerapi-na.amazon.com",
+//	    nil, // 使用默认配置
+//	)
 func NewClient(baseURL string, config *Config) *Client {
 	if config == nil {
 		config = DefaultConfig()
@@ -161,8 +162,9 @@ func NewClient(baseURL string, config *Config) *Client {
 //   - middleware: 要添加的中间件
 //
 // 示例:
-//   client.Use(loggingMiddleware)
-//   client.Use(retryMiddleware)
+//
+//	client.Use(loggingMiddleware)
+//	client.Use(retryMiddleware)
 func (c *Client) Use(middleware Middleware) {
 	c.middlewares = append(c.middlewares, middleware)
 }
@@ -173,7 +175,8 @@ func (c *Client) Use(middleware Middleware) {
 //   - recorder: 指标记录器实现
 //
 // 示例:
-//   client.SetMetrics(myPrometheusRecorder)
+//
+//	client.SetMetrics(myPrometheusRecorder)
 func (c *Client) SetMetrics(recorder metrics.Recorder) {
 	if recorder != nil {
 		c.metrics = recorder
@@ -193,12 +196,13 @@ func (c *Client) SetMetrics(recorder metrics.Recorder) {
 //   - error: 如果请求失败，返回错误
 //
 // 示例:
-//   req, _ := http.NewRequest("GET", "/orders/v0/orders", nil)
-//   resp, err := client.Do(ctx, req)
-//   if err != nil {
-//       log.Fatal(err)
-//   }
-//   defer resp.Body.Close()
+//
+//	req, _ := http.NewRequest("GET", "/orders/v0/orders", nil)
+//	resp, err := client.Do(ctx, req)
+//	if err != nil {
+//	    log.Fatal(err)
+//	}
+//	defer resp.Body.Close()
 func (c *Client) Do(ctx context.Context, req *http.Request) (*http.Response, error) {
 	// 设置 User-Agent
 	if req.Header.Get("User-Agent") == "" {

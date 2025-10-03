@@ -51,9 +51,9 @@
 // - 生产级错误处理和重试
 //
 // 使用方法：
-//   1. 配置环境变量（见 config.yaml.example）
-//   2. go run main.go
-//   3. 或使用 Docker: docker-compose up
+//  1. 配置环境变量（见 config.yaml.example）
+//  2. go run main.go
+//  3. 或使用 Docker: docker-compose up
 package main
 
 import (

@@ -100,8 +100,9 @@ func NewPoller(sqsClient *sqs.Client, config *Config) *Poller {
 // RegisterHandler 注册事件处理器
 //
 // 参数:
-//   notificationType: 事件类型（如 "ORDER_CHANGE", "FEED_PROCESSING_FINISHED"）
-//   handler: 处理函数
+//
+//	notificationType: 事件类型（如 "ORDER_CHANGE", "FEED_PROCESSING_FINISHED"）
+//	handler: 处理函数
 func (p *Poller) RegisterHandler(notificationType string, handler EventHandler) {
 	p.handlers[notificationType] = handler
 }

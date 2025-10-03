@@ -5,14 +5,14 @@
 // Amazon SP-API Go SDK is dual-licensed:
 //
 // 1. GNU Affero General Public License v3.0 (AGPL-3.0) for open source use
-//    - Free for personal, educational, and open source projects
-//    - Your project must also be open sourced under AGPL-3.0
-//    - See: https://www.gnu.org/licenses/agpl-3.0.html
+//   - Free for personal, educational, and open source projects
+//   - Your project must also be open sourced under AGPL-3.0
+//   - See: https://www.gnu.org/licenses/agpl-3.0.html
 //
 // 2. Commercial License for proprietary/commercial use
-//    - Required for any commercial, enterprise, or proprietary use
-//    - Allows closed source distribution
-//    - Contact: vanling1111@gmail.com
+//   - Required for any commercial, enterprise, or proprietary use
+//   - Allows closed source distribution
+//   - Contact: vanling1111@gmail.com
 //
 // Unless you have obtained a commercial license, this file is licensed
 // under AGPL-3.0. By using this software, you agree to comply with the
@@ -69,10 +69,11 @@ type ChainSigner struct {
 //   - *ChainSigner: 签名器链实例
 //
 // 示例:
-//   chain := signer.NewChainSigner(
-//       lwaSigner,
-//       rdtSigner,
-//   )
+//
+//	chain := signer.NewChainSigner(
+//	    lwaSigner,
+//	    rdtSigner,
+//	)
 func NewChainSigner(signers ...Signer) *ChainSigner {
 	return &ChainSigner{
 		signers: signers,

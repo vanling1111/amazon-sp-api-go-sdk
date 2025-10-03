@@ -5,19 +5,18 @@
 // Amazon SP-API Go SDK is dual-licensed:
 //
 // 1. GNU Affero General Public License v3.0 (AGPL-3.0) for open source use
-//    - Free for personal, educational, and open source projects
-//    - Your project must also be open sourced under AGPL-3.0
-//    - See: https://www.gnu.org/licenses/agpl-3.0.html
+//   - Free for personal, educational, and open source projects
+//   - Your project must also be open sourced under AGPL-3.0
+//   - See: https://www.gnu.org/licenses/agpl-3.0.html
 //
 // 2. Commercial License for proprietary/commercial use
-//    - Required for any commercial, enterprise, or proprietary use
-//    - Allows closed source distribution
-//    - Contact: vanling1111@gmail.com
+//   - Required for any commercial, enterprise, or proprietary use
+//   - Allows closed source distribution
+//   - Contact: vanling1111@gmail.com
 //
 // Unless you have obtained a commercial license, this file is licensed
 // under AGPL-3.0. By using this software, you agree to comply with the
 // terms of the applicable license. All rights reserved.
-//
 package spapi
 
 import (
@@ -309,11 +308,11 @@ func (c *Client) Signer() signer.Signer {
 // DoRequest 执行一个通用的 HTTP 请求。
 //
 // 此方法是所有 API 请求的基础，提供：
-//  - 自动 LWA 认证
-//  - 速率限制检查
-//  - 请求签名
-//  - 错误处理
-//  - 响应解析
+//   - 自动 LWA 认证
+//   - 速率限制检查
+//   - 请求签名
+//   - 错误处理
+//   - 响应解析
 //
 // 参数:
 //   - ctx: 请求上下文
@@ -525,9 +524,9 @@ func (c *Client) extractSellerID() string {
 // extractMarketplaceID 从查询参数中提取 Marketplace ID。
 //
 // Marketplace ID 可能出现在以下查询参数中：
-//  - MarketplaceIds (大多数 API)
-//  - MarketplaceId (部分 API)
-//  - marketplace_ids (部分 API)
+//   - MarketplaceIds (大多数 API)
+//   - MarketplaceId (部分 API)
+//   - marketplace_ids (部分 API)
 //
 // 如果查询参数中包含多个 Marketplace ID（逗号分隔），
 // 则返回第一个。
@@ -578,9 +577,9 @@ func (c *Client) extractMarketplaceID(query map[string]string) string {
 // 格式：{API名称}:{操作名称}
 //
 // 例如：
-//  - GET /orders/v0/orders -> orders:getOrders
-//  - GET /orders/v0/orders/{orderId} -> orders:getOrder
-//  - POST /feeds/2021-06-30/feeds -> feeds:createFeed
+//   - GET /orders/v0/orders -> orders:getOrders
+//   - GET /orders/v0/orders/{orderId} -> orders:getOrder
+//   - POST /feeds/2021-06-30/feeds -> feeds:createFeed
 //
 // 参数:
 //   - method: HTTP 方法

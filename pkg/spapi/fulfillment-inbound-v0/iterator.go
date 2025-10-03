@@ -51,10 +51,11 @@ import (
 // 浣跨敤 Go 1.25 杩唬鍣ㄧ壒鎬э紝鑷姩澶勭悊 NextToken 鍒嗛〉閫昏緫銆?
 //
 // 绀轰緥:
-//   for item, err := range client.IterateShipments(ctx, query) {
-//       if err != nil { return err }
-//       process(item)
-//   }
+//
+//	for item, err := range client.IterateShipments(ctx, query) {
+//	    if err != nil { return err }
+//	    process(item)
+//	}
 func (c *Client) IterateShipments(ctx context.Context, query map[string]string) iter.Seq2[map[string]interface{}, error] {
 	return func(yield func(map[string]interface{}, error) bool) {
 		currentQuery := make(map[string]string)
@@ -114,10 +115,11 @@ func (c *Client) IterateShipments(ctx context.Context, query map[string]string) 
 // 浣跨敤 Go 1.25 杩唬鍣ㄧ壒鎬э紝鑷姩澶勭悊 NextToken 鍒嗛〉閫昏緫銆?
 //
 // 绀轰緥:
-//   for item, err := range client.IterateShipmentItems(ctx, query) {
-//       if err != nil { return err }
-//       process(item)
-//   }
+//
+//	for item, err := range client.IterateShipmentItems(ctx, query) {
+//	    if err != nil { return err }
+//	    process(item)
+//	}
 func (c *Client) IterateShipmentItems(ctx context.Context, query map[string]string) iter.Seq2[map[string]interface{}, error] {
 	return func(yield func(map[string]interface{}, error) bool) {
 		currentQuery := make(map[string]string)

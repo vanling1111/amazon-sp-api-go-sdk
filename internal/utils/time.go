@@ -27,7 +27,7 @@ func FormatISO8601(t time.Time) string {
 
 // FormatAMZDate 将时间格式化为 Amazon 日期格式。
 //
-// SP-API 要求 x-amz-date 头使用特定格式：YYYYMMDDTHHmmssZ
+// # SP-API 要求 x-amz-date 头使用特定格式：YYYYMMDDTHHmmssZ
 //
 // 参数:
 //   - t: 时间

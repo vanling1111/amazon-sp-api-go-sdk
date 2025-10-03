@@ -5,19 +5,18 @@
 // Amazon SP-API Go SDK is dual-licensed:
 //
 // 1. GNU Affero General Public License v3.0 (AGPL-3.0) for open source use
-//    - Free for personal, educational, and open source projects
-//    - Your project must also be open sourced under AGPL-3.0
-//    - See: https://www.gnu.org/licenses/agpl-3.0.html
+//   - Free for personal, educational, and open source projects
+//   - Your project must also be open sourced under AGPL-3.0
+//   - See: https://www.gnu.org/licenses/agpl-3.0.html
 //
 // 2. Commercial License for proprietary/commercial use
-//    - Required for any commercial, enterprise, or proprietary use
-//    - Allows closed source distribution
-//    - Contact: vanling1111@gmail.com
+//   - Required for any commercial, enterprise, or proprietary use
+//   - Allows closed source distribution
+//   - Contact: vanling1111@gmail.com
 //
 // Unless you have obtained a commercial license, this file is licensed
 // under AGPL-3.0. By using this software, you agree to comply with the
 // terms of the applicable license. All rights reserved.
-//
 package transport
 
 import (
@@ -36,7 +35,8 @@ import (
 //   - Middleware: 日志中间件
 //
 // 示例:
-//   client.Use(transport.LoggingMiddleware())
+//
+//	client.Use(transport.LoggingMiddleware())
 func LoggingMiddleware() Middleware {
 	return func(next Handler) Handler {
 		return func(ctx context.Context, req *http.Request) (*http.Response, error) {
@@ -74,7 +74,8 @@ func LoggingMiddleware() Middleware {
 //   - Middleware: User-Agent 中间件
 //
 // 示例:
-//   client.Use(transport.UserAgentMiddleware("my-app/1.0.0"))
+//
+//	client.Use(transport.UserAgentMiddleware("my-app/1.0.0"))
 func UserAgentMiddleware(userAgent string) Middleware {
 	return func(next Handler) Handler {
 		return func(ctx context.Context, req *http.Request) (*http.Response, error) {
@@ -97,10 +98,11 @@ func UserAgentMiddleware(userAgent string) Middleware {
 //   - Middleware: 头部中间件
 //
 // 示例:
-//   headers := map[string]string{
-//       "X-Custom-Header": "value",
-//   }
-//   client.Use(transport.HeaderMiddleware(headers))
+//
+//	headers := map[string]string{
+//	    "X-Custom-Header": "value",
+//	}
+//	client.Use(transport.HeaderMiddleware(headers))
 func HeaderMiddleware(headers map[string]string) Middleware {
 	return func(next Handler) Handler {
 		return func(ctx context.Context, req *http.Request) (*http.Response, error) {
@@ -125,7 +127,8 @@ func HeaderMiddleware(headers map[string]string) Middleware {
 //   - Middleware: 超时中间件
 //
 // 示例:
-//   client.Use(transport.TimeoutMiddleware(30 * time.Second))
+//
+//	client.Use(transport.TimeoutMiddleware(30 * time.Second))
 func TimeoutMiddleware(timeout time.Duration) Middleware {
 	return func(next Handler) Handler {
 		return func(ctx context.Context, req *http.Request) (*http.Response, error) {
@@ -146,7 +149,8 @@ func TimeoutMiddleware(timeout time.Duration) Middleware {
 //   - Middleware: 请求 ID 中间件
 //
 // 示例:
-//   client.Use(transport.RequestIDMiddleware())
+//
+//	client.Use(transport.RequestIDMiddleware())
 func RequestIDMiddleware() Middleware {
 	return func(next Handler) Handler {
 		return func(ctx context.Context, req *http.Request) (*http.Response, error) {
@@ -176,10 +180,12 @@ func RequestIDMiddleware() Middleware {
 //   - Middleware: 日期时间中间件
 //
 // 示例:
-//   client.Use(transport.DateMiddleware())
+//
+//	client.Use(transport.DateMiddleware())
 //
 // 官方文档:
-//   https://developer-docs.amazon.com/sp-api/docs/connecting-to-the-selling-partner-api#step-3-add-headers-to-the-uri
+//
+//	https://developer-docs.amazon.com/sp-api/docs/connecting-to-the-selling-partner-api#step-3-add-headers-to-the-uri
 func DateMiddleware() Middleware {
 	return func(next Handler) Handler {
 		return func(ctx context.Context, req *http.Request) (*http.Response, error) {

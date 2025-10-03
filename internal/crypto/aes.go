@@ -5,14 +5,14 @@
 // Amazon SP-API Go SDK is dual-licensed:
 //
 // 1. GNU Affero General Public License v3.0 (AGPL-3.0) for open source use
-//    - Free for personal, educational, and open source projects
-//    - Your project must also be open sourced under AGPL-3.0
-//    - See: https://www.gnu.org/licenses/agpl-3.0.html
+//   - Free for personal, educational, and open source projects
+//   - Your project must also be open sourced under AGPL-3.0
+//   - See: https://www.gnu.org/licenses/agpl-3.0.html
 //
 // 2. Commercial License for proprietary/commercial use
-//    - Required for any commercial, enterprise, or proprietary use
-//    - Allows closed source distribution
-//    - Contact: vanling1111@gmail.com
+//   - Required for any commercial, enterprise, or proprietary use
+//   - Allows closed source distribution
+//   - Contact: vanling1111@gmail.com
 //
 // Unless you have obtained a commercial license, this file is licensed
 // under AGPL-3.0. By using this software, you agree to comply with the
@@ -66,13 +66,14 @@ type EncryptionDetails struct {
 //   - error: 如果解密失败，返回错误
 //
 // 示例:
-//   reportDoc, _ := client.Reports.GetReportDocument(ctx, reportDocumentID)
-//   encryptedData, _ := downloadReportContent(reportDoc.URL)
-//   decrypted, err := crypto.DecryptReport(
-//       reportDoc.EncryptionDetails.Key,
-//       reportDoc.EncryptionDetails.InitializationVector,
-//       encryptedData,
-//   )
+//
+//	reportDoc, _ := client.Reports.GetReportDocument(ctx, reportDocumentID)
+//	encryptedData, _ := downloadReportContent(reportDoc.URL)
+//	decrypted, err := crypto.DecryptReport(
+//	    reportDoc.EncryptionDetails.Key,
+//	    reportDoc.EncryptionDetails.InitializationVector,
+//	    encryptedData,
+//	)
 func DecryptReport(key, iv string, encryptedData []byte) ([]byte, error) {
 	if key == "" {
 		return nil, errors.New("encryption key is required")
@@ -147,8 +148,9 @@ func DecryptReport(key, iv string, encryptedData []byte) ([]byte, error) {
 //   - error: 如果加密失败，返回错误
 //
 // 示例:
-//   details, encrypted, err := crypto.EncryptDocument(documentData)
-//   // 上传 encrypted 数据和 details
+//
+//	details, encrypted, err := crypto.EncryptDocument(documentData)
+//	// 上传 encrypted 数据和 details
 func EncryptDocument(data []byte) (*EncryptionDetails, []byte, error) {
 	if len(data) == 0 {
 		return nil, nil, errors.New("data is empty")
