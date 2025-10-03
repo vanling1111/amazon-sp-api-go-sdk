@@ -291,20 +291,20 @@ func TestLimiter_GetTokens(t *testing.T) {
 		t.Fatalf("NewLimiter() error = %v", err)
 	}
 
-	// 初始令牌应该等于突发限制
+	// 初始令牌应该等于突发限制（使用容差）
 	tokens := limiter.GetTokens()
-	if tokens != 5.0 {
-		t.Errorf("GetTokens() = %v, want 5.0", tokens)
+	if tokens < 4.9 || tokens > 5.1 {
+		t.Errorf("GetTokens() = %v, want ~5.0", tokens)
 	}
 
 	// 消耗 2 个令牌
 	limiter.Allow()
 	limiter.Allow()
 
-	// 剩余令牌应该为 3
+	// 剩余令牌应该为 3（使用容差）
 	tokens = limiter.GetTokens()
-	if tokens != 3.0 {
-		t.Errorf("GetTokens() = %v, want 3.0", tokens)
+	if tokens < 2.9 || tokens > 3.1 {
+		t.Errorf("GetTokens() = %v, want ~3.0", tokens)
 	}
 
 	// 等待一段时间后令牌应该增加

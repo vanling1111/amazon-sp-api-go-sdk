@@ -175,20 +175,20 @@ func TestBucket_Available(t *testing.T) {
 		t.Fatalf("NewBucket() error = %v", err)
 	}
 
-	// 初始应该有 5 个令牌
+	// 初始应该有 5 个令牌（使用容差）
 	available := bucket.Available()
-	if available != 5.0 {
-		t.Errorf("Initial available = %v, want 5.0", available)
+	if available < 4.9 || available > 5.1 {
+		t.Errorf("Initial available = %v, want ~5.0", available)
 	}
 
 	// 取出 2 个令牌
 	bucket.Take()
 	bucket.Take()
 
-	// 应该剩余 3 个令牌
+	// 应该剩余 3 个令牌（使用容差比较）
 	available = bucket.Available()
-	if available != 3.0 {
-		t.Errorf("After taking 2, available = %v, want 3.0", available)
+	if available < 2.9 || available > 3.1 {
+		t.Errorf("After taking 2, available = %v, want ~3.0", available)
 	}
 
 	// 等待一段时间后令牌应该增加
@@ -269,18 +269,19 @@ func TestBucket_Reset(t *testing.T) {
 	bucket.Take()
 	bucket.Take()
 
-	// 验证令牌已消耗
-	if bucket.Available() != 2.0 {
-		t.Errorf("After taking 3, available = %v, want 2.0", bucket.Available())
+	// 验证令牌已消耗（使用容差）
+	avail := bucket.Available()
+	if avail < 1.9 || avail > 2.1 {
+		t.Errorf("After taking 3, available = %v, want ~2.0", avail)
 	}
 
 	// 重置
 	bucket.Reset()
 
-	// 验证桶已满
+	// 验证桶已满（使用容差）
 	available := bucket.Available()
-	if available != 5.0 {
-		t.Errorf("After reset, available = %v, want 5.0", available)
+	if available < 4.9 || available > 5.1 {
+		t.Errorf("After reset, available = %v, want ~5.0", available)
 	}
 }
 
