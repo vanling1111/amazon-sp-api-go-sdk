@@ -77,7 +77,7 @@ func main() {
 func uploadFeed(ctx context.Context, client *feeds_v2021_06_30.Client, content []byte, feedType string) (string, error) {
 	// 步骤 1: 创建 Feed 文档上传目标
 	log.Println("Step 1: Creating feed document upload destination...")
-	
+
 	docResult, err := client.CreateFeedDocument(ctx, map[string]interface{}{
 		"contentType": "text/tab-separated-values; charset=UTF-8",
 	})
@@ -88,15 +88,15 @@ func uploadFeed(ctx context.Context, client *feeds_v2021_06_30.Client, content [
 	docResp := docResult.(map[string]interface{})
 	feedDocumentID := docResp["feedDocumentId"].(string)
 	uploadURL := docResp["url"].(string)
-	
+
 	log.Printf("  Feed document ID: %s", feedDocumentID)
 
 	// 步骤 2: 上传文件到 S3
 	log.Println("Step 2: Uploading feed content to S3...")
-	
+
 	req, _ := http.NewRequestWithContext(ctx, "PUT", uploadURL, bytes.NewReader(content))
 	req.Header.Set("Content-Type", "text/tab-separated-values; charset=UTF-8")
-	
+
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
 		return "", fmt.Errorf("upload to S3: %w", err)
@@ -112,10 +112,10 @@ func uploadFeed(ctx context.Context, client *feeds_v2021_06_30.Client, content [
 
 	// 步骤 3: 创建 Feed
 	log.Println("Step 3: Creating feed...")
-	
+
 	feedResult, err := client.CreateFeed(ctx, map[string]interface{}{
-		"feedType":       feedType,
-		"marketplaceIds": []string{"ATVPDKIKX0DER"},
+		"feedType":            feedType,
+		"marketplaceIds":      []string{"ATVPDKIKX0DER"},
 		"inputFeedDocumentId": feedDocumentID,
 	})
 	if err != nil {
@@ -124,7 +124,7 @@ func uploadFeed(ctx context.Context, client *feeds_v2021_06_30.Client, content [
 
 	feedResp := feedResult.(map[string]interface{})
 	feedID := feedResp["feedId"].(string)
-	
+
 	log.Printf("  Feed created: %s", feedID)
 
 	return feedID, nil
@@ -143,7 +143,7 @@ func monitorFeedProcessing(ctx context.Context, client *feeds_v2021_06_30.Client
 
 		feed := result.(map[string]interface{})
 		status := feed["processingStatus"].(string)
-		
+
 		log.Printf("  Attempt %d/%d: Status=%s", attempt+1, maxAttempts, status)
 
 		switch status {
@@ -189,7 +189,7 @@ func processFeedResult(ctx context.Context, client *feeds_v2021_06_30.Client, re
 	defer resp.Body.Close()
 
 	resultContent, _ := io.ReadAll(resp.Body)
-	
+
 	log.Printf("Feed result:\n%s", string(resultContent))
 
 	return nil
@@ -199,29 +199,29 @@ func processFeedResult(ctx context.Context, client *feeds_v2021_06_30.Client, re
 func generateInventoryFeed() []byte {
 	// 使用 XML 格式的库存 Feed
 	type Message struct {
-		XMLName xml.Name `xml:"Message"`
-		MessageID int `xml:"MessageID"`
-		OperationType string `xml:"OperationType"`
-		Inventory struct {
-			SKU string `xml:"SKU"`
-			Quantity int `xml:"Quantity"`
-			FulfillmentLatency int `xml:"FulfillmentLatency"`
+		XMLName       xml.Name `xml:"Message"`
+		MessageID     int      `xml:"MessageID"`
+		OperationType string   `xml:"OperationType"`
+		Inventory     struct {
+			SKU                string `xml:"SKU"`
+			Quantity           int    `xml:"Quantity"`
+			FulfillmentLatency int    `xml:"FulfillmentLatency"`
 		} `xml:"Inventory"`
 	}
 
 	type Envelope struct {
 		XMLName xml.Name `xml:"AmazonEnvelope"`
-		NS string `xml:"xmlns:xsi,attr"`
-		Header struct {
-			DocumentVersion string `xml:"DocumentVersion"`
+		NS      string   `xml:"xmlns:xsi,attr"`
+		Header  struct {
+			DocumentVersion    string `xml:"DocumentVersion"`
 			MerchantIdentifier string `xml:"MerchantIdentifier"`
 		} `xml:"Header"`
-		MessageType string `xml:"MessageType"`
-		Messages []Message `xml:"Message"`
+		MessageType string    `xml:"MessageType"`
+		Messages    []Message `xml:"Message"`
 	}
 
 	envelope := Envelope{
-		NS: "http://www.w3.org/2001/XMLSchema-instance",
+		NS:          "http://www.w3.org/2001/XMLSchema-instance",
 		MessageType: "Inventory",
 	}
 	envelope.Header.DocumentVersion = "1.01"
@@ -230,28 +230,28 @@ func generateInventoryFeed() []byte {
 	// 添加库存更新消息
 	envelope.Messages = []Message{
 		{
-			MessageID: 1,
+			MessageID:     1,
 			OperationType: "Update",
 			Inventory: struct {
-				SKU string `xml:"SKU"`
-				Quantity int `xml:"Quantity"`
-				FulfillmentLatency int `xml:"FulfillmentLatency"`
+				SKU                string `xml:"SKU"`
+				Quantity           int    `xml:"Quantity"`
+				FulfillmentLatency int    `xml:"FulfillmentLatency"`
 			}{
-				SKU: "MY-SKU-001",
-				Quantity: 100,
+				SKU:                "MY-SKU-001",
+				Quantity:           100,
 				FulfillmentLatency: 2,
 			},
 		},
 		{
-			MessageID: 2,
+			MessageID:     2,
 			OperationType: "Update",
 			Inventory: struct {
-				SKU string `xml:"SKU"`
-				Quantity int `xml:"Quantity"`
-				FulfillmentLatency int `xml:"FulfillmentLatency"`
+				SKU                string `xml:"SKU"`
+				Quantity           int    `xml:"Quantity"`
+				FulfillmentLatency int    `xml:"FulfillmentLatency"`
 			}{
-				SKU: "MY-SKU-002",
-				Quantity: 50,
+				SKU:                "MY-SKU-002",
+				Quantity:           50,
 				FulfillmentLatency: 2,
 			},
 		},
@@ -260,4 +260,3 @@ func generateInventoryFeed() []byte {
 	data, _ := xml.MarshalIndent(envelope, "", "  ")
 	return append([]byte(xml.Header), data...)
 }
-

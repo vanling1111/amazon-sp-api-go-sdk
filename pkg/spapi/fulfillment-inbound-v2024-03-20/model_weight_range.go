@@ -13,6 +13,6 @@ type WeightRange struct {
 	// Maximum allowed weight.
 	Maximum float64 `json:"maximum"`
 	// Minimum allowed weight.
-	Minimum float64 `json:"minimum"`
-	Unit *UnitOfWeight `json:"unit"`
+	Minimum float64       `json:"minimum"`
+	Unit    *UnitOfWeight `json:"unit"`
 }

@@ -10,5 +10,5 @@ package aplus_content_v2020_11_01
 
 type GetContentDocumentResponse struct {
 	ContentRecord *ContentRecord `json:"contentRecord"`
-	Warnings *[]ModelError `json:"warnings,omitempty"`
+	Warnings      *[]ModelError  `json:"warnings,omitempty"`
 }

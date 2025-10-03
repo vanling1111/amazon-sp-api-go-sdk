@@ -13,10 +13,10 @@ import (
 
 // SearchResponse 商品搜索响应
 type SearchResponse struct {
-	Items          []map[string]interface{} `json:"items"`
-	NextToken      string                   `json:"nextToken,omitempty"`
-	Refinements    interface{}              `json:"refinements,omitempty"`
-	NumberOfResults int                     `json:"numberOfResults,omitempty"`
+	Items           []map[string]interface{} `json:"items"`
+	NextToken       string                   `json:"nextToken,omitempty"`
+	Refinements     interface{}              `json:"refinements,omitempty"`
+	NumberOfResults int                      `json:"numberOfResults,omitempty"`
 }
 
 // IterateCatalogItems 返回商品目录迭代器，自动处理分页。
@@ -88,4 +88,3 @@ func (c *Client) IterateCatalogItems(ctx context.Context, query map[string]strin
 		}
 	}
 }
-

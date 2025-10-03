@@ -12,7 +12,7 @@ package shipping_v2
 // The location where the person, business or institution is located.
 type Location struct {
 	StateOrRegion string `json:"stateOrRegion,omitempty"`
-	City string `json:"city,omitempty"`
-	CountryCode string `json:"countryCode,omitempty"`
-	PostalCode string `json:"postalCode,omitempty"`
+	City          string `json:"city,omitempty"`
+	CountryCode   string `json:"countryCode,omitempty"`
+	PostalCode    string `json:"postalCode,omitempty"`
 }

@@ -13,6 +13,6 @@ type InvalidReturnItem struct {
 	// An identifier the seller assigns to the return item.
 	SellerReturnItemId string `json:"sellerReturnItemId"`
 	// The identifier assigned to the item by the seller when the fulfillment order was created.
-	SellerFulfillmentOrderItemId string `json:"sellerFulfillmentOrderItemId"`
-	InvalidItemReason *InvalidItemReason `json:"invalidItemReason"`
+	SellerFulfillmentOrderItemId string             `json:"sellerFulfillmentOrderItemId"`
+	InvalidItemReason            *InvalidItemReason `json:"invalidItemReason"`
 }

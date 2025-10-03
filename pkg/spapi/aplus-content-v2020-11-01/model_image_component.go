@@ -11,7 +11,7 @@ package aplus_content_v2020_11_01
 // A reference to an image, hosted in the A+ Content media library.
 type ImageComponent struct {
 	// This identifier is provided by the [Uploads API](https://developer-docs.amazon.com/sp-api/reference/welcome-to-api-references).
-	UploadDestinationId string `json:"uploadDestinationId"`
+	UploadDestinationId    string                  `json:"uploadDestinationId"`
 	ImageCropSpecification *ImageCropSpecification `json:"imageCropSpecification"`
 	// The alternative text for the image.
 	AltText string `json:"altText"`

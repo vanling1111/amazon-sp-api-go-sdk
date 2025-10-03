@@ -11,6 +11,6 @@ package fulfillment_inbound_v0
 // Contains detail about an invalid SKU
 type InvalidSku struct {
 	// The seller SKU of the item.
-	SellerSKU string `json:"SellerSKU,omitempty"`
+	SellerSKU   string       `json:"SellerSKU,omitempty"`
 	ErrorReason *ErrorReason `json:"ErrorReason,omitempty"`
 }

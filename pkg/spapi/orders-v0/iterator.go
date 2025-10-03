@@ -176,4 +176,3 @@ func (c *Client) IterateOrderItems(ctx context.Context, orderID string, query ma
 		}
 	}
 }
-

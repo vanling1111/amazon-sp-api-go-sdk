@@ -15,10 +15,10 @@ type OrderItemStatus struct {
 	// Buyer's Standard Identification Number (ASIN) of an item.
 	BuyerProductIdentifier string `json:"buyerProductIdentifier,omitempty"`
 	// The vendor selected product identification of the item.
-	VendorProductIdentifier string `json:"vendorProductIdentifier,omitempty"`
-	NetCost *Money `json:"netCost,omitempty"`
-	ListPrice *Money `json:"listPrice,omitempty"`
-	OrderedQuantity *OrderItemStatusOrderedQuantity `json:"orderedQuantity,omitempty"`
-	AcknowledgementStatus *OrderItemStatusAcknowledgementStatus `json:"acknowledgementStatus,omitempty"`
-	ReceivingStatus *OrderItemStatusReceivingStatus `json:"receivingStatus,omitempty"`
+	VendorProductIdentifier string                                `json:"vendorProductIdentifier,omitempty"`
+	NetCost                 *Money                                `json:"netCost,omitempty"`
+	ListPrice               *Money                                `json:"listPrice,omitempty"`
+	OrderedQuantity         *OrderItemStatusOrderedQuantity       `json:"orderedQuantity,omitempty"`
+	AcknowledgementStatus   *OrderItemStatusAcknowledgementStatus `json:"acknowledgementStatus,omitempty"`
+	ReceivingStatus         *OrderItemStatusReceivingStatus       `json:"receivingStatus,omitempty"`
 }

@@ -141,10 +141,10 @@ func createReport(ctx context.Context, client *reports_v2021_06_30.Client, repor
 	startTime := endTime.Add(-time.Duration(daysBack) * 24 * time.Hour)
 
 	result, err := client.CreateReport(ctx, map[string]interface{}{
-		"reportType":    reportType,
+		"reportType":     reportType,
 		"marketplaceIds": []string{"ATVPDKIKX0DER"},
-		"dataStartTime": startTime.Format(time.RFC3339),
-		"dataEndTime":   endTime.Format(time.RFC3339),
+		"dataStartTime":  startTime.Format(time.RFC3339),
+		"dataEndTime":    endTime.Format(time.RFC3339),
 	})
 	if err != nil {
 		return "", err
@@ -220,7 +220,7 @@ func saveToDatabase(orders []map[string]string) error {
 
 // startScheduledProcessing 定时处理报告
 func startScheduledProcessing(ctx context.Context, client *reports_v2021_06_30.Client) {
-	ticker := time.NewTicker(24 * time.Hour)  // 每天执行一次
+	ticker := time.NewTicker(24 * time.Hour) // 每天执行一次
 	defer ticker.Stop()
 
 	reportTypes := []string{
@@ -235,10 +235,10 @@ func startScheduledProcessing(ctx context.Context, client *reports_v2021_06_30.C
 			return
 		case <-ticker.C:
 			log.Println("Starting scheduled report processing...")
-			
+
 			for _, reportType := range reportTypes {
 				log.Printf("Processing %s...", reportType)
-				
+
 				reportID, err := createReport(ctx, client, reportType, 1)
 				if err != nil {
 					log.Printf("Create failed: %v", err)
@@ -262,4 +262,3 @@ func startScheduledProcessing(ctx context.Context, client *reports_v2021_06_30.C
 		}
 	}
 }
-

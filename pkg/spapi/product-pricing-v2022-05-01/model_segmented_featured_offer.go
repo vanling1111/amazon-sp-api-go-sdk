@@ -13,14 +13,14 @@ type SegmentedFeaturedOffer struct {
 	// The list of segment information in which the offer is featured.
 	FeaturedOfferSegments []FeaturedOfferSegment `json:"featuredOfferSegments"`
 	// The seller identifier for the offer.
-	SellerId string `json:"sellerId"`
+	SellerId  string     `json:"sellerId"`
 	Condition *Condition `json:"condition"`
 	// The item subcondition of the offer.
-	SubCondition string `json:"subCondition,omitempty"`
+	SubCondition    string           `json:"subCondition,omitempty"`
 	FulfillmentType *FulfillmentType `json:"fulfillmentType"`
-	ListingPrice *MoneyType `json:"listingPrice"`
+	ListingPrice    *MoneyType       `json:"listingPrice"`
 	// A list of shipping options associated with this offer
 	ShippingOptions []ShippingOption `json:"shippingOptions,omitempty"`
-	Points *Points `json:"points,omitempty"`
-	PrimeDetails *PrimeDetails `json:"primeDetails,omitempty"`
+	Points          *Points          `json:"points,omitempty"`
+	PrimeDetails    *PrimeDetails    `json:"primeDetails,omitempty"`
 }

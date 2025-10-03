@@ -27,9 +27,9 @@ type Container struct {
 	// Carrier required for EU VOC vendors only.
 	Carrier string `json:"carrier,omitempty"`
 	// An integer that must be submitted for multi-box shipments only, where one item may come in separate packages.
-	ContainerSequenceNumber int32 `json:"containerSequenceNumber,omitempty"`
-	Dimensions *Dimensions `json:"dimensions,omitempty"`
-	Weight *Weight `json:"weight"`
+	ContainerSequenceNumber int32       `json:"containerSequenceNumber,omitempty"`
+	Dimensions              *Dimensions `json:"dimensions,omitempty"`
+	Weight                  *Weight     `json:"weight"`
 	// A list of packed items.
 	PackedItems []PackedItem `json:"packedItems"`
 }

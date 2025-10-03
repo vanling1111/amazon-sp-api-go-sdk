@@ -13,6 +13,6 @@ type MarketplaceTaxInfo struct {
 	// The legal name of the company.
 	CompanyLegalName string `json:"CompanyLegalName,omitempty"`
 	// The country or region imposing the tax.
-	TaxingRegion string `json:"TaxingRegion,omitempty"`
+	TaxingRegion       string               `json:"TaxingRegion,omitempty"`
 	TaxClassifications *[]TaxClassification `json:"TaxClassifications,omitempty"`
 }

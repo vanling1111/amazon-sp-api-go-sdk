@@ -12,5 +12,5 @@ package fulfillment_inbound_v2024_03_20
 type ListDeliveryWindowOptionsResponse struct {
 	// Delivery window options generated for the placement option.
 	DeliveryWindowOptions []DeliveryWindowOption `json:"deliveryWindowOptions"`
-	Pagination *Pagination `json:"pagination,omitempty"`
+	Pagination            *Pagination            `json:"pagination,omitempty"`
 }

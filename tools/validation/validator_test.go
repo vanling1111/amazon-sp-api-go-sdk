@@ -21,7 +21,7 @@ func TestValidator_AddRule(t *testing.T) {
 	validator := NewValidator()
 	validator.AddRule("email", "required", "Email is required")
 	validator.AddRule("email", "email", "Invalid email format")
-	
+
 	if len(validator.rules) != 2 {
 		t.Errorf("Expected 2 rules, got %d", len(validator.rules))
 	}
@@ -30,7 +30,7 @@ func TestValidator_AddRule(t *testing.T) {
 func TestValidator_Validate_Required(t *testing.T) {
 	validator := NewValidator()
 	validator.AddRule("name", "required", "Name is required")
-	
+
 	tests := []struct {
 		name    string
 		data    map[string]interface{}
@@ -52,7 +52,7 @@ func TestValidator_Validate_Required(t *testing.T) {
 			wantErr: false,
 		},
 	}
-	
+
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			errs := validator.Validate(tt.data)
@@ -66,7 +66,7 @@ func TestValidator_Validate_Required(t *testing.T) {
 func TestValidator_Validate_Email(t *testing.T) {
 	validator := NewValidator()
 	validator.AddRule("email", "email", "Invalid email")
-	
+
 	tests := []struct {
 		name    string
 		email   string
@@ -76,7 +76,7 @@ func TestValidator_Validate_Email(t *testing.T) {
 		{"invalid email", "invalid", true},
 		{"missing @", "testexample.com", true},
 	}
-	
+
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			data := map[string]interface{}{"email": tt.email}
@@ -87,4 +87,3 @@ func TestValidator_Validate_Email(t *testing.T) {
 		})
 	}
 }
-

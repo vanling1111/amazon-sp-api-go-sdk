@@ -11,8 +11,8 @@ package product_pricing_v0
 // List of request parameters that can be accepted by `ItemOffersRequest`
 type ItemOffersRequestParams struct {
 	// The Amazon Standard Identification Number (ASIN) of the item. This is the same Asin passed as a request parameter.
-	Asin string `json:"Asin,omitempty"`
-	MarketplaceId string `json:"MarketplaceId"`
+	Asin          string         `json:"Asin,omitempty"`
+	MarketplaceId string         `json:"MarketplaceId"`
 	ItemCondition *ItemCondition `json:"ItemCondition"`
-	CustomerType *CustomerType `json:"CustomerType,omitempty"`
+	CustomerType  *CustomerType  `json:"CustomerType,omitempty"`
 }

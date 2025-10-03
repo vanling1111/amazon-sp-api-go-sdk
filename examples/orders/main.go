@@ -38,8 +38,8 @@ func main() {
 	// 示例 1: 获取订单列表
 	fmt.Println("=== 示例 1: 获取最近的订单 ===")
 	queryParams := map[string]string{
-		"MarketplaceIds":  "ATVPDKIKX0DER", // US marketplace
-		"CreatedAfter":    time.Now().Add(-7 * 24 * time.Hour).Format(time.RFC3339),
+		"MarketplaceIds":    "ATVPDKIKX0DER", // US marketplace
+		"CreatedAfter":      time.Now().Add(-7 * 24 * time.Hour).Format(time.RFC3339),
 		"MaxResultsPerPage": "10",
 	}
 
@@ -76,7 +76,7 @@ func main() {
 	// 示例 4: 更新发货状态
 	fmt.Println("=== 示例 4: 更新发货状态 ===")
 	shipmentRequest := map[string]interface{}{
-		"marketplaceId": "ATVPDKIKX0DER",
+		"marketplaceId":  "ATVPDKIKX0DER",
 		"shipmentStatus": "Shipped",
 	}
 
@@ -89,4 +89,3 @@ func main() {
 
 	fmt.Println("\n✓ Orders API 示例完成")
 }
-

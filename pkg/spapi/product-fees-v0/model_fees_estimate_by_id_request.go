@@ -11,7 +11,7 @@ package product_fees_v0
 // A product, marketplace, and proposed price used to request estimated fees.
 type FeesEstimateByIdRequest struct {
 	FeesEstimateRequest *FeesEstimateRequest `json:"FeesEstimateRequest,omitempty"`
-	IdType *IdType `json:"IdType"`
+	IdType              *IdType              `json:"IdType"`
 	// The item identifier.
 	IdValue string `json:"IdValue"`
 }

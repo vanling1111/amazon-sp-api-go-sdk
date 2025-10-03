@@ -13,6 +13,6 @@ type ChargeInstrument struct {
 	// A short description of the charge instrument.
 	Description string `json:"Description,omitempty"`
 	// The account tail (trailing digits) of the charge instrument.
-	Tail string `json:"Tail,omitempty"`
+	Tail   string    `json:"Tail,omitempty"`
 	Amount *Currency `json:"Amount,omitempty"`
 }

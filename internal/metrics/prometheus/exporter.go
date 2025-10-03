@@ -125,4 +125,3 @@ func (m *Metrics) RecordError(api, errorType string) {
 func (m *Metrics) RecordRateLimitWait(api string, waitTime float64) {
 	m.rateLimitWait.WithLabelValues(api).Observe(waitTime)
 }
-

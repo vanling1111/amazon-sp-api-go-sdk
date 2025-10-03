@@ -17,6 +17,6 @@ type ListingsItemSubmissionResponse struct {
 	// The unique identifier of the listings item submission.
 	SubmissionId string `json:"submissionId"`
 	// Listings item issues related to the listings item submission.
-	Issues []Issue `json:"issues,omitempty"`
+	Issues      []Issue                         `json:"issues,omitempty"`
 	Identifiers *[]ItemIdentifiersByMarketplace `json:"identifiers,omitempty"`
 }

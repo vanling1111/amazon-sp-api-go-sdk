@@ -11,5 +11,5 @@ package merchant_fulfillment_v0
 // Response schema.
 type GetAdditionalSellerInputsResponse struct {
 	Payload *GetAdditionalSellerInputsResult `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError                    `json:"errors,omitempty"`
 }

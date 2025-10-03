@@ -35,7 +35,7 @@ type Address struct {
 	// The country code. A two-character country code, in ISO 3166-1 alpha-2 format.
 	CountryCode string `json:"CountryCode,omitempty"`
 	// The phone number of the buyer.  **Note**:  1. This attribute is only available for shipping address. 2. In some cases, the buyer phone number is suppressed:  a. Phone is suppressed for all `AFN` (fulfilled by Amazon) orders. b. Phone is suppressed for the shipped `MFN` (fulfilled by seller) order when the current date is past the Latest Delivery Date.
-	Phone string `json:"Phone,omitempty"`
+	Phone          string                 `json:"Phone,omitempty"`
 	ExtendedFields *AddressExtendedFields `json:"ExtendedFields,omitempty"`
 	// The address type of the shipping address.
 	AddressType string `json:"AddressType,omitempty"`

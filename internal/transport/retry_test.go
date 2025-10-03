@@ -195,49 +195,49 @@ func TestDefaultShouldRetry(t *testing.T) {
 
 func TestCalculateBackoff(t *testing.T) {
 	tests := []struct {
-		name        string
-		attempt     int
-		initial     time.Duration
-		max         time.Duration
-		multiplier  float64
-		wantMin     time.Duration
-		wantMax     time.Duration
+		name       string
+		attempt    int
+		initial    time.Duration
+		max        time.Duration
+		multiplier float64
+		wantMin    time.Duration
+		wantMax    time.Duration
 	}{
 		{
-			name:        "first attempt",
-			attempt:     0,
-			initial:     1 * time.Second,
-			max:         30 * time.Second,
-			multiplier:  2.0,
-			wantMin:     1 * time.Second,
-			wantMax:     1 * time.Second,
+			name:       "first attempt",
+			attempt:    0,
+			initial:    1 * time.Second,
+			max:        30 * time.Second,
+			multiplier: 2.0,
+			wantMin:    1 * time.Second,
+			wantMax:    1 * time.Second,
 		},
 		{
-			name:        "second attempt",
-			attempt:     1,
-			initial:     1 * time.Second,
-			max:         30 * time.Second,
-			multiplier:  2.0,
-			wantMin:     2 * time.Second,
-			wantMax:     2 * time.Second,
+			name:       "second attempt",
+			attempt:    1,
+			initial:    1 * time.Second,
+			max:        30 * time.Second,
+			multiplier: 2.0,
+			wantMin:    2 * time.Second,
+			wantMax:    2 * time.Second,
 		},
 		{
-			name:        "third attempt",
-			attempt:     2,
-			initial:     1 * time.Second,
-			max:         30 * time.Second,
-			multiplier:  2.0,
-			wantMin:     4 * time.Second,
-			wantMax:     4 * time.Second,
+			name:       "third attempt",
+			attempt:    2,
+			initial:    1 * time.Second,
+			max:        30 * time.Second,
+			multiplier: 2.0,
+			wantMin:    4 * time.Second,
+			wantMax:    4 * time.Second,
 		},
 		{
-			name:        "exceeds max",
-			attempt:     10,
-			initial:     1 * time.Second,
-			max:         30 * time.Second,
-			multiplier:  2.0,
-			wantMin:     30 * time.Second,
-			wantMax:     30 * time.Second,
+			name:       "exceeds max",
+			attempt:    10,
+			initial:    1 * time.Second,
+			max:        30 * time.Second,
+			multiplier: 2.0,
+			wantMin:    30 * time.Second,
+			wantMax:    30 * time.Second,
 		},
 	}
 
@@ -276,4 +276,3 @@ func TestDefaultRetryConfig(t *testing.T) {
 		t.Error("ShouldRetry should not be nil")
 	}
 }
-

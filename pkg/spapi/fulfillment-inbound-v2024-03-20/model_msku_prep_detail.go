@@ -10,11 +10,11 @@ package fulfillment_inbound_v2024_03_20
 
 // An MSKU and its related prep details.
 type MskuPrepDetail struct {
-	AllOwnersConstraint *AllOwnersConstraint `json:"allOwnersConstraint,omitempty"`
-	LabelOwnerConstraint *OwnerConstraint `json:"labelOwnerConstraint,omitempty"`
+	AllOwnersConstraint  *AllOwnersConstraint `json:"allOwnersConstraint,omitempty"`
+	LabelOwnerConstraint *OwnerConstraint     `json:"labelOwnerConstraint,omitempty"`
 	// The merchant SKU, a merchant-supplied identifier for a specific SKU.
-	Msku string `json:"msku"`
-	PrepCategory *PrepCategory `json:"prepCategory"`
+	Msku                string           `json:"msku"`
+	PrepCategory        *PrepCategory    `json:"prepCategory"`
 	PrepOwnerConstraint *OwnerConstraint `json:"prepOwnerConstraint,omitempty"`
 	// A list of preparation types associated with a preparation category.
 	PrepTypes []PrepType `json:"prepTypes"`

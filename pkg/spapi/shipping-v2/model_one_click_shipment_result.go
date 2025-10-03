@@ -11,10 +11,10 @@ package shipping_v2
 
 // The payload for the OneClickShipment API.
 type OneClickShipmentResult struct {
-	ShipmentId string `json:"shipmentId"`
+	ShipmentId             string                   `json:"shipmentId"`
 	PackageDocumentDetails *[]PackageDocumentDetail `json:"packageDocumentDetails"`
-	Promise *Promise `json:"promise"`
-	Carrier *Carrier `json:"carrier"`
-	Service *Service `json:"service"`
-	TotalCharge *Currency `json:"totalCharge"`
+	Promise                *Promise                 `json:"promise"`
+	Carrier                *Carrier                 `json:"carrier"`
+	Service                *Service                 `json:"service"`
+	TotalCharge            *Currency                `json:"totalCharge"`
 }

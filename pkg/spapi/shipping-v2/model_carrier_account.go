@@ -12,5 +12,5 @@ package shipping_v2
 // Carrier Account details used to fetch rates.
 type CarrierAccount struct {
 	CarrierAccountId string `json:"carrierAccountId"`
-	CarrierId string `json:"carrierId"`
+	CarrierId        string `json:"carrierId"`
 }

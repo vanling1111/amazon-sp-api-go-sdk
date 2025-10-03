@@ -10,7 +10,7 @@ package product_pricing_v2022_05_01
 
 // The FOEP response data for a requested SKU.
 type FeaturedOfferExpectedPriceResponseBody struct {
-	OfferIdentifier *OfferIdentifier `json:"offerIdentifier,omitempty"`
+	OfferIdentifier                   *OfferIdentifier                    `json:"offerIdentifier,omitempty"`
 	FeaturedOfferExpectedPriceResults *[]FeaturedOfferExpectedPriceResult `json:"featuredOfferExpectedPriceResults,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors                            *[]ModelError                       `json:"errors,omitempty"`
 }

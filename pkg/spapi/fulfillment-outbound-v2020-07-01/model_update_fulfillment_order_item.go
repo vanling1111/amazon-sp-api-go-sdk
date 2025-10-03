@@ -14,7 +14,7 @@ type UpdateFulfillmentOrderItem struct {
 	SellerSku string `json:"sellerSku,omitempty"`
 	// Identifies the fulfillment order item to update. Created with a previous call to the `createFulfillmentOrder` operation.
 	SellerFulfillmentOrderItemId string `json:"sellerFulfillmentOrderItemId"`
-	Quantity int32 `json:"quantity"`
+	Quantity                     int32  `json:"quantity"`
 	// A message to the gift recipient, if applicable.
 	GiftMessage string `json:"giftMessage,omitempty"`
 	// Item-specific text that displays in recipient-facing materials such as the outbound shipment packing slip.
@@ -24,6 +24,6 @@ type UpdateFulfillmentOrderItem struct {
 	// Indicates whether the item is sellable or unsellable.
 	OrderItemDisposition string `json:"orderItemDisposition,omitempty"`
 	PerUnitDeclaredValue *Money `json:"perUnitDeclaredValue,omitempty"`
-	PerUnitPrice *Money `json:"perUnitPrice,omitempty"`
-	PerUnitTax *Money `json:"perUnitTax,omitempty"`
+	PerUnitPrice         *Money `json:"perUnitPrice,omitempty"`
+	PerUnitTax           *Money `json:"perUnitTax,omitempty"`
 }

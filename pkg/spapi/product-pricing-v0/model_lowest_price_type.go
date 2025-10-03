@@ -13,13 +13,13 @@ type LowestPriceType struct {
 	// Indicates the condition of the item. For example: New, Used, Collectible, Refurbished, or Club.
 	Condition string `json:"condition"`
 	// Indicates whether the item is fulfilled by Amazon or by the seller.
-	FulfillmentChannel string `json:"fulfillmentChannel"`
-	OfferType *OfferCustomerType `json:"offerType,omitempty"`
+	FulfillmentChannel string             `json:"fulfillmentChannel"`
+	OfferType          *OfferCustomerType `json:"offerType,omitempty"`
 	// Indicates at what quantity this price becomes active.
-	QuantityTier int32 `json:"quantityTier,omitempty"`
+	QuantityTier         int32                 `json:"quantityTier,omitempty"`
 	QuantityDiscountType *QuantityDiscountType `json:"quantityDiscountType,omitempty"`
-	LandedPrice *MoneyType `json:"LandedPrice,omitempty"`
-	ListingPrice *MoneyType `json:"ListingPrice"`
-	Shipping *MoneyType `json:"Shipping,omitempty"`
-	Points *Points `json:"Points,omitempty"`
+	LandedPrice          *MoneyType            `json:"LandedPrice,omitempty"`
+	ListingPrice         *MoneyType            `json:"ListingPrice"`
+	Shipping             *MoneyType            `json:"Shipping,omitempty"`
+	Points               *Points               `json:"Points,omitempty"`
 }

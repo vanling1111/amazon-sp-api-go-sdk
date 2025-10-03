@@ -11,5 +11,5 @@ package shipment_invoicing_v0
 // The response schema for the getShipmentDetails operation.
 type GetShipmentDetailsResponse struct {
 	Payload *ShipmentDetail `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError   `json:"errors,omitempty"`
 }

@@ -11,7 +11,7 @@ package merchant_fulfillment_v0
 // The document data and checksum.
 type FileContents struct {
 	// Data for printing labels encoded into a Base64, GZip-compressed string.
-	Contents string `json:"Contents"`
+	Contents string    `json:"Contents"`
 	FileType *FileType `json:"FileType"`
 	// An MD5 hash to validate the PDF document data, in the form of a Base64 string.
 	Checksum string `json:"Checksum"`

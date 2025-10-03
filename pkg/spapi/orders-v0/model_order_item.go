@@ -20,23 +20,23 @@ type OrderItem struct {
 	AssociatedItems []AssociatedItem `json:"AssociatedItems,omitempty"`
 	// The item's name.
 	Title string `json:"Title,omitempty"`
-	// The number of items in the order. 
+	// The number of items in the order.
 	QuantityOrdered int32 `json:"QuantityOrdered"`
 	// The number of items shipped.
-	QuantityShipped int32 `json:"QuantityShipped,omitempty"`
-	ProductInfo *ProductInfoDetail `json:"ProductInfo,omitempty"`
-	PointsGranted *PointsGrantedDetail `json:"PointsGranted,omitempty"`
-	ItemPrice *Money `json:"ItemPrice,omitempty"`
-	ShippingPrice *Money `json:"ShippingPrice,omitempty"`
-	ItemTax *Money `json:"ItemTax,omitempty"`
-	ShippingTax *Money `json:"ShippingTax,omitempty"`
-	ShippingDiscount *Money `json:"ShippingDiscount,omitempty"`
-	ShippingDiscountTax *Money `json:"ShippingDiscountTax,omitempty"`
-	PromotionDiscount *Money `json:"PromotionDiscount,omitempty"`
-	PromotionDiscountTax *Money `json:"PromotionDiscountTax,omitempty"`
-	PromotionIds *[]string `json:"PromotionIds,omitempty"`
-	CODFee *Money `json:"CODFee,omitempty"`
-	CODFeeDiscount *Money `json:"CODFeeDiscount,omitempty"`
+	QuantityShipped      int32                `json:"QuantityShipped,omitempty"`
+	ProductInfo          *ProductInfoDetail   `json:"ProductInfo,omitempty"`
+	PointsGranted        *PointsGrantedDetail `json:"PointsGranted,omitempty"`
+	ItemPrice            *Money               `json:"ItemPrice,omitempty"`
+	ShippingPrice        *Money               `json:"ShippingPrice,omitempty"`
+	ItemTax              *Money               `json:"ItemTax,omitempty"`
+	ShippingTax          *Money               `json:"ShippingTax,omitempty"`
+	ShippingDiscount     *Money               `json:"ShippingDiscount,omitempty"`
+	ShippingDiscountTax  *Money               `json:"ShippingDiscountTax,omitempty"`
+	PromotionDiscount    *Money               `json:"PromotionDiscount,omitempty"`
+	PromotionDiscountTax *Money               `json:"PromotionDiscountTax,omitempty"`
+	PromotionIds         *[]string            `json:"PromotionIds,omitempty"`
+	CODFee               *Money               `json:"CODFee,omitempty"`
+	CODFeeDiscount       *Money               `json:"CODFeeDiscount,omitempty"`
 	// Indicates whether the item is a gift.  **Possible values**: `true` and `false`.
 	IsGift string `json:"IsGift,omitempty"`
 	// The condition of the item, as described by the seller.
@@ -50,8 +50,8 @@ type OrderItem struct {
 	// The end date of the scheduled delivery window in the time zone for the order destination. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
 	ScheduledDeliveryEndDate string `json:"ScheduledDeliveryEndDate,omitempty"`
 	// Indicates that the selling price is a special price that is only available for Amazon Business orders. For more information about the Amazon Business Seller Program, refer to the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business).   **Possible values**: `BusinessPrice`
-	PriceDesignation string `json:"PriceDesignation,omitempty"`
-	TaxCollection *TaxCollection `json:"TaxCollection,omitempty"`
+	PriceDesignation string         `json:"PriceDesignation,omitempty"`
+	TaxCollection    *TaxCollection `json:"TaxCollection,omitempty"`
 	// When true, the product type for this item has a serial number.   Only returned for Amazon Easy Ship orders.
 	SerialNumberRequired bool `json:"SerialNumberRequired,omitempty"`
 	// When true, the ASIN is enrolled in Transparency. The Transparency serial number that you must submit is determined by:  **1D or 2D Barcode:** This has a **T** logo. Submit either the 29-character alpha-numeric identifier beginning with **AZ** or **ZA**, or the 38-character Serialized Global Trade Item Number (SGTIN). **2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number is applied to the same side of the packaging as the GTIN (UPC/EAN/ISBN) barcode. **QR code SN:** Submit the URL that the QR code generates.
@@ -61,13 +61,13 @@ type OrderItem struct {
 	// The store chain store identifier. Linked to a specific store in a store chain.
 	StoreChainStoreId string `json:"StoreChainStoreId,omitempty"`
 	// The category of deemed reseller. This applies to selling partners that are not based in the EU and is used to help them meet the VAT Deemed Reseller tax laws in the EU and UK.
-	DeemedResellerCategory string `json:"DeemedResellerCategory,omitempty"`
-	BuyerInfo *ItemBuyerInfo `json:"BuyerInfo,omitempty"`
-	BuyerRequestedCancel *BuyerRequestedCancel `json:"BuyerRequestedCancel,omitempty"`
+	DeemedResellerCategory string                `json:"DeemedResellerCategory,omitempty"`
+	BuyerInfo              *ItemBuyerInfo        `json:"BuyerInfo,omitempty"`
+	BuyerRequestedCancel   *BuyerRequestedCancel `json:"BuyerRequestedCancel,omitempty"`
 	// A list of serial numbers for electronic products that are shipped to customers. Returned for FBA orders only.
-	SerialNumbers []string `json:"SerialNumbers,omitempty"`
+	SerialNumbers           []string                 `json:"SerialNumbers,omitempty"`
 	SubstitutionPreferences *SubstitutionPreferences `json:"SubstitutionPreferences,omitempty"`
-	Measurement *Measurement `json:"Measurement,omitempty"`
-	ShippingConstraints *ShippingConstraints `json:"ShippingConstraints,omitempty"`
-	AmazonPrograms *AmazonPrograms `json:"AmazonPrograms,omitempty"`
+	Measurement             *Measurement             `json:"Measurement,omitempty"`
+	ShippingConstraints     *ShippingConstraints     `json:"ShippingConstraints,omitempty"`
+	AmazonPrograms          *AmazonPrograms          `json:"AmazonPrograms,omitempty"`
 }

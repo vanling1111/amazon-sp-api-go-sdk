@@ -85,10 +85,10 @@ func main() {
 // createOrdersReport 创建订单报告
 func createOrdersReport(ctx context.Context, client *reports_v2021_06_30.Client) (string, error) {
 	request := map[string]interface{}{
-		"reportType": "GET_FLAT_FILE_ALL_ORDERS_DATA_BY_ORDER_DATE",
+		"reportType":     "GET_FLAT_FILE_ALL_ORDERS_DATA_BY_ORDER_DATE",
 		"marketplaceIds": []string{"ATVPDKIKX0DER"},
-		"dataStartTime": time.Now().Add(-30 * 24 * time.Hour).Format(time.RFC3339),
-		"dataEndTime":   time.Now().Format(time.RFC3339),
+		"dataStartTime":  time.Now().Add(-30 * 24 * time.Hour).Format(time.RFC3339),
+		"dataEndTime":    time.Now().Format(time.RFC3339),
 	}
 
 	result, err := client.CreateReport(ctx, request)
@@ -112,7 +112,7 @@ func createOrdersReport(ctx context.Context, client *reports_v2021_06_30.Client)
 
 // waitForReportCompletion 等待报告生成完成
 func waitForReportCompletion(ctx context.Context, client *reports_v2021_06_30.Client, reportID string) (string, error) {
-	maxAttempts := 60  // 最多等待 10 分钟
+	maxAttempts := 60 // 最多等待 10 分钟
 	interval := 10 * time.Second
 
 	for attempt := range maxAttempts {
@@ -158,7 +158,7 @@ func waitForReportCompletion(ctx context.Context, client *reports_v2021_06_30.Cl
 // parseCSVReport 解析 CSV 格式的报告
 func parseCSVReport(data []byte) error {
 	reader := csv.NewReader(strings.NewReader(string(data)))
-	reader.Comma = '\t'  // Amazon 报告通常使用 Tab 分隔
+	reader.Comma = '\t' // Amazon 报告通常使用 Tab 分隔
 
 	// 读取表头
 	headers, err := reader.Read()
@@ -166,14 +166,14 @@ func parseCSVReport(data []byte) error {
 		return fmt.Errorf("failed to read headers: %w", err)
 	}
 	fmt.Printf("  列数: %d\n", len(headers))
-	fmt.Printf("  列名: %v\n", headers[:min(5, len(headers))])  // 显示前 5 列
+	fmt.Printf("  列名: %v\n", headers[:min(5, len(headers))]) // 显示前 5 列
 
 	// 读取数据行
 	rowCount := 0
 	for {
 		row, err := reader.Read()
 		if err != nil {
-			break  // EOF or error
+			break // EOF or error
 		}
 		rowCount++
 
@@ -194,4 +194,3 @@ func min(a, b int) int {
 	}
 	return b
 }
-

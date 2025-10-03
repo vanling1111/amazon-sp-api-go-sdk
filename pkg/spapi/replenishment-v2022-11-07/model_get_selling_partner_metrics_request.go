@@ -11,10 +11,10 @@ package replenishment_v2022_11_07
 // The request body for the `getSellingPartnerMetrics` operation.
 type GetSellingPartnerMetricsRequest struct {
 	AggregationFrequency *AggregationFrequency `json:"aggregationFrequency,omitempty"`
-	TimeInterval *TimeInterval `json:"timeInterval"`
+	TimeInterval         *TimeInterval         `json:"timeInterval"`
 	// The list of metrics requested. If no metric value is provided, data for all of the metrics will be returned.
-	Metrics []Metric `json:"metrics,omitempty"`
+	Metrics        []Metric        `json:"metrics,omitempty"`
 	TimePeriodType *TimePeriodType `json:"timePeriodType"`
-	MarketplaceId string `json:"marketplaceId"`
-	ProgramTypes *[]ProgramType `json:"programTypes"`
+	MarketplaceId  string          `json:"marketplaceId"`
+	ProgramTypes   *[]ProgramType  `json:"programTypes"`
 }

@@ -13,7 +13,7 @@ type OrderAddress struct {
 	// An Amazon-defined order identifier, in 3-7-7 format.
 	AmazonOrderId string `json:"AmazonOrderId"`
 	// The company name of the contact buyer. For IBA orders, the buyer company must be Amazon entities.
-	BuyerCompanyName string `json:"BuyerCompanyName,omitempty"`
-	ShippingAddress *Address `json:"ShippingAddress,omitempty"`
+	BuyerCompanyName    string               `json:"BuyerCompanyName,omitempty"`
+	ShippingAddress     *Address             `json:"ShippingAddress,omitempty"`
 	DeliveryPreferences *DeliveryPreferences `json:"DeliveryPreferences,omitempty"`
 }

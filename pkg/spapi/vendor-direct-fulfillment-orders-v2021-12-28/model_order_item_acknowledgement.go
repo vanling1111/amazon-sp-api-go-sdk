@@ -15,6 +15,6 @@ type OrderItemAcknowledgement struct {
 	// Buyer's standard identification number (ASIN) of an item.
 	BuyerProductIdentifier string `json:"buyerProductIdentifier,omitempty"`
 	// The vendor selected product identification of the item. Should be the same as was provided in the purchase order.
-	VendorProductIdentifier string `json:"vendorProductIdentifier,omitempty"`
-	AcknowledgedQuantity *ItemQuantity `json:"acknowledgedQuantity"`
+	VendorProductIdentifier string        `json:"vendorProductIdentifier,omitempty"`
+	AcknowledgedQuantity    *ItemQuantity `json:"acknowledgedQuantity"`
 }

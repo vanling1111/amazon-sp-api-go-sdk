@@ -12,5 +12,5 @@ package fulfillment_outbound_v2020_07_01
 type Money struct {
 	// Three digit currency code in ISO 4217 format.
 	CurrencyCode string `json:"currencyCode"`
-	Value string `json:"value"`
+	Value        string `json:"value"`
 }

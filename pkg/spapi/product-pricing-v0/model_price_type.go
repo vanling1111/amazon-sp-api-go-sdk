@@ -10,8 +10,8 @@ package product_pricing_v0
 
 // Schema for item's price information, including listing price, shipping price, and Amazon points.
 type PriceType struct {
-	LandedPrice *MoneyType `json:"LandedPrice,omitempty"`
+	LandedPrice  *MoneyType `json:"LandedPrice,omitempty"`
 	ListingPrice *MoneyType `json:"ListingPrice"`
-	Shipping *MoneyType `json:"Shipping,omitempty"`
-	Points *Points `json:"Points,omitempty"`
+	Shipping     *MoneyType `json:"Shipping,omitempty"`
+	Points       *Points    `json:"Points,omitempty"`
 }

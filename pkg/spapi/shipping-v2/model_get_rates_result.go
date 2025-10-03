@@ -11,7 +11,7 @@ package shipping_v2
 
 // The payload for the getRates operation.
 type GetRatesResult struct {
-	RequestToken string `json:"requestToken"`
-	Rates *[]Rate `json:"rates"`
+	RequestToken    string            `json:"requestToken"`
+	Rates           *[]Rate           `json:"rates"`
 	IneligibleRates *[]IneligibleRate `json:"ineligibleRates,omitempty"`
 }

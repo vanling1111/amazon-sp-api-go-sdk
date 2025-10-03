@@ -28,7 +28,7 @@ import (
 // TestDecryptReport 测试报告解密功能
 func TestDecryptReport(t *testing.T) {
 	// 生成测试密钥和 IV
-	key := make([]byte, 32)  // AES-256
+	key := make([]byte, 32) // AES-256
 	iv := make([]byte, aes.BlockSize)
 	rand.Read(key)
 	rand.Read(iv)
@@ -59,7 +59,7 @@ func TestDecryptReport(t *testing.T) {
 func TestDecryptReport_RealWorldExample(t *testing.T) {
 	// 模拟 Amazon SP-API 返回的加密数据
 	// （这是一个示例，实际数据来自 API）
-	key := "MTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTI="  // Base64: 32 bytes
+	key := "MTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTI=" // Base64: 32 bytes
 	iv := "MTIzNDU2Nzg5MDEyMzQ1Ng=="                      // Base64: 16 bytes
 
 	// 创建加密数据用于测试
@@ -342,4 +342,3 @@ func BenchmarkEncryptDocument(b *testing.B) {
 		_, _, _ = EncryptDocument(data)
 	}
 }
-

@@ -11,15 +11,15 @@ package product_pricing_v0
 // Schema for an individual buybox price.
 type BuyBoxPriceType struct {
 	// Indicates the condition of the item. For example: New, Used, Collectible, Refurbished, or Club.
-	Condition string `json:"condition"`
+	Condition string             `json:"condition"`
 	OfferType *OfferCustomerType `json:"offerType,omitempty"`
 	// Indicates at what quantity this price becomes active.
-	QuantityTier int32 `json:"quantityTier,omitempty"`
+	QuantityTier         int32                 `json:"quantityTier,omitempty"`
 	QuantityDiscountType *QuantityDiscountType `json:"quantityDiscountType,omitempty"`
-	LandedPrice *MoneyType `json:"LandedPrice"`
-	ListingPrice *MoneyType `json:"ListingPrice"`
-	Shipping *MoneyType `json:"Shipping"`
-	Points *Points `json:"Points,omitempty"`
+	LandedPrice          *MoneyType            `json:"LandedPrice"`
+	ListingPrice         *MoneyType            `json:"ListingPrice"`
+	Shipping             *MoneyType            `json:"Shipping"`
+	Points               *Points               `json:"Points,omitempty"`
 	// The seller identifier for the offer.
 	SellerId string `json:"sellerId,omitempty"`
 }

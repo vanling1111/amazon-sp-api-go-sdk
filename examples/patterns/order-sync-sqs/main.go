@@ -87,9 +87,9 @@ func main() {
 		ordersClient: orders_v0.NewClient(spapiClient),
 		poller: poller.NewPoller(sqsClient, &poller.Config{
 			QueueURL:     sqsQueueURL,
-			PollInterval: 10 * time.Second,  // 每 10 秒轮询一次
-			MaxMessages:  10,                 // 每次最多 10 条消息
-			WaitTime:     20,                 // Long polling 20 秒
+			PollInterval: 10 * time.Second, // 每 10 秒轮询一次
+			MaxMessages:  10,               // 每次最多 10 条消息
+			WaitTime:     20,               // Long polling 20 秒
 		}),
 	}
 
@@ -136,9 +136,9 @@ func (s *OrderSyncService) handleOrderChange(ctx context.Context, event *poller.
 	// 解析订单变更负载
 	var payload struct {
 		OrderChangeNotification struct {
-			AmazonOrderID    string `json:"AmazonOrderId"`
-			OrderStatus      string `json:"OrderStatus"`
-			MarketplaceID    string `json:"MarketplaceId"`
+			AmazonOrderID string `json:"AmazonOrderId"`
+			OrderStatus   string `json:"OrderStatus"`
+			MarketplaceID string `json:"MarketplaceId"`
 		} `json:"OrderChangeNotification"`
 	}
 
@@ -241,4 +241,3 @@ func loadSPAPIConfig() struct {
 		RefreshToken: refreshToken,
 	}
 }
-

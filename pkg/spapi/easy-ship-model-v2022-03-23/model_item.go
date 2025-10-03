@@ -10,6 +10,6 @@ package easy_ship_model_v2022_03_23
 
 // Item identifier and serial number information.
 type Item struct {
-	OrderItemId string `json:"orderItemId,omitempty"`
+	OrderItemId            string    `json:"orderItemId,omitempty"`
 	OrderItemSerialNumbers *[]string `json:"orderItemSerialNumbers,omitempty"`
 }

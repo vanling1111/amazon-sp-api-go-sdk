@@ -11,5 +11,5 @@ package vendor_direct_fulfillment_shipping_v1
 // Response payload with the list of Packing Slips.
 type GetPackingSlipListResponse struct {
 	Payload *PackingSlipList `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError    `json:"errors,omitempty"`
 }

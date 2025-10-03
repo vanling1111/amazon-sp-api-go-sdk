@@ -15,9 +15,9 @@ type InvoiceItem struct {
 	// Buyer's standard identification number (ASIN) of an item.
 	BuyerProductIdentifier string `json:"buyerProductIdentifier,omitempty"`
 	// The vendor selected product identification of the item.
-	VendorProductIdentifier string `json:"vendorProductIdentifier,omitempty"`
-	InvoicedQuantity *ItemQuantity `json:"invoicedQuantity"`
-	NetCost *Money `json:"netCost"`
+	VendorProductIdentifier string        `json:"vendorProductIdentifier,omitempty"`
+	InvoicedQuantity        *ItemQuantity `json:"invoicedQuantity"`
+	NetCost                 *Money        `json:"netCost"`
 	// The purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.
 	PurchaseOrderNumber string `json:"purchaseOrderNumber"`
 	// The vendor's order number for this order.

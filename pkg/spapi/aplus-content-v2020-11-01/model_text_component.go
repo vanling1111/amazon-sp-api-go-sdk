@@ -11,6 +11,6 @@ package aplus_content_v2020_11_01
 // Rich text content.
 type TextComponent struct {
 	// The actual plain text.
-	Value string `json:"value"`
+	Value        string       `json:"value"`
 	DecoratorSet *[]Decorator `json:"decoratorSet,omitempty"`
 }

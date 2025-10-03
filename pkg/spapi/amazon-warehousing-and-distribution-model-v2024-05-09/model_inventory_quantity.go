@@ -11,6 +11,6 @@ package amazon_warehousing_and_distribution_model_v2024_05_09
 // Quantity of inventory with an associated measurement unit context.
 type InventoryQuantity struct {
 	// Quantity of the respective inventory.
-	Quantity float64 `json:"quantity"`
+	Quantity          float64                     `json:"quantity"`
 	UnitOfMeasurement *InventoryUnitOfMeasurement `json:"unitOfMeasurement"`
 }

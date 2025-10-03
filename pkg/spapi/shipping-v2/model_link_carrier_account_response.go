@@ -12,5 +12,5 @@ package shipping_v2
 // The Response  for the LinkCarrierAccount operation.
 type LinkCarrierAccountResponse struct {
 	RegistrationStatus *AccountStatus `json:"registrationStatus,omitempty"`
-	AccountId string `json:"accountId,omitempty"`
+	AccountId          string         `json:"accountId,omitempty"`
 }

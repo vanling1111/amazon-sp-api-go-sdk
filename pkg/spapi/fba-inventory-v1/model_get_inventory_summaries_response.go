@@ -10,7 +10,7 @@ package fba_inventory_v1
 
 // The Response schema.
 type GetInventorySummariesResponse struct {
-	Payload *GetInventorySummariesResult `json:"payload,omitempty"`
-	Pagination *Pagination `json:"pagination,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Payload    *GetInventorySummariesResult `json:"payload,omitempty"`
+	Pagination *Pagination                  `json:"pagination,omitempty"`
+	Errors     *[]ModelError                `json:"errors,omitempty"`
 }

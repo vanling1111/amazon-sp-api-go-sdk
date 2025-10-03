@@ -13,8 +13,8 @@ type ShipmentTransportationConfiguration struct {
 	ContactInformation *ContactInformation `json:"contactInformation,omitempty"`
 	FreightInformation *FreightInformation `json:"freightInformation,omitempty"`
 	// List of pallet configuration inputs.
-	Pallets []PalletInput `json:"pallets,omitempty"`
-	ReadyToShipWindow *WindowInput `json:"readyToShipWindow"`
+	Pallets           []PalletInput `json:"pallets,omitempty"`
+	ReadyToShipWindow *WindowInput  `json:"readyToShipWindow"`
 	// Identifier of a shipment. A shipment contains the boxes and units being inbounded.
 	ShipmentId string `json:"shipmentId"`
 }

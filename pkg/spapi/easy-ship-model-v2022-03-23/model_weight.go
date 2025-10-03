@@ -10,6 +10,6 @@ package easy_ship_model_v2022_03_23
 
 // The weight of the scheduled package
 type Weight struct {
-	Value float32 `json:"value,omitempty"`
-	Unit *UnitOfWeight `json:"unit,omitempty"`
+	Value float32       `json:"value,omitempty"`
+	Unit  *UnitOfWeight `json:"unit,omitempty"`
 }

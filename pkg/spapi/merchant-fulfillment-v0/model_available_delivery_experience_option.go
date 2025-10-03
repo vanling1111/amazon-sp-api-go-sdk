@@ -11,5 +11,5 @@ package merchant_fulfillment_v0
 // The available delivery confirmation options, and the fee charged, if any.
 type AvailableDeliveryExperienceOption struct {
 	DeliveryExperienceOption *DeliveryExperienceOption `json:"DeliveryExperienceOption"`
-	Charge *CurrencyAmount `json:"Charge"`
+	Charge                   *CurrencyAmount           `json:"Charge"`
 }

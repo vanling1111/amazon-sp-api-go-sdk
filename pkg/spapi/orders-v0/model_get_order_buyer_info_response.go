@@ -11,5 +11,5 @@ package orders_v0
 // The response schema for the `getOrderBuyerInfo` operation.
 type GetOrderBuyerInfoResponse struct {
 	Payload *OrderBuyerInfo `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError   `json:"errors,omitempty"`
 }

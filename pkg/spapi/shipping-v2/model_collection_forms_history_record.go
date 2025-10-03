@@ -13,8 +13,8 @@ package shipping_v2
 type CollectionFormsHistoryRecord struct {
 	CarrierName string `json:"carrierName,omitempty"`
 	// Creation Time for this account.
-	CreationDate string `json:"creationDate,omitempty"`
+	CreationDate     string            `json:"creationDate,omitempty"`
 	GenerationStatus *GenerationStatus `json:"generationStatus,omitempty"`
-	CollectionFormId string `json:"collectionFormId,omitempty"`
-	ShipFromAddress *Address `json:"shipFromAddress,omitempty"`
+	CollectionFormId string            `json:"collectionFormId,omitempty"`
+	ShipFromAddress  *Address          `json:"shipFromAddress,omitempty"`
 }

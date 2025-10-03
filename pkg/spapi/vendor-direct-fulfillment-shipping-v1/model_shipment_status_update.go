@@ -11,8 +11,8 @@ package vendor_direct_fulfillment_shipping_v1
 // Represents an update to the status of a shipment.
 type ShipmentStatusUpdate struct {
 	// Purchase order number of the shipment for which to update the shipment status.
-	PurchaseOrderNumber string `json:"purchaseOrderNumber"`
-	SellingParty *PartyIdentification `json:"sellingParty"`
-	ShipFromParty *PartyIdentification `json:"shipFromParty"`
+	PurchaseOrderNumber string               `json:"purchaseOrderNumber"`
+	SellingParty        *PartyIdentification `json:"sellingParty"`
+	ShipFromParty       *PartyIdentification `json:"shipFromParty"`
 	StatusUpdateDetails *StatusUpdateDetails `json:"statusUpdateDetails"`
 }

@@ -13,7 +13,7 @@ type ShippingOfferingFilter struct {
 	// When true, include a packing slip with the label.
 	IncludePackingSlipWithLabel bool `json:"IncludePackingSlipWithLabel,omitempty"`
 	// When true, include complex shipping options.
-	IncludeComplexShippingOptions bool `json:"IncludeComplexShippingOptions,omitempty"`
-	CarrierWillPickUp *CarrierWillPickUpOption `json:"CarrierWillPickUp,omitempty"`
-	DeliveryExperience *DeliveryExperienceOption `json:"DeliveryExperience,omitempty"`
+	IncludeComplexShippingOptions bool                      `json:"IncludeComplexShippingOptions,omitempty"`
+	CarrierWillPickUp             *CarrierWillPickUpOption  `json:"CarrierWillPickUp,omitempty"`
+	DeliveryExperience            *DeliveryExperienceOption `json:"DeliveryExperience,omitempty"`
 }

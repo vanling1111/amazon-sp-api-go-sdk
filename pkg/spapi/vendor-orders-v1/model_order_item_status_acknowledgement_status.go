@@ -11,9 +11,9 @@ package vendor_orders_v1
 // Acknowledgement status information.
 type OrderItemStatusAcknowledgementStatus struct {
 	// Confirmation status of line item.
-	ConfirmationStatus string `json:"confirmationStatus,omitempty"`
-	AcceptedQuantity *ItemQuantity `json:"acceptedQuantity,omitempty"`
-	RejectedQuantity *ItemQuantity `json:"rejectedQuantity,omitempty"`
+	ConfirmationStatus string        `json:"confirmationStatus,omitempty"`
+	AcceptedQuantity   *ItemQuantity `json:"acceptedQuantity,omitempty"`
+	RejectedQuantity   *ItemQuantity `json:"rejectedQuantity,omitempty"`
 	// Details of item quantity confirmed.
 	AcknowledgementStatusDetails []AcknowledgementStatusDetails `json:"acknowledgementStatusDetails,omitempty"`
 }

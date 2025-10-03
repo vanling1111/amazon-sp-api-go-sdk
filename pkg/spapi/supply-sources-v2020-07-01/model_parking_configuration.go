@@ -10,7 +10,7 @@ package supply_sources_v2020_07_01
 
 // The parking configuration.
 type ParkingConfiguration struct {
-	ParkingCostType *ParkingCostType `json:"parkingCostType,omitempty"`
+	ParkingCostType               *ParkingCostType               `json:"parkingCostType,omitempty"`
 	ParkingSpotIdentificationType *ParkingSpotIdentificationType `json:"parkingSpotIdentificationType,omitempty"`
-	NumberOfParkingSpots int32 `json:"numberOfParkingSpots,omitempty"`
+	NumberOfParkingSpots          int32                          `json:"numberOfParkingSpots,omitempty"`
 }

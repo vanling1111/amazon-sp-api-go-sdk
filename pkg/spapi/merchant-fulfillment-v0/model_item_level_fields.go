@@ -11,6 +11,6 @@ package merchant_fulfillment_v0
 // A list of item level fields.
 type ItemLevelFields struct {
 	// The Amazon Standard Identification Number (ASIN) of the item.
-	Asin string `json:"Asin"`
+	Asin             string              `json:"Asin"`
 	AdditionalInputs *[]AdditionalInputs `json:"AdditionalInputs"`
 }

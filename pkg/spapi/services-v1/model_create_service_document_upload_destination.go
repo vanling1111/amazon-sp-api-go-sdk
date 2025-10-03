@@ -11,5 +11,5 @@ package services_v1
 // The response schema for the `createServiceDocumentUploadDestination` operation.
 type CreateServiceDocumentUploadDestination struct {
 	Payload *ServiceDocumentUploadDestination `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError                     `json:"errors,omitempty"`
 }

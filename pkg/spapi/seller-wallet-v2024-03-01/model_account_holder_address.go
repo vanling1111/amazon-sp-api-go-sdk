@@ -8,20 +8,20 @@
  */
 package seller_wallet_v2024_03_01
 
-// Address for bank account verification of the Payee. For example, this can be a person or business mailing address 
+// Address for bank account verification of the Payee. For example, this can be a person or business mailing address
 type AccountHolderAddress struct {
-	// Address Line 1 of the public address 
+	// Address Line 1 of the public address
 	AddressLine1 string `json:"addressLine1"`
-	// Address Line 2 of the public address 
+	// Address Line 2 of the public address
 	AddressLine2 string `json:"addressLine2,omitempty"`
-	// City name of the public address 
+	// City name of the public address
 	City string `json:"city"`
 	// State name of the public address. This is the state or region for China-based addresses.
 	State string `json:"state"`
-	// Postal code of the public address 
+	// Postal code of the public address
 	PostalCode string `json:"postalCode"`
-	// Country name of the public address 
+	// Country name of the public address
 	Country string `json:"country,omitempty"`
-	// The two digit country code, in ISO 3166 format. 
+	// The two digit country code, in ISO 3166 format.
 	CountryCode string `json:"countryCode"`
 }

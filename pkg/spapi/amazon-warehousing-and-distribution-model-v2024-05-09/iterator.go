@@ -62,4 +62,3 @@ func (c *Client) IterateInboundShipments(ctx context.Context, query map[string]s
 		}
 	}
 }
-

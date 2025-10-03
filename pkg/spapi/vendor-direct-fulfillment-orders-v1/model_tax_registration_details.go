@@ -13,7 +13,7 @@ type TaxRegistrationDetails struct {
 	// Tax registration type for the entity.
 	TaxRegistrationType string `json:"taxRegistrationType,omitempty"`
 	// Tax registration number for the party. For example, VAT ID.
-	TaxRegistrationNumber string `json:"taxRegistrationNumber"`
+	TaxRegistrationNumber  string   `json:"taxRegistrationNumber"`
 	TaxRegistrationAddress *Address `json:"taxRegistrationAddress,omitempty"`
 	// Tax registration message that can be used for additional tax related details.
 	TaxRegistrationMessages string `json:"taxRegistrationMessages,omitempty"`

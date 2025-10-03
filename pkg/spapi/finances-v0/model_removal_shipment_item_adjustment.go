@@ -17,8 +17,8 @@ type RemovalShipmentItemAdjustment struct {
 	// The Amazon fulfillment network SKU for the item.
 	FulfillmentNetworkSKU string `json:"FulfillmentNetworkSKU,omitempty"`
 	// Adjusted quantity of removal shipmentItemAdjustment items.
-	AdjustedQuantity int32 `json:"AdjustedQuantity,omitempty"`
-	RevenueAdjustment *Currency `json:"RevenueAdjustment,omitempty"`
-	TaxAmountAdjustment *Currency `json:"TaxAmountAdjustment,omitempty"`
+	AdjustedQuantity      int32     `json:"AdjustedQuantity,omitempty"`
+	RevenueAdjustment     *Currency `json:"RevenueAdjustment,omitempty"`
+	TaxAmountAdjustment   *Currency `json:"TaxAmountAdjustment,omitempty"`
 	TaxWithheldAdjustment *Currency `json:"TaxWithheldAdjustment,omitempty"`
 }

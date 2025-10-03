@@ -7,7 +7,7 @@ import (
 	"context"
 	"fmt"
 	"strings"
-	
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 )
 
@@ -21,23 +21,27 @@ func NewClient(baseClient *spapi.Client) *Client {
 	return &Client{baseClient: baseClient}
 }
 
-// GenerateOrderScenarios 
+// GenerateOrderScenarios
 // Method: POST | Path: /vendor/directFulfillment/sandbox/2021-10-28/orders
 func (c *Client) GenerateOrderScenarios(ctx context.Context, body interface{}) (interface{}, error) {
 	path := "/vendor/directFulfillment/sandbox/2021-10-28/orders"
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("GenerateOrderScenarios: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GenerateOrderScenarios: %w", err)
+	}
 	return result, nil
 }
 
-// GetOrderScenarios 
+// GetOrderScenarios
 // Method: GET | Path: /vendor/directFulfillment/sandbox/2021-10-28/transactions/{transactionId}
 func (c *Client) GetOrderScenarios(ctx context.Context, transactionId string, query map[string]string) (interface{}, error) {
 	path := "/vendor/directFulfillment/sandbox/2021-10-28/transactions/{transactionId}"
 	path = strings.Replace(path, "{transactionId}", transactionId, 1)
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetOrderScenarios: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetOrderScenarios: %w", err)
+	}
 	return result, nil
 }

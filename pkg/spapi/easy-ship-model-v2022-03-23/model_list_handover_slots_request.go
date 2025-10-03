@@ -10,8 +10,8 @@ package easy_ship_model_v2022_03_23
 
 // The request schema for the `listHandoverSlots` operation.
 type ListHandoverSlotsRequest struct {
-	MarketplaceId string `json:"marketplaceId"`
-	AmazonOrderId string `json:"amazonOrderId"`
+	MarketplaceId     string      `json:"marketplaceId"`
+	AmazonOrderId     string      `json:"amazonOrderId"`
 	PackageDimensions *Dimensions `json:"packageDimensions"`
-	PackageWeight *Weight `json:"packageWeight"`
+	PackageWeight     *Weight     `json:"packageWeight"`
 }

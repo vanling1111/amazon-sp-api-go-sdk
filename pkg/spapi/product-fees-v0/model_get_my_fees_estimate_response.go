@@ -11,5 +11,5 @@ package product_fees_v0
 // The response object for the GetMyFeesEstimate operation.
 type GetMyFeesEstimateResponse struct {
 	Payload *GetMyFeesEstimateResult `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError            `json:"errors,omitempty"`
 }

@@ -89,7 +89,7 @@ func TestMiddleware_Error(t *testing.T) {
 	// 验证错误被记录
 	spans := exporter.GetSpans()
 	assert.Len(t, spans, 1)
-	assert.Len(t, spans[0].Events, 1)  // Error event
+	assert.Len(t, spans[0].Events, 1) // Error event
 }
 
 // TestStartSpan tests creating spans
@@ -148,4 +148,3 @@ func TestSetAttributes(t *testing.T) {
 	// 应该有初始属性 + 我们添加的
 	assert.Greater(t, len(spans[0].Attributes), 1)
 }
-

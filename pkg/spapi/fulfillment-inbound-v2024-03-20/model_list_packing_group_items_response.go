@@ -11,6 +11,6 @@ package fulfillment_inbound_v2024_03_20
 // The `listPackingGroupItems` response.
 type ListPackingGroupItemsResponse struct {
 	// Provides the information about the list of items in the packing group.
-	Items []Item `json:"items"`
+	Items      []Item      `json:"items"`
 	Pagination *Pagination `json:"pagination,omitempty"`
 }

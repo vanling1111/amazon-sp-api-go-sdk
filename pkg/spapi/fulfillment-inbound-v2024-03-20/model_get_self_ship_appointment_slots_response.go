@@ -10,6 +10,6 @@ package fulfillment_inbound_v2024_03_20
 
 // The `getSelfShipAppointmentSlots` response.
 type GetSelfShipAppointmentSlotsResponse struct {
-	Pagination *Pagination `json:"pagination,omitempty"`
+	Pagination                           *Pagination                           `json:"pagination,omitempty"`
 	SelfShipAppointmentSlotsAvailability *SelfShipAppointmentSlotsAvailability `json:"selfShipAppointmentSlotsAvailability"`
 }

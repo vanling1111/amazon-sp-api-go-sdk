@@ -11,7 +11,7 @@ package vendor_invoices_v1
 // Name, address and tax details of a party.
 type PartyIdentification struct {
 	// Assigned identification for the party.
-	PartyId string `json:"partyId"`
+	PartyId string   `json:"partyId"`
 	Address *Address `json:"address,omitempty"`
 	// Tax registration details of the party.
 	TaxRegistrationDetails []TaxRegistrationDetails `json:"taxRegistrationDetails,omitempty"`

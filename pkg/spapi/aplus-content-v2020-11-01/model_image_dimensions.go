@@ -10,6 +10,6 @@ package aplus_content_v2020_11_01
 
 // The dimensions that extend from the top left corner of the image (this applies to cropped and uncropped images). `ImageDimensions` units must be in pixels.
 type ImageDimensions struct {
-	Width *IntegerWithUnits `json:"width"`
+	Width  *IntegerWithUnits `json:"width"`
 	Height *IntegerWithUnits `json:"height"`
 }

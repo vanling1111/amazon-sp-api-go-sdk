@@ -89,4 +89,3 @@ func (c *ChainSigner) Sign(ctx context.Context, req *http.Request) error {
 func (c *ChainSigner) Add(signer Signer) {
 	c.signers = append(c.signers, signer)
 }
-

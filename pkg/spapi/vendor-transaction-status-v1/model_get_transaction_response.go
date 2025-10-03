@@ -11,5 +11,5 @@ package vendor_transaction_status_v1
 // The response schema for the getTransaction operation.
 type GetTransactionResponse struct {
 	Payload *TransactionStatus `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError      `json:"errors,omitempty"`
 }

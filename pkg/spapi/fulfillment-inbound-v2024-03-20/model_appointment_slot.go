@@ -11,6 +11,6 @@ package fulfillment_inbound_v2024_03_20
 // The fulfillment center appointment slot for the transportation option.
 type AppointmentSlot struct {
 	// An identifier to a self-ship appointment slot.
-	SlotId string `json:"slotId"`
+	SlotId   string               `json:"slotId"`
 	SlotTime *AppointmentSlotTime `json:"slotTime"`
 }

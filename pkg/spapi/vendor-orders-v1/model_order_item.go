@@ -15,10 +15,10 @@ type OrderItem struct {
 	// Amazon Standard Identification Number (ASIN) of an item.
 	AmazonProductIdentifier string `json:"amazonProductIdentifier,omitempty"`
 	// The vendor selected product identification of the item.
-	VendorProductIdentifier string `json:"vendorProductIdentifier,omitempty"`
-	OrderedQuantity *ItemQuantity `json:"orderedQuantity"`
+	VendorProductIdentifier string        `json:"vendorProductIdentifier,omitempty"`
+	OrderedQuantity         *ItemQuantity `json:"orderedQuantity"`
 	// When true, we will accept backorder confirmations for this item.
-	IsBackOrderAllowed bool `json:"isBackOrderAllowed"`
-	NetCost *Money `json:"netCost,omitempty"`
-	ListPrice *Money `json:"listPrice,omitempty"`
+	IsBackOrderAllowed bool   `json:"isBackOrderAllowed"`
+	NetCost            *Money `json:"netCost,omitempty"`
+	ListPrice          *Money `json:"listPrice,omitempty"`
 }

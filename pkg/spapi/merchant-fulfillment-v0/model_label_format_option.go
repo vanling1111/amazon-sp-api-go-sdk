@@ -11,6 +11,6 @@ package merchant_fulfillment_v0
 // The label format details and whether to include a packing slip.
 type LabelFormatOption struct {
 	// When true, include a packing slip with the label.
-	IncludePackingSlipWithLabel bool `json:"IncludePackingSlipWithLabel,omitempty"`
-	LabelFormat *LabelFormat `json:"LabelFormat,omitempty"`
+	IncludePackingSlipWithLabel bool         `json:"IncludePackingSlipWithLabel,omitempty"`
+	LabelFormat                 *LabelFormat `json:"LabelFormat,omitempty"`
 }

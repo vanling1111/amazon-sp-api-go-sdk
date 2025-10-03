@@ -10,6 +10,6 @@ package notifications_v1
 
 // The response schema for the `getDestination` operation.
 type GetDestinationResponse struct {
-	Payload *Destination `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Payload *Destination  `json:"payload,omitempty"`
+	Errors  *[]ModelError `json:"errors,omitempty"`
 }

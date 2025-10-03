@@ -15,11 +15,11 @@ type AssociatedItem struct {
 	// The title of the item.
 	Title string `json:"title,omitempty"`
 	// The total number of items included in the order.
-	Quantity int32 `json:"quantity,omitempty"`
-	OrderId string `json:"orderId,omitempty"`
+	Quantity int32  `json:"quantity,omitempty"`
+	OrderId  string `json:"orderId,omitempty"`
 	// The status of the item.
 	ItemStatus string `json:"itemStatus,omitempty"`
 	// The brand name of the item.
-	BrandName string `json:"brandName,omitempty"`
+	BrandName    string        `json:"brandName,omitempty"`
 	ItemDelivery *ItemDelivery `json:"itemDelivery,omitempty"`
 }

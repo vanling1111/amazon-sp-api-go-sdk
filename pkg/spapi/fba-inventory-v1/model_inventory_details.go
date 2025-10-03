@@ -17,8 +17,8 @@ type InventoryDetails struct {
 	// The number of units in an inbound shipment that you have notified Amazon about and have provided a tracking number.
 	InboundShippedQuantity int32 `json:"inboundShippedQuantity,omitempty"`
 	// The number of units that have not yet been received at an Amazon fulfillment center for processing, but are part of an inbound shipment with some units that have already been received and processed.
-	InboundReceivingQuantity int32 `json:"inboundReceivingQuantity,omitempty"`
-	ReservedQuantity *ReservedQuantity `json:"reservedQuantity,omitempty"`
-	ResearchingQuantity *ResearchingQuantity `json:"researchingQuantity,omitempty"`
-	UnfulfillableQuantity *UnfulfillableQuantity `json:"unfulfillableQuantity,omitempty"`
+	InboundReceivingQuantity int32                  `json:"inboundReceivingQuantity,omitempty"`
+	ReservedQuantity         *ReservedQuantity      `json:"reservedQuantity,omitempty"`
+	ResearchingQuantity      *ResearchingQuantity   `json:"researchingQuantity,omitempty"`
+	UnfulfillableQuantity    *UnfulfillableQuantity `json:"unfulfillableQuantity,omitempty"`
 }

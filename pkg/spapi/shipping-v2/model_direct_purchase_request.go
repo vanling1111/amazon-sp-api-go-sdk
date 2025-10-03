@@ -11,10 +11,10 @@ package shipping_v2
 
 // The request schema for the directPurchaseShipment operation. When the channel type is Amazon, the shipTo address is not required and will be ignored.
 type DirectPurchaseRequest struct {
-	ShipTo *Address `json:"shipTo,omitempty"`
-	ShipFrom *Address `json:"shipFrom,omitempty"`
-	ReturnTo *Address `json:"returnTo,omitempty"`
-	Packages *[]ModelPackage `json:"packages,omitempty"`
-	ChannelDetails *ChannelDetails `json:"channelDetails"`
+	ShipTo              *Address                        `json:"shipTo,omitempty"`
+	ShipFrom            *Address                        `json:"shipFrom,omitempty"`
+	ReturnTo            *Address                        `json:"returnTo,omitempty"`
+	Packages            *[]ModelPackage                 `json:"packages,omitempty"`
+	ChannelDetails      *ChannelDetails                 `json:"channelDetails"`
 	LabelSpecifications *RequestedDocumentSpecification `json:"labelSpecifications,omitempty"`
 }

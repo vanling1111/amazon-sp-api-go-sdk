@@ -8,8 +8,8 @@
  */
 package seller_wallet_v2024_03_01
 
-// Parameters containing information of the expression that defines when the schedule runs. The following formats are supported. 
+// Parameters containing information of the expression that defines when the schedule runs. The following formats are supported.
 type ScheduleExpression struct {
 	ScheduleExpressionType *ScheduleExpressionType `json:"scheduleExpressionType"`
-	RecurringFrequency *RecurringFrequency `json:"recurringFrequency,omitempty"`
+	RecurringFrequency     *RecurringFrequency     `json:"recurringFrequency,omitempty"`
 }

@@ -11,9 +11,9 @@ package vendor_direct_fulfillment_shipping_v2021_12_28
 // Represents the request payload for creating a shipping label, containing the purchase order number, selling party, ship from party, and a list of containers or packages in the shipment.
 type ShippingLabelRequest struct {
 	// The purchase order number of the order for which to create a shipping label.
-	PurchaseOrderNumber string `json:"purchaseOrderNumber"`
-	SellingParty *PartyIdentification `json:"sellingParty"`
-	ShipFromParty *PartyIdentification `json:"shipFromParty"`
+	PurchaseOrderNumber string               `json:"purchaseOrderNumber"`
+	SellingParty        *PartyIdentification `json:"sellingParty"`
+	ShipFromParty       *PartyIdentification `json:"shipFromParty"`
 	// A list of the packages in this shipment.
 	Containers []Container `json:"containers,omitempty"`
 }

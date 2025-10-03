@@ -12,5 +12,5 @@ package sales_v1
 type Money struct {
 	// Three-digit currency code. In ISO 4217 format.
 	CurrencyCode string `json:"currencyCode"`
-	Amount string `json:"amount"`
+	Amount       string `json:"amount"`
 }

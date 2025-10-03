@@ -11,6 +11,6 @@ package aplus_content_v2020_11_01
 // Rich positional text that is usually presented as a collection of bullet points.
 type TextItem struct {
 	// The rank or index of this text item within the collection. Different items cannot occupy the same position within a single collection.
-	Position int32 `json:"position"`
-	Text *TextComponent `json:"text"`
+	Position int32          `json:"position"`
+	Text     *TextComponent `json:"text"`
 }

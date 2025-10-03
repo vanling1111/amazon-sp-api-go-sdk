@@ -10,7 +10,7 @@ package product_pricing_v0
 
 // Common schema that present in `ItemOffersResponse` and `ListingOffersResponse`
 type BatchOffersResponse struct {
-	Headers *map[string]string `json:"headers,omitempty"`
-	Status *GetOffersHttpStatusLine `json:"status,omitempty"`
-	Body *GetOffersResponse `json:"body"`
+	Headers *map[string]string       `json:"headers,omitempty"`
+	Status  *GetOffersHttpStatusLine `json:"status,omitempty"`
+	Body    *GetOffersResponse       `json:"body"`
 }

@@ -15,7 +15,7 @@ type PackedItems struct {
 	// Buyer Standard Identification Number (ASIN) of an item.
 	BuyerProductIdentifier string `json:"buyerProductIdentifier,omitempty"`
 	// The vendor selected product identification of the item. Should be the same as was sent in the purchase order.
-	VendorProductIdentifier string `json:"vendorProductIdentifier,omitempty"`
-	PackedQuantity *ItemQuantity `json:"packedQuantity,omitempty"`
-	ItemDetails *PackageItemDetails `json:"itemDetails,omitempty"`
+	VendorProductIdentifier string              `json:"vendorProductIdentifier,omitempty"`
+	PackedQuantity          *ItemQuantity       `json:"packedQuantity,omitempty"`
+	ItemDetails             *PackageItemDetails `json:"itemDetails,omitempty"`
 }

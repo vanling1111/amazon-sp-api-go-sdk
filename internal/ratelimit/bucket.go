@@ -274,4 +274,3 @@ func (b *Bucket) calculateWaitTimeLocked() time.Duration {
 
 	return waitTime
 }
-

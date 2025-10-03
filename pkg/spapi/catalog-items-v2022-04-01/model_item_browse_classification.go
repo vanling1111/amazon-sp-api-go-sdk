@@ -13,6 +13,6 @@ type ItemBrowseClassification struct {
 	// Display name for the classification.
 	DisplayName string `json:"displayName"`
 	// Identifier of the classification.
-	ClassificationId string `json:"classificationId"`
-	Parent *ItemBrowseClassification `json:"parent,omitempty"`
+	ClassificationId string                    `json:"classificationId"`
+	Parent           *ItemBrowseClassification `json:"parent,omitempty"`
 }

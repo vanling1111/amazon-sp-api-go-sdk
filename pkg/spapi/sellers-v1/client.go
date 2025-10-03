@@ -6,7 +6,7 @@ package sellers_v1
 import (
 	"context"
 	"fmt"
-	
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 )
 
@@ -20,22 +20,26 @@ func NewClient(baseClient *spapi.Client) *Client {
 	return &Client{baseClient: baseClient}
 }
 
-// GetAccount 
+// GetAccount
 // Method: GET | Path: /sellers/v1/account
 func (c *Client) GetAccount(ctx context.Context, query map[string]string) (interface{}, error) {
 	path := "/sellers/v1/account"
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetAccount: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetAccount: %w", err)
+	}
 	return result, nil
 }
 
-// GetMarketplaceParticipations 
+// GetMarketplaceParticipations
 // Method: GET | Path: /sellers/v1/marketplaceParticipations
 func (c *Client) GetMarketplaceParticipations(ctx context.Context, query map[string]string) (interface{}, error) {
 	path := "/sellers/v1/marketplaceParticipations"
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetMarketplaceParticipations: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetMarketplaceParticipations: %w", err)
+	}
 	return result, nil
 }

@@ -10,8 +10,8 @@ package replenishment_v2022_11_07
 
 // Offer promotions to include in the result filter criteria.
 type Promotion struct {
-	SellingPartnerFundedBaseDiscount *DiscountFunding `json:"sellingPartnerFundedBaseDiscount,omitempty"`
+	SellingPartnerFundedBaseDiscount   *DiscountFunding `json:"sellingPartnerFundedBaseDiscount,omitempty"`
 	SellingPartnerFundedTieredDiscount *DiscountFunding `json:"sellingPartnerFundedTieredDiscount,omitempty"`
-	AmazonFundedBaseDiscount *DiscountFunding `json:"amazonFundedBaseDiscount,omitempty"`
-	AmazonFundedTieredDiscount *DiscountFunding `json:"amazonFundedTieredDiscount,omitempty"`
+	AmazonFundedBaseDiscount           *DiscountFunding `json:"amazonFundedBaseDiscount,omitempty"`
+	AmazonFundedTieredDiscount         *DiscountFunding `json:"amazonFundedTieredDiscount,omitempty"`
 }

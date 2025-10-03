@@ -13,6 +13,6 @@ type Transaction struct {
 	// The unique identifier returned in the response to the generateOrderScenarios request.
 	TransactionId string `json:"transactionId"`
 	// The current processing status of the transaction.
-	Status string `json:"status"`
+	Status       string        `json:"status"`
 	TestCaseData *TestCaseData `json:"testCaseData,omitempty"`
 }

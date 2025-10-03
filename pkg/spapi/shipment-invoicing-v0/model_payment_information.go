@@ -14,7 +14,7 @@ type PaymentInformation struct {
 	// Government ID of acquirer
 	AcquirerId string `json:"AcquirerId,omitempty"`
 	// Credit card brand (if payment method is CreditCard)
-	CardBrand string `json:"CardBrand,omitempty"`
+	CardBrand    string `json:"CardBrand,omitempty"`
 	PaymentValue *Money `json:"PaymentValue,omitempty"`
 	// Authorization code for this payment
 	AuthorizationCode string `json:"AuthorizationCode,omitempty"`

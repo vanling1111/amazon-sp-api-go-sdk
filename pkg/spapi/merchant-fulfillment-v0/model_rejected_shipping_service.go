@@ -14,7 +14,7 @@ type RejectedShippingService struct {
 	CarrierName string `json:"CarrierName"`
 	// The rejected shipping service localized name. For example, FedEx Standard Overnight.
 	ShippingServiceName string `json:"ShippingServiceName"`
-	ShippingServiceId string `json:"ShippingServiceId"`
+	ShippingServiceId   string `json:"ShippingServiceId"`
 	// A reason code meant to be consumed programatically. For example, `CARRIER_CANNOT_SHIP_TO_POBOX`.
 	RejectionReasonCode string `json:"RejectionReasonCode"`
 	// A localized human readable description of the rejected reason.

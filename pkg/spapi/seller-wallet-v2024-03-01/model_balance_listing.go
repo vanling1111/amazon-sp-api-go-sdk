@@ -10,6 +10,6 @@ package seller_wallet_v2024_03_01
 
 // Struct that holds list of balances on the seller account.
 type BalanceListing struct {
-	// Collection that holds list of balances on the account 
+	// Collection that holds list of balances on the account
 	Balances []Balance `json:"balances,omitempty"`
 }

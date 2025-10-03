@@ -11,6 +11,6 @@ package amazon_warehousing_and_distribution_model_v2024_05_09
 // Shipment labels.
 type ShipmentLabels struct {
 	// The URL to download shipment labels. The URL is active for 600 seconds from generation.
-	LabelDownloadURL string `json:"labelDownloadURL,omitempty"`
-	LabelStatus *LabelStatus `json:"labelStatus"`
+	LabelDownloadURL string       `json:"labelDownloadURL,omitempty"`
+	LabelStatus      *LabelStatus `json:"labelStatus"`
 }

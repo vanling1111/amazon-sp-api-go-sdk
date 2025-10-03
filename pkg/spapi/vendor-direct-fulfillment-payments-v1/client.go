@@ -6,7 +6,7 @@ package vendor_direct_fulfillment_payments_v1
 import (
 	"context"
 	"fmt"
-	
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 )
 
@@ -20,12 +20,14 @@ func NewClient(baseClient *spapi.Client) *Client {
 	return &Client{baseClient: baseClient}
 }
 
-// SubmitInvoice 
+// SubmitInvoice
 // Method: POST | Path: /vendor/directFulfillment/payments/v1/invoices
 func (c *Client) SubmitInvoice(ctx context.Context, body interface{}) (interface{}, error) {
 	path := "/vendor/directFulfillment/payments/v1/invoices"
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("SubmitInvoice: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("SubmitInvoice: %w", err)
+	}
 	return result, nil
 }

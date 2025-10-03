@@ -11,6 +11,6 @@ package supply_sources_v2020_07_01
 // The services capability of a supply source.
 type ServicesCapability struct {
 	// When true, `SupplySource` supports the Service capability.
-	IsSupported bool `json:"isSupported,omitempty"`
+	IsSupported              bool                      `json:"isSupported,omitempty"`
 	OperationalConfiguration *OperationalConfiguration `json:"operationalConfiguration,omitempty"`
 }

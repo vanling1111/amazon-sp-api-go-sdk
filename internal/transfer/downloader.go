@@ -51,7 +51,7 @@ func NewDownloader(config *DownloaderConfig) *Downloader {
 	}
 
 	if config.BufferSize == 0 {
-		config.BufferSize = 32 * 1024  // 32KB
+		config.BufferSize = 32 * 1024 // 32KB
 	}
 
 	client := config.HTTPClient
@@ -171,15 +171,14 @@ type progressReader struct {
 
 func (p *progressReader) Read(buf []byte) (int, error) {
 	n, err := p.reader.Read(buf)
-	
+
 	p.downloaded += int64(n)
-	
+
 	// 调用进度回调
 	if p.onProgress != nil && p.totalSize > 0 {
 		percent := float64(p.downloaded) / float64(p.totalSize) * 100.0
 		p.onProgress(p.downloaded, p.totalSize, percent)
 	}
-	
+
 	return n, err
 }
-

@@ -11,6 +11,6 @@ package fulfillment_inbound_v2024_03_20
 // The `listShipmentItems` response.
 type ListShipmentItemsResponse struct {
 	// The items in a shipment.
-	Items []Item `json:"items"`
+	Items      []Item      `json:"items"`
 	Pagination *Pagination `json:"pagination,omitempty"`
 }

@@ -7,7 +7,7 @@ import (
 	"context"
 	"fmt"
 	"strings"
-	
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 )
 
@@ -21,24 +21,28 @@ func NewClient(baseClient *spapi.Client) *Client {
 	return &Client{baseClient: baseClient}
 }
 
-// CreateProductReviewAndSellerFeedbackSolicitation 
+// CreateProductReviewAndSellerFeedbackSolicitation
 // Method: POST | Path: /solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback
 func (c *Client) CreateProductReviewAndSellerFeedbackSolicitation(ctx context.Context, amazonOrderId string, body interface{}) (interface{}, error) {
 	path := "/solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback"
 	path = strings.Replace(path, "{amazonOrderId}", amazonOrderId, 1)
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("CreateProductReviewAndSellerFeedbackSolicitation: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("CreateProductReviewAndSellerFeedbackSolicitation: %w", err)
+	}
 	return result, nil
 }
 
-// GetSolicitationActionsForOrder 
+// GetSolicitationActionsForOrder
 // Method: GET | Path: /solicitations/v1/orders/{amazonOrderId}
 func (c *Client) GetSolicitationActionsForOrder(ctx context.Context, amazonOrderId string, query map[string]string) (interface{}, error) {
 	path := "/solicitations/v1/orders/{amazonOrderId}"
 	path = strings.Replace(path, "{amazonOrderId}", amazonOrderId, 1)
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetSolicitationActionsForOrder: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetSolicitationActionsForOrder: %w", err)
+	}
 	return result, nil
 }

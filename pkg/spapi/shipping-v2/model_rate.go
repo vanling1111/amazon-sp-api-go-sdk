@@ -11,19 +11,19 @@ package shipping_v2
 
 // The details of a shipping service offering.
 type Rate struct {
-	RateId string `json:"rateId"`
-	CarrierId string `json:"carrierId"`
-	CarrierName string `json:"carrierName"`
-	ServiceId string `json:"serviceId"`
-	ServiceName string `json:"serviceName"`
-	BilledWeight *Weight `json:"billedWeight,omitempty"`
-	TotalCharge *Currency `json:"totalCharge"`
-	Promise *Promise `json:"promise"`
-	SupportedDocumentSpecifications *[]SupportedDocumentSpecification `json:"supportedDocumentSpecifications"`
+	RateId                           string                             `json:"rateId"`
+	CarrierId                        string                             `json:"carrierId"`
+	CarrierName                      string                             `json:"carrierName"`
+	ServiceId                        string                             `json:"serviceId"`
+	ServiceName                      string                             `json:"serviceName"`
+	BilledWeight                     *Weight                            `json:"billedWeight,omitempty"`
+	TotalCharge                      *Currency                          `json:"totalCharge"`
+	Promise                          *Promise                           `json:"promise"`
+	SupportedDocumentSpecifications  *[]SupportedDocumentSpecification  `json:"supportedDocumentSpecifications"`
 	AvailableValueAddedServiceGroups *[]AvailableValueAddedServiceGroup `json:"availableValueAddedServiceGroups,omitempty"`
 	// When true, indicates that additional inputs are required to purchase this shipment service. You must then call the getAdditionalInputs operation to return the JSON schema to use when providing the additional inputs to the purchaseShipment operation.
-	RequiresAdditionalInputs bool `json:"requiresAdditionalInputs"`
-	RateItemList *[]RateItem `json:"rateItemList,omitempty"`
-	PaymentType *PaymentType `json:"paymentType,omitempty"`
-	Benefits *Benefits `json:"benefits,omitempty"`
+	RequiresAdditionalInputs bool         `json:"requiresAdditionalInputs"`
+	RateItemList             *[]RateItem  `json:"rateItemList,omitempty"`
+	PaymentType              *PaymentType `json:"paymentType,omitempty"`
+	Benefits                 *Benefits    `json:"benefits,omitempty"`
 }

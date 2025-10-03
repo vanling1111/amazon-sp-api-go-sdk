@@ -10,6 +10,6 @@ package fba_inventory_v1
 
 // The payload schema for the getInventorySummaries operation.
 type GetInventorySummariesResult struct {
-	Granularity *Granularity `json:"granularity"`
+	Granularity        *Granularity        `json:"granularity"`
 	InventorySummaries *[]InventorySummary `json:"inventorySummaries"`
 }

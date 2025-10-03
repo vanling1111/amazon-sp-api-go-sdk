@@ -14,7 +14,7 @@ type Account struct {
 	// The type of business registered for the seller account.
 	BusinessType string `json:"businessType"`
 	// The selling plan details.
-	SellingPlan string `json:"sellingPlan"`
-	Business *Business `json:"business,omitempty"`
+	SellingPlan    string          `json:"sellingPlan"`
+	Business       *Business       `json:"business,omitempty"`
 	PrimaryContact *PrimaryContact `json:"primaryContact,omitempty"`
 }

@@ -10,10 +10,10 @@ package aplus_content_v2020_11_01
 
 // A standard image with several paragraphs and a bulleted list.
 type StandardSingleImageHighlightsModule struct {
-	Image *ImageComponent `json:"image,omitempty"`
-	Headline *TextComponent `json:"headline,omitempty"`
-	TextBlock1 *StandardTextBlock `json:"textBlock1,omitempty"`
-	TextBlock2 *StandardTextBlock `json:"textBlock2,omitempty"`
-	TextBlock3 *StandardTextBlock `json:"textBlock3,omitempty"`
+	Image             *ImageComponent              `json:"image,omitempty"`
+	Headline          *TextComponent               `json:"headline,omitempty"`
+	TextBlock1        *StandardTextBlock           `json:"textBlock1,omitempty"`
+	TextBlock2        *StandardTextBlock           `json:"textBlock2,omitempty"`
+	TextBlock3        *StandardTextBlock           `json:"textBlock3,omitempty"`
 	BulletedListBlock *StandardHeaderTextListBlock `json:"bulletedListBlock,omitempty"`
 }

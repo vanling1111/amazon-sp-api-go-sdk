@@ -11,5 +11,5 @@ package vendor_direct_fulfillment_shipping_v1
 // The response schema for the submitShippingLabelRequest operation.
 type SubmitShippingLabelsResponse struct {
 	Payload *TransactionReference `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError         `json:"errors,omitempty"`
 }

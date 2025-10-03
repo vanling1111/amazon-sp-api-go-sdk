@@ -11,6 +11,6 @@ package shipment_invoicing_v0
 // The shipment invoice status information.
 type ShipmentInvoiceStatusInfo struct {
 	// The Amazon-defined shipment identifier.
-	AmazonShipmentId string `json:"AmazonShipmentId,omitempty"`
-	InvoiceStatus *ShipmentInvoiceStatus `json:"InvoiceStatus,omitempty"`
+	AmazonShipmentId string                 `json:"AmazonShipmentId,omitempty"`
+	InvoiceStatus    *ShipmentInvoiceStatus `json:"InvoiceStatus,omitempty"`
 }

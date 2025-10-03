@@ -10,7 +10,7 @@ package aplus_content_v2020_11_01
 
 // The A+ Content standard image and text box block.
 type StandardImageTextBlock struct {
-	Image *ImageComponent `json:"image,omitempty"`
-	Headline *TextComponent `json:"headline,omitempty"`
-	Body *ParagraphComponent `json:"body,omitempty"`
+	Image    *ImageComponent     `json:"image,omitempty"`
+	Headline *TextComponent      `json:"headline,omitempty"`
+	Body     *ParagraphComponent `json:"body,omitempty"`
 }

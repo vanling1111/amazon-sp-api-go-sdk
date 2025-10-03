@@ -13,6 +13,6 @@ type Reservation struct {
 	// Unique identifier for a reservation. If present, it is treated as an update reservation request and will update the corresponding reservation. Otherwise, it is treated as a new create reservation request.
 	ReservationId string `json:"reservationId,omitempty"`
 	// Type of reservation.
-	Type_ string `json:"type"`
+	Type_        string              `json:"type"`
 	Availability *AvailabilityRecord `json:"availability"`
 }

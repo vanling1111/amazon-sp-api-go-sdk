@@ -12,5 +12,5 @@ package vendor_shipments_v1
 type Volume struct {
 	// The unit of measurement.
 	UnitOfMeasure string `json:"unitOfMeasure"`
-	Value string `json:"value"`
+	Value         string `json:"value"`
 }

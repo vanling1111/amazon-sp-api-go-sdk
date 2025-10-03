@@ -10,7 +10,7 @@ package easy_ship_model_v2022_03_23
 
 // Package details. Includes `packageItems`, `packageTimeSlot`, and `packageIdentifier`.
 type PackageDetails struct {
-	PackageItems *[]Item `json:"packageItems,omitempty"`
-	PackageTimeSlot *TimeSlot `json:"packageTimeSlot"`
-	PackageIdentifier string `json:"packageIdentifier,omitempty"`
+	PackageItems      *[]Item   `json:"packageItems,omitempty"`
+	PackageTimeSlot   *TimeSlot `json:"packageTimeSlot"`
+	PackageIdentifier string    `json:"packageIdentifier,omitempty"`
 }

@@ -11,7 +11,7 @@ package product_pricing_v0
 // Contains pricing information that includes special pricing when buying in bulk.
 type QuantityDiscountPriceType struct {
 	// Indicates at what quantity this price becomes active.
-	QuantityTier int32 `json:"quantityTier"`
+	QuantityTier         int32                 `json:"quantityTier"`
 	QuantityDiscountType *QuantityDiscountType `json:"quantityDiscountType"`
-	ListingPrice *MoneyType `json:"listingPrice"`
+	ListingPrice         *MoneyType            `json:"listingPrice"`
 }

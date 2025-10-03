@@ -10,10 +10,10 @@ package aplus_content_v2020_11_01
 
 // Two images, two paragraphs, and two bulleted lists. One image is smaller and displayed in the sidebar.
 type StandardImageSidebarModule struct {
-	Headline *TextComponent `json:"headline,omitempty"`
-	ImageCaptionBlock *StandardImageCaptionBlock `json:"imageCaptionBlock,omitempty"`
-	DescriptionTextBlock *StandardTextBlock `json:"descriptionTextBlock,omitempty"`
-	DescriptionListBlock *StandardTextListBlock `json:"descriptionListBlock,omitempty"`
-	SidebarImageTextBlock *StandardImageTextBlock `json:"sidebarImageTextBlock,omitempty"`
-	SidebarListBlock *StandardTextListBlock `json:"sidebarListBlock,omitempty"`
+	Headline              *TextComponent             `json:"headline,omitempty"`
+	ImageCaptionBlock     *StandardImageCaptionBlock `json:"imageCaptionBlock,omitempty"`
+	DescriptionTextBlock  *StandardTextBlock         `json:"descriptionTextBlock,omitempty"`
+	DescriptionListBlock  *StandardTextListBlock     `json:"descriptionListBlock,omitempty"`
+	SidebarImageTextBlock *StandardImageTextBlock    `json:"sidebarImageTextBlock,omitempty"`
+	SidebarListBlock      *StandardTextListBlock     `json:"sidebarListBlock,omitempty"`
 }

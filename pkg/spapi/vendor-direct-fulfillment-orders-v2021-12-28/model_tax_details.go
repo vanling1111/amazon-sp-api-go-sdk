@@ -10,8 +10,8 @@ package vendor_direct_fulfillment_orders_v2021_12_28
 
 // The tax details for the order. _Note:_ Amazon calculates tax on the list price (Amazon retail price).
 type TaxDetails struct {
-	TaxRate string `json:"taxRate,omitempty"`
-	TaxAmount *Money `json:"taxAmount"`
+	TaxRate       string `json:"taxRate,omitempty"`
+	TaxAmount     *Money `json:"taxAmount"`
 	TaxableAmount *Money `json:"taxableAmount,omitempty"`
 	// Tax type.
 	Type_ string `json:"type,omitempty"`

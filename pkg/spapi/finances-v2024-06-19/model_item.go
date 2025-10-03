@@ -11,10 +11,10 @@ package finances_v2024_06_19
 // Additional information about the items in Transaction.
 type Item struct {
 	// Description of items in the transaction
-	Description string `json:"description,omitempty"`
+	Description        string                   `json:"description,omitempty"`
 	RelatedIdentifiers *[]ItemRelatedIdentifier `json:"relatedIdentifiers,omitempty"`
-	TotalAmount *Currency `json:"totalAmount,omitempty"`
+	TotalAmount        *Currency                `json:"totalAmount,omitempty"`
 	// A list of breakdowns that detail how the total amount is calculated for the transaction.
 	Breakdowns []Breakdown `json:"breakdowns,omitempty"`
-	Contexts *[]Context `json:"contexts,omitempty"`
+	Contexts   *[]Context  `json:"contexts,omitempty"`
 }

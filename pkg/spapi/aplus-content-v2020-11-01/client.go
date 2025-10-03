@@ -7,7 +7,7 @@ import (
 	"context"
 	"fmt"
 	"strings"
-	
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 )
 
@@ -21,108 +21,128 @@ func NewClient(baseClient *spapi.Client) *Client {
 	return &Client{baseClient: baseClient}
 }
 
-// PostContentDocumentAsinRelations 
+// PostContentDocumentAsinRelations
 // Method: POST | Path: /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins
 func (c *Client) PostContentDocumentAsinRelations(ctx context.Context, contentReferenceKey string, body interface{}) (interface{}, error) {
 	path := "/aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins"
 	path = strings.Replace(path, "{contentReferenceKey}", contentReferenceKey, 1)
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("PostContentDocumentAsinRelations: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("PostContentDocumentAsinRelations: %w", err)
+	}
 	return result, nil
 }
 
-// SearchContentPublishRecords 
+// SearchContentPublishRecords
 // Method: GET | Path: /aplus/2020-11-01/contentPublishRecords
 func (c *Client) SearchContentPublishRecords(ctx context.Context, query map[string]string) (interface{}, error) {
 	path := "/aplus/2020-11-01/contentPublishRecords"
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("SearchContentPublishRecords: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("SearchContentPublishRecords: %w", err)
+	}
 	return result, nil
 }
 
-// GetContentDocument 
+// GetContentDocument
 // Method: GET | Path: /aplus/2020-11-01/contentDocuments/{contentReferenceKey}
 func (c *Client) GetContentDocument(ctx context.Context, contentReferenceKey string, query map[string]string) (interface{}, error) {
 	path := "/aplus/2020-11-01/contentDocuments/{contentReferenceKey}"
 	path = strings.Replace(path, "{contentReferenceKey}", contentReferenceKey, 1)
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetContentDocument: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetContentDocument: %w", err)
+	}
 	return result, nil
 }
 
-// CreateContentDocument 
+// CreateContentDocument
 // Method: POST | Path: /aplus/2020-11-01/contentDocuments
 func (c *Client) CreateContentDocument(ctx context.Context, body interface{}) (interface{}, error) {
 	path := "/aplus/2020-11-01/contentDocuments"
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("CreateContentDocument: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("CreateContentDocument: %w", err)
+	}
 	return result, nil
 }
 
-// ValidateContentDocumentAsinRelations 
+// ValidateContentDocumentAsinRelations
 // Method: POST | Path: /aplus/2020-11-01/contentAsinValidations
 func (c *Client) ValidateContentDocumentAsinRelations(ctx context.Context, body interface{}) (interface{}, error) {
 	path := "/aplus/2020-11-01/contentAsinValidations"
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("ValidateContentDocumentAsinRelations: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("ValidateContentDocumentAsinRelations: %w", err)
+	}
 	return result, nil
 }
 
-// PostContentDocumentSuspendSubmission 
+// PostContentDocumentSuspendSubmission
 // Method: POST | Path: /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions
 func (c *Client) PostContentDocumentSuspendSubmission(ctx context.Context, contentReferenceKey string, body interface{}) (interface{}, error) {
 	path := "/aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions"
 	path = strings.Replace(path, "{contentReferenceKey}", contentReferenceKey, 1)
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("PostContentDocumentSuspendSubmission: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("PostContentDocumentSuspendSubmission: %w", err)
+	}
 	return result, nil
 }
 
-// ListContentDocumentAsinRelations 
+// ListContentDocumentAsinRelations
 // Method: GET | Path: /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins
 func (c *Client) ListContentDocumentAsinRelations(ctx context.Context, contentReferenceKey string, query map[string]string) (interface{}, error) {
 	path := "/aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins"
 	path = strings.Replace(path, "{contentReferenceKey}", contentReferenceKey, 1)
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("ListContentDocumentAsinRelations: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("ListContentDocumentAsinRelations: %w", err)
+	}
 	return result, nil
 }
 
-// SearchContentDocuments 
+// SearchContentDocuments
 // Method: GET | Path: /aplus/2020-11-01/contentDocuments
 func (c *Client) SearchContentDocuments(ctx context.Context, query map[string]string) (interface{}, error) {
 	path := "/aplus/2020-11-01/contentDocuments"
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("SearchContentDocuments: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("SearchContentDocuments: %w", err)
+	}
 	return result, nil
 }
 
-// PostContentDocumentApprovalSubmission 
+// PostContentDocumentApprovalSubmission
 // Method: POST | Path: /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions
 func (c *Client) PostContentDocumentApprovalSubmission(ctx context.Context, contentReferenceKey string, body interface{}) (interface{}, error) {
 	path := "/aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions"
 	path = strings.Replace(path, "{contentReferenceKey}", contentReferenceKey, 1)
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("PostContentDocumentApprovalSubmission: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("PostContentDocumentApprovalSubmission: %w", err)
+	}
 	return result, nil
 }
 
-// UpdateContentDocument 
+// UpdateContentDocument
 // Method: POST | Path: /aplus/2020-11-01/contentDocuments/{contentReferenceKey}
 func (c *Client) UpdateContentDocument(ctx context.Context, contentReferenceKey string, body interface{}) (interface{}, error) {
 	path := "/aplus/2020-11-01/contentDocuments/{contentReferenceKey}"
 	path = strings.Replace(path, "{contentReferenceKey}", contentReferenceKey, 1)
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("UpdateContentDocument: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("UpdateContentDocument: %w", err)
+	}
 	return result, nil
 }

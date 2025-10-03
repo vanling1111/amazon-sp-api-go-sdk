@@ -12,7 +12,7 @@ package vendor_orders_v1
 type ImportDetails struct {
 	// If the recipient requests, contains the shipment method of payment. This is for import PO's only.
 	MethodOfPayment string `json:"methodOfPayment,omitempty"`
-	// Incoterms (International Commercial Terms) are used to divide transaction costs and responsibilities between buyer and seller and reflect state-of-the-art transportation practices. This is for import purchase orders only. 
+	// Incoterms (International Commercial Terms) are used to divide transaction costs and responsibilities between buyer and seller and reflect state-of-the-art transportation practices. This is for import purchase orders only.
 	InternationalCommercialTerms string `json:"internationalCommercialTerms,omitempty"`
 	// The port where goods on an import purchase order must be delivered by the vendor. This should only be specified when the internationalCommercialTerms is FOB.
 	PortOfDelivery string `json:"portOfDelivery,omitempty"`

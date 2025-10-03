@@ -11,8 +11,8 @@ package fulfillment_outbound_v2020_07_01
 // Item information for a fulfillment order preview.
 type GetFulfillmentPreviewItem struct {
 	// The seller SKU of the item.
-	SellerSku string `json:"sellerSku"`
-	Quantity int32 `json:"quantity"`
+	SellerSku            string `json:"sellerSku"`
+	Quantity             int32  `json:"quantity"`
 	PerUnitDeclaredValue *Money `json:"perUnitDeclaredValue,omitempty"`
 	// A fulfillment order item identifier that the seller creates to track items in the fulfillment preview.
 	SellerFulfillmentOrderItemId string `json:"sellerFulfillmentOrderItemId"`

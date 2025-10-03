@@ -10,7 +10,7 @@ package messaging_v1
 
 // The response schema for the `getMessagingActionsForOrder` operation.
 type GetMessagingActionsForOrderResponse struct {
-	Links *GetMessagingActionsForOrderResponseLinks `json:"_links,omitempty"`
+	Links    *GetMessagingActionsForOrderResponseLinks    `json:"_links,omitempty"`
 	Embedded *GetMessagingActionsForOrderResponseEmbedded `json:"_embedded,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors   *[]ModelError                                `json:"errors,omitempty"`
 }

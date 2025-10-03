@@ -11,10 +11,10 @@ package shipping_v2
 
 // The request schema for the purchaseShipment operation.
 type PurchaseShipmentRequest struct {
-	RequestToken string `json:"requestToken"`
-	RateId string `json:"rateId"`
+	RequestToken                   string                          `json:"requestToken"`
+	RateId                         string                          `json:"rateId"`
 	RequestedDocumentSpecification *RequestedDocumentSpecification `json:"requestedDocumentSpecification"`
-	RequestedValueAddedServices *[]RequestedValueAddedService `json:"requestedValueAddedServices,omitempty"`
+	RequestedValueAddedServices    *[]RequestedValueAddedService   `json:"requestedValueAddedServices,omitempty"`
 	// The additional inputs required to purchase a shipping offering, in JSON format. The JSON provided here must adhere to the JSON schema that is returned in the response to the getAdditionalInputs operation.  Additional inputs are only required when indicated by the requiresAdditionalInputs property in the response to the getRates operation.
 	AdditionalInputs map[string]interface{} `json:"additionalInputs,omitempty"`
 }

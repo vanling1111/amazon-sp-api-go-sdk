@@ -280,4 +280,3 @@ func MarshalIndentJSON(v interface{}, prefix, indent string) ([]byte, error) {
 	encoder := NewEncoder(WithIndent(prefix, indent))
 	return encoder.Marshal(v)
 }
-

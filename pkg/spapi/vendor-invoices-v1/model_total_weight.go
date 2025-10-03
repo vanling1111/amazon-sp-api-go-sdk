@@ -12,5 +12,5 @@ package vendor_invoices_v1
 type TotalWeight struct {
 	// The unit of measure for items sold by weight.
 	UnitOfMeasure string `json:"unitOfMeasure"`
-	Amount string `json:"amount"`
+	Amount        string `json:"amount"`
 }

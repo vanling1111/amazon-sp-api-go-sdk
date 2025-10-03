@@ -17,16 +17,16 @@ type Item struct {
 	// A unique identifier for an item provided by the client.
 	ItemIdentifier string `json:"itemIdentifier,omitempty"`
 	// The number of units. This value is required.
-	Quantity int32 `json:"quantity"`
-	Weight *Weight `json:"weight,omitempty"`
+	Quantity     int32         `json:"quantity"`
+	Weight       *Weight       `json:"weight,omitempty"`
 	LiquidVolume *LiquidVolume `json:"liquidVolume,omitempty"`
 	// When true, the item qualifies as hazardous materials (hazmat). Defaults to false.
-	IsHazmat bool `json:"isHazmat,omitempty"`
+	IsHazmat              bool                   `json:"isHazmat,omitempty"`
 	DangerousGoodsDetails *DangerousGoodsDetails `json:"dangerousGoodsDetails,omitempty"`
 	// The product type of the item.
-	ProductType string `json:"productType,omitempty"`
+	ProductType    string          `json:"productType,omitempty"`
 	InvoiceDetails *InvoiceDetails `json:"invoiceDetails,omitempty"`
 	// A list of unique serial numbers in an Amazon package that can be used to guarantee non-fraudulent items. The number of serial numbers in the list must be less than or equal to the quantity of items being shipped. Only applicable when channel source is Amazon.
-	SerialNumbers []string `json:"serialNumbers,omitempty"`
+	SerialNumbers                    []string                          `json:"serialNumbers,omitempty"`
 	DirectFulfillmentItemIdentifiers *DirectFulfillmentItemIdentifiers `json:"directFulfillmentItemIdentifiers,omitempty"`
 }

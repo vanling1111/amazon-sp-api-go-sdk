@@ -11,6 +11,6 @@ package fulfillment_inbound_v2024_03_20
 // The `listInboundPlanItems` response.
 type ListInboundPlanItemsResponse struct {
 	// The items in an inbound plan.
-	Items []Item `json:"items"`
+	Items      []Item      `json:"items"`
 	Pagination *Pagination `json:"pagination,omitempty"`
 }

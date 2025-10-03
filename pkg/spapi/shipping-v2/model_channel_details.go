@@ -11,7 +11,7 @@ package shipping_v2
 
 // Shipment source channel related information.
 type ChannelDetails struct {
-	ChannelType *ChannelType `json:"channelType"`
-	AmazonOrderDetails *AmazonOrderDetails `json:"amazonOrderDetails,omitempty"`
+	ChannelType           *ChannelType           `json:"channelType"`
+	AmazonOrderDetails    *AmazonOrderDetails    `json:"amazonOrderDetails,omitempty"`
 	AmazonShipmentDetails *AmazonShipmentDetails `json:"amazonShipmentDetails,omitempty"`
 }

@@ -10,12 +10,12 @@ package product_pricing_v2022_05_01
 
 // An individual `competitiveSummary` request for an ASIN and `marketplaceId`.
 type CompetitiveSummaryRequest struct {
-	Asin string `json:"asin"`
+	Asin          string `json:"asin"`
 	MarketplaceId string `json:"marketplaceId"`
 	// The list of requested competitive pricing data for the product.
 	IncludedData []CompetitiveSummaryIncludedData `json:"includedData"`
 	// The list of `lowestPricedOffersInput` parameters that are used to build `lowestPricedOffers` in the response. This attribute is only valid if `lowestPricedOffers` is requested in `includedData`
 	LowestPricedOffersInputs []LowestPricedOffersInput `json:"lowestPricedOffersInputs,omitempty"`
-	Method *HttpMethod `json:"method"`
-	Uri string `json:"uri"`
+	Method                   *HttpMethod               `json:"method"`
+	Uri                      string                    `json:"uri"`
 }

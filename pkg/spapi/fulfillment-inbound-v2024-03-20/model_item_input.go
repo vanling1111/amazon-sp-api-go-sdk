@@ -11,12 +11,12 @@ package fulfillment_inbound_v2024_03_20
 // Defines an item's input parameters.
 type ItemInput struct {
 	// The expiration date of the MSKU. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `YYYY-MM-DD`. Items with the same MSKU but different expiration dates cannot go into the same box.
-	Expiration string `json:"expiration,omitempty"`
+	Expiration string      `json:"expiration,omitempty"`
 	LabelOwner *LabelOwner `json:"labelOwner"`
 	// The manufacturing lot code.
 	ManufacturingLotCode string `json:"manufacturingLotCode,omitempty"`
 	// The merchant SKU, a merchant-supplied identifier of a specific SKU.
-	Msku string `json:"msku"`
+	Msku      string     `json:"msku"`
 	PrepOwner *PrepOwner `json:"prepOwner"`
 	// The number of units of the specified MSKU that will be shipped.
 	Quantity int32 `json:"quantity"`

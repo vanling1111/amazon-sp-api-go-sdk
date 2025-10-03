@@ -11,5 +11,5 @@ package vendor_orders_v1
 // The response schema for the submitAcknowledgement operation
 type SubmitAcknowledgementResponse struct {
 	Payload *TransactionId `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError  `json:"errors,omitempty"`
 }

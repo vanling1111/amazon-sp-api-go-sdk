@@ -11,6 +11,6 @@ package shipping_v2
 
 // Info About Linkable Carrier
 type LinkableCarrier struct {
-	CarrierId string `json:"carrierId,omitempty"`
+	CarrierId            string                 `json:"carrierId,omitempty"`
 	LinkableAccountTypes *[]LinkableAccountType `json:"linkableAccountTypes,omitempty"`
 }

@@ -11,9 +11,9 @@ package fulfillment_outbound_v2020_07_01
 // The COD (Cash On Delivery) charges that you associate with a COD fulfillment order.
 type CodSettings struct {
 	// When true, this fulfillment order requires a COD (Cash On Delivery) payment.
-	IsCodRequired bool `json:"isCodRequired"`
-	CodCharge *Money `json:"codCharge,omitempty"`
-	CodChargeTax *Money `json:"codChargeTax,omitempty"`
-	ShippingCharge *Money `json:"shippingCharge,omitempty"`
+	IsCodRequired     bool   `json:"isCodRequired"`
+	CodCharge         *Money `json:"codCharge,omitempty"`
+	CodChargeTax      *Money `json:"codChargeTax,omitempty"`
+	ShippingCharge    *Money `json:"shippingCharge,omitempty"`
 	ShippingChargeTax *Money `json:"shippingChargeTax,omitempty"`
 }

@@ -10,14 +10,14 @@ package merchant_fulfillment_v0
 
 // An Amazon order item identifier and a quantity.
 type Item struct {
-	OrderItemId string `json:"OrderItemId"`
-	Quantity int32 `json:"Quantity"`
-	ItemWeight *Weight `json:"ItemWeight,omitempty"`
-	ItemDescription string `json:"ItemDescription,omitempty"`
-	TransparencyCodeList *[]string `json:"TransparencyCodeList,omitempty"`
+	OrderItemId               string                    `json:"OrderItemId"`
+	Quantity                  int32                     `json:"Quantity"`
+	ItemWeight                *Weight                   `json:"ItemWeight,omitempty"`
+	ItemDescription           string                    `json:"ItemDescription,omitempty"`
+	TransparencyCodeList      *[]string                 `json:"TransparencyCodeList,omitempty"`
 	ItemLevelSellerInputsList *[]AdditionalSellerInputs `json:"ItemLevelSellerInputsList,omitempty"`
-	LiquidVolume *LiquidVolume `json:"LiquidVolume,omitempty"`
+	LiquidVolume              *LiquidVolume             `json:"LiquidVolume,omitempty"`
 	// When true, the item qualifies as hazardous materials (hazmat). Defaults to false.
-	IsHazmat bool `json:"IsHazmat,omitempty"`
+	IsHazmat              bool                   `json:"IsHazmat,omitempty"`
 	DangerousGoodsDetails *DangerousGoodsDetails `json:"DangerousGoodsDetails,omitempty"`
 }

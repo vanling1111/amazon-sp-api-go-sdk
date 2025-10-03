@@ -117,11 +117,11 @@ func (s *RDTSigner) requiresRDT(req *http.Request) bool {
 
 	// 受限端点列表（根据官方文档）
 	restrictedPaths := []string{
-		"/orders/v0/orders/",           // Get Order - 包含 PII
-		"/orders/v0/orders/{orderId}/address", // Get Order Address
+		"/orders/v0/orders/",                    // Get Order - 包含 PII
+		"/orders/v0/orders/{orderId}/address",   // Get Order Address
 		"/orders/v0/orders/{orderId}/buyerInfo", // Get Order Buyer Info
-		"/mfn/v0/shipments/",           // 部分 MFN API
-		"/messaging/v1/orders/",        // Messaging API
+		"/mfn/v0/shipments/",                    // 部分 MFN API
+		"/messaging/v1/orders/",                 // Messaging API
 	}
 
 	for _, restrictedPath := range restrictedPaths {
@@ -167,4 +167,3 @@ func (s *RDTSigner) extractDataElements(req *http.Request) []string {
 func (s *RDTSigner) SetRDTProvider(provider RDTProvider) {
 	s.rdtProvider = provider
 }
-

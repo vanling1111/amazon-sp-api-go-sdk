@@ -11,5 +11,5 @@ package notifications_v1
 // The response schema for the `createSubscription` operation.
 type CreateSubscriptionResponse struct {
 	Payload *Subscription `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError `json:"errors,omitempty"`
 }

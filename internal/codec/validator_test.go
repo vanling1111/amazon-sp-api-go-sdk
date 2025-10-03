@@ -598,4 +598,3 @@ func TestValidator_CompleteExample(t *testing.T) {
 		t.Error("Error() should return an error")
 	}
 }
-

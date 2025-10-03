@@ -13,8 +13,8 @@ type ReturnAuthorization struct {
 	// An identifier for the return authorization. This identifier associates return items with the return authorization used to return them.
 	ReturnAuthorizationId string `json:"returnAuthorizationId"`
 	// An identifier for the Amazon fulfillment center to which the return items should be sent.
-	FulfillmentCenterId string `json:"fulfillmentCenterId"`
-	ReturnToAddress *Address `json:"returnToAddress"`
+	FulfillmentCenterId string   `json:"fulfillmentCenterId"`
+	ReturnToAddress     *Address `json:"returnToAddress"`
 	// The return merchandise authorization (RMA) that Amazon needs to process the return.
 	AmazonRmaId string `json:"amazonRmaId"`
 	// A URL for a web page that contains the return authorization barcode and the mailing label. This does not include pre-paid shipping.

@@ -11,14 +11,14 @@ package shipping_v2
 
 // A package to be shipped through a shipping service offering.
 type ModelPackage struct {
-	Dimensions *Dimensions `json:"dimensions"`
-	Weight *Weight `json:"weight"`
-	InsuredValue *Currency `json:"insuredValue"`
+	Dimensions   *Dimensions `json:"dimensions"`
+	Weight       *Weight     `json:"weight"`
+	InsuredValue *Currency   `json:"insuredValue"`
 	// When true, the package contains hazardous materials. Defaults to false.
 	IsHazmat bool `json:"isHazmat,omitempty"`
 	// The seller name displayed on the label.
-	SellerDisplayName string `json:"sellerDisplayName,omitempty"`
-	Charges *[]ChargeComponent `json:"charges,omitempty"`
-	PackageClientReferenceId string `json:"packageClientReferenceId"`
-	Items *[]Item `json:"items"`
+	SellerDisplayName        string             `json:"sellerDisplayName,omitempty"`
+	Charges                  *[]ChargeComponent `json:"charges,omitempty"`
+	PackageClientReferenceId string             `json:"packageClientReferenceId"`
+	Items                    *[]Item            `json:"items"`
 }

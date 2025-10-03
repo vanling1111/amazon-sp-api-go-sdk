@@ -10,7 +10,7 @@ package messaging_v1
 
 // The `GET` request schema response.
 type GetSchemaResponse struct {
-	Links *GetSchemaResponseLinks `json:"_links,omitempty"`
+	Links   *GetSchemaResponseLinks `json:"_links,omitempty"`
 	Payload *map[string]interface{} `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError           `json:"errors,omitempty"`
 }

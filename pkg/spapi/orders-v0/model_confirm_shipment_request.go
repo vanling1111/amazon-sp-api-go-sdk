@@ -13,5 +13,5 @@ type ConfirmShipmentRequest struct {
 	PackageDetail *PackageDetail `json:"packageDetail"`
 	// The COD collection method (only supported in the JP marketplace).
 	CodCollectionMethod string `json:"codCollectionMethod,omitempty"`
-	MarketplaceId string `json:"marketplaceId"`
+	MarketplaceId       string `json:"marketplaceId"`
 }

@@ -78,7 +78,7 @@ func NewUploader(config *UploaderConfig) *Uploader {
 	}
 
 	if config.ChunkSize == 0 {
-		config.ChunkSize = 10 * 1024 * 1024  // 10MB
+		config.ChunkSize = 10 * 1024 * 1024 // 10MB
 	}
 
 	if config.Concurrency == 0 {
@@ -203,13 +203,12 @@ func (r *simpleReader) Read(p []byte) (n int, err error) {
 func (u *Uploader) UploadWithProgress(ctx context.Context, url string, reader io.Reader, contentType string, size int64, onProgress ProgressFunc) error {
 	// TODO: 实现真正的进度追踪
 	// 当前简化版本：直接上传
-	
+
 	err := u.Upload(ctx, url, reader, contentType, size)
-	
+
 	if onProgress != nil && err == nil {
 		onProgress(size, size, 100.0)
 	}
-	
+
 	return err
 }
-

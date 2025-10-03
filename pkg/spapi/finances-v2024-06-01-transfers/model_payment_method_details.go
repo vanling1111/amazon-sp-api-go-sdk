@@ -15,10 +15,10 @@ type PaymentMethodDetails struct {
 	// The payment method identifier.
 	PaymentMethodId string `json:"paymentMethodId,omitempty"`
 	// The last three or four digits of the payment method.
-	Tail string `json:"tail,omitempty"`
+	Tail       string      `json:"tail,omitempty"`
 	ExpiryDate *ExpiryDate `json:"expiryDate,omitempty"`
 	// The two-letter country code in ISO 3166-1 alpha-2 format. For payment methods in the `card` category, the code is for the country where the card was issued. For payment methods in the `bank account` category, the code is for the country where the account is located.
-	CountryCode string `json:"countryCode,omitempty"`
+	CountryCode       string             `json:"countryCode,omitempty"`
 	PaymentMethodType *PaymentMethodType `json:"paymentMethodType,omitempty"`
-	AssignmentType *AssignmentType `json:"assignmentType,omitempty"`
+	AssignmentType    *AssignmentType    `json:"assignmentType,omitempty"`
 }

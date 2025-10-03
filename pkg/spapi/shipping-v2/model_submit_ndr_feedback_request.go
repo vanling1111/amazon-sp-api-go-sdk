@@ -11,7 +11,7 @@ package shipping_v2
 
 // The request schema for the NdrFeedback operation
 type SubmitNdrFeedbackRequest struct {
-	TrackingId string `json:"trackingId"`
-	NdrAction *NdrAction `json:"ndrAction"`
+	TrackingId     string          `json:"trackingId"`
+	NdrAction      *NdrAction      `json:"ndrAction"`
 	NdrRequestData *NdrRequestData `json:"ndrRequestData,omitempty"`
 }

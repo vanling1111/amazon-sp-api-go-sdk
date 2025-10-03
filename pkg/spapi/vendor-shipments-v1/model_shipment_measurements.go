@@ -11,7 +11,7 @@ package vendor_shipments_v1
 // Shipment measurement details.
 type ShipmentMeasurements struct {
 	GrossShipmentWeight *Weight `json:"grossShipmentWeight,omitempty"`
-	ShipmentVolume *Volume `json:"shipmentVolume,omitempty"`
+	ShipmentVolume      *Volume `json:"shipmentVolume,omitempty"`
 	// Number of cartons present in the shipment. Provide the cartonCount only for non-palletized shipments.
 	CartonCount int32 `json:"cartonCount,omitempty"`
 	// Number of pallets present in the shipment. Provide the palletCount only for palletized shipments.

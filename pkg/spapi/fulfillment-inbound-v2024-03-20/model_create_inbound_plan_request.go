@@ -15,6 +15,6 @@ type CreateInboundPlanRequest struct {
 	// Items included in this plan.
 	Items []ItemInput `json:"items"`
 	// Name for the Inbound Plan. If one isn't provided, a default name will be provided.
-	Name string `json:"name,omitempty"`
+	Name          string        `json:"name,omitempty"`
 	SourceAddress *AddressInput `json:"sourceAddress"`
 }

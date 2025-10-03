@@ -10,7 +10,7 @@ package product_pricing_v2022_05_01
 
 // The schema for item's price information, including listing price, shipping price, and Amazon Points.
 type Price struct {
-	ListingPrice *MoneyType `json:"listingPrice"`
+	ListingPrice  *MoneyType `json:"listingPrice"`
 	ShippingPrice *MoneyType `json:"shippingPrice,omitempty"`
-	Points *Points `json:"points,omitempty"`
+	Points        *Points    `json:"points,omitempty"`
 }

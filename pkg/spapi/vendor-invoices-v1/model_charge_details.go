@@ -13,7 +13,7 @@ type ChargeDetails struct {
 	// Type of the charge applied.
 	Type_ string `json:"type"`
 	// Description of the charge.
-	Description string `json:"description,omitempty"`
+	Description  string `json:"description,omitempty"`
 	ChargeAmount *Money `json:"chargeAmount"`
 	// Tax amount details applied on this charge.
 	TaxDetails []TaxDetails `json:"taxDetails,omitempty"`

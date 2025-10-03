@@ -10,7 +10,7 @@ package amazon_warehousing_and_distribution_model_v2024_05_09
 
 // Represents an AWD distribution package.
 type DistributionPackage struct {
-	Contents *DistributionPackageContents `json:"contents"`
-	Measurements *MeasurementData `json:"measurements"`
-	Type_ *DistributionPackageType `json:"type"`
+	Contents     *DistributionPackageContents `json:"contents"`
+	Measurements *MeasurementData             `json:"measurements"`
+	Type_        *DistributionPackageType     `json:"type"`
 }

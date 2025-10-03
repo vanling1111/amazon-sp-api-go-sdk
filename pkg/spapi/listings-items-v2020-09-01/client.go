@@ -7,7 +7,7 @@ import (
 	"context"
 	"fmt"
 	"strings"
-	
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 )
 
@@ -21,7 +21,7 @@ func NewClient(baseClient *spapi.Client) *Client {
 	return &Client{baseClient: baseClient}
 }
 
-// PutListingsItem 
+// PutListingsItem
 // Method: PUT | Path: /listings/2020-09-01/items/{sellerId}/{sku}
 func (c *Client) PutListingsItem(ctx context.Context, sellerId string, sku string, body interface{}) (interface{}, error) {
 	path := "/listings/2020-09-01/items/{sellerId}/{sku}"
@@ -29,11 +29,13 @@ func (c *Client) PutListingsItem(ctx context.Context, sellerId string, sku strin
 	path = strings.Replace(path, "{sku}", sku, 1)
 	var result interface{}
 	err := c.baseClient.Put(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("PutListingsItem: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("PutListingsItem: %w", err)
+	}
 	return result, nil
 }
 
-// PatchListingsItem 
+// PatchListingsItem
 // Method: PATCH | Path: /listings/2020-09-01/items/{sellerId}/{sku}
 func (c *Client) PatchListingsItem(ctx context.Context, sellerId string, sku string, body interface{}) (interface{}, error) {
 	path := "/listings/2020-09-01/items/{sellerId}/{sku}"
@@ -41,11 +43,13 @@ func (c *Client) PatchListingsItem(ctx context.Context, sellerId string, sku str
 	path = strings.Replace(path, "{sku}", sku, 1)
 	var result interface{}
 	err := c.baseClient.DoRequest(ctx, "PATCH", path, nil, body, &result)
-	if err != nil { return nil, fmt.Errorf("PatchListingsItem: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("PatchListingsItem: %w", err)
+	}
 	return result, nil
 }
 
-// DeleteListingsItem 
+// DeleteListingsItem
 // Method: DELETE | Path: /listings/2020-09-01/items/{sellerId}/{sku}
 func (c *Client) DeleteListingsItem(ctx context.Context, sellerId string, sku string) (interface{}, error) {
 	path := "/listings/2020-09-01/items/{sellerId}/{sku}"
@@ -53,6 +57,8 @@ func (c *Client) DeleteListingsItem(ctx context.Context, sellerId string, sku st
 	path = strings.Replace(path, "{sku}", sku, 1)
 	var result interface{}
 	err := c.baseClient.Delete(ctx, path, &result)
-	if err != nil { return nil, fmt.Errorf("DeleteListingsItem: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("DeleteListingsItem: %w", err)
+	}
 	return result, nil
 }

@@ -11,5 +11,5 @@ package fba_inbound_eligibility_v1
 // The response schema for the getItemEligibilityPreview operation.
 type GetItemEligibilityPreviewResponse struct {
 	Payload *ItemEligibilityPreview `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError           `json:"errors,omitempty"`
 }

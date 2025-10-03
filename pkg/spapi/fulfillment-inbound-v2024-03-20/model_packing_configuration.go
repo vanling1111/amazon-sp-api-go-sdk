@@ -12,7 +12,7 @@ package fulfillment_inbound_v2024_03_20
 type PackingConfiguration struct {
 	// The box content information sources that are allowed.
 	BoxPackingMethods []BoxContentInformationSource `json:"boxPackingMethods,omitempty"`
-	BoxRequirements *BoxRequirements `json:"boxRequirements,omitempty"`
+	BoxRequirements   *BoxRequirements              `json:"boxRequirements,omitempty"`
 	// A list of supported shipping requirements for this packing configuration.
 	ShippingRequirements []ShippingRequirements `json:"shippingRequirements,omitempty"`
 }

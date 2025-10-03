@@ -11,8 +11,8 @@ package customer_feedback_v2024_06_01
 // The browse node review subtopic.
 type BrowseNodeSubtopic struct {
 	// The name of the browse node review subtopic.
-	Subtopic string `json:"subtopic"`
-	Metrics *BrowseNodeReviewSubtopicMetrics `json:"metrics"`
+	Subtopic string                           `json:"subtopic"`
+	Metrics  *BrowseNodeReviewSubtopicMetrics `json:"metrics"`
 	// A list of up to three snippets from reviews that contain the topic. This value is `null` if there aren't enough review snippets for the subtopic.
 	ReviewSnippets []string `json:"reviewSnippets,omitempty"`
 }

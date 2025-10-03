@@ -10,6 +10,6 @@ package aplus_content_v2020_11_01
 
 // The A+ Content standard label and description block, which contains a pair of text components.
 type StandardTextPairBlock struct {
-	Label *TextComponent `json:"label,omitempty"`
+	Label       *TextComponent `json:"label,omitempty"`
 	Description *TextComponent `json:"description,omitempty"`
 }

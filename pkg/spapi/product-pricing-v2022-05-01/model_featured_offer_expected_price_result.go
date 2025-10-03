@@ -12,7 +12,7 @@ package product_pricing_v2022_05_01
 type FeaturedOfferExpectedPriceResult struct {
 	FeaturedOfferExpectedPrice *FeaturedOfferExpectedPrice `json:"featuredOfferExpectedPrice,omitempty"`
 	// The status of the FOEP computation. Possible values include `VALID_FOEP`, `NO_COMPETING_OFFER`, `OFFER_NOT_ELIGIBLE`, `OFFER_NOT_FOUND`, and `ASIN_NOT_ELIGIBLE`. Additional values might be added in the future.
-	ResultStatus string `json:"resultStatus"`
+	ResultStatus           string         `json:"resultStatus"`
 	CompetingFeaturedOffer *FeaturedOffer `json:"competingFeaturedOffer,omitempty"`
-	CurrentFeaturedOffer *FeaturedOffer `json:"currentFeaturedOffer,omitempty"`
+	CurrentFeaturedOffer   *FeaturedOffer `json:"currentFeaturedOffer,omitempty"`
 }

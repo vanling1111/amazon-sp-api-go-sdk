@@ -17,11 +17,11 @@ type OrderItem struct {
 	// The vendor selected product identification of the item.
 	VendorProductIdentifier string `json:"vendorProductIdentifier,omitempty"`
 	// Title for the item.
-	Title string `json:"title,omitempty"`
-	OrderedQuantity *ItemQuantity `json:"orderedQuantity"`
+	Title                     string                     `json:"title,omitempty"`
+	OrderedQuantity           *ItemQuantity              `json:"orderedQuantity"`
 	ScheduledDeliveryShipment *ScheduledDeliveryShipment `json:"scheduledDeliveryShipment,omitempty"`
-	GiftDetails *GiftDetails `json:"giftDetails,omitempty"`
-	NetPrice *Money `json:"netPrice"`
-	TaxDetails *OrderItemTaxDetails `json:"taxDetails,omitempty"`
-	TotalPrice *Money `json:"totalPrice,omitempty"`
+	GiftDetails               *GiftDetails               `json:"giftDetails,omitempty"`
+	NetPrice                  *Money                     `json:"netPrice"`
+	TaxDetails                *OrderItemTaxDetails       `json:"taxDetails,omitempty"`
+	TotalPrice                *Money                     `json:"totalPrice,omitempty"`
 }

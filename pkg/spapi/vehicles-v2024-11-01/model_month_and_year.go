@@ -10,6 +10,6 @@ package vehicles_v2024_11_01
 
 // Represents a month in a specific year.
 type MonthAndYear struct {
-	Year float64 `json:"year,omitempty"`
+	Year  float64 `json:"year,omitempty"`
 	Month float64 `json:"month,omitempty"`
 }

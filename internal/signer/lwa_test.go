@@ -76,7 +76,7 @@ func TestLWASigner_Sign_Success(t *testing.T) {
 		auth.EndpointNA,
 	)
 	lwaClient := auth.NewClient(creds)
-	
+
 	signer := NewLWASigner(lwaClient)
 
 	// 创建测试请求
@@ -155,4 +155,3 @@ func TestLWASigner_SetLWAClient(t *testing.T) {
 		t.Error("SetLWAClient() did not update the client")
 	}
 }
-

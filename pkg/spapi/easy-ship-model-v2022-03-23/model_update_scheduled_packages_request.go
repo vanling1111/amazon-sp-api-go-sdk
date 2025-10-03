@@ -10,6 +10,6 @@ package easy_ship_model_v2022_03_23
 
 // The request schema for the `updateScheduledPackages` operation.
 type UpdateScheduledPackagesRequest struct {
-	MarketplaceId string `json:"marketplaceId"`
+	MarketplaceId            string                  `json:"marketplaceId"`
 	UpdatePackageDetailsList *[]UpdatePackageDetails `json:"updatePackageDetailsList"`
 }

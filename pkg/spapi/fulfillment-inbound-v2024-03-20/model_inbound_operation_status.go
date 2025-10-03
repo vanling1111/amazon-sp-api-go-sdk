@@ -16,5 +16,5 @@ type InboundOperationStatus struct {
 	OperationId string `json:"operationId"`
 	// The problems in the processing of the asynchronous operation.
 	OperationProblems []OperationProblem `json:"operationProblems"`
-	OperationStatus *OperationStatus `json:"operationStatus"`
+	OperationStatus   *OperationStatus   `json:"operationStatus"`
 }

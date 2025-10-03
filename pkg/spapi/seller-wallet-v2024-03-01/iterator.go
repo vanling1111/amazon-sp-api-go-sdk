@@ -74,4 +74,3 @@ func (c *Client) IterateAccountTransactions(ctx context.Context, query map[strin
 		}
 	}
 }
-

@@ -14,6 +14,6 @@ type UpdateVerificationStatusRequestBody struct {
 	// The identifier of the order's regulated information reviewer.
 	ExternalReviewerId string `json:"externalReviewerId"`
 	// The unique identifier of the rejection reason used for rejecting the order's regulated information. Only required if the new status is rejected.
-	RejectionReasonId string `json:"rejectionReasonId,omitempty"`
+	RejectionReasonId   string               `json:"rejectionReasonId,omitempty"`
 	VerificationDetails *VerificationDetails `json:"verificationDetails,omitempty"`
 }

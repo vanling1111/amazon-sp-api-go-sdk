@@ -12,6 +12,6 @@ package product_pricing_v2022_05_01
 type PostalCode struct {
 	// Country code value
 	CountryCode string `json:"countryCode,omitempty"`
-	// Postal code value 
+	// Postal code value
 	Value string `json:"value,omitempty"`
 }

@@ -8,8 +8,8 @@
  */
 package easy_ship_model_v2022_03_23
 
-// This object allows users to specify an order to be scheduled. Only the amazonOrderId is required. 
+// This object allows users to specify an order to be scheduled. Only the amazonOrderId is required.
 type OrderScheduleDetails struct {
-	AmazonOrderId string `json:"amazonOrderId"`
+	AmazonOrderId  string          `json:"amazonOrderId"`
 	PackageDetails *PackageDetails `json:"packageDetails,omitempty"`
 }

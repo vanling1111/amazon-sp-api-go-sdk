@@ -10,8 +10,8 @@ package supply_sources_v2020_07_01
 
 // The operational configuration of `supplySources`.
 type OperationalConfiguration struct {
-	ContactDetails *ContactDetails `json:"contactDetails,omitempty"`
-	ThroughputConfig *ThroughputConfig `json:"throughputConfig,omitempty"`
+	ContactDetails      *ContactDetails      `json:"contactDetails,omitempty"`
+	ThroughputConfig    *ThroughputConfig    `json:"throughputConfig,omitempty"`
 	OperatingHoursByDay *OperatingHoursByDay `json:"operatingHoursByDay,omitempty"`
-	HandlingTime *Duration `json:"handlingTime,omitempty"`
+	HandlingTime        *Duration            `json:"handlingTime,omitempty"`
 }

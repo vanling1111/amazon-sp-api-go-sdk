@@ -10,6 +10,6 @@ package aplus_content_v2020_11_01
 
 type ValidateContentDocumentAsinRelationsResponse struct {
 	// A list of error responses that are returned when a request is unsuccessful.
-	Errors []ModelError `json:"errors"`
+	Errors   []ModelError  `json:"errors"`
 	Warnings *[]ModelError `json:"warnings,omitempty"`
 }

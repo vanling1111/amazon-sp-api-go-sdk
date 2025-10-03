@@ -10,17 +10,17 @@ package seller_wallet_v2024_03_01
 
 // Details of the bank account involved in the transaction.
 type TransactionAccount struct {
-	// The unique identifier provided by Amazon to identify the account 
+	// The unique identifier provided by Amazon to identify the account
 	AccountId string `json:"accountId,omitempty"`
-	// BankAccount holder's name 
+	// BankAccount holder's name
 	BankAccountHolderName string `json:"bankAccountHolderName,omitempty"`
-	// The name of the bank 
-	BankName string `json:"bankName"`
+	// The name of the bank
+	BankName                string                   `json:"bankName"`
 	BankAccountNumberFormat *BankAccountNumberFormat `json:"bankAccountNumberFormat"`
-	// Last 3 digit of the bank account number 
+	// Last 3 digit of the bank account number
 	BankAccountNumberTail string `json:"bankAccountNumberTail,omitempty"`
-	// The two digit country code, in ISO 3166 format. This field is OPTIONAL for transactionSourceAccount object but is MANDATORY field for transactionDestinationAccount 
+	// The two digit country code, in ISO 3166 format. This field is OPTIONAL for transactionSourceAccount object but is MANDATORY field for transactionDestinationAccount
 	BankAccountCountryCode string `json:"bankAccountCountryCode,omitempty"`
-	// The currency code in ISO 4217 format 
+	// The currency code in ISO 4217 format
 	BankAccountCurrency string `json:"bankAccountCurrency"`
 }

@@ -31,9 +31,9 @@ func main() {
 			"your-client-secret",
 			"your-refresh-token",
 		),
-		spapi.WithHTTPTimeout(60*time.Second),      // 更长的超时时间
-		spapi.WithMaxRetries(5),                     // 更多重试次数
-		spapi.WithDebug(),                           // 启用调试模式
+		spapi.WithHTTPTimeout(60*time.Second), // 更长的超时时间
+		spapi.WithMaxRetries(5),               // 更多重试次数
+		spapi.WithDebug(),                     // 启用调试模式
 	)
 	if err != nil {
 		log.Fatalf("创建客户端失败: %v", err)
@@ -44,7 +44,7 @@ func main() {
 
 	// 示例 1: 组合使用多个 API
 	fmt.Println("=== 示例 1: 获取订单并查询价格 ===")
-	
+
 	// 创建多个 API 客户端
 	ordersClient := orders.NewClient(client)
 	pricingClient := pricing.NewClient(client)
@@ -60,7 +60,7 @@ func main() {
 		log.Printf("获取订单失败: %v", err)
 	} else {
 		fmt.Println("✓ 获取订单成功")
-		
+
 		// 假设我们获取到订单中的 SKU，查询价格
 		sku := "MY-SKU-001"
 		pricingParams := map[string]string{
@@ -90,14 +90,14 @@ func main() {
 	if err != nil {
 		// 打印错误信息
 		fmt.Printf("获取订单失败: %v\n", err)
-		
+
 		// 可以在这里根据错误类型进行特殊处理
 		fmt.Println("可以检查错误类型并进行相应的处理")
 	}
 
 	// 示例 4: 并发请求（使用 goroutine）
 	fmt.Println("\n=== 示例 4: 并发请求 ===")
-	
+
 	orderIDs := []string{"111-1111111-1111111", "222-2222222-2222222", "333-3333333-3333333"}
 	results := make(chan interface{}, len(orderIDs))
 	errors := make(chan error, len(orderIDs))
@@ -132,4 +132,3 @@ func main() {
 
 	fmt.Println("\n✓ 高级用法示例完成")
 }
-

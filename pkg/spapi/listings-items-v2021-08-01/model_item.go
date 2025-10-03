@@ -11,15 +11,15 @@ package listings_items_v2021_08_01
 // A listings item.
 type Item struct {
 	// A selling partner provided identifier for an Amazon listing.
-	Sku string `json:"sku"`
-	Summaries *[]ItemSummaryByMarketplace `json:"summaries,omitempty"`
-	Attributes map[string]interface{} `json:"attributes,omitempty"`
-	Issues *[]Issue `json:"issues,omitempty"`
-	Offers *[]ItemOfferByMarketplace `json:"offers,omitempty"`
+	Sku        string                      `json:"sku"`
+	Summaries  *[]ItemSummaryByMarketplace `json:"summaries,omitempty"`
+	Attributes map[string]interface{}      `json:"attributes,omitempty"`
+	Issues     *[]Issue                    `json:"issues,omitempty"`
+	Offers     *[]ItemOfferByMarketplace   `json:"offers,omitempty"`
 	// The fulfillment availability for the listings item.
 	FulfillmentAvailability []FulfillmentAvailability `json:"fulfillmentAvailability,omitempty"`
 	// The vendor procurement information for the listings item.
-	Procurement []ItemProcurement `json:"procurement,omitempty"`
+	Procurement   []ItemProcurement                 `json:"procurement,omitempty"`
 	Relationships *[]ItemRelationshipsByMarketplace `json:"relationships,omitempty"`
-	ProductTypes *[]ItemProductTypeByMarketplace `json:"productTypes,omitempty"`
+	ProductTypes  *[]ItemProductTypeByMarketplace   `json:"productTypes,omitempty"`
 }

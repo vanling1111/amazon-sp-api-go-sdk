@@ -10,8 +10,8 @@ package orders_v0
 
 // Delivery constraints applicable to this order.
 type ShippingConstraints struct {
-	PalletDelivery *ConstraintType `json:"PalletDelivery,omitempty"`
-	SignatureConfirmation *ConstraintType `json:"SignatureConfirmation,omitempty"`
+	PalletDelivery                *ConstraintType `json:"PalletDelivery,omitempty"`
+	SignatureConfirmation         *ConstraintType `json:"SignatureConfirmation,omitempty"`
 	RecipientIdentityVerification *ConstraintType `json:"RecipientIdentityVerification,omitempty"`
-	RecipientAgeVerification *ConstraintType `json:"RecipientAgeVerification,omitempty"`
+	RecipientAgeVerification      *ConstraintType `json:"RecipientAgeVerification,omitempty"`
 }

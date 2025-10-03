@@ -10,7 +10,7 @@ package solicitations_v1
 
 // The response schema for the getSolicitationActionsForOrder operation.
 type GetSolicitationActionsForOrderResponse struct {
-	Links *GetSolicitationActionsForOrderResponseLinks `json:"_links,omitempty"`
+	Links    *GetSolicitationActionsForOrderResponseLinks    `json:"_links,omitempty"`
 	Embedded *GetSolicitationActionsForOrderResponseEmbedded `json:"_embedded,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors   *[]ModelError                                   `json:"errors,omitempty"`
 }

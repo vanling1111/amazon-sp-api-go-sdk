@@ -13,7 +13,7 @@ type AllowanceDetails struct {
 	// Type of the allowance applied.
 	Type_ string `json:"type"`
 	// Description of the allowance.
-	Description string `json:"description,omitempty"`
+	Description     string `json:"description,omitempty"`
 	AllowanceAmount *Money `json:"allowanceAmount"`
 	// Tax amount details applied on this allowance.
 	TaxDetails []TaxDetails `json:"taxDetails,omitempty"`

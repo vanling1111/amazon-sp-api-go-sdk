@@ -51,4 +51,3 @@ func (c *Collector) Print() {
 		fmt.Printf("[%s] %s: %.2f %v\n", m.Timestamp.Format(time.RFC3339), m.Name, m.Value, m.Labels)
 	}
 }
-

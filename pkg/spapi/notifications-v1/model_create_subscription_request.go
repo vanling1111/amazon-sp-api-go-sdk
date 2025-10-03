@@ -13,6 +13,6 @@ type CreateSubscriptionRequest struct {
 	// The version of the payload object to be used in the notification.
 	PayloadVersion string `json:"payloadVersion"`
 	// The identifier for the destination where notifications will be delivered.
-	DestinationId string `json:"destinationId"`
+	DestinationId       string               `json:"destinationId"`
 	ProcessingDirective *ProcessingDirective `json:"processingDirective,omitempty"`
 }

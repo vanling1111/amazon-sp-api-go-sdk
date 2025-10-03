@@ -11,5 +11,5 @@ package uploads_v2020_11_01
 // The response schema for the createUploadDestination operation.
 type CreateUploadDestinationResponse struct {
 	Payload *UploadDestination `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError      `json:"errors,omitempty"`
 }

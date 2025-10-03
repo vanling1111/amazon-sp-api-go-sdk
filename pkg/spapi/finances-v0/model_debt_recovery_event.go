@@ -11,9 +11,9 @@ package finances_v0
 // A debt payment or debt adjustment.
 type DebtRecoveryEvent struct {
 	// The debt recovery type.  Possible values:  * DebtPayment  * DebtPaymentFailure  * DebtAdjustment
-	DebtRecoveryType string `json:"DebtRecoveryType,omitempty"`
-	RecoveryAmount *Currency `json:"RecoveryAmount,omitempty"`
-	OverPaymentCredit *Currency `json:"OverPaymentCredit,omitempty"`
+	DebtRecoveryType     string              `json:"DebtRecoveryType,omitempty"`
+	RecoveryAmount       *Currency           `json:"RecoveryAmount,omitempty"`
+	OverPaymentCredit    *Currency           `json:"OverPaymentCredit,omitempty"`
 	DebtRecoveryItemList *[]DebtRecoveryItem `json:"DebtRecoveryItemList,omitempty"`
 	ChargeInstrumentList *[]ChargeInstrument `json:"ChargeInstrumentList,omitempty"`
 }

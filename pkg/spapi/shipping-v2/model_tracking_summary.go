@@ -11,6 +11,6 @@ package shipping_v2
 
 // A package status summary.
 type TrackingSummary struct {
-	Status *Status `json:"status,omitempty"`
+	Status              *Status              `json:"status,omitempty"`
 	TrackingDetailCodes *TrackingDetailCodes `json:"trackingDetailCodes,omitempty"`
 }

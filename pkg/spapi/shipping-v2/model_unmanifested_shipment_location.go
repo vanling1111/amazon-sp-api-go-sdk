@@ -9,7 +9,7 @@
  */
 package shipping_v2
 
-// UnmanifestedShipmentLocation info 
+// UnmanifestedShipmentLocation info
 type UnmanifestedShipmentLocation struct {
 	Address *Address `json:"address,omitempty"`
 	// Its Last Manifest Date.

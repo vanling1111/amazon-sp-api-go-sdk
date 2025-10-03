@@ -11,5 +11,5 @@ package shipment_invoicing_v0
 // The response schema for the getInvoiceStatus operation.
 type GetInvoiceStatusResponse struct {
 	Payload *ShipmentInvoiceStatusResponse `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError                  `json:"errors,omitempty"`
 }

@@ -13,6 +13,6 @@ type AssociatedItem struct {
 	// The order item's order identifier, in 3-7-7 format.
 	OrderId string `json:"OrderId,omitempty"`
 	// An Amazon-defined item identifier for the associated item.
-	OrderItemId string `json:"OrderItemId,omitempty"`
+	OrderItemId     string           `json:"OrderItemId,omitempty"`
 	AssociationType *AssociationType `json:"AssociationType,omitempty"`
 }

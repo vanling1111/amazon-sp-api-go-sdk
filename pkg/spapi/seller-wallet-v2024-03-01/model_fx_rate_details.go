@@ -8,11 +8,11 @@
  */
 package seller_wallet_v2024_03_01
 
-// Foreign exchange rate details displayed when transfer preview is requested. 
+// Foreign exchange rate details displayed when transfer preview is requested.
 type FxRateDetails struct {
-	// Unique identifier assigned to the fees/foreign exchange Rate of a transaction. 
-	FxRateId string `json:"fxRateId"`
-	BaseRate float64 `json:"baseRate"`
-	EffectiveFxRate float64 `json:"effectiveFxRate"`
-	RateDirection *RateDirection `json:"rateDirection"`
+	// Unique identifier assigned to the fees/foreign exchange Rate of a transaction.
+	FxRateId        string         `json:"fxRateId"`
+	BaseRate        float64        `json:"baseRate"`
+	EffectiveFxRate float64        `json:"effectiveFxRate"`
+	RateDirection   *RateDirection `json:"rateDirection"`
 }

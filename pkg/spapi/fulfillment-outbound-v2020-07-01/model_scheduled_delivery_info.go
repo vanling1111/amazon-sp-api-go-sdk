@@ -11,6 +11,6 @@ package fulfillment_outbound_v2020_07_01
 // Delivery information for a scheduled delivery. This is only available in the JP marketplace.
 type ScheduledDeliveryInfo struct {
 	// The time zone of the destination address for the fulfillment order preview. Must be an IANA time zone name. Example: Asia/Tokyo.
-	DeliveryTimeZone string `json:"deliveryTimeZone"`
-	DeliveryWindows *[]DeliveryWindow `json:"deliveryWindows"`
+	DeliveryTimeZone string            `json:"deliveryTimeZone"`
+	DeliveryWindows  *[]DeliveryWindow `json:"deliveryWindows"`
 }

@@ -11,5 +11,5 @@ package fulfillment_inbound_v0
 // The response schema for the getShipmentItems operation.
 type GetShipmentItemsResponse struct {
 	Payload *GetShipmentItemsResult `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError           `json:"errors,omitempty"`
 }

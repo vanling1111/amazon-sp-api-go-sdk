@@ -11,5 +11,5 @@ package services_v1
 // The response of fetching appointment slots based on service context.
 type GetAppointmentSlotsResponse struct {
 	Payload *AppointmentSlotReport `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError          `json:"errors,omitempty"`
 }

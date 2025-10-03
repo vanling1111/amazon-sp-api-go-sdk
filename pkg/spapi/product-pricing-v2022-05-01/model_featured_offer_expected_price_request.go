@@ -10,12 +10,12 @@ package product_pricing_v2022_05_01
 
 // An individual FOEP request for a particular SKU.
 type FeaturedOfferExpectedPriceRequest struct {
-	MarketplaceId string `json:"marketplaceId"`
-	Sku string `json:"sku"`
-	Segment *Segment `json:"segment,omitempty"`
+	MarketplaceId string   `json:"marketplaceId"`
+	Sku           string   `json:"sku"`
+	Segment       *Segment `json:"segment,omitempty"`
 	// The URI associated with an individual request within a batch. For `FeaturedOfferExpectedPrice`, this is `/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice`.
-	Uri string `json:"uri"`
-	Method *HttpMethod `json:"method"`
-	Body *map[string]interface{} `json:"body,omitempty"`
-	Headers *map[string]string `json:"headers,omitempty"`
+	Uri     string                  `json:"uri"`
+	Method  *HttpMethod             `json:"method"`
+	Body    *map[string]interface{} `json:"body,omitempty"`
+	Headers *map[string]string      `json:"headers,omitempty"`
 }

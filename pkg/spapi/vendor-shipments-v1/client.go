@@ -6,7 +6,7 @@ package vendor_shipments_v1
 import (
 	"context"
 	"fmt"
-	
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 )
 
@@ -26,17 +26,21 @@ func (c *Client) SubmitShipments(ctx context.Context, body interface{}) (interfa
 	path := "/vendor/shipping/v1/shipments"
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("SubmitShipments: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("SubmitShipments: %w", err)
+	}
 	return result, nil
 }
 
-// GetShipmentLabels 
+// GetShipmentLabels
 // Method: GET | Path: /vendor/shipping/v1/transportLabels
 func (c *Client) GetShipmentLabels(ctx context.Context, query map[string]string) (interface{}, error) {
 	path := "/vendor/shipping/v1/transportLabels"
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetShipmentLabels: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetShipmentLabels: %w", err)
+	}
 	return result, nil
 }
 
@@ -46,7 +50,9 @@ func (c *Client) SubmitShipmentConfirmations(ctx context.Context, body interface
 	path := "/vendor/shipping/v1/shipmentConfirmations"
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("SubmitShipmentConfirmations: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("SubmitShipmentConfirmations: %w", err)
+	}
 	return result, nil
 }
 
@@ -56,6 +62,8 @@ func (c *Client) GetShipmentDetails(ctx context.Context, query map[string]string
 	path := "/vendor/shipping/v1/shipments"
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetShipmentDetails: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetShipmentDetails: %w", err)
+	}
 	return result, nil
 }

@@ -11,6 +11,6 @@ package replenishment_v2022_11_07
 // The response schema for the `listOfferMetrics` operation.
 type ListOfferMetricsResponse struct {
 	// A list of offers and associated metrics.
-	Offers []ListOfferMetricsResponseOffer `json:"offers,omitempty"`
-	Pagination *PaginationResponse `json:"pagination,omitempty"`
+	Offers     []ListOfferMetricsResponseOffer `json:"offers,omitempty"`
+	Pagination *PaginationResponse             `json:"pagination,omitempty"`
 }

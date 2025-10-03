@@ -252,4 +252,3 @@ func (b *Breaker) Reset() {
 
 // ErrCircuitOpen 表示熔断器处于打开状态
 var ErrCircuitOpen = fmt.Errorf("circuit breaker is open")
-

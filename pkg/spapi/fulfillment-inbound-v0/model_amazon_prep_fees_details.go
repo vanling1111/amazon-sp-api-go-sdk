@@ -11,5 +11,5 @@ package fulfillment_inbound_v0
 // The fees for Amazon to prep goods for shipment.
 type AmazonPrepFeesDetails struct {
 	PrepInstruction *PrepInstruction `json:"PrepInstruction,omitempty"`
-	FeePerUnit *Amount `json:"FeePerUnit,omitempty"`
+	FeePerUnit      *Amount          `json:"FeePerUnit,omitempty"`
 }

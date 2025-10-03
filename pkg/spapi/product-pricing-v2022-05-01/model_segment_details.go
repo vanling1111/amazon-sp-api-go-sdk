@@ -11,6 +11,6 @@ package product_pricing_v2022_05_01
 // The details about the segment. The FeaturedOfferExpectedPrice API uses only the sampleLocation portion as input.
 type SegmentDetails struct {
 	// The glance view weighted percentage for this segment, which is the glance views for this segment as a percentage of total glance views across all segments for the ASIN. A higher percentage indicates that more Amazon customers receive this offer as the Featured Offer.
-	GlanceViewWeightPercentage float64 `json:"glanceViewWeightPercentage,omitempty"`
-	SampleLocation *SampleLocation `json:"sampleLocation,omitempty"`
+	GlanceViewWeightPercentage float64         `json:"glanceViewWeightPercentage,omitempty"`
+	SampleLocation             *SampleLocation `json:"sampleLocation,omitempty"`
 }

@@ -11,6 +11,6 @@ package vendor_direct_fulfillment_orders_v2021_12_28
 // Represents a purchase order.
 type Order struct {
 	// The purchase order number for this order. Formatting Notes: alpha-numeric code.
-	PurchaseOrderNumber string `json:"purchaseOrderNumber"`
-	OrderDetails *OrderDetails `json:"orderDetails,omitempty"`
+	PurchaseOrderNumber string        `json:"purchaseOrderNumber"`
+	OrderDetails        *OrderDetails `json:"orderDetails,omitempty"`
 }

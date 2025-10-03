@@ -11,10 +11,10 @@ package shipping_v2
 
 // Detailed information for an ineligible shipping service offering.
 type IneligibleRate struct {
-	ServiceId string `json:"serviceId"`
+	ServiceId   string `json:"serviceId"`
 	ServiceName string `json:"serviceName"`
 	CarrierName string `json:"carrierName"`
-	CarrierId string `json:"carrierId"`
+	CarrierId   string `json:"carrierId"`
 	// A list of reasons why a shipping service offering is ineligible.
 	IneligibilityReasons []IneligibilityReason `json:"ineligibilityReasons"`
 }

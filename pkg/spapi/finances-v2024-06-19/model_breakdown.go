@@ -11,7 +11,7 @@ package finances_v2024_06_19
 // Breakdown provides details regarding the money movement under the financial transaction. Breakdowns get categorized further into breakdown types, breakdown amounts, and further breakdowns into a hierarchical structure.
 type Breakdown struct {
 	// The type of charge.
-	BreakdownType string `json:"breakdownType,omitempty"`
+	BreakdownType   string    `json:"breakdownType,omitempty"`
 	BreakdownAmount *Currency `json:"breakdownAmount,omitempty"`
 	// A list of breakdowns that detail how the total amount is calculated for the transaction.
 	Breakdowns []Breakdown `json:"breakdowns,omitempty"`

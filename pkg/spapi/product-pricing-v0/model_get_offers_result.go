@@ -15,11 +15,11 @@ type GetOffersResult struct {
 	// The Amazon Standard Identification Number (ASIN) of the item.
 	ASIN string `json:"ASIN,omitempty"`
 	// The stock keeping unit (SKU) of the item.
-	SKU string `json:"SKU,omitempty"`
+	SKU           string         `json:"SKU,omitempty"`
 	ItemCondition *ConditionType `json:"ItemCondition"`
 	// The status of the operation.
-	Status string `json:"status"`
+	Status     string          `json:"status"`
 	Identifier *ItemIdentifier `json:"Identifier"`
-	Summary *Summary `json:"Summary"`
-	Offers *[]OfferDetail `json:"Offers"`
+	Summary    *Summary        `json:"Summary"`
+	Offers     *[]OfferDetail  `json:"Offers"`
 }

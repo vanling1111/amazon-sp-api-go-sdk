@@ -13,8 +13,8 @@ package shipping_v2
 type GetCollectionFormHistoryRequest struct {
 	ClientReferenceDetails *[]ClientReferenceDetail `json:"clientReferenceDetails,omitempty"`
 	// max Number of Results for query .
-	MaxResults int32 `json:"maxResults,omitempty"`
-	CarrierId string `json:"carrierId,omitempty"`
-	ShipFromAddress *Address `json:"shipFromAddress,omitempty"`
-	DateRange *DateRange `json:"dateRange,omitempty"`
+	MaxResults      int32      `json:"maxResults,omitempty"`
+	CarrierId       string     `json:"carrierId,omitempty"`
+	ShipFromAddress *Address   `json:"shipFromAddress,omitempty"`
+	DateRange       *DateRange `json:"dateRange,omitempty"`
 }

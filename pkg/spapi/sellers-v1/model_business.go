@@ -11,7 +11,7 @@ package sellers_v1
 // Information about the seller's business. Certain fields may be omitted depending on the seller's `businessType`.
 type Business struct {
 	// The registered business name.
-	Name string `json:"name"`
+	Name                      string   `json:"name"`
 	RegisteredBusinessAddress *Address `json:"registeredBusinessAddress"`
 	// The seller's company registration number, if applicable. This field will be absent for individual sellers and sole proprietorships.
 	CompanyRegistrationNumber string `json:"companyRegistrationNumber,omitempty"`

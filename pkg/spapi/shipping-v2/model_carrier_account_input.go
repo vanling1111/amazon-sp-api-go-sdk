@@ -16,13 +16,13 @@ type CarrierAccountInput struct {
 	// name value .
 	Name string `json:"name,omitempty"`
 	// groupName value .
-	GroupName string `json:"groupName,omitempty"`
+	GroupName string     `json:"groupName,omitempty"`
 	InputType *InputType `json:"inputType,omitempty"`
 	// mandatory or not  value .
 	IsMandatory bool `json:"isMandatory,omitempty"`
 	// is value is Confidential .
 	IsConfidential bool `json:"isConfidential,omitempty"`
 	// is value is hidden .
-	IsHidden bool `json:"isHidden,omitempty"`
+	IsHidden           bool                  `json:"isHidden,omitempty"`
 	ValidationMetadata *[]ValidationMetadata `json:"validationMetadata,omitempty"`
 }

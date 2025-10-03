@@ -10,8 +10,8 @@ package fulfillment_inbound_v0
 
 // Result for the get prep instructions operation
 type GetPrepInstructionsResult struct {
-	SKUPrepInstructionsList *[]SkuPrepInstructions `json:"SKUPrepInstructionsList,omitempty"`
-	InvalidSKUList *[]InvalidSku `json:"InvalidSKUList,omitempty"`
+	SKUPrepInstructionsList  *[]SkuPrepInstructions  `json:"SKUPrepInstructionsList,omitempty"`
+	InvalidSKUList           *[]InvalidSku           `json:"InvalidSKUList,omitempty"`
 	ASINPrepInstructionsList *[]AsinPrepInstructions `json:"ASINPrepInstructionsList,omitempty"`
-	InvalidASINList *[]InvalidAsin `json:"InvalidASINList,omitempty"`
+	InvalidASINList          *[]InvalidAsin          `json:"InvalidASINList,omitempty"`
 }

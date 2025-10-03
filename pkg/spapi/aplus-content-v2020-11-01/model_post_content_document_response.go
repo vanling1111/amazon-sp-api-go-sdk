@@ -9,6 +9,6 @@
 package aplus_content_v2020_11_01
 
 type PostContentDocumentResponse struct {
-	ContentReferenceKey string `json:"contentReferenceKey"`
-	Warnings *[]ModelError `json:"warnings,omitempty"`
+	ContentReferenceKey string        `json:"contentReferenceKey"`
+	Warnings            *[]ModelError `json:"warnings,omitempty"`
 }

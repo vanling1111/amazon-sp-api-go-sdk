@@ -11,7 +11,7 @@ package orders_v0
 // Contains all of the delivery instructions provided by the customer for the shipping address.
 type DeliveryPreferences struct {
 	// Drop-off location selected by the customer.
-	DropOffLocation string `json:"DropOffLocation,omitempty"`
+	DropOffLocation       string                 `json:"DropOffLocation,omitempty"`
 	PreferredDeliveryTime *PreferredDeliveryTime `json:"PreferredDeliveryTime,omitempty"`
 	// Enumerated list of miscellaneous delivery attributes associated with the shipping address.
 	OtherAttributes []OtherDeliveryAttributes `json:"OtherAttributes,omitempty"`

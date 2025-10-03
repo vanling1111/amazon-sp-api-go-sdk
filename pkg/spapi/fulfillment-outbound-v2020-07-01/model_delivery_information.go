@@ -11,5 +11,5 @@ package fulfillment_outbound_v2020_07_01
 // The delivery information for the package. This information is available after the package is delivered.
 type DeliveryInformation struct {
 	DeliveryDocumentList *[]DeliveryDocument `json:"deliveryDocumentList,omitempty"`
-	DropOffLocation *DropOffLocation `json:"dropOffLocation,omitempty"`
+	DropOffLocation      *DropOffLocation    `json:"dropOffLocation,omitempty"`
 }

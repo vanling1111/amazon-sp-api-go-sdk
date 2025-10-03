@@ -12,5 +12,5 @@ package vendor_direct_fulfillment_orders_v1
 type Money struct {
 	// Three digit currency code in ISO 4217 format. String of length 3.
 	CurrencyCode string `json:"currencyCode,omitempty"`
-	Amount string `json:"amount,omitempty"`
+	Amount       string `json:"amount,omitempty"`
 }

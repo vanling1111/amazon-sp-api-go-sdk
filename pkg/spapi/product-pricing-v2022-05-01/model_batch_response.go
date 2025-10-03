@@ -11,5 +11,5 @@ package product_pricing_v2022_05_01
 // The common properties for responses to individual requests within a batch.
 type BatchResponse struct {
 	Headers *map[string]string `json:"headers"`
-	Status *HttpStatusLine `json:"status"`
+	Status  *HttpStatusLine    `json:"status"`
 }

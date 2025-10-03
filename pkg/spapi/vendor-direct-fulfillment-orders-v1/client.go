@@ -7,7 +7,7 @@ import (
 	"context"
 	"fmt"
 	"strings"
-	
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 )
 
@@ -21,33 +21,39 @@ func NewClient(baseClient *spapi.Client) *Client {
 	return &Client{baseClient: baseClient}
 }
 
-// GetOrder 
+// GetOrder
 // Method: GET | Path: /vendor/directFulfillment/orders/v1/purchaseOrders/{purchaseOrderNumber}
 func (c *Client) GetOrder(ctx context.Context, purchaseOrderNumber string, query map[string]string) (interface{}, error) {
 	path := "/vendor/directFulfillment/orders/v1/purchaseOrders/{purchaseOrderNumber}"
 	path = strings.Replace(path, "{purchaseOrderNumber}", purchaseOrderNumber, 1)
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetOrder: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetOrder: %w", err)
+	}
 	return result, nil
 }
 
-// GetOrders 
+// GetOrders
 // Method: GET | Path: /vendor/directFulfillment/orders/v1/purchaseOrders
 func (c *Client) GetOrders(ctx context.Context, query map[string]string) (interface{}, error) {
 	path := "/vendor/directFulfillment/orders/v1/purchaseOrders"
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetOrders: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetOrders: %w", err)
+	}
 	return result, nil
 }
 
-// SubmitAcknowledgement 
+// SubmitAcknowledgement
 // Method: POST | Path: /vendor/directFulfillment/orders/v1/acknowledgements
 func (c *Client) SubmitAcknowledgement(ctx context.Context, body interface{}) (interface{}, error) {
 	path := "/vendor/directFulfillment/orders/v1/acknowledgements"
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("SubmitAcknowledgement: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("SubmitAcknowledgement: %w", err)
+	}
 	return result, nil
 }

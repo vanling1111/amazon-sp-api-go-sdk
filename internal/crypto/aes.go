@@ -280,4 +280,3 @@ func removePKCS7Padding(data []byte) ([]byte, error) {
 	// 移除填充
 	return data[:len(data)-padding], nil
 }
-

@@ -14,7 +14,7 @@ type OfferIdentifier struct {
 	// The seller identifier for the offer.
 	SellerId string `json:"sellerId,omitempty"`
 	// The seller SKU of the item. This will only be present for the target offer, which belongs to the requesting seller.
-	Sku string `json:"sku,omitempty"`
-	Asin string `json:"asin"`
+	Sku             string           `json:"sku,omitempty"`
+	Asin            string           `json:"asin"`
 	FulfillmentType *FulfillmentType `json:"fulfillmentType,omitempty"`
 }

@@ -13,6 +13,6 @@ type CreateScheduledPackagesResponse struct {
 	// A list of packages. Refer to the `Package` object.
 	ScheduledPackages []ModelPackage `json:"scheduledPackages,omitempty"`
 	// A list of orders we couldn't scheduled on your behalf. Each element contains the reason and details on the error.
-	RejectedOrders []RejectedOrder `json:"rejectedOrders,omitempty"`
-	PrintableDocumentsUrl string `json:"printableDocumentsUrl,omitempty"`
+	RejectedOrders        []RejectedOrder `json:"rejectedOrders,omitempty"`
+	PrintableDocumentsUrl string          `json:"printableDocumentsUrl,omitempty"`
 }

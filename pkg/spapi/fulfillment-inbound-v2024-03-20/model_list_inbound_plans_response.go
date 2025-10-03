@@ -12,5 +12,5 @@ package fulfillment_inbound_v2024_03_20
 type ListInboundPlansResponse struct {
 	// A list of inbound plans with minimal information.
 	InboundPlans []InboundPlanSummary `json:"inboundPlans,omitempty"`
-	Pagination *Pagination `json:"pagination,omitempty"`
+	Pagination   *Pagination          `json:"pagination,omitempty"`
 }

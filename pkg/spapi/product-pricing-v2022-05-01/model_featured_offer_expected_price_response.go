@@ -11,7 +11,7 @@ package product_pricing_v2022_05_01
 // Schema for an individual FOEP response.
 type FeaturedOfferExpectedPriceResponse struct {
 	Request *FeaturedOfferExpectedPriceRequestParams `json:"request"`
-	Body *FeaturedOfferExpectedPriceResponseBody `json:"body,omitempty"`
-	Headers *map[string]string `json:"headers"`
-	Status *HttpStatusLine `json:"status"`
+	Body    *FeaturedOfferExpectedPriceResponseBody  `json:"body,omitempty"`
+	Headers *map[string]string                       `json:"headers"`
+	Status  *HttpStatusLine                          `json:"status"`
 }

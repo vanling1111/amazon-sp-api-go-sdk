@@ -11,7 +11,7 @@ package vendor_shipments_v1
 // Carton/Pallet level details for the item.
 type ContainerItem struct {
 	// The reference number for the item. Please provide the itemSequenceNumber from the 'items' segment to refer to that item's details here.
-	ItemReference string `json:"itemReference"`
+	ItemReference   string        `json:"itemReference"`
 	ShippedQuantity *ItemQuantity `json:"shippedQuantity"`
-	ItemDetails *ItemDetails `json:"itemDetails,omitempty"`
+	ItemDetails     *ItemDetails  `json:"itemDetails,omitempty"`
 }

@@ -11,6 +11,6 @@ package supply_sources_v2020_07_01
 // The address or reference to another `supplySourceId` to act as a return location.
 type ReturnLocation struct {
 	// The Amazon provided `supplySourceId` where orders can be returned to.
-	SupplySourceId string `json:"supplySourceId,omitempty"`
+	SupplySourceId     string              `json:"supplySourceId,omitempty"`
 	AddressWithContact *AddressWithContact `json:"addressWithContact,omitempty"`
 }

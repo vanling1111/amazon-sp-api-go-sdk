@@ -10,6 +10,6 @@ package merchant_fulfillment_v0
 
 // The available shipping service options.
 type AvailableShippingServiceOptions struct {
-	AvailableCarrierWillPickUpOptions *[]AvailableCarrierWillPickUpOption `json:"AvailableCarrierWillPickUpOptions"`
+	AvailableCarrierWillPickUpOptions  *[]AvailableCarrierWillPickUpOption  `json:"AvailableCarrierWillPickUpOptions"`
 	AvailableDeliveryExperienceOptions *[]AvailableDeliveryExperienceOption `json:"AvailableDeliveryExperienceOptions"`
 }

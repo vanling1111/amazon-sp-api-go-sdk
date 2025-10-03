@@ -11,6 +11,6 @@ package product_pricing_v2022_05_01
 // The reference price for the specified ASIN `marketplaceId` combination.
 type ReferencePrice struct {
 	// Reference price type (e.g., `CompetitivePriceThreshold`, `WasPrice`, `CompetitivePrice`). For definitions, see the [Product Pricing API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide).
-	Name string `json:"name"`
+	Name  string     `json:"name"`
 	Price *MoneyType `json:"price"`
 }

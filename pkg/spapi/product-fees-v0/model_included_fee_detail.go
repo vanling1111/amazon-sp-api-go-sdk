@@ -11,9 +11,9 @@ package product_fees_v0
 // The type of fee, fee amount, and other details.
 type IncludedFeeDetail struct {
 	// The type of fee charged to a seller.
-	FeeType string `json:"FeeType"`
-	FeeAmount *MoneyType `json:"FeeAmount"`
+	FeeType      string     `json:"FeeType"`
+	FeeAmount    *MoneyType `json:"FeeAmount"`
 	FeePromotion *MoneyType `json:"FeePromotion,omitempty"`
-	TaxAmount *MoneyType `json:"TaxAmount,omitempty"`
-	FinalFee *MoneyType `json:"FinalFee"`
+	TaxAmount    *MoneyType `json:"TaxAmount,omitempty"`
+	FinalFee     *MoneyType `json:"FinalFee"`
 }

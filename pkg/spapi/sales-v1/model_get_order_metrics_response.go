@@ -11,5 +11,5 @@ package sales_v1
 // The response schema for the getOrderMetrics operation.
 type GetOrderMetricsResponse struct {
 	Payload *[]OrderMetricsInterval `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError           `json:"errors,omitempty"`
 }

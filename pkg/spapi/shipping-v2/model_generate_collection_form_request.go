@@ -12,6 +12,6 @@ package shipping_v2
 // The request schema Call to generate the collection form.
 type GenerateCollectionFormRequest struct {
 	ClientReferenceDetails *[]ClientReferenceDetail `json:"clientReferenceDetails,omitempty"`
-	CarrierId string `json:"carrierId"`
-	ShipFromAddress *Address `json:"shipFromAddress,omitempty"`
+	CarrierId              string                   `json:"carrierId"`
+	ShipFromAddress        *Address                 `json:"shipFromAddress,omitempty"`
 }

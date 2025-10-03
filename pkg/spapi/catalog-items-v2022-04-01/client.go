@@ -7,7 +7,7 @@ import (
 	"context"
 	"fmt"
 	"strings"
-	
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 )
 
@@ -21,23 +21,27 @@ func NewClient(baseClient *spapi.Client) *Client {
 	return &Client{baseClient: baseClient}
 }
 
-// SearchCatalogItems 
+// SearchCatalogItems
 // Method: GET | Path: /catalog/2022-04-01/items
 func (c *Client) SearchCatalogItems(ctx context.Context, query map[string]string) (interface{}, error) {
 	path := "/catalog/2022-04-01/items"
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("SearchCatalogItems: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("SearchCatalogItems: %w", err)
+	}
 	return result, nil
 }
 
-// GetCatalogItem 
+// GetCatalogItem
 // Method: GET | Path: /catalog/2022-04-01/items/{asin}
 func (c *Client) GetCatalogItem(ctx context.Context, asin string, query map[string]string) (interface{}, error) {
 	path := "/catalog/2022-04-01/items/{asin}"
 	path = strings.Replace(path, "{asin}", asin, 1)
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetCatalogItem: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetCatalogItem: %w", err)
+	}
 	return result, nil
 }

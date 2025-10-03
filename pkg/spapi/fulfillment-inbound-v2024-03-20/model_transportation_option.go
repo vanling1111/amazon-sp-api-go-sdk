@@ -10,11 +10,11 @@ package fulfillment_inbound_v2024_03_20
 
 // Contains information pertaining to a transportation option and the related carrier.
 type TransportationOption struct {
-	Carrier *Carrier `json:"carrier"`
+	Carrier            *Carrier            `json:"carrier"`
 	CarrierAppointment *CarrierAppointment `json:"carrierAppointment,omitempty"`
 	// Identifies a list of preconditions for confirming the transportation option.
 	Preconditions []string `json:"preconditions"`
-	Quote *Quote `json:"quote,omitempty"`
+	Quote         *Quote   `json:"quote,omitempty"`
 	// Identifier of a shipment. A shipment contains the boxes and units being inbounded.
 	ShipmentId string `json:"shipmentId"`
 	// Mode of shipment transportation that this option will provide.  Possible values: `GROUND_SMALL_PARCEL`, `FREIGHT_LTL`, `FREIGHT_FTL_PALLET`, `FREIGHT_FTL_NONPALLET`, `OCEAN_LCL`, `OCEAN_FCL`, `AIR_SMALL_PARCEL`, `AIR_SMALL_PARCEL_EXPRESS`.

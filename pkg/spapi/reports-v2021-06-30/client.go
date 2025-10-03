@@ -26,98 +26,116 @@ func NewClient(baseClient *spapi.Client) *Client {
 	return &Client{baseClient: baseClient}
 }
 
-// CreateReport 
+// CreateReport
 // Method: POST | Path: /reports/2021-06-30/reports
 func (c *Client) CreateReport(ctx context.Context, body interface{}) (interface{}, error) {
 	path := "/reports/2021-06-30/reports"
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("CreateReport: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("CreateReport: %w", err)
+	}
 	return result, nil
 }
 
-// GetReportSchedule 
+// GetReportSchedule
 // Method: GET | Path: /reports/2021-06-30/schedules/{reportScheduleId}
 func (c *Client) GetReportSchedule(ctx context.Context, reportScheduleId string, query map[string]string) (interface{}, error) {
 	path := "/reports/2021-06-30/schedules/{reportScheduleId}"
 	path = strings.Replace(path, "{reportScheduleId}", reportScheduleId, 1)
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetReportSchedule: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetReportSchedule: %w", err)
+	}
 	return result, nil
 }
 
-// GetReportSchedules 
+// GetReportSchedules
 // Method: GET | Path: /reports/2021-06-30/schedules
 func (c *Client) GetReportSchedules(ctx context.Context, query map[string]string) (interface{}, error) {
 	path := "/reports/2021-06-30/schedules"
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetReportSchedules: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetReportSchedules: %w", err)
+	}
 	return result, nil
 }
 
-// GetReports 
+// GetReports
 // Method: GET | Path: /reports/2021-06-30/reports
 func (c *Client) GetReports(ctx context.Context, query map[string]string) (interface{}, error) {
 	path := "/reports/2021-06-30/reports"
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetReports: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetReports: %w", err)
+	}
 	return result, nil
 }
 
-// GetReport 
+// GetReport
 // Method: GET | Path: /reports/2021-06-30/reports/{reportId}
 func (c *Client) GetReport(ctx context.Context, reportId string, query map[string]string) (interface{}, error) {
 	path := "/reports/2021-06-30/reports/{reportId}"
 	path = strings.Replace(path, "{reportId}", reportId, 1)
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetReport: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetReport: %w", err)
+	}
 	return result, nil
 }
 
-// CancelReportSchedule 
+// CancelReportSchedule
 // Method: DELETE | Path: /reports/2021-06-30/schedules/{reportScheduleId}
 func (c *Client) CancelReportSchedule(ctx context.Context, reportScheduleId string) (interface{}, error) {
 	path := "/reports/2021-06-30/schedules/{reportScheduleId}"
 	path = strings.Replace(path, "{reportScheduleId}", reportScheduleId, 1)
 	var result interface{}
 	err := c.baseClient.Delete(ctx, path, &result)
-	if err != nil { return nil, fmt.Errorf("CancelReportSchedule: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("CancelReportSchedule: %w", err)
+	}
 	return result, nil
 }
 
-// GetReportDocument 
+// GetReportDocument
 // Method: GET | Path: /reports/2021-06-30/documents/{reportDocumentId}
 func (c *Client) GetReportDocument(ctx context.Context, reportDocumentId string, query map[string]string) (interface{}, error) {
 	path := "/reports/2021-06-30/documents/{reportDocumentId}"
 	path = strings.Replace(path, "{reportDocumentId}", reportDocumentId, 1)
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetReportDocument: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetReportDocument: %w", err)
+	}
 	return result, nil
 }
 
-// CancelReport 
+// CancelReport
 // Method: DELETE | Path: /reports/2021-06-30/reports/{reportId}
 func (c *Client) CancelReport(ctx context.Context, reportId string) (interface{}, error) {
 	path := "/reports/2021-06-30/reports/{reportId}"
 	path = strings.Replace(path, "{reportId}", reportId, 1)
 	var result interface{}
 	err := c.baseClient.Delete(ctx, path, &result)
-	if err != nil { return nil, fmt.Errorf("CancelReport: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("CancelReport: %w", err)
+	}
 	return result, nil
 }
 
-// CreateReportSchedule 
+// CreateReportSchedule
 // Method: POST | Path: /reports/2021-06-30/schedules
 func (c *Client) CreateReportSchedule(ctx context.Context, body interface{}) (interface{}, error) {
 	path := "/reports/2021-06-30/schedules"
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("CreateReportSchedule: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("CreateReportSchedule: %w", err)
+	}
 	return result, nil
 }
 
@@ -172,8 +190,8 @@ func (c *Client) GetReportDocumentDecrypted(ctx context.Context, reportDocumentI
 	}
 
 	var docResp struct {
-		ReportDocumentID string `json:"reportDocumentId"`
-		URL              string `json:"url"`
+		ReportDocumentID  string `json:"reportDocumentId"`
+		URL               string `json:"url"`
 		EncryptionDetails *struct {
 			Standard             string `json:"standard"`
 			InitializationVector string `json:"initializationVector"`

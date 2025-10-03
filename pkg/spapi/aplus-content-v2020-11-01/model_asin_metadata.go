@@ -10,12 +10,12 @@ package aplus_content_v2020_11_01
 
 // The A+ Content ASIN with additional metadata for content management. If you don't include the `includedDataSet` parameter in a call to the `listContentDocumentAsinRelations` operation, the related ASINs are returned without metadata.
 type AsinMetadata struct {
-	Asin string `json:"asin"`
+	Asin     string       `json:"asin"`
 	BadgeSet *[]AsinBadge `json:"badgeSet,omitempty"`
-	Parent string `json:"parent,omitempty"`
+	Parent   string       `json:"parent,omitempty"`
 	// The title for the ASIN in the Amazon catalog.
 	Title string `json:"title,omitempty"`
 	// The default image for the ASIN in the Amazon catalog.
-	ImageUrl string `json:"imageUrl,omitempty"`
+	ImageUrl               string    `json:"imageUrl,omitempty"`
 	ContentReferenceKeySet *[]string `json:"contentReferenceKeySet,omitempty"`
 }

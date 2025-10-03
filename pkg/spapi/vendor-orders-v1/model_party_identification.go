@@ -11,7 +11,7 @@ package vendor_orders_v1
 // Name, address and tax details of a party.
 type PartyIdentification struct {
 	// Assigned identification for the party. For example, warehouse code or vendor code. Please refer to specific party for more details.
-	PartyId string `json:"partyId"`
-	Address *Address `json:"address,omitempty"`
+	PartyId string                  `json:"partyId"`
+	Address *Address                `json:"address,omitempty"`
 	TaxInfo *TaxRegistrationDetails `json:"taxInfo,omitempty"`
 }

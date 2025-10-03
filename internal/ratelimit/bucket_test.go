@@ -123,10 +123,10 @@ func TestBucket_TakeN(t *testing.T) {
 	}
 
 	tests := []struct {
-		name       string
-		n          int
-		wantOk     bool
-		checkWait  bool
+		name      string
+		n         int
+		wantOk    bool
+		checkWait bool
 	}{
 		{
 			name:      "take 5 tokens",
@@ -387,4 +387,3 @@ func BenchmarkBucket_Available(b *testing.B) {
 		bucket.Available()
 	}
 }
-

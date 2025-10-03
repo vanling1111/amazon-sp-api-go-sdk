@@ -11,6 +11,6 @@ package listings_items_v2021_08_01
 // This field provides information about the enforcement actions taken by Amazon that affect the publishing or status of a listing. It also includes details about any associated exemptions.
 type IssueEnforcements struct {
 	// List of enforcement actions taken by Amazon that affect the publishing or status of a listing.
-	Actions []IssueEnforcementAction `json:"actions"`
-	Exemption *IssueExemption `json:"exemption"`
+	Actions   []IssueEnforcementAction `json:"actions"`
+	Exemption *IssueExemption          `json:"exemption"`
 }

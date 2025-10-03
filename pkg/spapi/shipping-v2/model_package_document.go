@@ -11,7 +11,7 @@ package shipping_v2
 
 // A document related to a package.
 type PackageDocument struct {
-	Type_ *DocumentType `json:"type"`
-	Format *DocumentFormat `json:"format"`
-	Contents string `json:"contents"`
+	Type_    *DocumentType   `json:"type"`
+	Format   *DocumentFormat `json:"format"`
+	Contents string          `json:"contents"`
 }

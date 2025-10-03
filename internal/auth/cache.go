@@ -33,8 +33,9 @@ type MemoryCache struct {
 //   - *MemoryCache: 内存缓存实例
 //
 // 示例:
-//   cache := auth.NewMemoryCache()
-//   client.SetCache(cache)
+//
+//	cache := auth.NewMemoryCache()
+//	client.SetCache(cache)
 func NewMemoryCache() *MemoryCache {
 	return &MemoryCache{
 		cache: make(map[string]*Token),

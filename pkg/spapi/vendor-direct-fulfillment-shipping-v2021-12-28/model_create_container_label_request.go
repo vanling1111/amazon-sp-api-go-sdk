@@ -10,9 +10,9 @@ package vendor_direct_fulfillment_shipping_v2021_12_28
 
 // The request body schema for the `createContainerLabel` operation.
 type CreateContainerLabelRequest struct {
-	SellingParty *PartyIdentification `json:"sellingParty"`
-	ShipFromParty *PartyIdentification `json:"shipFromParty"`
-	CarrierId *CarrierId `json:"carrierId"`
-	VendorContainerId string `json:"vendorContainerId"`
-	Packages *[]ModelPackage `json:"packages"`
+	SellingParty      *PartyIdentification `json:"sellingParty"`
+	ShipFromParty     *PartyIdentification `json:"shipFromParty"`
+	CarrierId         *CarrierId           `json:"carrierId"`
+	VendorContainerId string               `json:"vendorContainerId"`
+	Packages          *[]ModelPackage      `json:"packages"`
 }

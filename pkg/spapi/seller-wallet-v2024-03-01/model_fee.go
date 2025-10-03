@@ -8,12 +8,12 @@
  */
 package seller_wallet_v2024_03_01
 
-// If the fees is in baseAmount (sourceAccount) currency, effectiveRate =  (baseAmount - sum(fees.feeAmount.currencyAmount)) * baseRate) / baseAmount. If the fees is in transferAmount (destinationAccount) currency, effectiveRate =  (( baseAmount * baseRate ) -  sum(fees.feeAmount.currencyAmount )) / baseAmount 
+// If the fees is in baseAmount (sourceAccount) currency, effectiveRate =  (baseAmount - sum(fees.feeAmount.currencyAmount)) * baseRate) / baseAmount. If the fees is in transferAmount (destinationAccount) currency, effectiveRate =  (( baseAmount * baseRate ) -  sum(fees.feeAmount.currencyAmount )) / baseAmount
 type Fee struct {
-	// Unique identifier assigned to the Fee. 
-	FeeId string `json:"feeId"`
+	// Unique identifier assigned to the Fee.
+	FeeId   string   `json:"feeId"`
 	FeeType *FeeType `json:"feeType"`
 	// The value of the fee in percentage format.
-	FeeRateValue string `json:"feeRateValue"`
-	FeeAmount *Currency `json:"feeAmount"`
+	FeeRateValue string    `json:"feeRateValue"`
+	FeeAmount    *Currency `json:"feeAmount"`
 }

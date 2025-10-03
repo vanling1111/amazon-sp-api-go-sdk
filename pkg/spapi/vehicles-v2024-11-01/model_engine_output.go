@@ -11,6 +11,6 @@ package vehicles_v2024_11_01
 // Engine power output of vehicle.
 type EngineOutput struct {
 	// Engine power value in specified unit.
-	Value float64 `json:"value"`
-	Unit *EngineOutputUnit `json:"unit"`
+	Value float64           `json:"value"`
+	Unit  *EngineOutputUnit `json:"unit"`
 }

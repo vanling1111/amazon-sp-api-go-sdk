@@ -12,5 +12,5 @@ package vendor_invoices_v1
 type Money struct {
 	// Three-digit currency code in ISO 4217 format.
 	CurrencyCode string `json:"currencyCode,omitempty"`
-	Amount string `json:"amount,omitempty"`
+	Amount       string `json:"amount,omitempty"`
 }

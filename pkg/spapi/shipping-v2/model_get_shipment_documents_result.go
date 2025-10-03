@@ -11,7 +11,7 @@ package shipping_v2
 
 // The payload for the getShipmentDocuments operation.
 type GetShipmentDocumentsResult struct {
-	ShipmentId string `json:"shipmentId"`
+	ShipmentId            string                 `json:"shipmentId"`
 	PackageDocumentDetail *PackageDocumentDetail `json:"packageDocumentDetail"`
-	Benefits *Benefits `json:"benefits,omitempty"`
+	Benefits              *Benefits              `json:"benefits,omitempty"`
 }

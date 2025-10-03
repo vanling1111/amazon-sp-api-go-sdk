@@ -11,7 +11,7 @@ package shipping_v2
 
 // UnmanifestedCarrierInformation like carrierId CarrierName and Location
 type UnmanifestedCarrierInformation struct {
-	CarrierId string `json:"carrierId,omitempty"`
-	CarrierName string `json:"carrierName,omitempty"`
+	CarrierId                        string                          `json:"carrierId,omitempty"`
+	CarrierName                      string                          `json:"carrierName,omitempty"`
 	UnmanifestedShipmentLocationList *[]UnmanifestedShipmentLocation `json:"unmanifestedShipmentLocationList,omitempty"`
 }

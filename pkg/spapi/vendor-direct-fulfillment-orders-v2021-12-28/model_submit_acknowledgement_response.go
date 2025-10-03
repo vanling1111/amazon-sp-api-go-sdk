@@ -11,5 +11,5 @@ package vendor_direct_fulfillment_orders_v2021_12_28
 // The response schema for the submitAcknowledgement operation.
 type SubmitAcknowledgementResponse struct {
 	Payload *TransactionId `json:"payload,omitempty"`
-	Errors *ErrorList `json:"errors,omitempty"`
+	Errors  *ErrorList     `json:"errors,omitempty"`
 }

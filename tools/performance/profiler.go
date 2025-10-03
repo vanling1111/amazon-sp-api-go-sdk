@@ -59,4 +59,3 @@ func (p *Profiler) Report() {
 		fmt.Printf("  Memory: %d bytes\n", memDiff)
 	}
 }
-

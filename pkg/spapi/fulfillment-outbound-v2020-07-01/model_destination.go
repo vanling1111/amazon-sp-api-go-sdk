@@ -11,5 +11,5 @@ package fulfillment_outbound_v2020_07_01
 // The destination for the delivery offer.
 type Destination struct {
 	DeliveryAddress *VariablePrecisionAddress `json:"deliveryAddress,omitempty"`
-	IpAddress string `json:"ipAddress,omitempty"`
+	IpAddress       string                    `json:"ipAddress,omitempty"`
 }

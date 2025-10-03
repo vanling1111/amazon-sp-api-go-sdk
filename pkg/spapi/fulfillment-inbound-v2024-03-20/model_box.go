@@ -11,10 +11,10 @@ package fulfillment_inbound_v2024_03_20
 // Contains information about a box that is used in the inbound plan. The box is a container that holds multiple items.
 type Box struct {
 	// The ID provided by Amazon that identifies a given box. This ID is comprised of the external shipment ID (which is generated after transportation has been confirmed) and the index of the box.
-	BoxId string `json:"boxId,omitempty"`
+	BoxId                    string                       `json:"boxId,omitempty"`
 	ContentInformationSource *BoxContentInformationSource `json:"contentInformationSource,omitempty"`
-	DestinationRegion *Region `json:"destinationRegion,omitempty"`
-	Dimensions *Dimensions `json:"dimensions,omitempty"`
+	DestinationRegion        *Region                      `json:"destinationRegion,omitempty"`
+	Dimensions               *Dimensions                  `json:"dimensions,omitempty"`
 	// The external identifier for this container / box.
 	ExternalContainerIdentifier string `json:"externalContainerIdentifier,omitempty"`
 	// Type of the external identifier used. Can be: `AMAZON`, `SSCC`.
@@ -26,6 +26,6 @@ type Box struct {
 	// The number of containers where all other properties like weight or dimensions are identical.
 	Quantity int32 `json:"quantity,omitempty"`
 	// Template name of the box.
-	TemplateName string `json:"templateName,omitempty"`
-	Weight *Weight `json:"weight,omitempty"`
+	TemplateName string  `json:"templateName,omitempty"`
+	Weight       *Weight `json:"weight,omitempty"`
 }

@@ -31,6 +31,6 @@ type Address struct {
 	// The country code.
 	CountryCode string `json:"CountryCode,omitempty"`
 	// The phone number.
-	Phone string `json:"Phone,omitempty"`
+	Phone       string           `json:"Phone,omitempty"`
 	AddressType *AddressTypeEnum `json:"AddressType,omitempty"`
 }

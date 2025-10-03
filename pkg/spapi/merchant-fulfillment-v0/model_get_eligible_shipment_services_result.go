@@ -10,8 +10,8 @@ package merchant_fulfillment_v0
 
 // The payload for the `getEligibleShipmentServices` operation.
 type GetEligibleShipmentServicesResult struct {
-	ShippingServiceList *[]ShippingService `json:"ShippingServiceList"`
-	RejectedShippingServiceList *[]RejectedShippingService `json:"RejectedShippingServiceList,omitempty"`
-	TemporarilyUnavailableCarrierList *[]TemporarilyUnavailableCarrier `json:"TemporarilyUnavailableCarrierList,omitempty"`
+	ShippingServiceList                      *[]ShippingService                      `json:"ShippingServiceList"`
+	RejectedShippingServiceList              *[]RejectedShippingService              `json:"RejectedShippingServiceList,omitempty"`
+	TemporarilyUnavailableCarrierList        *[]TemporarilyUnavailableCarrier        `json:"TemporarilyUnavailableCarrierList,omitempty"`
 	TermsAndConditionsNotAcceptedCarrierList *[]TermsAndConditionsNotAcceptedCarrier `json:"TermsAndConditionsNotAcceptedCarrierList,omitempty"`
 }

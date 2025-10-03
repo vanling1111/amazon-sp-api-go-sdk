@@ -10,7 +10,7 @@ package services_v1
 
 // Response schema for the `addAppointmentForServiceJobByServiceJobId` and `rescheduleAppointmentForServiceJobByServiceJobId` operations.
 type SetAppointmentResponse struct {
-	AppointmentId string `json:"appointmentId,omitempty"`
-	Warnings *[]Warning `json:"warnings,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	AppointmentId string        `json:"appointmentId,omitempty"`
+	Warnings      *[]Warning    `json:"warnings,omitempty"`
+	Errors        *[]ModelError `json:"errors,omitempty"`
 }

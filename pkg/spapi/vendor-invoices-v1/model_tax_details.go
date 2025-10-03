@@ -11,8 +11,8 @@ package vendor_invoices_v1
 // Details of tax amount applied.
 type TaxDetails struct {
 	// Type of the tax applied.
-	TaxType string `json:"taxType"`
-	TaxRate string `json:"taxRate,omitempty"`
-	TaxAmount *Money `json:"taxAmount"`
+	TaxType       string `json:"taxType"`
+	TaxRate       string `json:"taxRate,omitempty"`
+	TaxAmount     *Money `json:"taxAmount"`
 	TaxableAmount *Money `json:"taxableAmount,omitempty"`
 }

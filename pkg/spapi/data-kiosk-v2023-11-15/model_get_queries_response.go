@@ -10,6 +10,6 @@ package data_kiosk_v2023_11_15
 
 // The response for the `getQueries` operation.
 type GetQueriesResponse struct {
-	Queries *[]Query `json:"queries"`
+	Queries    *[]Query                      `json:"queries"`
 	Pagination *GetQueriesResponsePagination `json:"pagination,omitempty"`
 }

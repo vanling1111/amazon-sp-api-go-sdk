@@ -11,6 +11,6 @@ package supply_sources_v2020_07_01
 // The in-store pickup configuration of a supply source.
 type InStorePickupConfiguration struct {
 	// When true, in-store pickup is supported by the supply source (default: `isSupported` value in `PickupChannel`).
-	IsSupported bool `json:"isSupported,omitempty"`
+	IsSupported          bool                  `json:"isSupported,omitempty"`
 	ParkingConfiguration *ParkingConfiguration `json:"parkingConfiguration,omitempty"`
 }

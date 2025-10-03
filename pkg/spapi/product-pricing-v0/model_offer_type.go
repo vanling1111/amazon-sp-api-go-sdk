@@ -10,10 +10,10 @@ package product_pricing_v0
 
 // Schema for an individual offer.
 type OfferType struct {
-	OfferType *OfferCustomerType `json:"offerType,omitempty"`
-	BuyingPrice *PriceType `json:"BuyingPrice"`
-	RegularPrice *MoneyType `json:"RegularPrice"`
-	BusinessPrice *MoneyType `json:"businessPrice,omitempty"`
+	OfferType     *OfferCustomerType `json:"offerType,omitempty"`
+	BuyingPrice   *PriceType         `json:"BuyingPrice"`
+	RegularPrice  *MoneyType         `json:"RegularPrice"`
+	BusinessPrice *MoneyType         `json:"businessPrice,omitempty"`
 	// List of `QuantityDiscountPrice` that contains item's pricing information when buy in bulk.
 	QuantityDiscountPrices []QuantityDiscountPriceType `json:"quantityDiscountPrices,omitempty"`
 	// The fulfillment channel for the offer listing. Possible values:  * Amazon - Fulfilled by Amazon. * Merchant - Fulfilled by the seller.

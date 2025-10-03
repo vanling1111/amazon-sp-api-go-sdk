@@ -12,10 +12,10 @@ package fulfillment_outbound_v2020_07_01
 type FulfillmentPreviewItem struct {
 	// The seller SKU of the item.
 	SellerSku string `json:"sellerSku"`
-	Quantity int32 `json:"quantity"`
+	Quantity  int32  `json:"quantity"`
 	// A fulfillment order item identifier that the seller created with a call to the `createFulfillmentOrder` operation.
-	SellerFulfillmentOrderItemId string `json:"sellerFulfillmentOrderItemId"`
-	EstimatedShippingWeight *Weight `json:"estimatedShippingWeight,omitempty"`
+	SellerFulfillmentOrderItemId string  `json:"sellerFulfillmentOrderItemId"`
+	EstimatedShippingWeight      *Weight `json:"estimatedShippingWeight,omitempty"`
 	// The method used to calculate the estimated shipping weight.
 	ShippingWeightCalculationMethod string `json:"shippingWeightCalculationMethod,omitempty"`
 }

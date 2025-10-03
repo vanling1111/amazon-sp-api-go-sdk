@@ -15,6 +15,6 @@ type ComplianceDetail struct {
 	// The Fulfillment Network SKU, which identifies a real fulfillable item with catalog data and condition.
 	Fnsku string `json:"fnsku,omitempty"`
 	// The merchant SKU, a merchant-supplied identifier for a specific SKU.
-	Msku string `json:"msku,omitempty"`
+	Msku       string      `json:"msku,omitempty"`
 	TaxDetails *TaxDetails `json:"taxDetails,omitempty"`
 }

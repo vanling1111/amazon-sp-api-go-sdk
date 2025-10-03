@@ -12,5 +12,5 @@ package fulfillment_inbound_v2024_03_20
 type ListShipmentContentUpdatePreviewsResponse struct {
 	// A list of content update previews in a shipment.
 	ContentUpdatePreviews []ContentUpdatePreview `json:"contentUpdatePreviews"`
-	Pagination *Pagination `json:"pagination,omitempty"`
+	Pagination            *Pagination            `json:"pagination,omitempty"`
 }

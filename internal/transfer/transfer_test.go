@@ -42,10 +42,10 @@ func TestUpload(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		assert.Equal(t, "PUT", r.Method)
 		assert.Equal(t, "text/plain", r.Header.Get("Content-Type"))
-		
+
 		body, _ := io.ReadAll(r.Body)
 		assert.Equal(t, "test data", string(body))
-		
+
 		w.WriteHeader(http.StatusOK)
 	}))
 	defer server.Close()
@@ -69,7 +69,7 @@ func TestNewDownloader(t *testing.T) {
 // TestDownload tests basic download
 func TestDownload(t *testing.T) {
 	testData := "test download data"
-	
+
 	// 创建测试服务器
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		assert.Equal(t, "GET", r.Method)
@@ -84,7 +84,7 @@ func TestDownload(t *testing.T) {
 
 	var buf bytes.Buffer
 	size, err := downloader.Download(context.Background(), server.URL, &buf)
-	
+
 	require.NoError(t, err)
 	assert.Equal(t, int64(len(testData)), size)
 	assert.Equal(t, testData, buf.String())
@@ -93,7 +93,7 @@ func TestDownload(t *testing.T) {
 // TestDownloadWithProgress tests download with progress callback
 func TestDownloadWithProgress(t *testing.T) {
 	testData := "test progress download"
-	
+
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Length", fmt.Sprintf("%d", len(testData)))
 		w.WriteHeader(http.StatusOK)
@@ -107,7 +107,7 @@ func TestDownloadWithProgress(t *testing.T) {
 
 	progressCalls := 0
 	var buf bytes.Buffer
-	
+
 	size, err := downloader.DownloadWithProgress(context.Background(), server.URL, &buf,
 		func(downloaded, total int64, percent float64) {
 			progressCalls++
@@ -115,9 +115,8 @@ func TestDownloadWithProgress(t *testing.T) {
 			assert.LessOrEqual(t, percent, 100.0)
 		},
 	)
-	
+
 	require.NoError(t, err)
 	assert.Equal(t, int64(len(testData)), size)
 	assert.Greater(t, progressCalls, 0)
 }
-

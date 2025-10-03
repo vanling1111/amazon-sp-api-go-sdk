@@ -1,4 +1,4 @@
-﻿// Copyright 2025 Amazon SP-API Go SDK Authors.
+// Copyright 2025 Amazon SP-API Go SDK Authors.
 // Licensed under the Apache License, Version 2.0.
 
 package fulfillment_inbound_v0
@@ -136,4 +136,3 @@ func (c *Client) IterateShipmentItems(ctx context.Context, query map[string]stri
 		}
 	}
 }
-

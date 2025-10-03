@@ -11,12 +11,12 @@ package easy_ship_model_v2022_03_23
 // This object contains all the details of the scheduled Easy Ship package.
 type ModelPackage struct {
 	ScheduledPackageId *ScheduledPackageId `json:"scheduledPackageId"`
-	PackageDimensions *Dimensions `json:"packageDimensions"`
-	PackageWeight *Weight `json:"packageWeight"`
-	PackageItems *[]Item `json:"packageItems,omitempty"`
-	PackageTimeSlot *TimeSlot `json:"packageTimeSlot"`
-	PackageIdentifier string `json:"packageIdentifier,omitempty"`
-	Invoice *InvoiceData `json:"invoice,omitempty"`
-	PackageStatus *PackageStatus `json:"packageStatus,omitempty"`
-	TrackingDetails *TrackingDetails `json:"trackingDetails,omitempty"`
+	PackageDimensions  *Dimensions         `json:"packageDimensions"`
+	PackageWeight      *Weight             `json:"packageWeight"`
+	PackageItems       *[]Item             `json:"packageItems,omitempty"`
+	PackageTimeSlot    *TimeSlot           `json:"packageTimeSlot"`
+	PackageIdentifier  string              `json:"packageIdentifier,omitempty"`
+	Invoice            *InvoiceData        `json:"invoice,omitempty"`
+	PackageStatus      *PackageStatus      `json:"packageStatus,omitempty"`
+	TrackingDetails    *TrackingDetails    `json:"trackingDetails,omitempty"`
 }

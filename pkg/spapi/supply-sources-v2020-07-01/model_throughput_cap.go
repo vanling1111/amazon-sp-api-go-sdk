@@ -10,6 +10,6 @@ package supply_sources_v2020_07_01
 
 // The throughput capacity
 type ThroughputCap struct {
-	Value int32 `json:"value,omitempty"`
+	Value    int32     `json:"value,omitempty"`
 	TimeUnit *TimeUnit `json:"timeUnit,omitempty"`
 }

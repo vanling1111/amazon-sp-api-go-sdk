@@ -91,7 +91,7 @@ func TestBreaker_Recovery(t *testing.T) {
 
 	// 下一个请求应该被允许（Half-Open）
 	err := breaker.Execute(func() error {
-		return nil  // 成功
+		return nil // 成功
 	})
 	assert.NoError(t, err)
 
@@ -197,7 +197,7 @@ func TestBreaker_Concurrent(t *testing.T) {
 	for range 20 {
 		go func() {
 			defer func() { done <- true }()
-			
+
 			breaker.Execute(func() error {
 				time.Sleep(time.Millisecond)
 				return nil
@@ -228,4 +228,3 @@ func BenchmarkBreaker(b *testing.B) {
 		})
 	}
 }
-

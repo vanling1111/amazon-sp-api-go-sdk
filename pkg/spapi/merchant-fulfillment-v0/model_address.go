@@ -10,15 +10,15 @@ package merchant_fulfillment_v0
 
 // The postal address information.
 type Address struct {
-	Name string `json:"Name"`
-	AddressLine1 string `json:"AddressLine1"`
-	AddressLine2 string `json:"AddressLine2,omitempty"`
-	AddressLine3 string `json:"AddressLine3,omitempty"`
-	DistrictOrCounty string `json:"DistrictOrCounty,omitempty"`
-	Email string `json:"Email"`
-	City string `json:"City"`
+	Name                string `json:"Name"`
+	AddressLine1        string `json:"AddressLine1"`
+	AddressLine2        string `json:"AddressLine2,omitempty"`
+	AddressLine3        string `json:"AddressLine3,omitempty"`
+	DistrictOrCounty    string `json:"DistrictOrCounty,omitempty"`
+	Email               string `json:"Email"`
+	City                string `json:"City"`
 	StateOrProvinceCode string `json:"StateOrProvinceCode,omitempty"`
-	PostalCode string `json:"PostalCode"`
-	CountryCode string `json:"CountryCode"`
-	Phone string `json:"Phone"`
+	PostalCode          string `json:"PostalCode"`
+	CountryCode         string `json:"CountryCode"`
+	Phone               string `json:"Phone"`
 }

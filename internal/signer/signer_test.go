@@ -23,7 +23,7 @@ import (
 
 // mockSigner 是用于测试的模拟签名器。
 type mockSigner struct {
-	signFunc func(ctx context.Context, req *http.Request) error
+	signFunc  func(ctx context.Context, req *http.Request) error
 	callCount int
 }
 
@@ -136,4 +136,3 @@ func TestChainSigner_EmptyChain(t *testing.T) {
 		t.Fatalf("Sign() with empty chain should not error, got %v", err)
 	}
 }
-

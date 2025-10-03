@@ -11,10 +11,10 @@ package fulfillment_outbound_v2020_07_01
 // The request body schema for the `getFulfillmentPreview` operation.
 type GetFulfillmentPreviewRequest struct {
 	// The marketplace the fulfillment order is placed against.
-	MarketplaceId string `json:"marketplaceId,omitempty"`
-	Address *Address `json:"address"`
-	Items *[]GetFulfillmentPreviewItem `json:"items"`
-	ShippingSpeedCategories *[]ShippingSpeedCategory `json:"shippingSpeedCategories,omitempty"`
+	MarketplaceId           string                       `json:"marketplaceId,omitempty"`
+	Address                 *Address                     `json:"address"`
+	Items                   *[]GetFulfillmentPreviewItem `json:"items"`
+	ShippingSpeedCategories *[]ShippingSpeedCategory     `json:"shippingSpeedCategories,omitempty"`
 	// When true, returns all fulfillment order previews both for COD and not for COD. Otherwise, returns only fulfillment order previews that are not for COD.
 	IncludeCODFulfillmentPreview bool `json:"includeCODFulfillmentPreview,omitempty"`
 	// When true, returns the `ScheduledDeliveryInfo` response object, which contains the available delivery windows for a Scheduled Delivery. The `ScheduledDeliveryInfo` response object can only be returned for fulfillment order previews with `ShippingSpeedCategories` equal to `ScheduledDelivery`.

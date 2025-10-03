@@ -10,6 +10,6 @@ package vendor_orders_v1
 
 // The response schema for the getPurchaseOrder operation.
 type GetPurchaseOrderResponse struct {
-	Payload *Order `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Payload *Order        `json:"payload,omitempty"`
+	Errors  *[]ModelError `json:"errors,omitempty"`
 }

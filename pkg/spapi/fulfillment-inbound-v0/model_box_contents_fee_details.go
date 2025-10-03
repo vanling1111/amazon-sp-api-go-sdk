@@ -10,7 +10,7 @@ package fulfillment_inbound_v0
 
 // The manual processing fee per unit and total fee for a shipment.
 type BoxContentsFeeDetails struct {
-	TotalUnits int32 `json:"TotalUnits,omitempty"`
+	TotalUnits int32   `json:"TotalUnits,omitempty"`
 	FeePerUnit *Amount `json:"FeePerUnit,omitempty"`
-	TotalFee *Amount `json:"TotalFee,omitempty"`
+	TotalFee   *Amount `json:"TotalFee,omitempty"`
 }

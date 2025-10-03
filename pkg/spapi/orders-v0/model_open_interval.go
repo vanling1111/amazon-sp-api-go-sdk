@@ -11,5 +11,5 @@ package orders_v0
 // The time interval for which the business is open.
 type OpenInterval struct {
 	StartTime *OpenTimeInterval `json:"StartTime,omitempty"`
-	EndTime *OpenTimeInterval `json:"EndTime,omitempty"`
+	EndTime   *OpenTimeInterval `json:"EndTime,omitempty"`
 }

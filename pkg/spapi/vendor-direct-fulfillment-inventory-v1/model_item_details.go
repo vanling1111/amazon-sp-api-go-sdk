@@ -13,8 +13,8 @@ type ItemDetails struct {
 	// The buyer selected product identification of the item. Either buyerProductIdentifier or vendorProductIdentifier should be submitted.
 	BuyerProductIdentifier string `json:"buyerProductIdentifier,omitempty"`
 	// The vendor selected product identification of the item. Either buyerProductIdentifier or vendorProductIdentifier should be submitted.
-	VendorProductIdentifier string `json:"vendorProductIdentifier,omitempty"`
-	AvailableQuantity *ItemQuantity `json:"availableQuantity"`
+	VendorProductIdentifier string        `json:"vendorProductIdentifier,omitempty"`
+	AvailableQuantity       *ItemQuantity `json:"availableQuantity"`
 	// When true, the item is permanently unavailable.
 	IsObsolete bool `json:"isObsolete,omitempty"`
 }

@@ -10,11 +10,11 @@ package product_pricing_v0
 
 // List of request parameters can be accepted by `ItemOffersRequests` operation
 type ItemOffersRequest struct {
-	MarketplaceId string `json:"MarketplaceId"`
+	MarketplaceId string         `json:"MarketplaceId"`
 	ItemCondition *ItemCondition `json:"ItemCondition"`
-	CustomerType *CustomerType `json:"CustomerType,omitempty"`
+	CustomerType  *CustomerType  `json:"CustomerType,omitempty"`
 	// The resource path of the operation you are calling in batch without any query parameters.  If you are calling `getItemOffersBatch`, supply the path of `getItemOffers`.  **Example:** `/products/pricing/v0/items/B000P6Q7MY/offers`  If you are calling `getListingOffersBatch`, supply the path of `getListingOffers`.  **Example:** `/products/pricing/v0/listings/B000P6Q7MY/offers`
-	Uri string `json:"uri"`
-	Method *HttpMethod `json:"method"`
+	Uri     string             `json:"uri"`
+	Method  *HttpMethod        `json:"method"`
 	Headers *map[string]string `json:"headers,omitempty"`
 }

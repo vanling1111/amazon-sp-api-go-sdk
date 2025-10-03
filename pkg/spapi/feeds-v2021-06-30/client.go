@@ -7,7 +7,7 @@ import (
 	"context"
 	"fmt"
 	"strings"
-	
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 )
 
@@ -21,65 +21,77 @@ func NewClient(baseClient *spapi.Client) *Client {
 	return &Client{baseClient: baseClient}
 }
 
-// CreateFeed 
+// CreateFeed
 // Method: POST | Path: /feeds/2021-06-30/feeds
 func (c *Client) CreateFeed(ctx context.Context, body interface{}) (interface{}, error) {
 	path := "/feeds/2021-06-30/feeds"
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("CreateFeed: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("CreateFeed: %w", err)
+	}
 	return result, nil
 }
 
-// CreateFeedDocument 
+// CreateFeedDocument
 // Method: POST | Path: /feeds/2021-06-30/documents
 func (c *Client) CreateFeedDocument(ctx context.Context, body interface{}) (interface{}, error) {
 	path := "/feeds/2021-06-30/documents"
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("CreateFeedDocument: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("CreateFeedDocument: %w", err)
+	}
 	return result, nil
 }
 
-// GetFeeds 
+// GetFeeds
 // Method: GET | Path: /feeds/2021-06-30/feeds
 func (c *Client) GetFeeds(ctx context.Context, query map[string]string) (interface{}, error) {
 	path := "/feeds/2021-06-30/feeds"
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetFeeds: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetFeeds: %w", err)
+	}
 	return result, nil
 }
 
-// CancelFeed 
+// CancelFeed
 // Method: DELETE | Path: /feeds/2021-06-30/feeds/{feedId}
 func (c *Client) CancelFeed(ctx context.Context, feedId string) (interface{}, error) {
 	path := "/feeds/2021-06-30/feeds/{feedId}"
 	path = strings.Replace(path, "{feedId}", feedId, 1)
 	var result interface{}
 	err := c.baseClient.Delete(ctx, path, &result)
-	if err != nil { return nil, fmt.Errorf("CancelFeed: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("CancelFeed: %w", err)
+	}
 	return result, nil
 }
 
-// GetFeedDocument 
+// GetFeedDocument
 // Method: GET | Path: /feeds/2021-06-30/documents/{feedDocumentId}
 func (c *Client) GetFeedDocument(ctx context.Context, feedDocumentId string, query map[string]string) (interface{}, error) {
 	path := "/feeds/2021-06-30/documents/{feedDocumentId}"
 	path = strings.Replace(path, "{feedDocumentId}", feedDocumentId, 1)
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetFeedDocument: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetFeedDocument: %w", err)
+	}
 	return result, nil
 }
 
-// GetFeed 
+// GetFeed
 // Method: GET | Path: /feeds/2021-06-30/feeds/{feedId}
 func (c *Client) GetFeed(ctx context.Context, feedId string, query map[string]string) (interface{}, error) {
 	path := "/feeds/2021-06-30/feeds/{feedId}"
 	path = strings.Replace(path, "{feedId}", feedId, 1)
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetFeed: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetFeed: %w", err)
+	}
 	return result, nil
 }

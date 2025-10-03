@@ -11,5 +11,5 @@ package merchant_fulfillment_v0
 // Indicates whether the carrier will pick up the package, and what fee is charged, if any.
 type AvailableCarrierWillPickUpOption struct {
 	CarrierWillPickUpOption *CarrierWillPickUpOption `json:"CarrierWillPickUpOption"`
-	Charge *CurrencyAmount `json:"Charge"`
+	Charge                  *CurrencyAmount          `json:"Charge"`
 }

@@ -6,7 +6,7 @@ package finances_v2024_06_19
 import (
 	"context"
 	"fmt"
-	
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 )
 
@@ -20,12 +20,14 @@ func NewClient(baseClient *spapi.Client) *Client {
 	return &Client{baseClient: baseClient}
 }
 
-// ListTransactions 
+// ListTransactions
 // Method: GET | Path: /finances/2024-06-19/transactions
 func (c *Client) ListTransactions(ctx context.Context, query map[string]string) (interface{}, error) {
 	path := "/finances/2024-06-19/transactions"
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("ListTransactions: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("ListTransactions: %w", err)
+	}
 	return result, nil
 }

@@ -11,5 +11,5 @@ package product_pricing_v2022_05_01
 // The item price at or below which the target offer may be featured.
 type FeaturedOfferExpectedPrice struct {
 	ListingPrice *MoneyType `json:"listingPrice"`
-	Points *Points `json:"points,omitempty"`
+	Points       *Points    `json:"points,omitempty"`
 }

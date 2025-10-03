@@ -11,10 +11,10 @@ package replenishment_v2022_11_07
 // Use these parameters to filter results. Any result must match all provided parameters. For any parameter that is an array, the result must match at least one element in the provided array.
 type ListOfferMetricsRequestFilters struct {
 	AggregationFrequency *AggregationFrequency `json:"aggregationFrequency,omitempty"`
-	TimeInterval *TimeInterval `json:"timeInterval"`
-	TimePeriodType *TimePeriodType `json:"timePeriodType"`
-	MarketplaceId string `json:"marketplaceId"`
-	ProgramTypes *[]ProgramType `json:"programTypes"`
+	TimeInterval         *TimeInterval         `json:"timeInterval"`
+	TimePeriodType       *TimePeriodType       `json:"timePeriodType"`
+	MarketplaceId        string                `json:"marketplaceId"`
+	ProgramTypes         *[]ProgramType        `json:"programTypes"`
 	// A list of Amazon Standard Identification Numbers (ASINs).
 	Asins []string `json:"asins,omitempty"`
 }

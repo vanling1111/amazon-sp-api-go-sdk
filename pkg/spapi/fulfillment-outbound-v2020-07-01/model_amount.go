@@ -12,5 +12,5 @@ package fulfillment_outbound_v2020_07_01
 type Amount struct {
 	// The unit of measure for the amount.
 	UnitOfMeasure string `json:"unitOfMeasure"`
-	Value string `json:"value"`
+	Value         string `json:"value"`
 }

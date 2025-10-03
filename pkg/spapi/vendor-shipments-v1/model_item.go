@@ -15,7 +15,7 @@ type Item struct {
 	// Buyer Standard Identification Number (ASIN) of an item.
 	AmazonProductIdentifier string `json:"amazonProductIdentifier,omitempty"`
 	// The vendor selected product identification of the item. Should be the same as was sent in the purchase order.
-	VendorProductIdentifier string `json:"vendorProductIdentifier,omitempty"`
-	ShippedQuantity *ItemQuantity `json:"shippedQuantity"`
-	ItemDetails *ItemDetails `json:"itemDetails,omitempty"`
+	VendorProductIdentifier string        `json:"vendorProductIdentifier,omitempty"`
+	ShippedQuantity         *ItemQuantity `json:"shippedQuantity"`
+	ItemDetails             *ItemDetails  `json:"itemDetails,omitempty"`
 }

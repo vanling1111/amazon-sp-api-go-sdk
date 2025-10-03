@@ -2,10 +2,10 @@
 package data_kiosk_v2023_11_15_test
 
 import (
-	"testing"
 	"github.com/vanling1111/amazon-sp-api-go-sdk/internal/models"
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 	api "github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi/data-kiosk-v2023-11-15"
+	"testing"
 )
 
 func TestNewClient(t *testing.T) {
@@ -13,11 +13,15 @@ func TestNewClient(t *testing.T) {
 		spapi.WithRegion(models.RegionNA),
 		spapi.WithCredentials("test", "test", "test"),
 	)
-	if err != nil { t.Fatalf("create base client: %v", err) }
+	if err != nil {
+		t.Fatalf("create base client: %v", err)
+	}
 	defer baseClient.Close()
-	
+
 	client := api.NewClient(baseClient)
-	if client == nil { t.Error("NewClient returned nil") }
+	if client == nil {
+		t.Error("NewClient returned nil")
+	}
 }
 
 func TestMethodCount(t *testing.T) {

@@ -10,7 +10,7 @@ package product_pricing_v2022_05_01
 
 // The parameters for an individual request.
 type FeaturedOfferExpectedPriceRequestParams struct {
-	MarketplaceId string `json:"marketplaceId"`
-	Sku string `json:"sku"`
-	Segment *Segment `json:"segment,omitempty"`
+	MarketplaceId string   `json:"marketplaceId"`
+	Sku           string   `json:"sku"`
+	Segment       *Segment `json:"segment,omitempty"`
 }

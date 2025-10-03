@@ -17,7 +17,7 @@ type ItemSummaryByMarketplace struct {
 	// When `true`, the Amazon catalog item is autographed.
 	Autographed bool `json:"autographed,omitempty"`
 	// Name of the brand that is associated with the Amazon catalog item.
-	Brand string `json:"brand,omitempty"`
+	Brand                string                    `json:"brand,omitempty"`
 	BrowseClassification *ItemBrowseClassification `json:"browseClassification,omitempty"`
 	// The color that is associated with the Amazon catalog item.
 	Color string `json:"color,omitempty"`

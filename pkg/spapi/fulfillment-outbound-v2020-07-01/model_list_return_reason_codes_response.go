@@ -11,5 +11,5 @@ package fulfillment_outbound_v2020_07_01
 // The response schema for the `listReturnReasonCodes` operation.
 type ListReturnReasonCodesResponse struct {
 	Payload *ListReturnReasonCodesResult `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError                `json:"errors,omitempty"`
 }

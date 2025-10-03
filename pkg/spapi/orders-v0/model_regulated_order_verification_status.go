@@ -15,7 +15,7 @@ type RegulatedOrderVerificationStatus struct {
 	RequiresMerchantAction bool `json:"RequiresMerchantAction"`
 	// A list of valid rejection reasons that may be used to reject the order's regulated information.
 	ValidRejectionReasons []RejectionReason `json:"ValidRejectionReasons"`
-	RejectionReason *RejectionReason `json:"RejectionReason,omitempty"`
+	RejectionReason       *RejectionReason  `json:"RejectionReason,omitempty"`
 	// The date the order was reviewed. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
 	ReviewDate string `json:"ReviewDate,omitempty"`
 	// The identifier for the order's regulated information reviewer.

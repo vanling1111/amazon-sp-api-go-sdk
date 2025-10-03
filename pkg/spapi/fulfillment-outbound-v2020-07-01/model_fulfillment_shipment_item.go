@@ -14,10 +14,10 @@ type FulfillmentShipmentItem struct {
 	SellerSku string `json:"sellerSku"`
 	// The fulfillment order item identifier that the seller created and submitted with a call to the `createFulfillmentOrder` operation.
 	SellerFulfillmentOrderItemId string `json:"sellerFulfillmentOrderItemId"`
-	Quantity int32 `json:"quantity"`
+	Quantity                     int32  `json:"quantity"`
 	// An identifier for the package that contains the item quantity.
 	PackageNumber int32 `json:"packageNumber,omitempty"`
 	// The serial number of the shipped item.
-	SerialNumber string `json:"serialNumber,omitempty"`
+	SerialNumber         string    `json:"serialNumber,omitempty"`
 	ManufacturerLotCodes *[]string `json:"manufacturerLotCodes,omitempty"`
 }

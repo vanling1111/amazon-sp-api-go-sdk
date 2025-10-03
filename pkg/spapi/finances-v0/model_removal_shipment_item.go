@@ -17,9 +17,9 @@ type RemovalShipmentItem struct {
 	// The Amazon fulfillment network SKU for the item.
 	FulfillmentNetworkSKU string `json:"FulfillmentNetworkSKU,omitempty"`
 	// The quantity of the item.
-	Quantity int32 `json:"Quantity,omitempty"`
-	Revenue *Currency `json:"Revenue,omitempty"`
-	FeeAmount *Currency `json:"FeeAmount,omitempty"`
-	TaxAmount *Currency `json:"TaxAmount,omitempty"`
+	Quantity    int32     `json:"Quantity,omitempty"`
+	Revenue     *Currency `json:"Revenue,omitempty"`
+	FeeAmount   *Currency `json:"FeeAmount,omitempty"`
+	TaxAmount   *Currency `json:"TaxAmount,omitempty"`
 	TaxWithheld *Currency `json:"TaxWithheld,omitempty"`
 }

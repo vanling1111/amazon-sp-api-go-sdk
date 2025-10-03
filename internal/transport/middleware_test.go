@@ -37,7 +37,7 @@ func TestUserAgentMiddleware(t *testing.T) {
 	config := DefaultConfig()
 	config.UserAgent = ""
 	client := NewClient(server.URL, config)
-	
+
 	userAgent := "test-agent/1.0.0"
 	client.Use(UserAgentMiddleware(userAgent))
 
@@ -187,10 +187,10 @@ func TestMultipleMiddlewares(t *testing.T) {
 
 func TestGenerateRequestID(t *testing.T) {
 	id1 := generateRequestID()
-	
+
 	// 稍微等待，确保纳秒时间戳不同
 	time.Sleep(1 * time.Millisecond)
-	
+
 	id2 := generateRequestID()
 
 	if id1 == "" {
@@ -287,4 +287,3 @@ func TestDateMiddleware_DoesNotOverride(t *testing.T) {
 		t.Errorf("x-amz-date was overridden, got %s, want %s", dateHeader, customDate)
 	}
 }
-

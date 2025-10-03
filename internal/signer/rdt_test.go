@@ -96,10 +96,10 @@ func TestRDTSigner_Sign_WithDataElements(t *testing.T) {
 	signer := NewRDTSigner(provider)
 
 	req, _ := http.NewRequest(http.MethodGet, "https://sellingpartnerapi-na.amazon.com/orders/v0/orders/123", nil)
-	
+
 	// 模拟设置数据元素（实际使用中可能通过 context 或其他方式传递）
 	ctx := context.Background()
-	
+
 	err := signer.Sign(ctx, req)
 	if err != nil {
 		t.Fatalf("Sign() error = %v", err)
@@ -242,7 +242,7 @@ func TestRDTSigner_ExtractDataElements(t *testing.T) {
 
 			signer := NewRDTSigner(provider)
 			req, _ := http.NewRequest(http.MethodGet, tt.url, nil)
-			
+
 			if tt.header != "" {
 				req.Header.Set("x-amzn-RDT-DataElements", tt.header)
 			}
@@ -251,11 +251,9 @@ func TestRDTSigner_ExtractDataElements(t *testing.T) {
 			_ = signer.Sign(ctx, req)
 
 			if len(capturedElements) != tt.expected {
-				t.Errorf("extracted %d elements, want %d. Elements: %v", 
+				t.Errorf("extracted %d elements, want %d. Elements: %v",
 					len(capturedElements), tt.expected, capturedElements)
 			}
 		})
 	}
 }
-
-

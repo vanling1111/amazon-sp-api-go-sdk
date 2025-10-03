@@ -10,9 +10,9 @@ package supply_sources_v2020_07_01
 
 // The outbound capability of a supply source.
 type OutboundCapability struct {
-	IsSupported bool `json:"isSupported,omitempty"`
+	IsSupported              bool                      `json:"isSupported,omitempty"`
 	OperationalConfiguration *OperationalConfiguration `json:"operationalConfiguration,omitempty"`
-	ReturnLocation *ReturnLocation `json:"returnLocation,omitempty"`
-	DeliveryChannel *DeliveryChannel `json:"deliveryChannel,omitempty"`
-	PickupChannel *PickupChannel `json:"pickupChannel,omitempty"`
+	ReturnLocation           *ReturnLocation           `json:"returnLocation,omitempty"`
+	DeliveryChannel          *DeliveryChannel          `json:"deliveryChannel,omitempty"`
+	PickupChannel            *PickupChannel            `json:"pickupChannel,omitempty"`
 }

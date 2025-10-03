@@ -10,6 +10,6 @@ package customer_feedback_v2024_06_01
 
 // The return metrics for a certain month.
 type BrowseNodeReturnTrendPoint struct {
-	DateRange *DateRange `json:"dateRange"`
+	DateRange         *DateRange              `json:"dateRange"`
 	BrowseNodeMetrics *BrowseNodeTrendMetrics `json:"browseNodeMetrics"`
 }

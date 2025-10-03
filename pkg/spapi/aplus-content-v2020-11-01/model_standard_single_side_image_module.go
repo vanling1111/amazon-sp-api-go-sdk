@@ -10,6 +10,6 @@ package aplus_content_v2020_11_01
 
 // A standard headline and body text with an image on the side.
 type StandardSingleSideImageModule struct {
-	ImagePositionType *PositionType `json:"imagePositionType"`
-	Block *StandardImageTextBlock `json:"block,omitempty"`
+	ImagePositionType *PositionType           `json:"imagePositionType"`
+	Block             *StandardImageTextBlock `json:"block,omitempty"`
 }

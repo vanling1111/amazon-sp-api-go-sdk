@@ -11,9 +11,9 @@ package catalog_items_v2020_12_01
 // Items in the Amazon catalog and search related metadata.
 type ItemSearchResults struct {
 	// The estimated total number of products matched by the search query (only results up to the page count limit will be returned per request regardless of the number found).  Note: The maximum number of items (ASINs) that can be returned and paged through is 1000.
-	NumberOfResults int32 `json:"numberOfResults"`
-	Pagination *Pagination `json:"pagination"`
-	Refinements *Refinements `json:"refinements"`
+	NumberOfResults int32        `json:"numberOfResults"`
+	Pagination      *Pagination  `json:"pagination"`
+	Refinements     *Refinements `json:"refinements"`
 	// A list of items from the Amazon catalog.
 	Items []Item `json:"items"`
 }

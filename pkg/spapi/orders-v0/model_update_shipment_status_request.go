@@ -10,7 +10,7 @@ package orders_v0
 
 // The request body for the `updateShipmentStatus` operation.
 type UpdateShipmentStatusRequest struct {
-	MarketplaceId string `json:"marketplaceId"`
-	ShipmentStatus *ShipmentStatus `json:"shipmentStatus"`
-	OrderItems *[]OrderItemsInner `json:"orderItems,omitempty"`
+	MarketplaceId  string             `json:"marketplaceId"`
+	ShipmentStatus *ShipmentStatus    `json:"shipmentStatus"`
+	OrderItems     *[]OrderItemsInner `json:"orderItems,omitempty"`
 }

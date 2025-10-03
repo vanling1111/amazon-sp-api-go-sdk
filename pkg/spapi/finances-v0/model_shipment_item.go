@@ -17,14 +17,14 @@ type ShipmentItem struct {
 	// An Amazon-defined order adjustment identifier defined for refunds, guarantee claims, and chargeback events.
 	OrderAdjustmentItemId string `json:"OrderAdjustmentItemId,omitempty"`
 	// The number of items shipped.
-	QuantityShipped int32 `json:"QuantityShipped,omitempty"`
-	ItemChargeList *[]ChargeComponent `json:"ItemChargeList,omitempty"`
-	ItemChargeAdjustmentList *[]ChargeComponent `json:"ItemChargeAdjustmentList,omitempty"`
-	ItemFeeList *[]FeeComponent `json:"ItemFeeList,omitempty"`
-	ItemFeeAdjustmentList *[]FeeComponent `json:"ItemFeeAdjustmentList,omitempty"`
-	ItemTaxWithheldList *[]TaxWithheldComponent `json:"ItemTaxWithheldList,omitempty"`
-	PromotionList *[]Promotion `json:"PromotionList,omitempty"`
-	PromotionAdjustmentList *[]Promotion `json:"PromotionAdjustmentList,omitempty"`
-	CostOfPointsGranted *Currency `json:"CostOfPointsGranted,omitempty"`
-	CostOfPointsReturned *Currency `json:"CostOfPointsReturned,omitempty"`
+	QuantityShipped          int32                   `json:"QuantityShipped,omitempty"`
+	ItemChargeList           *[]ChargeComponent      `json:"ItemChargeList,omitempty"`
+	ItemChargeAdjustmentList *[]ChargeComponent      `json:"ItemChargeAdjustmentList,omitempty"`
+	ItemFeeList              *[]FeeComponent         `json:"ItemFeeList,omitempty"`
+	ItemFeeAdjustmentList    *[]FeeComponent         `json:"ItemFeeAdjustmentList,omitempty"`
+	ItemTaxWithheldList      *[]TaxWithheldComponent `json:"ItemTaxWithheldList,omitempty"`
+	PromotionList            *[]Promotion            `json:"PromotionList,omitempty"`
+	PromotionAdjustmentList  *[]Promotion            `json:"PromotionAdjustmentList,omitempty"`
+	CostOfPointsGranted      *Currency               `json:"CostOfPointsGranted,omitempty"`
+	CostOfPointsReturned     *Currency               `json:"CostOfPointsReturned,omitempty"`
 }

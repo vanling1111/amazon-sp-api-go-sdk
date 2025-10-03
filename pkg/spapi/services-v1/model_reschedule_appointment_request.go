@@ -10,6 +10,6 @@ package services_v1
 
 // Input for rescheduled appointment operation.
 type RescheduleAppointmentRequest struct {
-	AppointmentTime *AppointmentTimeInput `json:"appointmentTime"`
-	RescheduleReasonCode string `json:"rescheduleReasonCode"`
+	AppointmentTime      *AppointmentTimeInput `json:"appointmentTime"`
+	RescheduleReasonCode string                `json:"rescheduleReasonCode"`
 }

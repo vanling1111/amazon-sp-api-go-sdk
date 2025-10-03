@@ -72,4 +72,3 @@ func (c *Client) IterateOrders(ctx context.Context, query map[string]string) ite
 		}
 	}
 }
-

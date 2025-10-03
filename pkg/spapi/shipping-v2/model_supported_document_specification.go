@@ -11,7 +11,7 @@ package shipping_v2
 
 // Document specification that is supported for a service offering.
 type SupportedDocumentSpecification struct {
-	Format *DocumentFormat `json:"format"`
-	Size *DocumentSize `json:"size"`
-	PrintOptions *[]PrintOption `json:"printOptions"`
+	Format       *DocumentFormat `json:"format"`
+	Size         *DocumentSize   `json:"size"`
+	PrintOptions *[]PrintOption  `json:"printOptions"`
 }

@@ -10,6 +10,6 @@ package aplus_content_v2020_11_01
 
 // The A+ Content standard text box block, which contains a paragraph and a headline.
 type StandardTextBlock struct {
-	Headline *TextComponent `json:"headline,omitempty"`
-	Body *ParagraphComponent `json:"body,omitempty"`
+	Headline *TextComponent      `json:"headline,omitempty"`
+	Body     *ParagraphComponent `json:"body,omitempty"`
 }

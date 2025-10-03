@@ -7,7 +7,7 @@ import (
 	"context"
 	"fmt"
 	"strings"
-	
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 )
 
@@ -21,13 +21,15 @@ func NewClient(baseClient *spapi.Client) *Client {
 	return &Client{baseClient: baseClient}
 }
 
-// CreateUploadDestinationForResource 
+// CreateUploadDestinationForResource
 // Method: POST | Path: /uploads/2020-11-01/uploadDestinations/{resource}
 func (c *Client) CreateUploadDestinationForResource(ctx context.Context, resource string, body interface{}) (interface{}, error) {
 	path := "/uploads/2020-11-01/uploadDestinations/{resource}"
 	path = strings.Replace(path, "{resource}", resource, 1)
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("CreateUploadDestinationForResource: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("CreateUploadDestinationForResource: %w", err)
+	}
 	return result, nil
 }

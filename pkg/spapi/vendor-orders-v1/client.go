@@ -7,7 +7,7 @@ import (
 	"context"
 	"fmt"
 	"strings"
-	
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 )
 
@@ -21,43 +21,51 @@ func NewClient(baseClient *spapi.Client) *Client {
 	return &Client{baseClient: baseClient}
 }
 
-// GetPurchaseOrder 
+// GetPurchaseOrder
 // Method: GET | Path: /vendor/orders/v1/purchaseOrders/{purchaseOrderNumber}
 func (c *Client) GetPurchaseOrder(ctx context.Context, purchaseOrderNumber string, query map[string]string) (interface{}, error) {
 	path := "/vendor/orders/v1/purchaseOrders/{purchaseOrderNumber}"
 	path = strings.Replace(path, "{purchaseOrderNumber}", purchaseOrderNumber, 1)
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetPurchaseOrder: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetPurchaseOrder: %w", err)
+	}
 	return result, nil
 }
 
-// GetPurchaseOrders 
+// GetPurchaseOrders
 // Method: GET | Path: /vendor/orders/v1/purchaseOrders
 func (c *Client) GetPurchaseOrders(ctx context.Context, query map[string]string) (interface{}, error) {
 	path := "/vendor/orders/v1/purchaseOrders"
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetPurchaseOrders: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetPurchaseOrders: %w", err)
+	}
 	return result, nil
 }
 
-// GetPurchaseOrdersStatus 
+// GetPurchaseOrdersStatus
 // Method: GET | Path: /vendor/orders/v1/purchaseOrdersStatus
 func (c *Client) GetPurchaseOrdersStatus(ctx context.Context, query map[string]string) (interface{}, error) {
 	path := "/vendor/orders/v1/purchaseOrdersStatus"
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetPurchaseOrdersStatus: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetPurchaseOrdersStatus: %w", err)
+	}
 	return result, nil
 }
 
-// SubmitAcknowledgement 
+// SubmitAcknowledgement
 // Method: POST | Path: /vendor/orders/v1/acknowledgements
 func (c *Client) SubmitAcknowledgement(ctx context.Context, body interface{}) (interface{}, error) {
 	path := "/vendor/orders/v1/acknowledgements"
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("SubmitAcknowledgement: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("SubmitAcknowledgement: %w", err)
+	}
 	return result, nil
 }

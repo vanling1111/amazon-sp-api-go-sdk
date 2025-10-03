@@ -11,5 +11,5 @@ package vendor_direct_fulfillment_payments_v1
 // The response schema for the submitInvoice operation.
 type SubmitInvoiceResponse struct {
 	Payload *TransactionReference `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError         `json:"errors,omitempty"`
 }

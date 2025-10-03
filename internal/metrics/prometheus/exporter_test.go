@@ -26,7 +26,7 @@ import (
 func TestNewMetrics(t *testing.T) {
 	// 创建新的 registry 避免冲突
 	registry := prometheus.NewRegistry()
-	
+
 	metrics := &Metrics{
 		requestsTotal: prometheus.NewCounterVec(
 			prometheus.CounterOpts{
@@ -37,9 +37,9 @@ func TestNewMetrics(t *testing.T) {
 			[]string{"api", "method", "status"},
 		),
 	}
-	
+
 	registry.MustRegister(metrics.requestsTotal)
-	
+
 	assert.NotNil(t, metrics)
 	assert.NotNil(t, metrics.requestsTotal)
 }
@@ -47,7 +47,7 @@ func TestNewMetrics(t *testing.T) {
 // TestRecordRequest tests recording requests
 func TestRecordRequest(t *testing.T) {
 	registry := prometheus.NewRegistry()
-	
+
 	metrics := &Metrics{
 		requestsTotal: prometheus.NewCounterVec(
 			prometheus.CounterOpts{
@@ -64,19 +64,19 @@ func TestRecordRequest(t *testing.T) {
 			[]string{"api", "method"},
 		),
 	}
-	
+
 	registry.MustRegister(metrics.requestsTotal)
 	registry.MustRegister(metrics.requestDuration)
-	
+
 	// 记录请求
 	metrics.RecordRequest("orders", "GET", 200, 0.5)
 	metrics.RecordRequest("orders", "GET", 200, 0.3)
 	metrics.RecordRequest("orders", "GET", 429, 1.0)
-	
+
 	// 验证计数
 	count := testutil.ToFloat64(metrics.requestsTotal.WithLabelValues("orders", "GET", "OK"))
 	assert.Equal(t, 2.0, count)
-	
+
 	rateLimitCount := testutil.ToFloat64(metrics.requestsTotal.WithLabelValues("orders", "GET", "Too Many Requests"))
 	assert.Equal(t, 1.0, rateLimitCount)
 }
@@ -84,7 +84,7 @@ func TestRecordRequest(t *testing.T) {
 // TestRecordError tests recording errors
 func TestRecordError(t *testing.T) {
 	registry := prometheus.NewRegistry()
-	
+
 	metrics := &Metrics{
 		errorsTotal: prometheus.NewCounterVec(
 			prometheus.CounterOpts{
@@ -94,18 +94,18 @@ func TestRecordError(t *testing.T) {
 			[]string{"api", "error_type"},
 		),
 	}
-	
+
 	registry.MustRegister(metrics.errorsTotal)
-	
+
 	// 记录错误
 	metrics.RecordError("orders", "rate_limit")
 	metrics.RecordError("orders", "rate_limit")
 	metrics.RecordError("reports", "network")
-	
+
 	// 验证计数
 	rateLimitErrors := testutil.ToFloat64(metrics.errorsTotal.WithLabelValues("orders", "rate_limit"))
 	assert.Equal(t, 2.0, rateLimitErrors)
-	
+
 	networkErrors := testutil.ToFloat64(metrics.errorsTotal.WithLabelValues("reports", "network"))
 	assert.Equal(t, 1.0, networkErrors)
 }
@@ -113,7 +113,7 @@ func TestRecordError(t *testing.T) {
 // TestRecordRateLimitWait tests recording rate limit wait time
 func TestRecordRateLimitWait(t *testing.T) {
 	registry := prometheus.NewRegistry()
-	
+
 	metrics := &Metrics{
 		rateLimitWait: prometheus.NewHistogramVec(
 			prometheus.HistogramOpts{
@@ -123,14 +123,14 @@ func TestRecordRateLimitWait(t *testing.T) {
 			[]string{"api"},
 		),
 	}
-	
+
 	registry.MustRegister(metrics.rateLimitWait)
-	
+
 	// 记录等待时间
 	metrics.RecordRateLimitWait("orders", 0.5)
 	metrics.RecordRateLimitWait("orders", 1.0)
 	metrics.RecordRateLimitWait("orders", 0.3)
-	
+
 	// 验证有数据记录（histogram 需要用 Collector 而不是 Observer）
 	// 简单验证不会 panic
 	assert.NotNil(t, metrics.rateLimitWait)
@@ -139,7 +139,7 @@ func TestRecordRateLimitWait(t *testing.T) {
 // TestMetrics_Concurrent tests concurrent metric recording
 func TestMetrics_Concurrent(t *testing.T) {
 	registry := prometheus.NewRegistry()
-	
+
 	metrics := &Metrics{
 		requestsTotal: prometheus.NewCounterVec(
 			prometheus.CounterOpts{
@@ -156,10 +156,10 @@ func TestMetrics_Concurrent(t *testing.T) {
 			[]string{"api", "method"},
 		),
 	}
-	
+
 	registry.MustRegister(metrics.requestsTotal)
 	registry.MustRegister(metrics.requestDuration)
-	
+
 	// 并发记录
 	done := make(chan bool, 100)
 	for range 100 {
@@ -168,14 +168,13 @@ func TestMetrics_Concurrent(t *testing.T) {
 			metrics.RecordRequest("orders", "GET", 200, 0.1)
 		}()
 	}
-	
+
 	// 等待完成
 	for range 100 {
 		<-done
 	}
-	
+
 	// 验证计数正确
 	count := testutil.ToFloat64(metrics.requestsTotal.WithLabelValues("orders", "GET", "OK"))
 	assert.Equal(t, 100.0, count)
 }
-

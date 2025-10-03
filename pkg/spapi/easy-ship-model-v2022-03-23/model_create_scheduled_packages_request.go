@@ -13,5 +13,5 @@ type CreateScheduledPackagesRequest struct {
 	MarketplaceId string `json:"marketplaceId"`
 	// An array allowing users to specify orders to be scheduled.
 	OrderScheduleDetailsList []OrderScheduleDetails `json:"orderScheduleDetailsList"`
-	LabelFormat *LabelFormat `json:"labelFormat"`
+	LabelFormat              *LabelFormat           `json:"labelFormat"`
 }

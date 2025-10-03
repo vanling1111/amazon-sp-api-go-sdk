@@ -10,7 +10,7 @@ package supply_sources_v2020_07_01
 
 // A request to create a supply source.
 type CreateSupplySourceRequest struct {
-	SupplySourceCode string `json:"supplySourceCode"`
-	Alias string `json:"alias"`
-	Address *Address `json:"address"`
+	SupplySourceCode string   `json:"supplySourceCode"`
+	Alias            string   `json:"alias"`
+	Address          *Address `json:"address"`
 }

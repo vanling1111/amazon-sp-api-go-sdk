@@ -11,7 +11,7 @@ package product_type_definitions_v2020_09_01
 // A product type definition represents the attributes and data requirements for a product type in the Amazon catalog. Product type definitions are used interchangeably between the Selling Partner API for Listings Items, Selling Partner API for Catalog Items, and JSON-based listings feeds in the Selling Partner API for Feeds.
 type ProductTypeDefinition struct {
 	MetaSchema *SchemaLink `json:"metaSchema,omitempty"`
-	Schema *SchemaLink `json:"schema"`
+	Schema     *SchemaLink `json:"schema"`
 	// Name of the requirements set represented in this product type definition.
 	Requirements string `json:"requirements"`
 	// Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all of the required attributes being present (such as for partial updates).
@@ -25,6 +25,6 @@ type ProductTypeDefinition struct {
 	// The name of the Amazon product type that this product type definition applies to.
 	ProductType string `json:"productType"`
 	// Human-readable and localized description of the Amazon product type.
-	DisplayName string `json:"displayName"`
+	DisplayName        string              `json:"displayName"`
 	ProductTypeVersion *ProductTypeVersion `json:"productTypeVersion"`
 }

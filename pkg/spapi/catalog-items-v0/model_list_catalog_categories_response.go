@@ -10,5 +10,5 @@ package catalog_items_v0
 
 type ListCatalogCategoriesResponse struct {
 	Payload *[]Categories `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError `json:"errors,omitempty"`
 }

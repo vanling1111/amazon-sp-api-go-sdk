@@ -10,8 +10,8 @@ package services_v1
 
 // Input for set appointment fulfillment data operation.
 type SetAppointmentFulfillmentDataRequest struct {
-	EstimatedArrivalTime *DateTimeRange `json:"estimatedArrivalTime,omitempty"`
-	FulfillmentTime *FulfillmentTime `json:"fulfillmentTime,omitempty"`
+	EstimatedArrivalTime *DateTimeRange         `json:"estimatedArrivalTime,omitempty"`
+	FulfillmentTime      *FulfillmentTime       `json:"fulfillmentTime,omitempty"`
 	AppointmentResources *[]AppointmentResource `json:"appointmentResources,omitempty"`
 	FulfillmentDocuments *[]FulfillmentDocument `json:"fulfillmentDocuments,omitempty"`
 }

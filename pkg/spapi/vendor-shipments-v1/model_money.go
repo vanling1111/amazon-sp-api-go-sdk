@@ -12,5 +12,5 @@ package vendor_shipments_v1
 type Money struct {
 	// Three digit currency code in ISO 4217 format.
 	CurrencyCode string `json:"currencyCode"`
-	Amount string `json:"amount"`
+	Amount       string `json:"amount"`
 }

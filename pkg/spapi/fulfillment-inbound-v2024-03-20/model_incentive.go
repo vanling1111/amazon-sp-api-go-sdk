@@ -15,6 +15,6 @@ type Incentive struct {
 	// Target of the incentive. Possible values: 'Placement Services', 'Fulfillment Fee Discount'.
 	Target string `json:"target"`
 	// Type of incentive. Possible values: `FEE`, `DISCOUNT`.
-	Type_ string `json:"type"`
+	Type_ string    `json:"type"`
 	Value *Currency `json:"value"`
 }

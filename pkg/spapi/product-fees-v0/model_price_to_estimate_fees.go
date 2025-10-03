@@ -11,6 +11,6 @@ package product_fees_v0
 // Price information for an item, used to estimate fees.
 type PriceToEstimateFees struct {
 	ListingPrice *MoneyType `json:"ListingPrice"`
-	Shipping *MoneyType `json:"Shipping,omitempty"`
-	Points *Points `json:"Points,omitempty"`
+	Shipping     *MoneyType `json:"Shipping,omitempty"`
+	Points       *Points    `json:"Points,omitempty"`
 }

@@ -13,7 +13,7 @@ type ServiceDocumentUploadDestination struct {
 	// The unique identifier to be used by APIs that reference the upload destination.
 	UploadDestinationId string `json:"uploadDestinationId"`
 	// The URL to which to upload the file.
-	Url string `json:"url"`
+	Url               string             `json:"url"`
 	EncryptionDetails *EncryptionDetails `json:"encryptionDetails"`
 	// The headers to include in the upload request.
 	Headers *interface{} `json:"headers,omitempty"`

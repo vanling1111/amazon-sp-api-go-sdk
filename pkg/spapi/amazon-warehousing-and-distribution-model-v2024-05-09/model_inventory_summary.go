@@ -12,7 +12,7 @@ package amazon_warehousing_and_distribution_model_v2024_05_09
 type InventorySummary struct {
 	// The expiration details of the inventory. This object will only appear if the `details` parameter in the request is set to `SHOW`.
 	ExpirationDetails []ExpirationDetails `json:"expirationDetails,omitempty"`
-	InventoryDetails *InventoryDetails `json:"inventoryDetails,omitempty"`
+	InventoryDetails  *InventoryDetails   `json:"inventoryDetails,omitempty"`
 	// The seller or merchant SKU.
 	Sku string `json:"sku"`
 	// Total quantity that is in-transit from the seller and has not yet been received at an AWD Distribution Center

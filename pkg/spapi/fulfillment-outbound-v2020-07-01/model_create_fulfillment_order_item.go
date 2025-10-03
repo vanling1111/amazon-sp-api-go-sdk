@@ -14,14 +14,14 @@ type CreateFulfillmentOrderItem struct {
 	SellerSku string `json:"sellerSku"`
 	// A fulfillment order item identifier that the seller creates to track fulfillment order items. Used to disambiguate multiple fulfillment items that have the same `sellerSku` value. For example, the seller might assign different `sellerFulfillmentOrderItemId` values to two items in a fulfillment order that share the same `sellerSku` value but have different `giftMessage` values.
 	SellerFulfillmentOrderItemId string `json:"sellerFulfillmentOrderItemId"`
-	Quantity int32 `json:"quantity"`
+	Quantity                     int32  `json:"quantity"`
 	// A message to the gift recipient, if applicable.
 	GiftMessage string `json:"giftMessage,omitempty"`
 	// Item-specific text that displays in recipient-facing materials such as the outbound shipment packing slip.
 	DisplayableComment string `json:"displayableComment,omitempty"`
 	// Amazon's fulfillment network SKU of the item.
 	FulfillmentNetworkSku string `json:"fulfillmentNetworkSku,omitempty"`
-	PerUnitDeclaredValue *Money `json:"perUnitDeclaredValue,omitempty"`
-	PerUnitPrice *Money `json:"perUnitPrice,omitempty"`
-	PerUnitTax *Money `json:"perUnitTax,omitempty"`
+	PerUnitDeclaredValue  *Money `json:"perUnitDeclaredValue,omitempty"`
+	PerUnitPrice          *Money `json:"perUnitPrice,omitempty"`
+	PerUnitTax            *Money `json:"perUnitTax,omitempty"`
 }

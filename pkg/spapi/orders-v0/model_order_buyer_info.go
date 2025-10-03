@@ -17,7 +17,7 @@ type OrderBuyerInfo struct {
 	// The buyer name or the recipient name.
 	BuyerName string `json:"BuyerName,omitempty"`
 	// The county of the buyer.  **Note**: This attribute is only available in the Brazil marketplace.
-	BuyerCounty string `json:"BuyerCounty,omitempty"`
+	BuyerCounty  string        `json:"BuyerCounty,omitempty"`
 	BuyerTaxInfo *BuyerTaxInfo `json:"BuyerTaxInfo,omitempty"`
 	// The purchase order (PO) number entered by the buyer at checkout. Only returned for orders where the buyer entered a PO number at checkout.
 	PurchaseOrderNumber string `json:"PurchaseOrderNumber,omitempty"`

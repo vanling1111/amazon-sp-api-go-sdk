@@ -11,12 +11,12 @@ package shipping_v2
 
 // The document specifications requested. For calls to the purchaseShipment operation, the shipment purchase fails if the specified document specifications are not among those returned in the response to the getRates operation.
 type RequestedDocumentSpecification struct {
-	Format *DocumentFormat `json:"format"`
-	Size *DocumentSize `json:"size"`
-	Dpi int32 `json:"dpi,omitempty"`
-	PageLayout string `json:"pageLayout,omitempty"`
-	NeedFileJoining bool `json:"needFileJoining"`
+	Format          *DocumentFormat `json:"format"`
+	Size            *DocumentSize   `json:"size"`
+	Dpi             int32           `json:"dpi,omitempty"`
+	PageLayout      string          `json:"pageLayout,omitempty"`
+	NeedFileJoining bool            `json:"needFileJoining"`
 	// A list of the document types requested.
-	RequestedDocumentTypes []DocumentType `json:"requestedDocumentTypes"`
+	RequestedDocumentTypes      []DocumentType               `json:"requestedDocumentTypes"`
 	RequestedLabelCustomization *RequestedLabelCustomization `json:"requestedLabelCustomization,omitempty"`
 }

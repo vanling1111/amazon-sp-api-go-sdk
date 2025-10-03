@@ -20,14 +20,14 @@ type Address struct {
 	// Additional address information, if required.
 	AddressLine3 string `json:"addressLine3,omitempty"`
 	// The name of the business or institution associated with the address.
-	CompanyName string `json:"companyName,omitempty"`
+	CompanyName   string `json:"companyName,omitempty"`
 	StateOrRegion string `json:"stateOrRegion"`
-	City string `json:"city"`
-	CountryCode string `json:"countryCode"`
-	PostalCode string `json:"postalCode"`
+	City          string `json:"city"`
+	CountryCode   string `json:"countryCode"`
+	PostalCode    string `json:"postalCode"`
 	// The email address of the contact associated with the address.
 	Email string `json:"email,omitempty"`
 	// The phone number of the person, business or institution located at that address, including the country calling code.
-	PhoneNumber string `json:"phoneNumber,omitempty"`
-	Geocode *Geocode `json:"geocode,omitempty"`
+	PhoneNumber string   `json:"phoneNumber,omitempty"`
+	Geocode     *Geocode `json:"geocode,omitempty"`
 }

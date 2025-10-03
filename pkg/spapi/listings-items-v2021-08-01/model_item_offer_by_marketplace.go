@@ -13,8 +13,8 @@ type ItemOfferByMarketplace struct {
 	// The Amazon marketplace identifier.
 	MarketplaceId string `json:"marketplaceId"`
 	// Type of offer for the listings item.
-	OfferType string `json:"offerType"`
-	Price *Money `json:"price"`
-	Points *Points `json:"points,omitempty"`
-	Audience *Audience `json:"audience,omitempty"`
+	OfferType string    `json:"offerType"`
+	Price     *Money    `json:"price"`
+	Points    *Points   `json:"points,omitempty"`
+	Audience  *Audience `json:"audience,omitempty"`
 }

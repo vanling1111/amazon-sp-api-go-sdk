@@ -6,7 +6,7 @@ package fba_inbound_eligibility_v1
 import (
 	"context"
 	"fmt"
-	
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 )
 
@@ -20,12 +20,14 @@ func NewClient(baseClient *spapi.Client) *Client {
 	return &Client{baseClient: baseClient}
 }
 
-// GetItemEligibilityPreview 
+// GetItemEligibilityPreview
 // Method: GET | Path: /fba/inbound/v1/eligibility/itemPreview
 func (c *Client) GetItemEligibilityPreview(ctx context.Context, query map[string]string) (interface{}, error) {
 	path := "/fba/inbound/v1/eligibility/itemPreview"
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetItemEligibilityPreview: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetItemEligibilityPreview: %w", err)
+	}
 	return result, nil
 }

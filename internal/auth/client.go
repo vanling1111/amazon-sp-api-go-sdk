@@ -103,8 +103,9 @@ var (
 //   - *Client: LWA 客户端实例
 //
 // 示例:
-//   creds, _ := auth.NewCredentials(...)
-//   client := auth.NewClient(creds)
+//
+//	creds, _ := auth.NewCredentials(...)
+//	client := auth.NewClient(creds)
 func NewClient(credentials *Credentials) *Client {
 	return &Client{
 		credentials: credentials,
@@ -142,12 +143,13 @@ func (c *Client) SetCache(cache TokenCache) {
 //   - error: 如果获取失败，返回错误
 //
 // 示例:
-//   ctx := context.Background()
-//   token, err := client.GetAccessToken(ctx)
-//   if err != nil {
-//       log.Fatal(err)
-//   }
-//   fmt.Println("Access Token:", token)
+//
+//	ctx := context.Background()
+//	token, err := client.GetAccessToken(ctx)
+//	if err != nil {
+//	    log.Fatal(err)
+//	}
+//	fmt.Println("Access Token:", token)
 func (c *Client) GetAccessToken(ctx context.Context) (string, error) {
 	// 生成缓存键
 	cacheKey := c.getCacheKey()

@@ -10,5 +10,5 @@ package aplus_content_v2020_11_01
 
 type SearchContentDocumentsResponse struct {
 	ContentMetadataRecords *[]ContentMetadataRecord `json:"contentMetadataRecords"`
-	NextPageToken string `json:"nextPageToken,omitempty"`
+	NextPageToken          string                   `json:"nextPageToken,omitempty"`
 }

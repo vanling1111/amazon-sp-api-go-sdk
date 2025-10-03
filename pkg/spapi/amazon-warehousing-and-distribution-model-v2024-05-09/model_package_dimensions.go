@@ -13,7 +13,7 @@ type PackageDimensions struct {
 	// Height of the package.
 	Height float64 `json:"height"`
 	// Length of the package.
-	Length float64 `json:"length"`
+	Length            float64                     `json:"length"`
 	UnitOfMeasurement *DimensionUnitOfMeasurement `json:"unitOfMeasurement"`
 	// Width of the package.
 	Width float64 `json:"width"`

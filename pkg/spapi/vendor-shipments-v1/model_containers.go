@@ -17,13 +17,13 @@ type Containers struct {
 	// A list of carton identifiers.
 	ContainerIdentifiers []ContainerIdentification `json:"containerIdentifiers"`
 	// The tracking number used for identifying the shipment.
-	TrackingNumber string `json:"trackingNumber,omitempty"`
-	Dimensions *Dimensions `json:"dimensions,omitempty"`
-	Weight *Weight `json:"weight,omitempty"`
+	TrackingNumber string      `json:"trackingNumber,omitempty"`
+	Dimensions     *Dimensions `json:"dimensions,omitempty"`
+	Weight         *Weight     `json:"weight,omitempty"`
 	// Number of layers per pallet.
 	Tier int32 `json:"tier,omitempty"`
 	// Number of cartons per layer on the pallet.
-	Block int32 `json:"block,omitempty"`
+	Block                  int32                   `json:"block,omitempty"`
 	InnerContainersDetails *InnerContainersDetails `json:"innerContainersDetails,omitempty"`
 	// A list of packed items.
 	PackedItems []PackedItems `json:"packedItems,omitempty"`

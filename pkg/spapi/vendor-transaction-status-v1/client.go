@@ -7,7 +7,7 @@ import (
 	"context"
 	"fmt"
 	"strings"
-	
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 )
 
@@ -21,13 +21,15 @@ func NewClient(baseClient *spapi.Client) *Client {
 	return &Client{baseClient: baseClient}
 }
 
-// GetTransaction 
+// GetTransaction
 // Method: GET | Path: /vendor/transactions/v1/transactions/{transactionId}
 func (c *Client) GetTransaction(ctx context.Context, transactionId string, query map[string]string) (interface{}, error) {
 	path := "/vendor/transactions/v1/transactions/{transactionId}"
 	path = strings.Replace(path, "{transactionId}", transactionId, 1)
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetTransaction: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetTransaction: %w", err)
+	}
 	return result, nil
 }

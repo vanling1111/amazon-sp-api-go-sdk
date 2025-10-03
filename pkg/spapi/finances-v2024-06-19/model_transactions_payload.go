@@ -11,6 +11,6 @@ package finances_v2024_06_19
 // The payload for the `listTransactions` operation.
 type TransactionsPayload struct {
 	// When present and not empty, pass this string token in the next request to return the next response page.
-	NextToken string `json:"nextToken,omitempty"`
+	NextToken    string         `json:"nextToken,omitempty"`
 	Transactions *[]Transaction `json:"transactions,omitempty"`
 }

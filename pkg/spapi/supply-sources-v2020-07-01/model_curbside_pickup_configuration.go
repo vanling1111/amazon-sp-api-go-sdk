@@ -11,7 +11,7 @@ package supply_sources_v2020_07_01
 // The curbside pickup configuration of a supply source.
 type CurbsidePickupConfiguration struct {
 	// When true, curbside pickup is supported by the supply source.
-	IsSupported bool `json:"isSupported,omitempty"`
-	OperationalConfiguration *OperationalConfiguration `json:"operationalConfiguration,omitempty"`
+	IsSupported                     bool                             `json:"isSupported,omitempty"`
+	OperationalConfiguration        *OperationalConfiguration        `json:"operationalConfiguration,omitempty"`
 	ParkingWithAddressConfiguration *ParkingWithAddressConfiguration `json:"parkingWithAddressConfiguration,omitempty"`
 }

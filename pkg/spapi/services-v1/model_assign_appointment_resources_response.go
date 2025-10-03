@@ -11,5 +11,5 @@ package services_v1
 // Response schema for the `assignAppointmentResources` operation.
 type AssignAppointmentResourcesResponse struct {
 	Payload *AssignAppointmentResourcesResponsePayload `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError                              `json:"errors,omitempty"`
 }

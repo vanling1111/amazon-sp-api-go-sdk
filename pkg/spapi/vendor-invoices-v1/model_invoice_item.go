@@ -15,14 +15,14 @@ type InvoiceItem struct {
 	// Amazon Standard Identification Number (ASIN) of an item.
 	AmazonProductIdentifier string `json:"amazonProductIdentifier,omitempty"`
 	// The vendor selected product identifier of the item. Should be the same as was provided in the purchase order.
-	VendorProductIdentifier string `json:"vendorProductIdentifier,omitempty"`
-	InvoicedQuantity *ItemQuantity `json:"invoicedQuantity"`
-	NetCost *Money `json:"netCost"`
-	NetCostUnitOfMeasure *NetCostUnitOfMeasure `json:"netCostUnitOfMeasure,omitempty"`
+	VendorProductIdentifier string                `json:"vendorProductIdentifier,omitempty"`
+	InvoicedQuantity        *ItemQuantity         `json:"invoicedQuantity"`
+	NetCost                 *Money                `json:"netCost"`
+	NetCostUnitOfMeasure    *NetCostUnitOfMeasure `json:"netCostUnitOfMeasure,omitempty"`
 	// The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when invoiceType is Invoice, and is not required when invoiceType is CreditNote.
 	PurchaseOrderNumber string `json:"purchaseOrderNumber,omitempty"`
 	// HSN Tax code. The HSN number cannot contain alphabets.
-	HsnCode string `json:"hsnCode,omitempty"`
+	HsnCode           string             `json:"hsnCode,omitempty"`
 	CreditNoteDetails *CreditNoteDetails `json:"creditNoteDetails,omitempty"`
 	// Individual tax details per line item.
 	TaxDetails []TaxDetails `json:"taxDetails,omitempty"`

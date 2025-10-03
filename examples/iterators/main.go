@@ -201,7 +201,7 @@ func earlyExitExample(ctx context.Context, baseClient *spapi.Client) {
 		orderID := order["AmazonOrderId"]
 		if orderID == targetOrderID {
 			fmt.Printf("找到目标订单: %s\n", orderID)
-			break  // 提前退出，不再继续迭代
+			break // 提前退出，不再继续迭代
 		}
 	}
 }
@@ -221,7 +221,7 @@ func concurrentProcessingExample(ctx context.Context, baseClient *spapi.Client) 
 	// Go 1.25: 在循环中启动 goroutine 不再需要 item := item
 	go func() {
 		defer close(ordersChan)
-		
+
 		for order, err := range ordersClient.IterateOrders(ctx, query) {
 			if err != nil {
 				log.Printf("错误: %v", err)
@@ -235,7 +235,7 @@ func concurrentProcessingExample(ctx context.Context, baseClient *spapi.Client) 
 	count := 0
 	for order := range ordersChan {
 		count++
-		
+
 		// 启动 goroutine 处理订单（Go 1.25 自动正确捕获变量）
 		go func() {
 			orderID := order["AmazonOrderId"]
@@ -246,4 +246,3 @@ func concurrentProcessingExample(ctx context.Context, baseClient *spapi.Client) 
 
 	fmt.Printf("总计提交 %d 个订单处理任务\n", count)
 }
-

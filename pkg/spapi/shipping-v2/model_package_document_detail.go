@@ -11,7 +11,7 @@ package shipping_v2
 
 // The post-purchase details of a package that will be shipped using a shipping service.
 type PackageDocumentDetail struct {
-	PackageClientReferenceId string `json:"packageClientReferenceId"`
-	PackageDocuments *[]PackageDocument `json:"packageDocuments"`
-	TrackingId string `json:"trackingId,omitempty"`
+	PackageClientReferenceId string             `json:"packageClientReferenceId"`
+	PackageDocuments         *[]PackageDocument `json:"packageDocuments"`
+	TrackingId               string             `json:"trackingId,omitempty"`
 }

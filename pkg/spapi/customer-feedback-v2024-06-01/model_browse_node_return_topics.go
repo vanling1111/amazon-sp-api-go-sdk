@@ -11,6 +11,6 @@ package customer_feedback_v2024_06_01
 // Topics from returns for all items in a browse node.
 type BrowseNodeReturnTopics struct {
 	// The name of the return feedback topic .
-	Topic string `json:"topic"`
+	Topic             string                  `json:"topic"`
 	BrowseNodeMetrics *BrowseNodeTrendMetrics `json:"browseNodeMetrics"`
 }

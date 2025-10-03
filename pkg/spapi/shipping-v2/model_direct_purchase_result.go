@@ -11,6 +11,6 @@ package shipping_v2
 
 // The payload for the directPurchaseShipment operation.
 type DirectPurchaseResult struct {
-	ShipmentId string `json:"shipmentId"`
+	ShipmentId                string                   `json:"shipmentId"`
 	PackageDocumentDetailList *[]PackageDocumentDetail `json:"packageDocumentDetailList,omitempty"`
 }

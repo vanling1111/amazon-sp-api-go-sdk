@@ -11,8 +11,8 @@ package customer_feedback_v2024_06_01
 // Details of the subtopic for an item review topic.
 type ItemReviewSubtopic struct {
 	// The name of the subtopic.
-	Subtopic string `json:"subtopic"`
-	Metrics *ItemReviewSubtopicMetrics `json:"metrics"`
+	Subtopic string                     `json:"subtopic"`
+	Metrics  *ItemReviewSubtopicMetrics `json:"metrics"`
 	// A list of up to three snippets from reviews that contain the subtopic. This value is `null` if there aren't enough review snippets for the subtopic.
 	ReviewSnippets []string `json:"reviewSnippets,omitempty"`
 }

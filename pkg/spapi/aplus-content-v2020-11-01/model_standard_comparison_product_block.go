@@ -11,11 +11,11 @@ package aplus_content_v2020_11_01
 // The A+ Content standard comparison product block.
 type StandardComparisonProductBlock struct {
 	// The rank or index of this comparison product block within the module. Different blocks cannot occupy the same position within a single module.
-	Position int32 `json:"position"`
-	Image *ImageComponent `json:"image,omitempty"`
+	Position int32           `json:"position"`
+	Image    *ImageComponent `json:"image,omitempty"`
 	// The comparison product title.
 	Title string `json:"title,omitempty"`
-	Asin string `json:"asin,omitempty"`
+	Asin  string `json:"asin,omitempty"`
 	// When true, indicates that this content block is visually highlighted.
 	Highlight bool `json:"highlight,omitempty"`
 	// Comparison metrics for the product.

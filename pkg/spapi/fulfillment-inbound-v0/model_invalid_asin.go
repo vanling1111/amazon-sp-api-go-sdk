@@ -11,6 +11,6 @@ package fulfillment_inbound_v0
 // Contains details about an invalid ASIN
 type InvalidAsin struct {
 	// The Amazon Standard Identification Number (ASIN) of the item.
-	ASIN string `json:"ASIN,omitempty"`
+	ASIN        string       `json:"ASIN,omitempty"`
 	ErrorReason *ErrorReason `json:"ErrorReason,omitempty"`
 }

@@ -87,12 +87,12 @@ func (m *Monitor) SaveState() error {
 func (m *Monitor) FetchSpec(ctx context.Context, apiName, version, fileName string) ([]byte, error) {
 	// Build URL
 	modelDir := apiName
-	if modelDir != "amazon-warehousing-and-distribution-model" && 
-	   modelDir != "easy-ship-model" && 
-	   !contains(modelDir, "-model") {
+	if modelDir != "amazon-warehousing-and-distribution-model" &&
+		modelDir != "easy-ship-model" &&
+		!contains(modelDir, "-model") {
 		modelDir += "-api-model"
 	}
-	
+
 	url := fmt.Sprintf("%s/%s/%s", baseURL, modelDir, fileName)
 
 	// Create request
@@ -237,4 +237,3 @@ func main() {
 		fmt.Println("✓ No changes detected. All APIs are up to date.")
 	}
 }
-

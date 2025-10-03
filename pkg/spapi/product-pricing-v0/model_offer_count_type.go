@@ -11,7 +11,7 @@ package product_pricing_v0
 // The total number of offers for the specified condition and fulfillment channel.
 type OfferCountType struct {
 	// Indicates the condition of the item. For example: New, Used, Collectible, Refurbished, or Club.
-	Condition string `json:"condition,omitempty"`
+	Condition          string                  `json:"condition,omitempty"`
 	FulfillmentChannel *FulfillmentChannelType `json:"fulfillmentChannel,omitempty"`
 	// The number of offers in a fulfillment channel that meet a specific condition.
 	OfferCount int32 `json:"OfferCount,omitempty"`

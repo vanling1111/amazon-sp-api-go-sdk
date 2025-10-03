@@ -10,9 +10,9 @@ package amazon_warehousing_and_distribution_model_v2024_05_09
 
 // The preparation details for a product. This contains the prep category, prep owner, and label owner. Prep instructions are generated based on the specified category.
 type PrepDetails struct {
-	LabelOwner *LabelOwner `json:"labelOwner,omitempty"`
+	LabelOwner   *LabelOwner   `json:"labelOwner,omitempty"`
 	PrepCategory *PrepCategory `json:"prepCategory,omitempty"`
 	// Contains information about the preparation of the inbound products. The system auto-generates this field with the use of the `prepCategory`, and if you attempt to pass a value for this field, the system will ignore it.
 	PrepInstructions []PrepInstruction `json:"prepInstructions,omitempty"`
-	PrepOwner *PrepOwner `json:"prepOwner,omitempty"`
+	PrepOwner        *PrepOwner        `json:"prepOwner,omitempty"`
 }

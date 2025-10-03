@@ -13,11 +13,11 @@ type ListOffersResponseOffer struct {
 	// The SKU. This property is only supported for sellers and not for vendors.
 	Sku string `json:"sku,omitempty"`
 	// The Amazon Standard Identification Number (ASIN).
-	Asin string `json:"asin,omitempty"`
-	MarketplaceId string `json:"marketplaceId,omitempty"`
-	Eligibility *EligibilityStatus `json:"eligibility,omitempty"`
+	Asin                      string                     `json:"asin,omitempty"`
+	MarketplaceId             string                     `json:"marketplaceId,omitempty"`
+	Eligibility               *EligibilityStatus         `json:"eligibility,omitempty"`
 	OfferProgramConfiguration *OfferProgramConfiguration `json:"offerProgramConfiguration,omitempty"`
-	ProgramType *ProgramType `json:"programType,omitempty"`
+	ProgramType               *ProgramType               `json:"programType,omitempty"`
 	// A list of vendor codes associated with the offer.
 	VendorCodes []string `json:"vendorCodes,omitempty"`
 }

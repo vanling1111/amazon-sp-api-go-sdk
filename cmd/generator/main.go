@@ -53,4 +53,3 @@ func printUsage() {
 	fmt.Println()
 	fmt.Println("Note: This tool provides guidance. Actual generation is done via PowerShell scripts.")
 }
-

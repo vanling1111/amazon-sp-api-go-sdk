@@ -10,6 +10,6 @@ package aplus_content_v2020_11_01
 
 // The A+ Content standard image and text block, with a related caption. The caption might not display on all devices.
 type StandardImageTextCaptionBlock struct {
-	Block *StandardImageTextBlock `json:"block,omitempty"`
-	Caption *TextComponent `json:"caption,omitempty"`
+	Block   *StandardImageTextBlock `json:"block,omitempty"`
+	Caption *TextComponent          `json:"caption,omitempty"`
 }

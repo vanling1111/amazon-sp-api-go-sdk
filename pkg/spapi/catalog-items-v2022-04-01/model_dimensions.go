@@ -13,5 +13,5 @@ type Dimensions struct {
 	Height *Dimension `json:"height,omitempty"`
 	Length *Dimension `json:"length,omitempty"`
 	Weight *Dimension `json:"weight,omitempty"`
-	Width *Dimension `json:"width,omitempty"`
+	Width  *Dimension `json:"width,omitempty"`
 }

@@ -9,7 +9,7 @@
 package sellers_v1
 
 type MarketplaceParticipation struct {
-	Marketplace *Marketplace `json:"marketplace"`
+	Marketplace   *Marketplace   `json:"marketplace"`
 	Participation *Participation `json:"participation"`
 	// The name of the seller's store as displayed in the marketplace.
 	StoreName string `json:"storeName"`

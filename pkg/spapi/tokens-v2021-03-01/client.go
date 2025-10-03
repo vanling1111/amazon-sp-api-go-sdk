@@ -6,7 +6,7 @@ package tokens_v2021_03_01
 import (
 	"context"
 	"fmt"
-	
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 )
 
@@ -20,12 +20,14 @@ func NewClient(baseClient *spapi.Client) *Client {
 	return &Client{baseClient: baseClient}
 }
 
-// CreateRestrictedDataToken 
+// CreateRestrictedDataToken
 // Method: POST | Path: /tokens/2021-03-01/restrictedDataToken
 func (c *Client) CreateRestrictedDataToken(ctx context.Context, body interface{}) (interface{}, error) {
 	path := "/tokens/2021-03-01/restrictedDataToken"
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("CreateRestrictedDataToken: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("CreateRestrictedDataToken: %w", err)
+	}
 	return result, nil
 }

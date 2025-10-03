@@ -10,6 +10,6 @@ package supply_sources_v2020_07_01
 
 // The delivery channel of a supply source.
 type DeliveryChannel struct {
-	IsSupported bool `json:"isSupported,omitempty"`
+	IsSupported              bool                      `json:"isSupported,omitempty"`
 	OperationalConfiguration *OperationalConfiguration `json:"operationalConfiguration,omitempty"`
 }

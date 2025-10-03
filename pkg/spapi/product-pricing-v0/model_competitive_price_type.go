@@ -11,15 +11,15 @@ package product_pricing_v0
 // Schema for competitive pricing information
 type CompetitivePriceType struct {
 	// The pricing model for each price that is returned.  Possible values:  * 1 - New Buy Box Price. * 2 - Used Buy Box Price.
-	CompetitivePriceId string `json:"CompetitivePriceId"`
-	Price *PriceType `json:"Price"`
+	CompetitivePriceId string     `json:"CompetitivePriceId"`
+	Price              *PriceType `json:"Price"`
 	// Indicates the condition of the item whose pricing information is returned. Possible values are: New, Used, Collectible, Refurbished, or Club.
 	Condition string `json:"condition,omitempty"`
 	// Indicates the subcondition of the item whose pricing information is returned. Possible values are: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other.
-	Subcondition string `json:"subcondition,omitempty"`
-	OfferType *OfferCustomerType `json:"offerType,omitempty"`
+	Subcondition string             `json:"subcondition,omitempty"`
+	OfferType    *OfferCustomerType `json:"offerType,omitempty"`
 	// Indicates at what quantity this price becomes active.
-	QuantityTier int32 `json:"quantityTier,omitempty"`
+	QuantityTier         int32                 `json:"quantityTier,omitempty"`
 	QuantityDiscountType *QuantityDiscountType `json:"quantityDiscountType,omitempty"`
 	// The seller identifier for the offer.
 	SellerId string `json:"sellerId,omitempty"`

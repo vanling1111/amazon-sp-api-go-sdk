@@ -11,5 +11,5 @@ package finances_v0
 // The response schema for the listFinancialEvents operation.
 type ListFinancialEventsResponse struct {
 	Payload *ListFinancialEventsPayload `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError               `json:"errors,omitempty"`
 }

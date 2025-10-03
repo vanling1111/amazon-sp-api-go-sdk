@@ -15,6 +15,6 @@ type CreateFeedSpecification struct {
 	// A list of identifiers for marketplaces that you want the feed to be applied to.
 	MarketplaceIds []string `json:"marketplaceIds"`
 	// The document identifier returned by the createFeedDocument operation. Upload the feed document contents before calling the createFeed operation.
-	InputFeedDocumentId string `json:"inputFeedDocumentId"`
-	FeedOptions *map[string]string `json:"feedOptions,omitempty"`
+	InputFeedDocumentId string             `json:"inputFeedDocumentId"`
+	FeedOptions         *map[string]string `json:"feedOptions,omitempty"`
 }

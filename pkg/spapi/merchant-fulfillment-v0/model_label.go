@@ -10,9 +10,9 @@ package merchant_fulfillment_v0
 
 // Data for creating a shipping label and dimensions for printing the label.
 type Label struct {
-	CustomTextForLabel string `json:"CustomTextForLabel,omitempty"`
-	Dimensions *LabelDimensions `json:"Dimensions"`
-	FileContents *FileContents `json:"FileContents"`
-	LabelFormat *LabelFormat `json:"LabelFormat,omitempty"`
+	CustomTextForLabel string              `json:"CustomTextForLabel,omitempty"`
+	Dimensions         *LabelDimensions    `json:"Dimensions"`
+	FileContents       *FileContents       `json:"FileContents"`
+	LabelFormat        *LabelFormat        `json:"LabelFormat,omitempty"`
 	StandardIdForLabel *StandardIdForLabel `json:"StandardIdForLabel,omitempty"`
 }

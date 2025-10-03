@@ -7,7 +7,7 @@ import (
 	"context"
 	"fmt"
 	"strings"
-	
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 )
 
@@ -21,33 +21,39 @@ func NewClient(baseClient *spapi.Client) *Client {
 	return &Client{baseClient: baseClient}
 }
 
-// RecordActionFeedback 
+// RecordActionFeedback
 // Method: POST | Path: /appIntegrations/2024-04-01/notifications/{notificationId}/feedback
 func (c *Client) RecordActionFeedback(ctx context.Context, notificationId string, body interface{}) (interface{}, error) {
 	path := "/appIntegrations/2024-04-01/notifications/{notificationId}/feedback"
 	path = strings.Replace(path, "{notificationId}", notificationId, 1)
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("RecordActionFeedback: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("RecordActionFeedback: %w", err)
+	}
 	return result, nil
 }
 
-// CreateNotification 
+// CreateNotification
 // Method: POST | Path: /appIntegrations/2024-04-01/notifications
 func (c *Client) CreateNotification(ctx context.Context, body interface{}) (interface{}, error) {
 	path := "/appIntegrations/2024-04-01/notifications"
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("CreateNotification: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("CreateNotification: %w", err)
+	}
 	return result, nil
 }
 
-// DeleteNotifications 
+// DeleteNotifications
 // Method: POST | Path: /appIntegrations/2024-04-01/notifications/deletion
 func (c *Client) DeleteNotifications(ctx context.Context, body interface{}) (interface{}, error) {
 	path := "/appIntegrations/2024-04-01/notifications/deletion"
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("DeleteNotifications: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("DeleteNotifications: %w", err)
+	}
 	return result, nil
 }

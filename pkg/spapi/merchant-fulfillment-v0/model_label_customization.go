@@ -10,6 +10,6 @@ package merchant_fulfillment_v0
 
 // Custom text for shipping labels.
 type LabelCustomization struct {
-	CustomTextForLabel string `json:"CustomTextForLabel,omitempty"`
+	CustomTextForLabel string              `json:"CustomTextForLabel,omitempty"`
 	StandardIdForLabel *StandardIdForLabel `json:"StandardIdForLabel,omitempty"`
 }

@@ -11,6 +11,6 @@ package fulfillment_outbound_v2020_07_01
 // Fee type and cost.
 type Fee struct {
 	// The type of fee.
-	Name string `json:"name"`
+	Name   string `json:"name"`
 	Amount *Money `json:"amount"`
 }

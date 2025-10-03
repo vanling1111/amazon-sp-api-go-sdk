@@ -12,5 +12,5 @@ package shipping_v2
 // The time windows promised for pickup and delivery events.
 type Promise struct {
 	DeliveryWindow *TimeWindow `json:"deliveryWindow,omitempty"`
-	PickupWindow *TimeWindow `json:"pickupWindow,omitempty"`
+	PickupWindow   *TimeWindow `json:"pickupWindow,omitempty"`
 }

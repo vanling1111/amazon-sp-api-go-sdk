@@ -12,6 +12,6 @@ package shipping_v2
 // A value-added service to be applied to a shipping service purchase.
 type OneClickShipmentValueAddedService struct {
 	// The identifier of the selected value-added service.
-	Id string `json:"id"`
+	Id     string    `json:"id"`
 	Amount *Currency `json:"amount,omitempty"`
 }

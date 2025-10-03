@@ -189,4 +189,3 @@ func (b byteReader) Read(p []byte) (n int, err error) {
 	n = copy(p, b)
 	return n, nil
 }
-

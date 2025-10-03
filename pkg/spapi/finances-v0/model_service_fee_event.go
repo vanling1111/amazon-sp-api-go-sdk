@@ -13,8 +13,8 @@ type ServiceFeeEvent struct {
 	// An Amazon-defined identifier for an order.
 	AmazonOrderId string `json:"AmazonOrderId,omitempty"`
 	// A short description of the service fee reason.
-	FeeReason string `json:"FeeReason,omitempty"`
-	FeeList *[]FeeComponent `json:"FeeList,omitempty"`
+	FeeReason string          `json:"FeeReason,omitempty"`
+	FeeList   *[]FeeComponent `json:"FeeList,omitempty"`
 	// The seller SKU of the item. The seller SKU is qualified by the seller's seller ID, which is included with every call to the Selling Partner API.
 	SellerSKU string `json:"SellerSKU,omitempty"`
 	// A unique identifier assigned by Amazon to products stored in and fulfilled from an Amazon fulfillment center.

@@ -11,5 +11,5 @@ package services_v1
 // Response schema for the `updateReservation` operation.
 type UpdateReservationResponse struct {
 	Payload *UpdateReservationRecord `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError            `json:"errors,omitempty"`
 }

@@ -67,4 +67,3 @@ func (v *Validator) Validate(data map[string]interface{}) []error {
 
 	return errors
 }
-

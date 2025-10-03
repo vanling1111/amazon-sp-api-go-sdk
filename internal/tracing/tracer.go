@@ -145,4 +145,3 @@ func SetAttributes(ctx context.Context, attrs ...attribute.KeyValue) {
 		span.SetAttributes(attrs...)
 	}
 }
-

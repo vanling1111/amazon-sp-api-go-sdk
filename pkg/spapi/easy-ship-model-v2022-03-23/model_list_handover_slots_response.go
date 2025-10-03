@@ -10,6 +10,6 @@ package easy_ship_model_v2022_03_23
 
 // The response schema for the `listHandoverSlots` operation.
 type ListHandoverSlotsResponse struct {
-	AmazonOrderId string `json:"amazonOrderId"`
-	TimeSlots *[]TimeSlot `json:"timeSlots"`
+	AmazonOrderId string      `json:"amazonOrderId"`
+	TimeSlots     *[]TimeSlot `json:"timeSlots"`
 }

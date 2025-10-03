@@ -11,6 +11,6 @@ package product_pricing_v2022_05_01
 // The shipping option available for the offer.
 type ShippingOption struct {
 	// The type of shipping option.
-	ShippingOptionType string `json:"shippingOptionType"`
-	Price *MoneyType `json:"price"`
+	ShippingOptionType string     `json:"shippingOptionType"`
+	Price              *MoneyType `json:"price"`
 }

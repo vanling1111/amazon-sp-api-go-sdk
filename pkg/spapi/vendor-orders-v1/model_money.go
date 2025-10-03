@@ -12,7 +12,7 @@ package vendor_orders_v1
 type Money struct {
 	// Three digit currency code in ISO 4217 format. String of length 3.
 	CurrencyCode string `json:"currencyCode,omitempty"`
-	Amount string `json:"amount,omitempty"`
+	Amount       string `json:"amount,omitempty"`
 	// The unit of measure for prices of items sold by weight. If this field is absent, the item is sold by eaches.
 	UnitOfMeasure string `json:"unitOfMeasure,omitempty"`
 }

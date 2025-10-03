@@ -6,7 +6,7 @@ package vehicles_v2024_11_01
 import (
 	"context"
 	"fmt"
-	
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 )
 
@@ -20,12 +20,14 @@ func NewClient(baseClient *spapi.Client) *Client {
 	return &Client{baseClient: baseClient}
 }
 
-// GetVehicles 
+// GetVehicles
 // Method: GET | Path: /catalog/2024-11-01/automotive/vehicles
 func (c *Client) GetVehicles(ctx context.Context, query map[string]string) (interface{}, error) {
 	path := "/catalog/2024-11-01/automotive/vehicles"
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetVehicles: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetVehicles: %w", err)
+	}
 	return result, nil
 }

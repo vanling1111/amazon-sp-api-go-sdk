@@ -10,6 +10,6 @@ package aplus_content_v2020_11_01
 
 // The A+ Content standard image and caption block.
 type StandardImageCaptionBlock struct {
-	Image *ImageComponent `json:"image,omitempty"`
-	Caption *TextComponent `json:"caption,omitempty"`
+	Image   *ImageComponent `json:"image,omitempty"`
+	Caption *TextComponent  `json:"caption,omitempty"`
 }

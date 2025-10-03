@@ -10,6 +10,6 @@ package supply_sources_v2020_07_01
 
 // The throughput configuration.
 type ThroughputConfig struct {
-	ThroughputCap *ThroughputCap `json:"throughputCap,omitempty"`
+	ThroughputCap  *ThroughputCap  `json:"throughputCap,omitempty"`
 	ThroughputUnit *ThroughputUnit `json:"throughputUnit"`
 }

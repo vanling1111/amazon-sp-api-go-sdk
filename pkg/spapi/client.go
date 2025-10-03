@@ -169,7 +169,7 @@ func NewClient(opts ...ClientOption) (*Client, error) {
 	if config.MaxRetries > 0 {
 		retryConfig := &transport.RetryConfig{
 			MaxRetries:      config.MaxRetries,
-			InitialInterval: 100,  // 100ms
+			InitialInterval: 100,   // 100ms
 			MaxInterval:     30000, // 30s
 			Multiplier:      2.0,
 			ShouldRetry:     nil, // 使用默认的重试判断函数
@@ -340,7 +340,7 @@ func (c *Client) DoRequest(ctx context.Context, method, path string, query map[s
 		appID := c.config.ClientID
 		marketplace := c.extractMarketplaceID(query)
 		operation := c.extractOperationName(method, path)
-		
+
 		allowed := c.rateLimitManager.Allow(sellerID, appID, marketplace, operation)
 		if !allowed {
 			return ErrRateLimitExceeded
@@ -510,7 +510,7 @@ func (c *Client) extractSellerID() string {
 	if c.config.SellerID != "" {
 		return c.config.SellerID
 	}
-	
+
 	// 使用 client ID 作为唯一标识
 	// 为每个应用提供独立的速率限制跟踪
 	return c.config.ClientID
@@ -544,12 +544,12 @@ func (c *Client) extractMarketplaceID(query map[string]string) string {
 			return ids
 		}
 	}
-	
+
 	// 尝试单数形式
 	if id := query["MarketplaceId"]; id != "" {
 		return id
 	}
-	
+
 	// 尝试小写形式
 	if ids := query["marketplace_ids"]; ids != "" {
 		if idx := len(ids); idx > 0 {
@@ -561,7 +561,7 @@ func (c *Client) extractMarketplaceID(query map[string]string) string {
 			return ids
 		}
 	}
-	
+
 	// 回退值：使用 "global" 表示跨市场的速率限制
 	return "global"
 }
@@ -587,7 +587,7 @@ func (c *Client) extractOperationName(method, path string) string {
 	if len(path) > 0 && path[0] == '/' {
 		path = path[1:]
 	}
-	
+
 	// 提取 API 名称（第一个路径段）
 	apiName := ""
 	endIdx := 0
@@ -598,12 +598,12 @@ func (c *Client) extractOperationName(method, path string) string {
 			break
 		}
 	}
-	
+
 	if apiName == "" {
 		// 如果没有找到 "/"，整个路径就是 API 名称
 		return method + ":" + path
 	}
-	
+
 	// 跳过版本号（如 "v0", "2021-06-30"）
 	versionEndIdx := endIdx
 	for i := endIdx; i < len(path); i++ {
@@ -612,12 +612,12 @@ func (c *Client) extractOperationName(method, path string) string {
 			break
 		}
 	}
-	
+
 	// 提取资源名称（用于构建操作名）
 	resourcePath := ""
 	if versionEndIdx < len(path) {
 		resourcePath = path[versionEndIdx:]
-		
+
 		// 移除路径参数（如 {orderId}）
 		cleanPath := ""
 		inBrace := false
@@ -632,7 +632,7 @@ func (c *Client) extractOperationName(method, path string) string {
 		}
 		resourcePath = cleanPath
 	}
-	
+
 	// 构建标准化的操作名称
 	operationName := apiName
 	if resourcePath != "" {
@@ -640,7 +640,7 @@ func (c *Client) extractOperationName(method, path string) string {
 	} else {
 		operationName += ":" + method
 	}
-	
+
 	return operationName
 }
 
@@ -711,4 +711,3 @@ func (c *Client) Put(ctx context.Context, path string, body, result interface{})
 func (c *Client) Delete(ctx context.Context, path string, result interface{}) error {
 	return c.DoRequest(ctx, "DELETE", path, nil, nil, result)
 }
-

@@ -10,6 +10,6 @@ package merchant_fulfillment_v0
 
 // Response schema.
 type CreateShipmentResponse struct {
-	Payload *Shipment `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Payload *Shipment     `json:"payload,omitempty"`
+	Errors  *[]ModelError `json:"errors,omitempty"`
 }

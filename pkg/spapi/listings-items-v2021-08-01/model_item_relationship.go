@@ -13,7 +13,7 @@ type ItemRelationship struct {
 	// Identifiers (SKUs) of the related items that are children of this listing item.
 	ChildSkus []string `json:"childSkus,omitempty"`
 	// Identifiers (SKUs) of the related items that are parents of this listing item.
-	ParentSkus []string `json:"parentSkus,omitempty"`
+	ParentSkus     []string            `json:"parentSkus,omitempty"`
 	VariationTheme *ItemVariationTheme `json:"variationTheme,omitempty"`
 	// The type of relationship.
 	Type_ string `json:"type"`

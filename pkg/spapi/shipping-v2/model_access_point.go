@@ -15,15 +15,15 @@ type AccessPoint struct {
 	// Name of entity (store/hub etc) where this access point is located
 	Name string `json:"name,omitempty"`
 	// Timezone of access point
-	Timezone string `json:"timezone,omitempty"`
-	Type_ *AccessPointType `json:"type,omitempty"`
+	Timezone                string                   `json:"timezone,omitempty"`
+	Type_                   *AccessPointType         `json:"type,omitempty"`
 	AccessibilityAttributes *AccessibilityAttributes `json:"accessibilityAttributes,omitempty"`
-	Address *Address `json:"address,omitempty"`
+	Address                 *Address                 `json:"address,omitempty"`
 	// Exception operating hours for Access Point
 	ExceptionOperatingHours []ExceptionOperatingHours `json:"exceptionOperatingHours,omitempty"`
 	// Assistance type enum for Access point i.e. STAFF_ASSISTED or SELF_ASSISTED
 	AssistanceType string `json:"assistanceType,omitempty"`
 	// The score of access point, based on proximity to postal code and sorting preference. This can be used to sort access point results on shipper's end.
-	Score string `json:"score,omitempty"`
+	Score                  string                     `json:"score,omitempty"`
 	StandardOperatingHours *map[string]OperatingHours `json:"standardOperatingHours,omitempty"`
 }

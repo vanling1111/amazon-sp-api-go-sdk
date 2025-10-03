@@ -27,7 +27,7 @@ type Poller struct {
 	queueURL     string
 	pollInterval time.Duration
 	maxMessages  int32
-	waitTime     int32  // Long polling wait time (1-20 seconds)
+	waitTime     int32 // Long polling wait time (1-20 seconds)
 	handlers     map[string]EventHandler
 	errorHandler func(error)
 }
@@ -49,7 +49,7 @@ func NewPoller(sqsClient *sqs.Client, config *Config) *Poller {
 		config.MaxMessages = 10
 	}
 	if config.WaitTime == 0 {
-		config.WaitTime = 20  // Long polling
+		config.WaitTime = 20 // Long polling
 	}
 
 	return &Poller{
@@ -107,7 +107,7 @@ func (p *Poller) poll(ctx context.Context) {
 	result, err := p.sqsClient.ReceiveMessage(ctx, &sqs.ReceiveMessageInput{
 		QueueUrl:            aws.String(p.queueURL),
 		MaxNumberOfMessages: p.maxMessages,
-		WaitTimeSeconds:     p.waitTime,  // Long polling
+		WaitTimeSeconds:     p.waitTime, // Long polling
 		MessageAttributeNames: []string{
 			string(types.QueueAttributeNameAll),
 		},
@@ -155,7 +155,7 @@ func (p *Poller) processMessage(ctx context.Context, msg types.Message) error {
 	handler, ok := p.handlers[event.NotificationType]
 	if !ok {
 		log.Printf("[Poller] No handler for notification type: %s", event.NotificationType)
-		return nil  // 不是错误，只是没有处理器
+		return nil // 不是错误，只是没有处理器
 	}
 
 	// 执行处理器
@@ -227,4 +227,3 @@ func ParseSQSMessage(body string) (*Event, error) {
 func (e *Event) ParsePayload(v interface{}) error {
 	return json.Unmarshal(e.Payload, v)
 }
-

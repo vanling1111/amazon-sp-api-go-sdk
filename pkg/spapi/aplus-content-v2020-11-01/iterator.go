@@ -1,4 +1,4 @@
-﻿// Copyright 2025 Amazon SP-API Go SDK Authors.
+// Copyright 2025 Amazon SP-API Go SDK Authors.
 // Licensed under the Apache License, Version 2.0.
 
 package aplus_content_v2020_11_01
@@ -73,4 +73,3 @@ func (c *Client) IterateContentDocuments(ctx context.Context, query map[string]s
 		}
 	}
 }
-

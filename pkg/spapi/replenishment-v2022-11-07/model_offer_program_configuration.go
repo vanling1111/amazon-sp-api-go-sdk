@@ -10,7 +10,7 @@ package replenishment_v2022_11_07
 
 // The offer program configuration contains a set of program properties for an offer.
 type OfferProgramConfiguration struct {
-	Preferences *OfferProgramConfigurationPreferences `json:"preferences,omitempty"`
-	Promotions *OfferProgramConfigurationPromotions `json:"promotions,omitempty"`
-	EnrollmentMethod *EnrollmentMethod `json:"enrollmentMethod,omitempty"`
+	Preferences      *OfferProgramConfigurationPreferences `json:"preferences,omitempty"`
+	Promotions       *OfferProgramConfigurationPromotions  `json:"promotions,omitempty"`
+	EnrollmentMethod *EnrollmentMethod                     `json:"enrollmentMethod,omitempty"`
 }

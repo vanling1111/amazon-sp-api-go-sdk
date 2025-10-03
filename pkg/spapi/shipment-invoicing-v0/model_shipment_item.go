@@ -19,11 +19,11 @@ type ShipmentItem struct {
 	// The name of the item.
 	Title string `json:"Title,omitempty"`
 	// The number of items ordered.
-	QuantityOrdered float64 `json:"QuantityOrdered,omitempty"`
-	ItemPrice *Money `json:"ItemPrice,omitempty"`
-	ShippingPrice *Money `json:"ShippingPrice,omitempty"`
-	GiftWrapPrice *Money `json:"GiftWrapPrice,omitempty"`
-	ShippingDiscount *Money `json:"ShippingDiscount,omitempty"`
-	PromotionDiscount *Money `json:"PromotionDiscount,omitempty"`
-	SerialNumbers *[]string `json:"SerialNumbers,omitempty"`
+	QuantityOrdered   float64   `json:"QuantityOrdered,omitempty"`
+	ItemPrice         *Money    `json:"ItemPrice,omitempty"`
+	ShippingPrice     *Money    `json:"ShippingPrice,omitempty"`
+	GiftWrapPrice     *Money    `json:"GiftWrapPrice,omitempty"`
+	ShippingDiscount  *Money    `json:"ShippingDiscount,omitempty"`
+	PromotionDiscount *Money    `json:"PromotionDiscount,omitempty"`
+	SerialNumbers     *[]string `json:"SerialNumbers,omitempty"`
 }

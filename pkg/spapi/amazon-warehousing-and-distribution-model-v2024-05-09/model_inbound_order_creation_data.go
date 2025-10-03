@@ -11,9 +11,9 @@ package amazon_warehousing_and_distribution_model_v2024_05_09
 // Payload for creating an inbound order.
 type InboundOrderCreationData struct {
 	// Reference ID that can be used to correlate the order with partner resources.
-	ExternalReferenceId string `json:"externalReferenceId,omitempty"`
-	OriginAddress *Address `json:"originAddress"`
+	ExternalReferenceId string   `json:"externalReferenceId,omitempty"`
+	OriginAddress       *Address `json:"originAddress"`
 	// List of packages to be inbounded.
 	PackagesToInbound []DistributionPackageQuantity `json:"packagesToInbound"`
-	Preferences *InboundPreferences `json:"preferences,omitempty"`
+	Preferences       *InboundPreferences           `json:"preferences,omitempty"`
 }

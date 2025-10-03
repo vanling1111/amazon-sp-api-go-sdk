@@ -79,4 +79,3 @@ func (c *Client) IterateListingsItems(ctx context.Context, sellerId string, quer
 		}
 	}
 }
-

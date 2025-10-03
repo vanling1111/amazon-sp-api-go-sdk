@@ -10,9 +10,9 @@ package easy_ship_model_v2022_03_23
 
 // The dimensions of the scheduled package.
 type Dimensions struct {
-	Length float32 `json:"length,omitempty"`
-	Width float32 `json:"width,omitempty"`
-	Height float32 `json:"height,omitempty"`
-	Unit *UnitOfLength `json:"unit,omitempty"`
-	Identifier string `json:"identifier,omitempty"`
+	Length     float32       `json:"length,omitempty"`
+	Width      float32       `json:"width,omitempty"`
+	Height     float32       `json:"height,omitempty"`
+	Unit       *UnitOfLength `json:"unit,omitempty"`
+	Identifier string        `json:"identifier,omitempty"`
 }

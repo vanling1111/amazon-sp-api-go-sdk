@@ -10,9 +10,9 @@ package aplus_content_v2020_11_01
 
 // Four standard images with text, presented across a single row.
 type StandardFourImageTextModule struct {
-	Headline *TextComponent `json:"headline,omitempty"`
-	Block1 *StandardImageTextBlock `json:"block1,omitempty"`
-	Block2 *StandardImageTextBlock `json:"block2,omitempty"`
-	Block3 *StandardImageTextBlock `json:"block3,omitempty"`
-	Block4 *StandardImageTextBlock `json:"block4,omitempty"`
+	Headline *TextComponent          `json:"headline,omitempty"`
+	Block1   *StandardImageTextBlock `json:"block1,omitempty"`
+	Block2   *StandardImageTextBlock `json:"block2,omitempty"`
+	Block3   *StandardImageTextBlock `json:"block3,omitempty"`
+	Block4   *StandardImageTextBlock `json:"block4,omitempty"`
 }

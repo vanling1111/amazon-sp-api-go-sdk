@@ -13,6 +13,6 @@ type Destination struct {
 	// The developer-defined name for this destination.
 	Name string `json:"name"`
 	// The destination identifier generated when you created the destination.
-	DestinationId string `json:"destinationId"`
-	Resource *DestinationResource `json:"resource"`
+	DestinationId string               `json:"destinationId"`
+	Resource      *DestinationResource `json:"resource"`
 }

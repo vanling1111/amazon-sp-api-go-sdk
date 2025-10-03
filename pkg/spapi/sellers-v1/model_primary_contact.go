@@ -11,7 +11,7 @@ package sellers_v1
 // Information about the seller's primary contact.
 type PrimaryContact struct {
 	// The full name of the seller's primary contact.
-	Name string `json:"name"`
+	Name    string   `json:"name"`
 	Address *Address `json:"address"`
 	// The non-Latin script version of the primary contact's name, if applicable.
 	NonLatinName string `json:"nonLatinName,omitempty"`

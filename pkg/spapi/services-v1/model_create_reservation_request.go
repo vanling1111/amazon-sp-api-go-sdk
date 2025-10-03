@@ -11,6 +11,6 @@ package services_v1
 // Request schema for the `createReservation` operation.
 type CreateReservationRequest struct {
 	// Resource (store) identifier.
-	ResourceId string `json:"resourceId"`
+	ResourceId  string       `json:"resourceId"`
 	Reservation *Reservation `json:"reservation"`
 }

@@ -11,5 +11,5 @@ package easy_ship_model_v2022_03_23
 // Identifies the scheduled package to be updated.
 type ScheduledPackageId struct {
 	AmazonOrderId string `json:"amazonOrderId"`
-	PackageId string `json:"packageId,omitempty"`
+	PackageId     string `json:"packageId,omitempty"`
 }

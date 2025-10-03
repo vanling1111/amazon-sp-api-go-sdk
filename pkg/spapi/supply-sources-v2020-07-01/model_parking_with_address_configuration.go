@@ -10,8 +10,8 @@ package supply_sources_v2020_07_01
 
 // The parking configuration with the address.
 type ParkingWithAddressConfiguration struct {
-	Address *Address `json:"address,omitempty"`
-	ParkingCostType *ParkingCostType `json:"parkingCostType,omitempty"`
+	Address                       *Address                       `json:"address,omitempty"`
+	ParkingCostType               *ParkingCostType               `json:"parkingCostType,omitempty"`
 	ParkingSpotIdentificationType *ParkingSpotIdentificationType `json:"parkingSpotIdentificationType,omitempty"`
-	NumberOfParkingSpots int32 `json:"numberOfParkingSpots,omitempty"`
+	NumberOfParkingSpots          int32                          `json:"numberOfParkingSpots,omitempty"`
 }

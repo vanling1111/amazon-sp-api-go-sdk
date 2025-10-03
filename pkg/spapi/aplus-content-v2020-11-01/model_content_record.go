@@ -10,7 +10,7 @@ package aplus_content_v2020_11_01
 
 // A content document with additional information for content management.
 type ContentRecord struct {
-	ContentReferenceKey string `json:"contentReferenceKey"`
-	ContentMetadata *ContentMetadata `json:"contentMetadata,omitempty"`
-	ContentDocument *ContentDocument `json:"contentDocument,omitempty"`
+	ContentReferenceKey string           `json:"contentReferenceKey"`
+	ContentMetadata     *ContentMetadata `json:"contentMetadata,omitempty"`
+	ContentDocument     *ContentDocument `json:"contentDocument,omitempty"`
 }

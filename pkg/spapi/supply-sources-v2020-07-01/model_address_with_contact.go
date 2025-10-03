@@ -11,5 +11,5 @@ package supply_sources_v2020_07_01
 // The address and contact details.
 type AddressWithContact struct {
 	ContactDetails *ContactDetails `json:"contactDetails,omitempty"`
-	Address *Address `json:"address,omitempty"`
+	Address        *Address        `json:"address,omitempty"`
 }

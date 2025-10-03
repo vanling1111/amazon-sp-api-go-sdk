@@ -11,5 +11,5 @@ package orders_v0
 // The response schema for the `getOrderAddress` operation.
 type GetOrderAddressResponse struct {
 	Payload *OrderAddress `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError `json:"errors,omitempty"`
 }

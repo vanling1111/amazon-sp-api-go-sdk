@@ -23,12 +23,12 @@ type Vehicle struct {
 	// Energy Source for the vehicle(example: Petrol)
 	Energy string `json:"energy,omitempty"`
 	// Engine output of vehicle.
-	EngineOutput []EngineOutput `json:"engineOutput,omitempty"`
-	ManufacturingStartDate *MonthAndYear `json:"manufacturingStartDate,omitempty"`
-	ManufacturingStopDate *MonthAndYear `json:"manufacturingStopDate,omitempty"`
+	EngineOutput           []EngineOutput `json:"engineOutput,omitempty"`
+	ManufacturingStartDate *MonthAndYear  `json:"manufacturingStartDate,omitempty"`
+	ManufacturingStopDate  *MonthAndYear  `json:"manufacturingStopDate,omitempty"`
 	// The date on which the vehicle was last updated, in ISO-8601 date/time format.
-	LastProcessedDate string `json:"lastProcessedDate,omitempty"`
-	Status *VehicleStatusInCatalog `json:"status,omitempty"`
+	LastProcessedDate string                  `json:"lastProcessedDate,omitempty"`
+	Status            *VehicleStatusInCatalog `json:"status,omitempty"`
 	// Identifiers that can be used to identify the vehicle uniquely
 	Identifiers []VehicleIdentifiers `json:"identifiers"`
 }

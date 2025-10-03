@@ -337,4 +337,3 @@ func TestMaskString_EdgeCases(t *testing.T) {
 		})
 	}
 }
-

@@ -15,6 +15,6 @@ type ItemQuantity struct {
 	// Unit of measure for the quantity.
 	UnitOfMeasure string `json:"unitOfMeasure"`
 	// The case size, if the unit of measure value is Cases.
-	UnitSize int32 `json:"unitSize,omitempty"`
+	UnitSize    int32        `json:"unitSize,omitempty"`
 	TotalWeight *TotalWeight `json:"totalWeight,omitempty"`
 }

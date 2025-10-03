@@ -10,6 +10,6 @@ package product_pricing_v2022_05_01
 
 // The response for the individual `competitiveSummary` request in the batch operation.
 type CompetitiveSummaryResponse struct {
-	Status *HttpStatusLine `json:"status"`
-	Body *CompetitiveSummaryResponseBody `json:"body"`
+	Status *HttpStatusLine                 `json:"status"`
+	Body   *CompetitiveSummaryResponseBody `json:"body"`
 }

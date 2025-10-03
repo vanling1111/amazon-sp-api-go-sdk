@@ -11,5 +11,5 @@ package vendor_shipments_v1
 // The response schema for the SubmitShipmentConfirmations operation.
 type SubmitShipmentConfirmationsResponse struct {
 	Payload *TransactionReference `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError         `json:"errors,omitempty"`
 }

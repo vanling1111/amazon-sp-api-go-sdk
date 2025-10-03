@@ -10,8 +10,8 @@ package customer_feedback_v2024_06_01
 
 // The review metrics for a certain month.
 type ItemReviewTrendPoint struct {
-	DateRange *DateRange `json:"dateRange"`
-	AsinMetrics *ReviewTrendMetrics `json:"asinMetrics"`
-	ParentAsinMetrics *ReviewTrendMetrics `json:"parentAsinMetrics,omitempty"`
+	DateRange         *DateRange              `json:"dateRange"`
+	AsinMetrics       *ReviewTrendMetrics     `json:"asinMetrics"`
+	ParentAsinMetrics *ReviewTrendMetrics     `json:"parentAsinMetrics,omitempty"`
 	BrowseNodeMetrics *BrowseNodeTrendMetrics `json:"browseNodeMetrics,omitempty"`
 }

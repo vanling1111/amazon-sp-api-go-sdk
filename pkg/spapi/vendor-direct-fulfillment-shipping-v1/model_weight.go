@@ -12,5 +12,5 @@ package vendor_direct_fulfillment_shipping_v1
 type Weight struct {
 	// The unit of measurement.
 	UnitOfMeasure string `json:"unitOfMeasure"`
-	Value string `json:"value"`
+	Value         string `json:"value"`
 }

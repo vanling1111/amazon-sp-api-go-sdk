@@ -121,15 +121,15 @@ func NewClient(baseURL string, config *Config) *Client {
 		MaxConnsPerHost:     config.MaxConnsPerHost,
 		IdleConnTimeout:     config.IdleConnTimeout,
 		// 启用 HTTP/2 支持
-		ForceAttemptHTTP2:     true,
+		ForceAttemptHTTP2: true,
 		// 禁用压缩以提高性能（SP-API 响应通常已压缩）
-		DisableCompression:    false,
+		DisableCompression: false,
 		// 启用 Keep-Alive
-		DisableKeepAlives:     false,
+		DisableKeepAlives: false,
 		// 连接超时
 		ResponseHeaderTimeout: 10 * time.Second,
 		// TLS 握手超时
-		TLSHandshakeTimeout:   10 * time.Second,
+		TLSHandshakeTimeout: 10 * time.Second,
 	}
 
 	// 创建 HTTP 客户端
@@ -229,7 +229,7 @@ func (c *Client) doRequest(ctx context.Context, req *http.Request) (*http.Respon
 
 	// 发送请求
 	resp, err := c.httpClient.Do(req)
-	
+
 	// 记录请求延迟
 	duration := time.Since(startTime)
 	c.metrics.RecordTiming(metrics.MetricRequestDuration, duration, map[string]string{
@@ -252,7 +252,7 @@ func (c *Client) doRequest(ctx context.Context, req *http.Request) (*http.Respon
 
 	// 记录响应状态码
 	c.metrics.RecordCounter(metrics.MetricRequestTotal, 1, map[string]string{
-		metrics.LabelOperation: req.URL.Path,
+		metrics.LabelOperation:  req.URL.Path,
 		metrics.LabelStatusCode: strconv.Itoa(resp.StatusCode),
 	})
 
@@ -270,4 +270,3 @@ func (c *Client) BaseURL() string {
 func (c *Client) HTTPClient() *http.Client {
 	return c.httpClient
 }
-

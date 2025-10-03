@@ -339,4 +339,3 @@ func (v *Validator) Errors() ValidationErrors {
 func (v *Validator) Clear() {
 	v.errors = make(ValidationErrors, 0)
 }
-

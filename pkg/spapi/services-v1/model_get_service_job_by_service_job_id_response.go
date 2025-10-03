@@ -10,6 +10,6 @@ package services_v1
 
 // The response schema for the `getServiceJobByServiceJobId` operation.
 type GetServiceJobByServiceJobIdResponse struct {
-	Payload *ServiceJob `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Payload *ServiceJob   `json:"payload,omitempty"`
+	Errors  *[]ModelError `json:"errors,omitempty"`
 }

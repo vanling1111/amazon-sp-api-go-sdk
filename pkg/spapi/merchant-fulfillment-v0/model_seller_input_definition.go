@@ -13,11 +13,11 @@ type SellerInputDefinition struct {
 	// When true, the additional input field is required.
 	IsRequired bool `json:"IsRequired"`
 	// The data type of the additional input field.
-	DataType string `json:"DataType"`
+	DataType    string        `json:"DataType"`
 	Constraints *[]Constraint `json:"Constraints"`
 	// The display text for the additional input field.
-	InputDisplayText string `json:"InputDisplayText"`
-	InputTarget *InputTargetType `json:"InputTarget,omitempty"`
-	StoredValue *AdditionalSellerInput `json:"StoredValue"`
-	RestrictedSetValues *[]string `json:"RestrictedSetValues,omitempty"`
+	InputDisplayText    string                 `json:"InputDisplayText"`
+	InputTarget         *InputTargetType       `json:"InputTarget,omitempty"`
+	StoredValue         *AdditionalSellerInput `json:"StoredValue"`
+	RestrictedSetValues *[]string              `json:"RestrictedSetValues,omitempty"`
 }

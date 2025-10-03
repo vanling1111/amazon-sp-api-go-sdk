@@ -10,9 +10,9 @@ package supply_sources_v2020_07_01
 
 // The pick up channel of a supply source.
 type PickupChannel struct {
-	InventoryHoldPeriod *Duration `json:"inventoryHoldPeriod,omitempty"`
-	IsSupported bool `json:"isSupported,omitempty"`
-	OperationalConfiguration *OperationalConfiguration `json:"operationalConfiguration,omitempty"`
-	InStorePickupConfiguration *InStorePickupConfiguration `json:"inStorePickupConfiguration,omitempty"`
+	InventoryHoldPeriod         *Duration                    `json:"inventoryHoldPeriod,omitempty"`
+	IsSupported                 bool                         `json:"isSupported,omitempty"`
+	OperationalConfiguration    *OperationalConfiguration    `json:"operationalConfiguration,omitempty"`
+	InStorePickupConfiguration  *InStorePickupConfiguration  `json:"inStorePickupConfiguration,omitempty"`
 	CurbsidePickupConfiguration *CurbsidePickupConfiguration `json:"curbsidePickupConfiguration,omitempty"`
 }

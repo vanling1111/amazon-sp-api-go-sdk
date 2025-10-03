@@ -11,9 +11,9 @@ package finances_v0
 // An item in an adjustment to the seller's account.
 type AdjustmentItem struct {
 	// Represents the number of units in the seller's inventory when the AdustmentType is FBAInventoryReimbursement.
-	Quantity string `json:"Quantity,omitempty"`
+	Quantity      string    `json:"Quantity,omitempty"`
 	PerUnitAmount *Currency `json:"PerUnitAmount,omitempty"`
-	TotalAmount *Currency `json:"TotalAmount,omitempty"`
+	TotalAmount   *Currency `json:"TotalAmount,omitempty"`
 	// The seller SKU of the item. The seller SKU is qualified by the seller's seller ID, which is included with every call to the Selling Partner API.
 	SellerSKU string `json:"SellerSKU,omitempty"`
 	// A unique identifier assigned to products stored in and fulfilled from a fulfillment center.

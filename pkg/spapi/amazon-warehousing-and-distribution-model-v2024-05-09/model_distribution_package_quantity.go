@@ -11,6 +11,6 @@ package amazon_warehousing_and_distribution_model_v2024_05_09
 // Represents a distribution package with its respective quantity.
 type DistributionPackageQuantity struct {
 	// Number of cases or pallets with the same package configuration.
-	Count int32 `json:"count"`
+	Count               int32                `json:"count"`
 	DistributionPackage *DistributionPackage `json:"distributionPackage"`
 }

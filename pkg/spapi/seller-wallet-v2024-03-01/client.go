@@ -7,7 +7,7 @@ import (
 	"context"
 	"fmt"
 	"strings"
-	
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 )
 
@@ -27,7 +27,9 @@ func (c *Client) ListAccounts(ctx context.Context, query map[string]string) (int
 	path := "/finances/transfers/wallet/2024-03-01/accounts"
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("ListAccounts: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("ListAccounts: %w", err)
+	}
 	return result, nil
 }
 
@@ -37,7 +39,9 @@ func (c *Client) ListAccountTransactions(ctx context.Context, query map[string]s
 	path := "/finances/transfers/wallet/2024-03-01/transactions"
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("ListAccountTransactions: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("ListAccountTransactions: %w", err)
+	}
 	return result, nil
 }
 
@@ -48,7 +52,9 @@ func (c *Client) GetAccount(ctx context.Context, accountId string, query map[str
 	path = strings.Replace(path, "{accountId}", accountId, 1)
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetAccount: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetAccount: %w", err)
+	}
 	return result, nil
 }
 
@@ -58,7 +64,9 @@ func (c *Client) CreateTransaction(ctx context.Context, body interface{}) (inter
 	path := "/finances/transfers/wallet/2024-03-01/transactions"
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("CreateTransaction: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("CreateTransaction: %w", err)
+	}
 	return result, nil
 }
 
@@ -69,7 +77,9 @@ func (c *Client) ListAccountBalances(ctx context.Context, accountId string, quer
 	path = strings.Replace(path, "{accountId}", accountId, 1)
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("ListAccountBalances: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("ListAccountBalances: %w", err)
+	}
 	return result, nil
 }
 
@@ -80,7 +90,9 @@ func (c *Client) GetTransferSchedule(ctx context.Context, transferScheduleId str
 	path = strings.Replace(path, "{transferScheduleId}", transferScheduleId, 1)
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetTransferSchedule: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetTransferSchedule: %w", err)
+	}
 	return result, nil
 }
 
@@ -90,7 +102,9 @@ func (c *Client) GetTransferPreview(ctx context.Context, query map[string]string
 	path := "/finances/transfers/wallet/2024-03-01/transferPreview"
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetTransferPreview: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetTransferPreview: %w", err)
+	}
 	return result, nil
 }
 
@@ -100,7 +114,9 @@ func (c *Client) UpdateTransferSchedule(ctx context.Context, body interface{}) (
 	path := "/finances/transfers/wallet/2024-03-01/transferSchedules"
 	var result interface{}
 	err := c.baseClient.Put(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("UpdateTransferSchedule: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("UpdateTransferSchedule: %w", err)
+	}
 	return result, nil
 }
 
@@ -110,7 +126,9 @@ func (c *Client) ListTransferSchedules(ctx context.Context, query map[string]str
 	path := "/finances/transfers/wallet/2024-03-01/transferSchedules"
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("ListTransferSchedules: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("ListTransferSchedules: %w", err)
+	}
 	return result, nil
 }
 
@@ -121,7 +139,9 @@ func (c *Client) DeleteScheduleTransaction(ctx context.Context, transferSchedule
 	path = strings.Replace(path, "{transferScheduleId}", transferScheduleId, 1)
 	var result interface{}
 	err := c.baseClient.Delete(ctx, path, &result)
-	if err != nil { return nil, fmt.Errorf("DeleteScheduleTransaction: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("DeleteScheduleTransaction: %w", err)
+	}
 	return result, nil
 }
 
@@ -132,7 +152,9 @@ func (c *Client) GetTransaction(ctx context.Context, transactionId string, query
 	path = strings.Replace(path, "{transactionId}", transactionId, 1)
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetTransaction: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetTransaction: %w", err)
+	}
 	return result, nil
 }
 
@@ -142,6 +164,8 @@ func (c *Client) CreateTransferSchedule(ctx context.Context, body interface{}) (
 	path := "/finances/transfers/wallet/2024-03-01/transferSchedules"
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("CreateTransferSchedule: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("CreateTransferSchedule: %w", err)
+	}
 	return result, nil
 }

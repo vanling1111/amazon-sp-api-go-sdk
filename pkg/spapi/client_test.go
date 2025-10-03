@@ -120,7 +120,7 @@ func TestClient_Config(t *testing.T) {
 	client, err := spapi.NewClient(
 		spapi.WithRegion(models.RegionNA),
 		spapi.WithCredentials("test-client-id", "test-client-secret", "test-refresh-token"),
-		spapi.WithHTTPTimeout(45 * time.Second),
+		spapi.WithHTTPTimeout(45*time.Second),
 	)
 	if err != nil {
 		t.Fatalf("NewClient() error = %v", err)
@@ -403,7 +403,7 @@ func TestClient_RequestWithQueryParams(t *testing.T) {
 
 	var result interface{}
 	err = client.Get(ctx, "/test/path", queryParams, &result)
-	
+
 	// 预期会失败，但测试参数处理
 	t.Logf("Request with query params: %v", err)
 }
@@ -425,7 +425,7 @@ func TestClient_ContextCancellation(t *testing.T) {
 
 	var result interface{}
 	err = client.Get(ctx, "/test/path", nil, &result)
-	
+
 	if err == nil {
 		t.Error("Expected error with cancelled context, got nil")
 	} else {
@@ -460,4 +460,3 @@ func TestClient_AllRegions(t *testing.T) {
 		})
 	}
 }
-

@@ -11,5 +11,5 @@ package fulfillment_inbound_v0
 // The monetary value.
 type Amount struct {
 	CurrencyCode *CurrencyCode `json:"CurrencyCode"`
-	Value float64 `json:"Value"`
+	Value        float64       `json:"Value"`
 }

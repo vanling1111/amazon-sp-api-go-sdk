@@ -11,7 +11,7 @@ package vendor_direct_fulfillment_payments_v1
 // Monetary and tax details of the charge.
 type ChargeDetails struct {
 	// Type of charge applied.
-	Type_ string `json:"type"`
+	Type_        string `json:"type"`
 	ChargeAmount *Money `json:"chargeAmount"`
 	// Individual tax details per line item.
 	TaxDetails []TaxDetail `json:"taxDetails,omitempty"`

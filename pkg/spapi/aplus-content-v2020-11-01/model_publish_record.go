@@ -10,10 +10,10 @@ package aplus_content_v2020_11_01
 
 // The full context for an A+ Content publishing event.
 type PublishRecord struct {
-	MarketplaceId string `json:"marketplaceId"`
-	Locale string `json:"locale"`
-	Asin string `json:"asin"`
-	ContentType *ContentType `json:"contentType"`
-	ContentSubType string `json:"contentSubType,omitempty"`
-	ContentReferenceKey string `json:"contentReferenceKey"`
+	MarketplaceId       string       `json:"marketplaceId"`
+	Locale              string       `json:"locale"`
+	Asin                string       `json:"asin"`
+	ContentType         *ContentType `json:"contentType"`
+	ContentSubType      string       `json:"contentSubType,omitempty"`
+	ContentReferenceKey string       `json:"contentReferenceKey"`
 }

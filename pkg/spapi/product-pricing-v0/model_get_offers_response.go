@@ -11,5 +11,5 @@ package product_pricing_v0
 // The response schema for the `getListingOffers` and `getItemOffers` operations.
 type GetOffersResponse struct {
 	Payload *GetOffersResult `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError    `json:"errors,omitempty"`
 }

@@ -79,8 +79,8 @@ func WithDefaultRate(rate float64, burst int) ManagerOption {
 func NewManager(opts ...ManagerOption) *Manager {
 	m := &Manager{
 		limiters:     make(map[string]*Limiter),
-		defaultRate:  1.0,  // 默认每秒 1 个请求
-		defaultBurst: 5,    // 默认突发 5 个
+		defaultRate:  1.0, // 默认每秒 1 个请求
+		defaultBurst: 5,   // 默认突发 5 个
 	}
 
 	for _, opt := range opts {
@@ -290,7 +290,7 @@ func buildLimiterKey(sellerID, appID, marketplace, operation string) string {
 	var builder strings.Builder
 	// 预分配足够容量，避免扩容
 	builder.Grow(len(sellerID) + len(appID) + len(marketplace) + len(operation) + 3) // +3 for colons
-	
+
 	builder.WriteString(sellerID)
 	builder.WriteByte(':')
 	builder.WriteString(appID)
@@ -298,7 +298,6 @@ func buildLimiterKey(sellerID, appID, marketplace, operation string) string {
 	builder.WriteString(marketplace)
 	builder.WriteByte(':')
 	builder.WriteString(operation)
-	
+
 	return builder.String()
 }
-

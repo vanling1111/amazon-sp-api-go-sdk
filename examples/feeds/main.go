@@ -51,8 +51,8 @@ func main() {
 	// 示例 2: 创建 Feed
 	fmt.Println("=== 示例 2: 创建 Feed ===")
 	feedRequest := map[string]interface{}{
-		"feedType": "POST_PRODUCT_DATA",
-		"marketplaceIds": []string{"ATVPDKIKX0DER"},
+		"feedType":            "POST_PRODUCT_DATA",
+		"marketplaceIds":      []string{"ATVPDKIKX0DER"},
 		"inputFeedDocumentId": "amzn1.tortuga.3.example", // 替换为实际的文档ID
 	}
 
@@ -67,7 +67,7 @@ func main() {
 	// 示例 3: 获取 Feed 列表
 	fmt.Println("=== 示例 3: 获取 Feed 列表 ===")
 	queryParams := map[string]string{
-		"feedTypes": "POST_PRODUCT_DATA",
+		"feedTypes":  "POST_PRODUCT_DATA",
 		"maxResults": "10",
 	}
 
@@ -93,4 +93,3 @@ func main() {
 
 	fmt.Println("\n✓ Feeds API 示例完成")
 }
-

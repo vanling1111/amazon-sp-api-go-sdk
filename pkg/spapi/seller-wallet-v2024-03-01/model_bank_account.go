@@ -8,24 +8,24 @@
  */
 package seller_wallet_v2024_03_01
 
-// Details of an Amazon SW bank account, used to hold money earned by a SW customer by selling items. NOTE: Not including account_links, short cut links to the account balance and transactions -> since not mandatory 
+// Details of an Amazon SW bank account, used to hold money earned by a SW customer by selling items. NOTE: Not including account_links, short cut links to the account balance and transactions -> since not mandatory
 type BankAccount struct {
-	// The unique identifier provided by Amazon to identify the account 
+	// The unique identifier provided by Amazon to identify the account
 	AccountId string `json:"accountId,omitempty"`
-	// BankAccount holder's name (expected to be Amazon customer) 
-	AccountHolderName string `json:"accountHolderName,omitempty"`
+	// BankAccount holder's name (expected to be Amazon customer)
+	AccountHolderName       string                   `json:"accountHolderName,omitempty"`
 	BankAccountNumberFormat *BankAccountNumberFormat `json:"bankAccountNumberFormat"`
-	// The name of the bank, for all Amazon Seller Wallet account the value will be Amazon Seller Wallet 
-	BankName string `json:"bankName,omitempty"`
+	// The name of the bank, for all Amazon Seller Wallet account the value will be Amazon Seller Wallet
+	BankName                 string                    `json:"bankName,omitempty"`
 	BankAccountOwnershipType *BankAccountOwnershipType `json:"bankAccountOwnershipType"`
-	// Routing number for automated clearing house transfers, for all Amazon Seller Wallet account the value will be denoted by nine cosecutive 0's,  
-	RoutingNumber string `json:"routingNumber"`
+	// Routing number for automated clearing house transfers, for all Amazon Seller Wallet account the value will be denoted by nine cosecutive 0's,
+	RoutingNumber    string            `json:"routingNumber"`
 	BankNumberFormat *BankNumberFormat `json:"bankNumberFormat"`
-	// The two digit country code, in ISO 3166 format. 
+	// The two digit country code, in ISO 3166 format.
 	AccountCountryCode string `json:"accountCountryCode"`
-	// BankAccount currency code in ISO 4217 format 
+	// BankAccount currency code in ISO 4217 format
 	AccountCurrency string `json:"accountCurrency"`
-	// Last 3 digit of the bank account number, for all Amazon Seller Wallet account the value will be three consecutive 0's 
-	BankAccountNumberTail string `json:"bankAccountNumberTail"`
+	// Last 3 digit of the bank account number, for all Amazon Seller Wallet account the value will be three consecutive 0's
+	BankAccountNumberTail   string                   `json:"bankAccountNumberTail"`
 	BankAccountHolderStatus *BankAccountHolderStatus `json:"bankAccountHolderStatus,omitempty"`
 }

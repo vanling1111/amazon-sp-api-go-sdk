@@ -11,5 +11,5 @@ package fulfillment_inbound_v0
 // Preparation instructions and who is responsible for the preparation.
 type PrepDetails struct {
 	PrepInstruction *PrepInstruction `json:"PrepInstruction"`
-	PrepOwner *PrepOwner `json:"PrepOwner"`
+	PrepOwner       *PrepOwner       `json:"PrepOwner"`
 }

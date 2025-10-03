@@ -10,6 +10,6 @@ package notifications_v1
 
 // The information required to create a destination resource. Applications should use one resource type (sqs or eventBridge) per destination.
 type DestinationResourceSpecification struct {
-	Sqs *SqsResource `json:"sqs,omitempty"`
+	Sqs         *SqsResource                      `json:"sqs,omitempty"`
 	EventBridge *EventBridgeResourceSpecification `json:"eventBridge,omitempty"`
 }

@@ -11,10 +11,10 @@ package vendor_direct_fulfillment_shipping_v2021_12_28
 // Represents the confirmation details of a shipment, including the purchase order number and other shipment details.
 type ShipmentConfirmation struct {
 	// Purchase order number corresponding to the shipment.
-	PurchaseOrderNumber string `json:"purchaseOrderNumber"`
-	ShipmentDetails *ShipmentDetails `json:"shipmentDetails"`
-	SellingParty *PartyIdentification `json:"sellingParty"`
-	ShipFromParty *PartyIdentification `json:"shipFromParty"`
+	PurchaseOrderNumber string               `json:"purchaseOrderNumber"`
+	ShipmentDetails     *ShipmentDetails     `json:"shipmentDetails"`
+	SellingParty        *PartyIdentification `json:"sellingParty"`
+	ShipFromParty       *PartyIdentification `json:"shipFromParty"`
 	// Provide the details of the items in this shipment. If any of the item details field is common at a package or a pallet level, then provide them at the corresponding package.
 	Items []Item `json:"items"`
 	// Provide the details of the items in this shipment. If any of the item details field is common at a package or a pallet level, then provide them at the corresponding package.

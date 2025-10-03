@@ -73,12 +73,12 @@ func main() {
 		"productType": "PRODUCT",
 		"patches": []map[string]interface{}{
 			{
-				"op":    "replace",
-				"path":  "/attributes/fulfillment_availability",
+				"op":   "replace",
+				"path": "/attributes/fulfillment_availability",
 				"value": []map[string]interface{}{
 					{
 						"fulfillment_channel_code": "DEFAULT",
-						"quantity": 100,
+						"quantity":                 100,
 					},
 				},
 			},
@@ -95,4 +95,3 @@ func main() {
 
 	fmt.Println("\n✓ Listings API 示例完成")
 }
-

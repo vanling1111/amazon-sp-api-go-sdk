@@ -10,6 +10,6 @@ package aplus_content_v2020_11_01
 
 // A standard headline and body text.
 type StandardTextModule struct {
-	Headline *TextComponent `json:"headline,omitempty"`
-	Body *ParagraphComponent `json:"body"`
+	Headline *TextComponent      `json:"headline,omitempty"`
+	Body     *ParagraphComponent `json:"body"`
 }

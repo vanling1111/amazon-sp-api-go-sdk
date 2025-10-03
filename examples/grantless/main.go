@@ -87,4 +87,3 @@ func main() {
 	fmt.Println("  - sellingpartnerapi::notifications")
 	fmt.Println("  - sellingpartnerapi::migration")
 }
-

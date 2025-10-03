@@ -11,6 +11,6 @@ package services_v1
 // Information about the location of the service job.
 type ServiceLocation struct {
 	// The location of the service job.
-	ServiceLocationType string `json:"serviceLocationType,omitempty"`
-	Address *Address `json:"address,omitempty"`
+	ServiceLocationType string   `json:"serviceLocationType,omitempty"`
+	Address             *Address `json:"address,omitempty"`
 }

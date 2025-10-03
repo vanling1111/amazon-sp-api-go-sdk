@@ -10,6 +10,6 @@ package vendor_direct_fulfillment_sandbox_test_data_v2021_10_28
 
 // The party identifiers required to generate the test data.
 type OrderScenarioRequest struct {
-	SellingParty *PartyIdentification `json:"sellingParty"`
+	SellingParty  *PartyIdentification `json:"sellingParty"`
 	ShipFromParty *PartyIdentification `json:"shipFromParty"`
 }

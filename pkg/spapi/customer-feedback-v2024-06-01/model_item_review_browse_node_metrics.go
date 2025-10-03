@@ -10,6 +10,6 @@ package customer_feedback_v2024_06_01
 
 // The browse node review topic metrics.
 type ItemReviewBrowseNodeMetrics struct {
-	OccurrencePercentage *BrowseNodeOccurrence `json:"occurrencePercentage,omitempty"`
-	StarRatingImpact *BrowseNodeStarRatingImpact `json:"starRatingImpact,omitempty"`
+	OccurrencePercentage *BrowseNodeOccurrence       `json:"occurrencePercentage,omitempty"`
+	StarRatingImpact     *BrowseNodeStarRatingImpact `json:"starRatingImpact,omitempty"`
 }

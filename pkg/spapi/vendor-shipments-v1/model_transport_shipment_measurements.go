@@ -15,7 +15,7 @@ type TransportShipmentMeasurements struct {
 	// Total number of Stackable Pallets present in the shipment.
 	TotalPalletStackable int32 `json:"totalPalletStackable,omitempty"`
 	// Total number of Non Stackable Pallets present in the shipment.
-	TotalPalletNonStackable int32 `json:"totalPalletNonStackable,omitempty"`
-	ShipmentWeight *Weight `json:"shipmentWeight,omitempty"`
-	ShipmentVolume *Volume `json:"shipmentVolume,omitempty"`
+	TotalPalletNonStackable int32   `json:"totalPalletNonStackable,omitempty"`
+	ShipmentWeight          *Weight `json:"shipmentWeight,omitempty"`
+	ShipmentVolume          *Volume `json:"shipmentVolume,omitempty"`
 }

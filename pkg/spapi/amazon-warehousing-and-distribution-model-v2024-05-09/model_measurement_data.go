@@ -11,6 +11,6 @@ package amazon_warehousing_and_distribution_model_v2024_05_09
 // Package weight and dimension.
 type MeasurementData struct {
 	Dimensions *PackageDimensions `json:"dimensions,omitempty"`
-	Volume *PackageVolume `json:"volume,omitempty"`
-	Weight *PackageWeight `json:"weight"`
+	Volume     *PackageVolume     `json:"volume,omitempty"`
+	Weight     *PackageWeight     `json:"weight"`
 }

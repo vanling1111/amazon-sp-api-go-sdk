@@ -11,5 +11,5 @@ package vendor_shipments_v1
 // The response schema for the GetShipmentLabels operation.
 type GetShipmentLabels struct {
 	Payload *TransportationLabels `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError         `json:"errors,omitempty"`
 }

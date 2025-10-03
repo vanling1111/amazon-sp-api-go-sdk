@@ -15,8 +15,8 @@ type ExportInvoicesRequest struct {
 	// The earliest invoice creation date for invoices that you want to include in the response. Dates are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default is 24 hours prior to the time of the request.
 	DateStart string `json:"dateStart,omitempty"`
 	// The external ID of the invoices you want included in the response.
-	ExternalInvoiceId string `json:"externalInvoiceId,omitempty"`
-	FileFormat *FileFormat `json:"fileFormat,omitempty"`
+	ExternalInvoiceId string      `json:"externalInvoiceId,omitempty"`
+	FileFormat        *FileFormat `json:"fileFormat,omitempty"`
 	// The marketplace-specific classification of the invoice type. Use the `getInvoicesAttributes` operation to check `invoiceType` options.
 	InvoiceType string `json:"invoiceType,omitempty"`
 	// The ID of the marketplace from which you want the invoices.
@@ -24,7 +24,7 @@ type ExportInvoicesRequest struct {
 	// The series number of the invoices you want included in the response.
 	Series string `json:"series,omitempty"`
 	// A list of statuses that you can use to filter invoices. Use the `getInvoicesAttributes` operation to check invoice status options.  Min count: 1
-	Statuses []string `json:"statuses,omitempty"`
+	Statuses              []string               `json:"statuses,omitempty"`
 	TransactionIdentifier *TransactionIdentifier `json:"transactionIdentifier,omitempty"`
 	// The marketplace-specific classification of the transaction type for which the invoice was created. Use the `getInvoicesAttributes` operation to check `transactionType` options
 	TransactionType string `json:"transactionType,omitempty"`

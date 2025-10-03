@@ -11,5 +11,5 @@ package merchant_fulfillment_v0
 // Response schema.
 type GetEligibleShipmentServicesResponse struct {
 	Payload *GetEligibleShipmentServicesResult `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError                      `json:"errors,omitempty"`
 }

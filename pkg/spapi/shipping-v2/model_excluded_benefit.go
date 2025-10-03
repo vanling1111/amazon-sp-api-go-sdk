@@ -12,6 +12,6 @@ package shipping_v2
 // Object representing a benefit that is excluded for a shipping offer or rate.
 type ExcludedBenefit struct {
 	// benefit
-	Benefit string `json:"benefit"`
+	Benefit     string    `json:"benefit"`
 	ReasonCodes *[]string `json:"reasonCodes,omitempty"`
 }

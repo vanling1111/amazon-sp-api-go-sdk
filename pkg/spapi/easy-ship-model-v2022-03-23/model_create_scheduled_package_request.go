@@ -10,7 +10,7 @@ package easy_ship_model_v2022_03_23
 
 // The request schema for the `createScheduledPackage` operation.
 type CreateScheduledPackageRequest struct {
-	AmazonOrderId string `json:"amazonOrderId"`
-	MarketplaceId string `json:"marketplaceId"`
+	AmazonOrderId  string          `json:"amazonOrderId"`
+	MarketplaceId  string          `json:"marketplaceId"`
 	PackageDetails *PackageDetails `json:"packageDetails"`
 }

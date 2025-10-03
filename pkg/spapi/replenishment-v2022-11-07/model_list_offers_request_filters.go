@@ -17,7 +17,7 @@ type ListOffersRequestFilters struct {
 	Asins []string `json:"asins,omitempty"`
 	// A list of eligibilities associated with an offer.
 	Eligibilities []EligibilityStatus `json:"eligibilities,omitempty"`
-	Preferences *Preference `json:"preferences,omitempty"`
-	Promotions *Promotion `json:"promotions,omitempty"`
-	ProgramTypes *[]ProgramType `json:"programTypes"`
+	Preferences   *Preference         `json:"preferences,omitempty"`
+	Promotions    *Promotion          `json:"promotions,omitempty"`
+	ProgramTypes  *[]ProgramType      `json:"programTypes"`
 }

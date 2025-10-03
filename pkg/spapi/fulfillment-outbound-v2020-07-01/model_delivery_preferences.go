@@ -11,6 +11,6 @@ package fulfillment_outbound_v2020_07_01
 // The delivery preferences applied to the destination address. These preferences are applied when possible and are best effort. This feature is currently supported only in the JP marketplace and not applicable for other marketplaces. For eligible orders, the default delivery preference will be to deliver the package unattended at the front door, unless you specify otherwise.
 type DeliveryPreferences struct {
 	// Additional delivery instructions. For example, this could be instructions on how to enter a building, nearby landmark or navigation instructions, 'Beware of dogs', etc.
-	DeliveryInstructions string `json:"deliveryInstructions,omitempty"`
-	DropOffLocation *DropOffLocation `json:"dropOffLocation,omitempty"`
+	DeliveryInstructions string           `json:"deliveryInstructions,omitempty"`
+	DropOffLocation      *DropOffLocation `json:"dropOffLocation,omitempty"`
 }

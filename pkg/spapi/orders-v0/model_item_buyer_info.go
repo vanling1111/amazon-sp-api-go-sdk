@@ -11,8 +11,8 @@ package orders_v0
 // A single item's buyer information.
 type ItemBuyerInfo struct {
 	BuyerCustomizedInfo *BuyerCustomizedInfoDetail `json:"BuyerCustomizedInfo,omitempty"`
-	GiftWrapPrice *Money `json:"GiftWrapPrice,omitempty"`
-	GiftWrapTax *Money `json:"GiftWrapTax,omitempty"`
+	GiftWrapPrice       *Money                     `json:"GiftWrapPrice,omitempty"`
+	GiftWrapTax         *Money                     `json:"GiftWrapTax,omitempty"`
 	// A gift message provided by the buyer.  **Note**: This attribute is only available for MFN (fulfilled by seller) orders.
 	GiftMessageText string `json:"GiftMessageText,omitempty"`
 	// The gift wrap level specified by the buyer.

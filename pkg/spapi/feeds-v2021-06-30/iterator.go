@@ -1,4 +1,4 @@
-﻿// Copyright 2025 Amazon SP-API Go SDK Authors.
+// Copyright 2025 Amazon SP-API Go SDK Authors.
 // Licensed under the Apache License, Version 2.0.
 
 package feeds_v2021_06_30
@@ -73,4 +73,3 @@ func (c *Client) IterateFeeds(ctx context.Context, query map[string]string) iter
 		}
 	}
 }
-

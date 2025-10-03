@@ -10,6 +10,6 @@ package product_pricing_v0
 
 // The response schema for the `getPricing` and `getCompetitivePricing` operations.
 type GetPricingResponse struct {
-	Payload *[]Price `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Payload *[]Price      `json:"payload,omitempty"`
+	Errors  *[]ModelError `json:"errors,omitempty"`
 }

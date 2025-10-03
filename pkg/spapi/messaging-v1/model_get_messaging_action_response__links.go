@@ -10,6 +10,6 @@ package messaging_v1
 
 // The links response that is associated with the messaging action.
 type GetMessagingActionResponseLinks struct {
-	Self *LinkObject `json:"self"`
+	Self   *LinkObject `json:"self"`
 	Schema *LinkObject `json:"schema"`
 }

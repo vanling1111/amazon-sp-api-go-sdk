@@ -11,9 +11,9 @@ package aplus_content_v2020_11_01
 // The A+ Content document. This is the enhanced content that is published to product detail pages.
 type ContentDocument struct {
 	// The A+ Content document name.
-	Name string `json:"name"`
-	ContentType *ContentType `json:"contentType"`
-	ContentSubType string `json:"contentSubType,omitempty"`
-	Locale string `json:"locale"`
+	Name              string           `json:"name"`
+	ContentType       *ContentType     `json:"contentType"`
+	ContentSubType    string           `json:"contentSubType,omitempty"`
+	Locale            string           `json:"locale"`
 	ContentModuleList *[]ContentModule `json:"contentModuleList"`
 }

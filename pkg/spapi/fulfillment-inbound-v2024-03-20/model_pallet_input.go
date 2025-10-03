@@ -12,7 +12,7 @@ package fulfillment_inbound_v2024_03_20
 type PalletInput struct {
 	Dimensions *Dimensions `json:"dimensions,omitempty"`
 	// The number of containers where all other properties like weight or dimensions are identical.
-	Quantity int32 `json:"quantity"`
+	Quantity     int32         `json:"quantity"`
 	Stackability *Stackability `json:"stackability,omitempty"`
-	Weight *Weight `json:"weight,omitempty"`
+	Weight       *Weight       `json:"weight,omitempty"`
 }

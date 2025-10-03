@@ -11,5 +11,5 @@ package sellers_v1
 // The response schema for the `getMarketplaceParticipations` operation.
 type GetMarketplaceParticipationsResponse struct {
 	Payload *[]MarketplaceParticipation `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError               `json:"errors,omitempty"`
 }

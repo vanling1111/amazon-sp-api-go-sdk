@@ -11,9 +11,9 @@ package orders_v0
 // The order's regulated information along with its verification status.
 type OrderRegulatedInfo struct {
 	// An Amazon-defined order identifier, in 3-7-7 format.
-	AmazonOrderId string `json:"AmazonOrderId"`
+	AmazonOrderId        string                `json:"AmazonOrderId"`
 	RegulatedInformation *RegulatedInformation `json:"RegulatedInformation"`
 	// When true, the order requires attaching a dosage information label when shipped.
-	RequiresDosageLabel bool `json:"RequiresDosageLabel"`
+	RequiresDosageLabel              bool                              `json:"RequiresDosageLabel"`
 	RegulatedOrderVerificationStatus *RegulatedOrderVerificationStatus `json:"RegulatedOrderVerificationStatus"`
 }

@@ -141,4 +141,3 @@ func MaskString(s string, visibleStart, visibleEnd int) string {
 
 	return start + strings.Repeat("*", maskLen) + end
 }
-

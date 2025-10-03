@@ -11,25 +11,25 @@ package product_pricing_v0
 // Schema for an individual offer. Object in `OfferDetailList`.
 type OfferDetail struct {
 	// When true, this is the seller's offer.
-	MyOffer bool `json:"MyOffer,omitempty"`
+	MyOffer   bool               `json:"MyOffer,omitempty"`
 	OfferType *OfferCustomerType `json:"offerType,omitempty"`
 	// The subcondition of the item. Subcondition values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other.
 	SubCondition string `json:"SubCondition"`
 	// The seller identifier for the offer.
 	SellerId string `json:"SellerId,omitempty"`
 	// Information about the condition of the item.
-	ConditionNotes string `json:"ConditionNotes,omitempty"`
-	SellerFeedbackRating *SellerFeedbackType `json:"SellerFeedbackRating,omitempty"`
-	ShippingTime *DetailedShippingTimeType `json:"ShippingTime"`
-	ListingPrice *MoneyType `json:"ListingPrice"`
+	ConditionNotes       string                    `json:"ConditionNotes,omitempty"`
+	SellerFeedbackRating *SellerFeedbackType       `json:"SellerFeedbackRating,omitempty"`
+	ShippingTime         *DetailedShippingTimeType `json:"ShippingTime"`
+	ListingPrice         *MoneyType                `json:"ListingPrice"`
 	// List of `QuantityDiscountPrice` that contains item's pricing information when buy in bulk.
 	QuantityDiscountPrices []QuantityDiscountPriceType `json:"quantityDiscountPrices,omitempty"`
-	Points *Points `json:"Points,omitempty"`
-	Shipping *MoneyType `json:"Shipping"`
-	ShipsFrom *ShipsFromType `json:"ShipsFrom,omitempty"`
+	Points                 *Points                     `json:"Points,omitempty"`
+	Shipping               *MoneyType                  `json:"Shipping"`
+	ShipsFrom              *ShipsFromType              `json:"ShipsFrom,omitempty"`
 	// When true, the offer is fulfilled by Amazon.
-	IsFulfilledByAmazon bool `json:"IsFulfilledByAmazon"`
-	PrimeInformation *PrimeInformationType `json:"PrimeInformation,omitempty"`
+	IsFulfilledByAmazon bool                  `json:"IsFulfilledByAmazon"`
+	PrimeInformation    *PrimeInformationType `json:"PrimeInformation,omitempty"`
 	// When true, the offer is currently in the Buy Box. There can be up to two Buy Box winners at any time per ASIN, one that is eligible for Prime and one that is not eligible for Prime.
 	IsBuyBoxWinner bool `json:"IsBuyBoxWinner,omitempty"`
 	// When true, the seller of the item is eligible to win the Buy Box.

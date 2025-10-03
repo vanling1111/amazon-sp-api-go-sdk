@@ -124,11 +124,11 @@ func (c *Config) Validate() error {
 // formatValidationErrors 格式化验证错误
 func formatValidationErrors(errs validator.ValidationErrors) error {
 	messages := make([]string, 0, len(errs))
-	
+
 	for _, err := range errs {
 		var msg string
 		field := err.Field()
-		
+
 		switch err.Tag() {
 		case "required":
 			msg = fmt.Sprintf("%s is required", field)
@@ -143,14 +143,14 @@ func formatValidationErrors(errs validator.ValidationErrors) error {
 		default:
 			msg = fmt.Sprintf("%s validation failed: %s", field, err.Tag())
 		}
-		
+
 		messages = append(messages, msg)
 	}
 
 	if len(messages) == 1 {
 		return fmt.Errorf("config validation failed: %s", messages[0])
 	}
-	
+
 	return fmt.Errorf("config validation failed: %v", messages)
 }
 
@@ -303,4 +303,3 @@ func WithMetrics(recorder metrics.Recorder) ClientOption {
 		}
 	}
 }
-

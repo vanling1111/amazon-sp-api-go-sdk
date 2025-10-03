@@ -10,7 +10,7 @@ package product_pricing_v0
 
 // Common request parameters that can be accepted by `ItemOffersRequest` and `ListingOffersRequest`
 type BatchOffersRequestParams struct {
-	MarketplaceId string `json:"MarketplaceId"`
+	MarketplaceId string         `json:"MarketplaceId"`
 	ItemCondition *ItemCondition `json:"ItemCondition"`
-	CustomerType *CustomerType `json:"CustomerType,omitempty"`
+	CustomerType  *CustomerType  `json:"CustomerType,omitempty"`
 }

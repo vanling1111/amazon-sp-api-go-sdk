@@ -13,9 +13,9 @@ type Carton struct {
 	// A list of carton identifiers.
 	CartonIdentifiers []ContainerIdentification `json:"cartonIdentifiers,omitempty"`
 	// Carton sequence number for the carton. The first carton will be 001, the second 002, and so on. This number is used as a reference to refer to this carton from the pallet level.
-	CartonSequenceNumber string `json:"cartonSequenceNumber"`
-	Dimensions *Dimensions `json:"dimensions,omitempty"`
-	Weight *Weight `json:"weight,omitempty"`
+	CartonSequenceNumber string      `json:"cartonSequenceNumber"`
+	Dimensions           *Dimensions `json:"dimensions,omitempty"`
+	Weight               *Weight     `json:"weight,omitempty"`
 	// This is required to be provided for every carton in the small parcel shipments.
 	TrackingNumber string `json:"trackingNumber,omitempty"`
 	// A list of container item details.

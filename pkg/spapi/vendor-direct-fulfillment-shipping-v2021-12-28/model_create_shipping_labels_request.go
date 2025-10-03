@@ -10,7 +10,7 @@ package vendor_direct_fulfillment_shipping_v2021_12_28
 
 // The request body for the createShippingLabels operation.
 type CreateShippingLabelsRequest struct {
-	SellingParty *PartyIdentification `json:"sellingParty"`
+	SellingParty  *PartyIdentification `json:"sellingParty"`
 	ShipFromParty *PartyIdentification `json:"shipFromParty"`
 	// A list of the packages in this shipment.
 	Containers []Container `json:"containers,omitempty"`

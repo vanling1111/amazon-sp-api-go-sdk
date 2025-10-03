@@ -9,8 +9,8 @@
 package supply_sources_v2020_07_01
 
 type SupplySourceListInner struct {
-	Alias string `json:"alias,omitempty"`
-	SupplySourceId string `json:"supplySourceId,omitempty"`
-	SupplySourceCode string `json:"supplySourceCode,omitempty"`
-	Address *Address `json:"address,omitempty"`
+	Alias            string   `json:"alias,omitempty"`
+	SupplySourceId   string   `json:"supplySourceId,omitempty"`
+	SupplySourceCode string   `json:"supplySourceCode,omitempty"`
+	Address          *Address `json:"address,omitempty"`
 }

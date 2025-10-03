@@ -13,6 +13,6 @@ type Promotion struct {
 	// The type of promotion.
 	PromotionType string `json:"PromotionType,omitempty"`
 	// The seller-specified identifier for the promotion.
-	PromotionId string `json:"PromotionId,omitempty"`
+	PromotionId     string    `json:"PromotionId,omitempty"`
 	PromotionAmount *Currency `json:"PromotionAmount,omitempty"`
 }

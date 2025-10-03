@@ -10,13 +10,13 @@ package supply_sources_v2020_07_01
 
 // The supply source details, including configurations and capabilities.
 type SupplySource struct {
-	SupplySourceId string `json:"supplySourceId,omitempty"`
-	SupplySourceCode string `json:"supplySourceCode,omitempty"`
-	Alias string `json:"alias,omitempty"`
-	Status *SupplySourceStatusReadOnly `json:"status,omitempty"`
-	Address *Address `json:"address,omitempty"`
-	Configuration *SupplySourceConfiguration `json:"configuration,omitempty"`
-	Capabilities *SupplySourceCapabilities `json:"capabilities,omitempty"`
-	CreatedAt string `json:"createdAt,omitempty"`
-	UpdatedAt string `json:"updatedAt,omitempty"`
+	SupplySourceId   string                      `json:"supplySourceId,omitempty"`
+	SupplySourceCode string                      `json:"supplySourceCode,omitempty"`
+	Alias            string                      `json:"alias,omitempty"`
+	Status           *SupplySourceStatusReadOnly `json:"status,omitempty"`
+	Address          *Address                    `json:"address,omitempty"`
+	Configuration    *SupplySourceConfiguration  `json:"configuration,omitempty"`
+	Capabilities     *SupplySourceCapabilities   `json:"capabilities,omitempty"`
+	CreatedAt        string                      `json:"createdAt,omitempty"`
+	UpdatedAt        string                      `json:"updatedAt,omitempty"`
 }

@@ -10,6 +10,6 @@ package supply_sources_v2020_07_01
 
 // The result of creating a new supply source.
 type CreateSupplySourceResponse struct {
-	SupplySourceId string `json:"supplySourceId"`
+	SupplySourceId   string `json:"supplySourceId"`
 	SupplySourceCode string `json:"supplySourceCode"`
 }

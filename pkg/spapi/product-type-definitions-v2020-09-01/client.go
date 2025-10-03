@@ -7,7 +7,7 @@ import (
 	"context"
 	"fmt"
 	"strings"
-	
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 )
 
@@ -21,23 +21,27 @@ func NewClient(baseClient *spapi.Client) *Client {
 	return &Client{baseClient: baseClient}
 }
 
-// GetDefinitionsProductType 
+// GetDefinitionsProductType
 // Method: GET | Path: /definitions/2020-09-01/productTypes/{productType}
 func (c *Client) GetDefinitionsProductType(ctx context.Context, productType string, query map[string]string) (interface{}, error) {
 	path := "/definitions/2020-09-01/productTypes/{productType}"
 	path = strings.Replace(path, "{productType}", productType, 1)
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetDefinitionsProductType: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetDefinitionsProductType: %w", err)
+	}
 	return result, nil
 }
 
-// SearchDefinitionsProductTypes 
+// SearchDefinitionsProductTypes
 // Method: GET | Path: /definitions/2020-09-01/productTypes
 func (c *Client) SearchDefinitionsProductTypes(ctx context.Context, query map[string]string) (interface{}, error) {
 	path := "/definitions/2020-09-01/productTypes"
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("SearchDefinitionsProductTypes: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("SearchDefinitionsProductTypes: %w", err)
+	}
 	return result, nil
 }

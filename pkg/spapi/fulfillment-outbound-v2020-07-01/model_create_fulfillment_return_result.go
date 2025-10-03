@@ -10,7 +10,7 @@ package fulfillment_outbound_v2020_07_01
 
 // The result for the `createFulfillmentReturn` operation.
 type CreateFulfillmentReturnResult struct {
-	ReturnItems *[]ReturnItem `json:"returnItems,omitempty"`
-	InvalidReturnItems *[]InvalidReturnItem `json:"invalidReturnItems,omitempty"`
+	ReturnItems          *[]ReturnItem          `json:"returnItems,omitempty"`
+	InvalidReturnItems   *[]InvalidReturnItem   `json:"invalidReturnItems,omitempty"`
 	ReturnAuthorizations *[]ReturnAuthorization `json:"returnAuthorizations,omitempty"`
 }

@@ -99,4 +99,3 @@ func IsExpired(t time.Time, buffer time.Duration) bool {
 func CalculateExpireTime(expiresIn int) time.Time {
 	return time.Now().Add(time.Duration(expiresIn) * time.Second)
 }
-

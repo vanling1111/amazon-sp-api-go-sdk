@@ -11,11 +11,11 @@ package customer_feedback_v2024_06_01
 // Details of item review topic.
 type ItemReviewTopic struct {
 	// The name of the item review topic.
-	Topic string `json:"topic"`
-	AsinMetrics *ItemReviewTopicMetrics `json:"asinMetrics"`
-	ParentAsinMetrics *ItemReviewTopicMetrics `json:"parentAsinMetrics,omitempty"`
+	Topic             string                       `json:"topic"`
+	AsinMetrics       *ItemReviewTopicMetrics      `json:"asinMetrics"`
+	ParentAsinMetrics *ItemReviewTopicMetrics      `json:"parentAsinMetrics,omitempty"`
 	BrowseNodeMetrics *ItemReviewBrowseNodeMetrics `json:"browseNodeMetrics,omitempty"`
-	ChildAsinMetrics *ChildAsinMetrics `json:"childAsinMetrics,omitempty"`
+	ChildAsinMetrics  *ChildAsinMetrics            `json:"childAsinMetrics,omitempty"`
 	// A list of up to three snippets from reviews that contain the topic. This value is `null` if there aren't enough review snippets for the topic.
 	ReviewSnippets []string `json:"reviewSnippets,omitempty"`
 	// A list of up to five top subtopics for the topic. The percentage of customer reviews that mention the subtopic determine the topic's placement in the list. This value is `null` if there are no subtopics.

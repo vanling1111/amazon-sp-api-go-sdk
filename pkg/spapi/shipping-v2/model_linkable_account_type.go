@@ -11,6 +11,6 @@ package shipping_v2
 
 // Info About Linkable Account Type
 type LinkableAccountType struct {
-	AccountType *AccountType `json:"accountType,omitempty"`
+	AccountType          *AccountType           `json:"accountType,omitempty"`
 	CarrierAccountInputs *[]CarrierAccountInput `json:"carrierAccountInputs,omitempty"`
 }

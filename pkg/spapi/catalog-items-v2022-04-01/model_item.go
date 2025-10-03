@@ -10,15 +10,15 @@ package catalog_items_v2022_04_01
 
 // An item in the Amazon catalog.
 type Item struct {
-	Asin string `json:"asin"`
-	Attributes map[string]interface{} `json:"attributes,omitempty"`
+	Asin            string                                    `json:"asin"`
+	Attributes      map[string]interface{}                    `json:"attributes,omitempty"`
 	Classifications *[]ItemBrowseClassificationsByMarketplace `json:"classifications,omitempty"`
-	Dimensions *[]ItemDimensionsByMarketplace `json:"dimensions,omitempty"`
-	Identifiers *[]ItemIdentifiersByMarketplace `json:"identifiers,omitempty"`
-	Images *[]ItemImagesByMarketplace `json:"images,omitempty"`
-	ProductTypes *[]ItemProductTypeByMarketplace `json:"productTypes,omitempty"`
-	Relationships *[]ItemRelationshipsByMarketplace `json:"relationships,omitempty"`
-	SalesRanks *[]ItemSalesRanksByMarketplace `json:"salesRanks,omitempty"`
-	Summaries *[]ItemSummaryByMarketplace `json:"summaries,omitempty"`
-	VendorDetails *[]ItemVendorDetailsByMarketplace `json:"vendorDetails,omitempty"`
+	Dimensions      *[]ItemDimensionsByMarketplace            `json:"dimensions,omitempty"`
+	Identifiers     *[]ItemIdentifiersByMarketplace           `json:"identifiers,omitempty"`
+	Images          *[]ItemImagesByMarketplace                `json:"images,omitempty"`
+	ProductTypes    *[]ItemProductTypeByMarketplace           `json:"productTypes,omitempty"`
+	Relationships   *[]ItemRelationshipsByMarketplace         `json:"relationships,omitempty"`
+	SalesRanks      *[]ItemSalesRanksByMarketplace            `json:"salesRanks,omitempty"`
+	Summaries       *[]ItemSummaryByMarketplace               `json:"summaries,omitempty"`
+	VendorDetails   *[]ItemVendorDetailsByMarketplace         `json:"vendorDetails,omitempty"`
 }

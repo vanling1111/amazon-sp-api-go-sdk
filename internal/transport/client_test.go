@@ -168,4 +168,3 @@ func TestDefaultConfig(t *testing.T) {
 		t.Error("Default MaxIdleConns should be > 0")
 	}
 }
-

@@ -10,6 +10,6 @@ package messaging_v1
 
 // The response schema for the GetAttributes operation.
 type GetAttributesResponse struct {
-	Buyer *GetAttributesResponseBuyer `json:"buyer,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Buyer  *GetAttributesResponseBuyer `json:"buyer,omitempty"`
+	Errors *[]ModelError               `json:"errors,omitempty"`
 }

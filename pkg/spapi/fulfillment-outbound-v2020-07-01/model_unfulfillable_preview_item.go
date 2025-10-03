@@ -12,8 +12,8 @@ package fulfillment_outbound_v2020_07_01
 type UnfulfillablePreviewItem struct {
 	// The seller SKU of the item.
 	SellerSku string `json:"sellerSku"`
-	Quantity int32 `json:"quantity"`
+	Quantity  int32  `json:"quantity"`
 	// A fulfillment order item identifier created with a call to the `getFulfillmentPreview` operation.
-	SellerFulfillmentOrderItemId string `json:"sellerFulfillmentOrderItemId"`
-	ItemUnfulfillableReasons *[]string `json:"itemUnfulfillableReasons,omitempty"`
+	SellerFulfillmentOrderItemId string    `json:"sellerFulfillmentOrderItemId"`
+	ItemUnfulfillableReasons     *[]string `json:"itemUnfulfillableReasons,omitempty"`
 }

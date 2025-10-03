@@ -13,15 +13,15 @@ type InboundShipmentInfo struct {
 	// The shipment identifier submitted in the request.
 	ShipmentId string `json:"ShipmentId,omitempty"`
 	// The name for the inbound shipment.
-	ShipmentName string `json:"ShipmentName,omitempty"`
+	ShipmentName    string   `json:"ShipmentName,omitempty"`
 	ShipFromAddress *Address `json:"ShipFromAddress"`
 	// An Amazon fulfillment center identifier created by Amazon.
-	DestinationFulfillmentCenterId string `json:"DestinationFulfillmentCenterId,omitempty"`
-	ShipmentStatus *ShipmentStatus `json:"ShipmentStatus,omitempty"`
-	LabelPrepType *LabelPrepType `json:"LabelPrepType,omitempty"`
+	DestinationFulfillmentCenterId string          `json:"DestinationFulfillmentCenterId,omitempty"`
+	ShipmentStatus                 *ShipmentStatus `json:"ShipmentStatus,omitempty"`
+	LabelPrepType                  *LabelPrepType  `json:"LabelPrepType,omitempty"`
 	// Indicates whether or not an inbound shipment contains case-packed boxes. When AreCasesRequired = true for an inbound shipment, all items in the inbound shipment must be case packed.
-	AreCasesRequired bool `json:"AreCasesRequired"`
-	ConfirmedNeedByDate string `json:"ConfirmedNeedByDate,omitempty"`
-	BoxContentsSource *BoxContentsSource `json:"BoxContentsSource,omitempty"`
+	AreCasesRequired        bool                   `json:"AreCasesRequired"`
+	ConfirmedNeedByDate     string                 `json:"ConfirmedNeedByDate,omitempty"`
+	BoxContentsSource       *BoxContentsSource     `json:"BoxContentsSource,omitempty"`
 	EstimatedBoxContentsFee *BoxContentsFeeDetails `json:"EstimatedBoxContentsFee,omitempty"`
 }

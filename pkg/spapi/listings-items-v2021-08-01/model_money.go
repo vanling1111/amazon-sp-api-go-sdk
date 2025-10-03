@@ -12,5 +12,5 @@ package listings_items_v2021_08_01
 type Money struct {
 	// Three-digit currency code in ISO 4217 format.
 	CurrencyCode string `json:"currencyCode"`
-	Amount string `json:"amount"`
+	Amount       string `json:"amount"`
 }

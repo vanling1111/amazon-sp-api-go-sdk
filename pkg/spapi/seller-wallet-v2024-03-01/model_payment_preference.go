@@ -8,8 +8,8 @@
  */
 package seller_wallet_v2024_03_01
 
-// Payment preference type in which transfer is being scheduled 
+// Payment preference type in which transfer is being scheduled
 type PaymentPreference struct {
 	PaymentPreferencePaymentType *PaymentPreferencePaymentType `json:"paymentPreferencePaymentType"`
-	Value float64 `json:"value"`
+	Value                        float64                       `json:"value"`
 }

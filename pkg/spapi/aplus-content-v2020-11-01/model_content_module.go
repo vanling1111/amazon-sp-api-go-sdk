@@ -10,20 +10,20 @@ package aplus_content_v2020_11_01
 
 // An A+ Content module. An A+ Content document is composed of content modules. The `contentModuleType` property selects which content module types to use.
 type ContentModule struct {
-	ContentModuleType *ContentModuleType `json:"contentModuleType"`
-	StandardCompanyLogo *StandardCompanyLogoModule `json:"standardCompanyLogo,omitempty"`
-	StandardComparisonTable *StandardComparisonTableModule `json:"standardComparisonTable,omitempty"`
-	StandardFourImageText *StandardFourImageTextModule `json:"standardFourImageText,omitempty"`
-	StandardFourImageTextQuadrant *StandardFourImageTextQuadrantModule `json:"standardFourImageTextQuadrant,omitempty"`
-	StandardHeaderImageText *StandardHeaderImageTextModule `json:"standardHeaderImageText,omitempty"`
-	StandardImageSidebar *StandardImageSidebarModule `json:"standardImageSidebar,omitempty"`
-	StandardImageTextOverlay *StandardImageTextOverlayModule `json:"standardImageTextOverlay,omitempty"`
-	StandardMultipleImageText *StandardMultipleImageTextModule `json:"standardMultipleImageText,omitempty"`
-	StandardProductDescription *StandardProductDescriptionModule `json:"standardProductDescription,omitempty"`
-	StandardSingleImageHighlights *StandardSingleImageHighlightsModule `json:"standardSingleImageHighlights,omitempty"`
+	ContentModuleType              *ContentModuleType                    `json:"contentModuleType"`
+	StandardCompanyLogo            *StandardCompanyLogoModule            `json:"standardCompanyLogo,omitempty"`
+	StandardComparisonTable        *StandardComparisonTableModule        `json:"standardComparisonTable,omitempty"`
+	StandardFourImageText          *StandardFourImageTextModule          `json:"standardFourImageText,omitempty"`
+	StandardFourImageTextQuadrant  *StandardFourImageTextQuadrantModule  `json:"standardFourImageTextQuadrant,omitempty"`
+	StandardHeaderImageText        *StandardHeaderImageTextModule        `json:"standardHeaderImageText,omitempty"`
+	StandardImageSidebar           *StandardImageSidebarModule           `json:"standardImageSidebar,omitempty"`
+	StandardImageTextOverlay       *StandardImageTextOverlayModule       `json:"standardImageTextOverlay,omitempty"`
+	StandardMultipleImageText      *StandardMultipleImageTextModule      `json:"standardMultipleImageText,omitempty"`
+	StandardProductDescription     *StandardProductDescriptionModule     `json:"standardProductDescription,omitempty"`
+	StandardSingleImageHighlights  *StandardSingleImageHighlightsModule  `json:"standardSingleImageHighlights,omitempty"`
 	StandardSingleImageSpecsDetail *StandardSingleImageSpecsDetailModule `json:"standardSingleImageSpecsDetail,omitempty"`
-	StandardSingleSideImage *StandardSingleSideImageModule `json:"standardSingleSideImage,omitempty"`
-	StandardTechSpecs *StandardTechSpecsModule `json:"standardTechSpecs,omitempty"`
-	StandardText *StandardTextModule `json:"standardText,omitempty"`
-	StandardThreeImageText *StandardThreeImageTextModule `json:"standardThreeImageText,omitempty"`
+	StandardSingleSideImage        *StandardSingleSideImageModule        `json:"standardSingleSideImage,omitempty"`
+	StandardTechSpecs              *StandardTechSpecsModule              `json:"standardTechSpecs,omitempty"`
+	StandardText                   *StandardTextModule                   `json:"standardText,omitempty"`
+	StandardThreeImageText         *StandardThreeImageTextModule         `json:"standardThreeImageText,omitempty"`
 }

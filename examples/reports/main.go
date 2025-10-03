@@ -38,7 +38,7 @@ func main() {
 	// 示例 1: 创建报告
 	fmt.Println("=== 示例 1: 创建库存报告 ===")
 	reportRequest := map[string]interface{}{
-		"reportType": "GET_MERCHANT_LISTINGS_ALL_DATA",
+		"reportType":     "GET_MERCHANT_LISTINGS_ALL_DATA",
 		"marketplaceIds": []string{"ATVPDKIKX0DER"},
 	}
 
@@ -53,9 +53,9 @@ func main() {
 	// 示例 2: 获取报告列表
 	fmt.Println("=== 示例 2: 获取报告列表 ===")
 	queryParams := map[string]string{
-		"reportTypes": "GET_MERCHANT_LISTINGS_ALL_DATA",
+		"reportTypes":  "GET_MERCHANT_LISTINGS_ALL_DATA",
 		"createdSince": time.Now().Add(-30 * 24 * time.Hour).Format(time.RFC3339),
-		"pageSize": "10",
+		"pageSize":     "10",
 	}
 
 	listResult, err := reportsClient.GetReports(ctx, queryParams)
@@ -92,4 +92,3 @@ func main() {
 
 	fmt.Println("\n✓ Reports API 示例完成")
 }
-

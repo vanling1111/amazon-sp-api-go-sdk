@@ -9,6 +9,6 @@
 package solicitations_v1
 
 type GetSolicitationActionResponseLinks struct {
-	Self *LinkObject `json:"self"`
+	Self   *LinkObject `json:"self"`
 	Schema *LinkObject `json:"schema"`
 }

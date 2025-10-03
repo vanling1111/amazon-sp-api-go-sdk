@@ -9,11 +9,11 @@
  */
 package shipping_v2
 
-// Rate Item for shipping (base cost, transaction fee, confirmation, insurance, etc.) Data source definition: 
+// Rate Item for shipping (base cost, transaction fee, confirmation, insurance, etc.) Data source definition:
 type RateItem struct {
-	RateItemID *RateItemId `json:"rateItemID,omitempty"`
-	RateItemType *RateItemType `json:"rateItemType,omitempty"`
-	RateItemCharge *Currency `json:"rateItemCharge,omitempty"`
+	RateItemID     *RateItemId   `json:"rateItemID,omitempty"`
+	RateItemType   *RateItemType `json:"rateItemType,omitempty"`
+	RateItemCharge *Currency     `json:"rateItemCharge,omitempty"`
 	// Used for the localization.
 	RateItemNameLocalization string `json:"rateItemNameLocalization,omitempty"`
 }

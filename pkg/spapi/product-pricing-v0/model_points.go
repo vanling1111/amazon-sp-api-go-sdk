@@ -11,6 +11,6 @@ package product_pricing_v0
 // The number of Amazon Points offered with the purchase of an item, and their monetary value.
 type Points struct {
 	// The number of points.
-	PointsNumber int32 `json:"PointsNumber,omitempty"`
+	PointsNumber        int32      `json:"PointsNumber,omitempty"`
 	PointsMonetaryValue *MoneyType `json:"PointsMonetaryValue,omitempty"`
 }

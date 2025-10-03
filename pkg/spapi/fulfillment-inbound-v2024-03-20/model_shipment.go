@@ -11,15 +11,15 @@ package fulfillment_inbound_v2024_03_20
 // Contains information pertaining to a shipment in an inbound plan.
 type Shipment struct {
 	// A unique identifier created by Amazon that identifies this Amazon-partnered, Less Than Truckload/Full Truckload (LTL/FTL) shipment.
-	AmazonReferenceId string `json:"amazonReferenceId,omitempty"`
-	ContactInformation *ContactInformation `json:"contactInformation,omitempty"`
-	Dates *Dates `json:"dates,omitempty"`
-	Destination *ShipmentDestination `json:"destination"`
-	FreightInformation *FreightInformation `json:"freightInformation,omitempty"`
+	AmazonReferenceId  string               `json:"amazonReferenceId,omitempty"`
+	ContactInformation *ContactInformation  `json:"contactInformation,omitempty"`
+	Dates              *Dates               `json:"dates,omitempty"`
+	Destination        *ShipmentDestination `json:"destination"`
+	FreightInformation *FreightInformation  `json:"freightInformation,omitempty"`
 	// The name of the shipment.
 	Name string `json:"name,omitempty"`
 	// The identifier of a placement option. A placement option represents the shipment splits and destinations of SKUs.
-	PlacementOptionId string `json:"placementOptionId"`
+	PlacementOptionId      string                  `json:"placementOptionId"`
 	SelectedDeliveryWindow *SelectedDeliveryWindow `json:"selectedDeliveryWindow,omitempty"`
 	// Identifier of a transportation option. A transportation option represent one option for how to send a shipment.
 	SelectedTransportationOptionId string `json:"selectedTransportationOptionId,omitempty"`
@@ -28,9 +28,9 @@ type Shipment struct {
 	// The confirmed shipment ID which shows up on labels (for example, `FBA1234ABCD`).
 	ShipmentConfirmationId string `json:"shipmentConfirmationId,omitempty"`
 	// Identifier of a shipment. A shipment contains the boxes and units being inbounded.
-	ShipmentId string `json:"shipmentId"`
-	Source *ShipmentSource `json:"source"`
+	ShipmentId string          `json:"shipmentId"`
+	Source     *ShipmentSource `json:"source"`
 	// The status of a shipment. The state of the shipment will typically start as `UNCONFIRMED`, then transition to `WORKING` after a placement option has been confirmed, and then to `READY_TO_SHIP` once labels are generated.  Possible values: `ABANDONED`, `CANCELLED`, `CHECKED_IN`, `CLOSED`, `DELETED`, `DELIVERED`, `IN_TRANSIT`, `MIXED`, `READY_TO_SHIP`, `RECEIVING`, `SHIPPED`, `UNCONFIRMED`, `WORKING`
-	Status string `json:"status,omitempty"`
+	Status          string           `json:"status,omitempty"`
 	TrackingDetails *TrackingDetails `json:"trackingDetails,omitempty"`
 }

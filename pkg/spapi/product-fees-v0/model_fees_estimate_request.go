@@ -13,9 +13,9 @@ type FeesEstimateRequest struct {
 	// A marketplace identifier.
 	MarketplaceId string `json:"MarketplaceId"`
 	// When true, the offer is fulfilled by Amazon.
-	IsAmazonFulfilled bool `json:"IsAmazonFulfilled,omitempty"`
+	IsAmazonFulfilled   bool                 `json:"IsAmazonFulfilled,omitempty"`
 	PriceToEstimateFees *PriceToEstimateFees `json:"PriceToEstimateFees"`
 	// A unique identifier provided by the caller to track this request.
-	Identifier string `json:"Identifier"`
+	Identifier                 string                      `json:"Identifier"`
 	OptionalFulfillmentProgram *OptionalFulfillmentProgram `json:"OptionalFulfillmentProgram,omitempty"`
 }

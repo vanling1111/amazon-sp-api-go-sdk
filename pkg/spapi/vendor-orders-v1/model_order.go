@@ -13,6 +13,6 @@ type Order struct {
 	// The purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.
 	PurchaseOrderNumber string `json:"purchaseOrderNumber"`
 	// This field will contain the current state of the purchase order.
-	PurchaseOrderState string `json:"purchaseOrderState"`
-	OrderDetails *OrderDetails `json:"orderDetails,omitempty"`
+	PurchaseOrderState string        `json:"purchaseOrderState"`
+	OrderDetails       *OrderDetails `json:"orderDetails,omitempty"`
 }

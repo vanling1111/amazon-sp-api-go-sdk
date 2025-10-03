@@ -12,5 +12,5 @@ package fulfillment_inbound_v2024_03_20
 type ListPackingOptionsResponse struct {
 	// List of packing options.
 	PackingOptions []PackingOption `json:"packingOptions"`
-	Pagination *Pagination `json:"pagination,omitempty"`
+	Pagination     *Pagination     `json:"pagination,omitempty"`
 }

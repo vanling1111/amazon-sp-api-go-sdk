@@ -11,6 +11,6 @@ package product_pricing_v2022_05_01
 // Schema for `currentFeaturedOffer` or `competingFeaturedOffer`.
 type FeaturedOffer struct {
 	OfferIdentifier *OfferIdentifier `json:"offerIdentifier"`
-	Condition *Condition `json:"condition,omitempty"`
-	Price *Price `json:"price,omitempty"`
+	Condition       *Condition       `json:"condition,omitempty"`
+	Price           *Price           `json:"price,omitempty"`
 }

@@ -10,7 +10,7 @@ package services_v1
 
 // `CreateReservationRecord` entity contains the `Reservation` if there is an error/warning while performing the requested operation on it, otherwise it will contain the new `reservationId`.
 type CreateReservationRecord struct {
-	Reservation *Reservation `json:"reservation,omitempty"`
-	Warnings *[]Warning `json:"warnings,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Reservation *Reservation  `json:"reservation,omitempty"`
+	Warnings    *[]Warning    `json:"warnings,omitempty"`
+	Errors      *[]ModelError `json:"errors,omitempty"`
 }

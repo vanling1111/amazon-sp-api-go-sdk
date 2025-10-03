@@ -10,13 +10,13 @@ package catalog_items_v2020_12_01
 
 // An item in the Amazon catalog.
 type Item struct {
-	Asin string `json:"asin"`
-	Attributes map[string]interface{} `json:"attributes,omitempty"`
-	Identifiers *[]ItemIdentifiersByMarketplace `json:"identifiers,omitempty"`
-	Images *[]ItemImagesByMarketplace `json:"images,omitempty"`
-	ProductTypes *[]ItemProductTypeByMarketplace `json:"productTypes,omitempty"`
-	SalesRanks *[]ItemSalesRanksByMarketplace `json:"salesRanks,omitempty"`
-	Summaries *[]ItemSummaryByMarketplace `json:"summaries,omitempty"`
-	Variations *[]ItemVariationsByMarketplace `json:"variations,omitempty"`
+	Asin          string                            `json:"asin"`
+	Attributes    map[string]interface{}            `json:"attributes,omitempty"`
+	Identifiers   *[]ItemIdentifiersByMarketplace   `json:"identifiers,omitempty"`
+	Images        *[]ItemImagesByMarketplace        `json:"images,omitempty"`
+	ProductTypes  *[]ItemProductTypeByMarketplace   `json:"productTypes,omitempty"`
+	SalesRanks    *[]ItemSalesRanksByMarketplace    `json:"salesRanks,omitempty"`
+	Summaries     *[]ItemSummaryByMarketplace       `json:"summaries,omitempty"`
+	Variations    *[]ItemVariationsByMarketplace    `json:"variations,omitempty"`
 	VendorDetails *[]ItemVendorDetailsByMarketplace `json:"vendorDetails,omitempty"`
 }

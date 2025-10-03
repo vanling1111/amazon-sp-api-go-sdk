@@ -10,6 +10,6 @@ package aplus_content_v2020_11_01
 
 // The standard product comparison table.
 type StandardComparisonTableModule struct {
-	ProductColumns []StandardComparisonProductBlock `json:"productColumns,omitempty"`
-	MetricRowLabels []PlainTextItem `json:"metricRowLabels,omitempty"`
+	ProductColumns  []StandardComparisonProductBlock `json:"productColumns,omitempty"`
+	MetricRowLabels []PlainTextItem                  `json:"metricRowLabels,omitempty"`
 }

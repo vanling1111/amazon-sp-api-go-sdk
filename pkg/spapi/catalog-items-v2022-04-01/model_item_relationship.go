@@ -13,7 +13,7 @@ type ItemRelationship struct {
 	// ASINs of the related items that are children of this item.
 	ChildAsins []string `json:"childAsins,omitempty"`
 	// ASINs of the related items that are parents of this item.
-	ParentAsins []string `json:"parentAsins,omitempty"`
+	ParentAsins    []string            `json:"parentAsins,omitempty"`
 	VariationTheme *ItemVariationTheme `json:"variationTheme,omitempty"`
 	// Type of relationship.
 	Type_ string `json:"type"`

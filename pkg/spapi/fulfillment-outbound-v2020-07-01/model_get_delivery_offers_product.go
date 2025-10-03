@@ -11,5 +11,5 @@ package fulfillment_outbound_v2020_07_01
 // The product details for the delivery offer.
 type GetDeliveryOffersProduct struct {
 	ProductIdentifier *ProductIdentifier `json:"productIdentifier"`
-	Amount *Amount `json:"amount,omitempty"`
+	Amount            *Amount            `json:"amount,omitempty"`
 }

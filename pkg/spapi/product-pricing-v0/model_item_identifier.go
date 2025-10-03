@@ -15,6 +15,6 @@ type ItemIdentifier struct {
 	// The Amazon Standard Identification Number (ASIN) of the item.
 	ASIN string `json:"ASIN,omitempty"`
 	// The seller stock keeping unit (SKU) of the item.
-	SellerSKU string `json:"SellerSKU,omitempty"`
+	SellerSKU     string         `json:"SellerSKU,omitempty"`
 	ItemCondition *ConditionType `json:"ItemCondition"`
 }

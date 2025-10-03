@@ -7,7 +7,7 @@ import (
 	"context"
 	"fmt"
 	"strings"
-	
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 )
 
@@ -27,7 +27,9 @@ func (c *Client) SubmitShippingLabelRequest(ctx context.Context, body interface{
 	path := "/vendor/directFulfillment/shipping/2021-12-28/shippingLabels"
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("SubmitShippingLabelRequest: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("SubmitShippingLabelRequest: %w", err)
+	}
 	return result, nil
 }
 
@@ -37,7 +39,9 @@ func (c *Client) SubmitShipmentConfirmations(ctx context.Context, body interface
 	path := "/vendor/directFulfillment/shipping/2021-12-28/shipmentConfirmations"
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("SubmitShipmentConfirmations: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("SubmitShipmentConfirmations: %w", err)
+	}
 	return result, nil
 }
 
@@ -47,7 +51,9 @@ func (c *Client) GetShippingLabels(ctx context.Context, query map[string]string)
 	path := "/vendor/directFulfillment/shipping/2021-12-28/shippingLabels"
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetShippingLabels: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetShippingLabels: %w", err)
+	}
 	return result, nil
 }
 
@@ -57,7 +63,9 @@ func (c *Client) GetPackingSlips(ctx context.Context, query map[string]string) (
 	path := "/vendor/directFulfillment/shipping/2021-12-28/packingSlips"
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetPackingSlips: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetPackingSlips: %w", err)
+	}
 	return result, nil
 }
 
@@ -68,7 +76,9 @@ func (c *Client) GetShippingLabel(ctx context.Context, purchaseOrderNumber strin
 	path = strings.Replace(path, "{purchaseOrderNumber}", purchaseOrderNumber, 1)
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetShippingLabel: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetShippingLabel: %w", err)
+	}
 	return result, nil
 }
 
@@ -78,7 +88,9 @@ func (c *Client) GetCustomerInvoices(ctx context.Context, query map[string]strin
 	path := "/vendor/directFulfillment/shipping/2021-12-28/customerInvoices"
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetCustomerInvoices: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetCustomerInvoices: %w", err)
+	}
 	return result, nil
 }
 
@@ -89,7 +101,9 @@ func (c *Client) GetCustomerInvoice(ctx context.Context, purchaseOrderNumber str
 	path = strings.Replace(path, "{purchaseOrderNumber}", purchaseOrderNumber, 1)
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetCustomerInvoice: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetCustomerInvoice: %w", err)
+	}
 	return result, nil
 }
 
@@ -100,7 +114,9 @@ func (c *Client) CreateShippingLabels(ctx context.Context, purchaseOrderNumber s
 	path = strings.Replace(path, "{purchaseOrderNumber}", purchaseOrderNumber, 1)
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("CreateShippingLabels: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("CreateShippingLabels: %w", err)
+	}
 	return result, nil
 }
 
@@ -111,7 +127,9 @@ func (c *Client) GetPackingSlip(ctx context.Context, purchaseOrderNumber string,
 	path = strings.Replace(path, "{purchaseOrderNumber}", purchaseOrderNumber, 1)
 	var result interface{}
 	err := c.baseClient.Get(ctx, path, query, &result)
-	if err != nil { return nil, fmt.Errorf("GetPackingSlip: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("GetPackingSlip: %w", err)
+	}
 	return result, nil
 }
 
@@ -121,7 +139,9 @@ func (c *Client) SubmitShipmentStatusUpdates(ctx context.Context, body interface
 	path := "/vendor/directFulfillment/shipping/2021-12-28/shipmentStatusUpdates"
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("SubmitShipmentStatusUpdates: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("SubmitShipmentStatusUpdates: %w", err)
+	}
 	return result, nil
 }
 
@@ -131,6 +151,8 @@ func (c *Client) CreateContainerLabel(ctx context.Context, body interface{}) (in
 	path := "/vendor/directFulfillment/shipping/2021-12-28/containerLabel"
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("CreateContainerLabel: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("CreateContainerLabel: %w", err)
+	}
 	return result, nil
 }

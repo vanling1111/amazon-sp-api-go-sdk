@@ -11,7 +11,7 @@ package application_integrations_v2024_04_01
 // The request for the `createNotification` operation.
 type CreateNotificationRequest struct {
 	// The unique identifier of the notification template you used to onboard your application.
-	TemplateId string `json:"templateId"`
+	TemplateId             string                  `json:"templateId"`
 	NotificationParameters *map[string]interface{} `json:"notificationParameters"`
 	// An encrypted marketplace identifier for the posted notification.
 	MarketplaceId string `json:"marketplaceId,omitempty"`

@@ -10,6 +10,6 @@ package aplus_content_v2020_11_01
 
 // The A+ standard fixed-length list of text and a related headline.
 type StandardHeaderTextListBlock struct {
-	Headline *TextComponent `json:"headline,omitempty"`
-	Block *StandardTextListBlock `json:"block,omitempty"`
+	Headline *TextComponent         `json:"headline,omitempty"`
+	Block    *StandardTextListBlock `json:"block,omitempty"`
 }

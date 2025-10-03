@@ -11,6 +11,6 @@ package replenishment_v2022_11_07
 // The response schema for the `listOffers` operation.
 type ListOffersResponse struct {
 	// A list of offers.
-	Offers []ListOffersResponseOffer `json:"offers,omitempty"`
-	Pagination *PaginationResponse `json:"pagination,omitempty"`
+	Offers     []ListOffersResponseOffer `json:"offers,omitempty"`
+	Pagination *PaginationResponse       `json:"pagination,omitempty"`
 }

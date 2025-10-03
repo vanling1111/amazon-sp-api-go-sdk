@@ -11,6 +11,6 @@ package product_fees_v0
 // The number of Amazon Points offered with the purchase of an item.The Amazon Points program is only available in Japan.
 type Points struct {
 	// The number of Amazon Points
-	PointsNumber int32 `json:"PointsNumber,omitempty"`
+	PointsNumber        int32      `json:"PointsNumber,omitempty"`
 	PointsMonetaryValue *MoneyType `json:"PointsMonetaryValue,omitempty"`
 }

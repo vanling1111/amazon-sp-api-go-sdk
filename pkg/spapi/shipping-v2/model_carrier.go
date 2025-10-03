@@ -11,6 +11,6 @@ package shipping_v2
 
 // Carrier Related Info
 type Carrier struct {
-	Id string `json:"id"`
+	Id   string `json:"id"`
 	Name string `json:"name"`
 }

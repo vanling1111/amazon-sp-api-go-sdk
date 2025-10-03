@@ -11,6 +11,6 @@ package finances_v0
 // A currency type and amount.
 type Currency struct {
 	// The three-digit currency code in ISO 4217 format.
-	CurrencyCode string `json:"CurrencyCode,omitempty"`
+	CurrencyCode   string  `json:"CurrencyCode,omitempty"`
 	CurrencyAmount float64 `json:"CurrencyAmount,omitempty"`
 }

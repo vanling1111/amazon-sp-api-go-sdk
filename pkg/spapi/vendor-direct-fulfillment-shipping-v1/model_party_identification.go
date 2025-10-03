@@ -11,7 +11,7 @@ package vendor_direct_fulfillment_shipping_v1
 // Name, address and tax details of a party.
 type PartyIdentification struct {
 	// Assigned Identification for the party.
-	PartyId string `json:"partyId"`
+	PartyId string   `json:"partyId"`
 	Address *Address `json:"address,omitempty"`
 	// Tax registration details of the entity.
 	TaxRegistrationDetails []TaxRegistrationDetails `json:"taxRegistrationDetails,omitempty"`

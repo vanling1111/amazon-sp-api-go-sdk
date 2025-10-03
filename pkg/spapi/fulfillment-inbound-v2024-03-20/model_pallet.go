@@ -14,7 +14,7 @@ type Pallet struct {
 	// Primary key to uniquely identify a Package (Box or Pallet).
 	PackageId string `json:"packageId"`
 	// The number of containers where all other properties like weight or dimensions are identical.
-	Quantity int32 `json:"quantity,omitempty"`
+	Quantity     int32         `json:"quantity,omitempty"`
 	Stackability *Stackability `json:"stackability,omitempty"`
-	Weight *Weight `json:"weight,omitempty"`
+	Weight       *Weight       `json:"weight,omitempty"`
 }

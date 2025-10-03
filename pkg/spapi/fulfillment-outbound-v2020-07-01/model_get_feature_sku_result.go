@@ -17,6 +17,6 @@ type GetFeatureSkuResult struct {
 	// When true, the seller SKU is eligible for the requested feature.
 	IsEligible bool `json:"isEligible"`
 	// A list of one or more reasons that the seller SKU is ineligible for the feature.  Possible values: * `MERCHANT_NOT_ENROLLED`: The merchant isn't enrolled for the feature. * `SKU_NOT_ELIGIBLE`: The SKU doesn't reside in a warehouse that supports the feature. * `INVALID_SKU`: There is an issue with the SKU provided.
-	IneligibleReasons []string `json:"ineligibleReasons,omitempty"`
-	SkuInfo *FeatureSku `json:"skuInfo,omitempty"`
+	IneligibleReasons []string    `json:"ineligibleReasons,omitempty"`
+	SkuInfo           *FeatureSku `json:"skuInfo,omitempty"`
 }

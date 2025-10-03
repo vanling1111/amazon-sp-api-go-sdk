@@ -19,7 +19,7 @@ type ShipmentDetails struct {
 	// When true, the order contain a gift. Include the gift message and gift wrap information.
 	IsGift bool `json:"isGift,omitempty"`
 	// Ship method to be used for shipping the order. Amazon defines ship method codes indicating the shipping carrier and shipment service level. To see the full list of ship methods in use, including both the code and the friendly name, search the 'Help' section on Vendor Central for 'ship methods'.
-	ShipMethod string `json:"shipMethod"`
+	ShipMethod    string         `json:"shipMethod"`
 	ShipmentDates *ShipmentDates `json:"shipmentDates"`
 	// Message to customer for order status.
 	MessageToCustomer string `json:"messageToCustomer"`

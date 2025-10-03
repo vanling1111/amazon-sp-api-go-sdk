@@ -11,7 +11,7 @@ package vendor_invoices_v1
 // Terms of the payment for the invoice. The basis of the payment terms is the invoice date.
 type PaymentTerms struct {
 	// The payment term type for the invoice.
-	Type_ string `json:"type,omitempty"`
+	Type_           string `json:"type,omitempty"`
 	DiscountPercent string `json:"discountPercent,omitempty"`
 	// The number of calendar days from the Base date (Invoice date) until the discount is no longer valid.
 	DiscountDueDays float64 `json:"discountDueDays,omitempty"`

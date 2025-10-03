@@ -10,6 +10,6 @@ package customer_feedback_v2024_06_01
 
 // The review topic metrics for other child ASINs that have the same parent ASIN. This value is `null` if there isn't any child ASIN metric data.
 type ChildAsinMetrics struct {
-	MostMentions *ChildAsinMentionMetrics `json:"mostMentions,omitempty"`
+	MostMentions  *ChildAsinMentionMetrics `json:"mostMentions,omitempty"`
 	LeastMentions *ChildAsinMentionMetrics `json:"leastMentions,omitempty"`
 }

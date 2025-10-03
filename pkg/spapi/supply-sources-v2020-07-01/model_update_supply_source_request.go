@@ -10,7 +10,7 @@ package supply_sources_v2020_07_01
 
 // A request to update the configuration and capabilities of a supply source.
 type UpdateSupplySourceRequest struct {
-	Alias string `json:"alias,omitempty"`
+	Alias         string                     `json:"alias,omitempty"`
 	Configuration *SupplySourceConfiguration `json:"configuration,omitempty"`
-	Capabilities *SupplySourceCapabilities `json:"capabilities,omitempty"`
+	Capabilities  *SupplySourceCapabilities  `json:"capabilities,omitempty"`
 }

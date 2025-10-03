@@ -10,6 +10,6 @@ package merchant_fulfillment_v0
 
 // Benefits that are included and excluded for each shipping offer. Benefits represents services provided by Amazon (for example, `CLAIMS_PROTECTED`) when sellers purchase shipping through Amazon. Benefit details are made available for any shipment placed on or after January 1st 2024 00:00 UTC.
 type Benefits struct {
-	IncludedBenefits *[]string `json:"IncludedBenefits,omitempty"`
+	IncludedBenefits *[]string          `json:"IncludedBenefits,omitempty"`
 	ExcludedBenefits *[]ExcludedBenefit `json:"ExcludedBenefits,omitempty"`
 }

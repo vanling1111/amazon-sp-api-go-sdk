@@ -10,6 +10,6 @@ package merchant_fulfillment_v0
 
 // The weight.
 type Weight struct {
-	Value float64 `json:"Value"`
-	Unit *UnitOfWeight `json:"Unit"`
+	Value float64       `json:"Value"`
+	Unit  *UnitOfWeight `json:"Unit"`
 }

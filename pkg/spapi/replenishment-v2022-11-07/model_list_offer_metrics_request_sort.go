@@ -10,6 +10,6 @@ package replenishment_v2022_11_07
 
 // Use these parameters to sort the response.
 type ListOfferMetricsRequestSort struct {
-	Order *SortOrder `json:"order"`
-	Key *ListOfferMetricsSortKey `json:"key"`
+	Order *SortOrder               `json:"order"`
+	Key   *ListOfferMetricsSortKey `json:"key"`
 }

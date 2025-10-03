@@ -10,5 +10,5 @@ package aplus_content_v2020_11_01
 
 type ListContentDocumentAsinRelationsResponse struct {
 	AsinMetadataSet *[]AsinMetadata `json:"asinMetadataSet"`
-	NextPageToken string `json:"nextPageToken,omitempty"`
+	NextPageToken   string          `json:"nextPageToken,omitempty"`
 }

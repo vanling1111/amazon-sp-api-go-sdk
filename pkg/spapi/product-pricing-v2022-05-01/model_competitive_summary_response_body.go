@@ -10,7 +10,7 @@ package product_pricing_v2022_05_01
 
 // The `competitiveSummaryResponse` body for a requested ASIN and `marketplaceId`.
 type CompetitiveSummaryResponseBody struct {
-	Asin string `json:"asin"`
+	Asin          string `json:"asin"`
 	MarketplaceId string `json:"marketplaceId"`
 	// A list of featured buying options for the specified ASIN `marketplaceId` combination.
 	FeaturedBuyingOptions []FeaturedBuyingOption `json:"featuredBuyingOptions,omitempty"`
@@ -18,5 +18,5 @@ type CompetitiveSummaryResponseBody struct {
 	LowestPricedOffers []LowestPricedOffer `json:"lowestPricedOffers,omitempty"`
 	// A list of reference prices for the specified ASIN `marketplaceId` combination.
 	ReferencePrices []ReferencePrice `json:"referencePrices,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors          *[]ModelError    `json:"errors,omitempty"`
 }

@@ -12,10 +12,10 @@ package services_v1
 type Appointment struct {
 	AppointmentId string `json:"appointmentId,omitempty"`
 	// The status of the appointment.
-	AppointmentStatus string `json:"appointmentStatus,omitempty"`
-	AppointmentTime *AppointmentTime `json:"appointmentTime,omitempty"`
+	AppointmentStatus string           `json:"appointmentStatus,omitempty"`
+	AppointmentTime   *AppointmentTime `json:"appointmentTime,omitempty"`
 	// A list of technicians assigned to the service job.
-	AssignedTechnicians []Technician `json:"assignedTechnicians,omitempty"`
-	RescheduledAppointmentId string `json:"rescheduledAppointmentId,omitempty"`
-	Poa *Poa `json:"poa,omitempty"`
+	AssignedTechnicians      []Technician `json:"assignedTechnicians,omitempty"`
+	RescheduledAppointmentId string       `json:"rescheduledAppointmentId,omitempty"`
+	Poa                      *Poa         `json:"poa,omitempty"`
 }

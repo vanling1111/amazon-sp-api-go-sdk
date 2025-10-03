@@ -11,15 +11,15 @@ package fulfillment_inbound_v2024_03_20
 // The `createMarketplaceItemLabels` request.
 type CreateMarketplaceItemLabelsRequest struct {
 	// The height of the item label.
-	Height float64 `json:"height,omitempty"`
+	Height    float64         `json:"height,omitempty"`
 	LabelType *LabelPrintType `json:"labelType"`
 	// The locale code constructed from ISO 639 language code and ISO 3166-1 alpha-2 standard of country codes separated by an underscore character.
 	LocaleCode string `json:"localeCode,omitempty"`
 	// The Marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
 	MarketplaceId string `json:"marketplaceId"`
 	// Represents the quantity of an MSKU to print item labels for.
-	MskuQuantities []MskuQuantity `json:"mskuQuantities"`
-	PageType *ItemLabelPageType `json:"pageType,omitempty"`
+	MskuQuantities []MskuQuantity     `json:"mskuQuantities"`
+	PageType       *ItemLabelPageType `json:"pageType,omitempty"`
 	// The width of the item label.
 	Width float64 `json:"width,omitempty"`
 }

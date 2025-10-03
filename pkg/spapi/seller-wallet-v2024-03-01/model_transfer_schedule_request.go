@@ -8,17 +8,17 @@
  */
 package seller_wallet_v2024_03_01
 
-// Request body to initiate a scheduled transfer from a SW bank account to another customer defined bank account 
+// Request body to initiate a scheduled transfer from a SW bank account to another customer defined bank account
 type TransferScheduleRequest struct {
-	// The unique identifier of the source Amazon SW bank account from where the money needs to be debited 
+	// The unique identifier of the source Amazon SW bank account from where the money needs to be debited
 	SourceAccountId string `json:"sourceAccountId"`
-	// Represents 3 letter currency code in ISO 4217 standard format of the source payment method country 
+	// Represents 3 letter currency code in ISO 4217 standard format of the source payment method country
 	SourceCurrencyCode string `json:"sourceCurrencyCode"`
-	// Optional field to specify the unique identifier of the destination bank account where the money needs to be deposited 
-	DestinationAccountId string `json:"destinationAccountId"`
+	// Optional field to specify the unique identifier of the destination bank account where the money needs to be deposited
+	DestinationAccountId             string                        `json:"destinationAccountId"`
 	DestinationTransactionInstrument *TransactionInstrumentDetails `json:"destinationTransactionInstrument"`
-	TransactionType *TransactionType `json:"transactionType"`
-	TransferScheduleInformation *TransferScheduleInformation `json:"transferScheduleInformation"`
-	PaymentPreference *PaymentPreference `json:"paymentPreference"`
-	TransferScheduleStatus *TransferScheduleStatus `json:"transferScheduleStatus,omitempty"`
+	TransactionType                  *TransactionType              `json:"transactionType"`
+	TransferScheduleInformation      *TransferScheduleInformation  `json:"transferScheduleInformation"`
+	PaymentPreference                *PaymentPreference            `json:"paymentPreference"`
+	TransferScheduleStatus           *TransferScheduleStatus       `json:"transferScheduleStatus,omitempty"`
 }

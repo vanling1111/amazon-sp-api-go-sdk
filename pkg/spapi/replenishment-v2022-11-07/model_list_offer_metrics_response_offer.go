@@ -39,8 +39,8 @@ type ListOfferMetricsResponseOffer struct {
 	// The forecasted shipped subscription units for the next 60 days. Applicable to FORECAST timePeriodType.
 	Next60DayShippedSubscriptionUnits float64 `json:"next60DayShippedSubscriptionUnits,omitempty"`
 	// The forecasted shipped subscription units for the next 90 days. Applicable to FORECAST timePeriodType.
-	Next90DayShippedSubscriptionUnits float64 `json:"next90DayShippedSubscriptionUnits,omitempty"`
-	TimeInterval *TimeInterval `json:"timeInterval,omitempty"`
+	Next90DayShippedSubscriptionUnits float64       `json:"next90DayShippedSubscriptionUnits,omitempty"`
+	TimeInterval                      *TimeInterval `json:"timeInterval,omitempty"`
 	// The currency code in ISO 4217 format.
 	CurrencyCode string `json:"currencyCode,omitempty"`
 }

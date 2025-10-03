@@ -10,8 +10,8 @@ package messaging_v1
 
 // Describes a messaging action that can be taken for an order. Provides a JSON Hypertext Application Language (HAL) link to the JSON schema document that describes the expected input.
 type GetMessagingActionResponse struct {
-	Links *GetMessagingActionResponseLinks `json:"_links,omitempty"`
+	Links    *GetMessagingActionResponseLinks    `json:"_links,omitempty"`
 	Embedded *GetMessagingActionResponseEmbedded `json:"_embedded,omitempty"`
-	Payload *MessagingAction `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Payload  *MessagingAction                    `json:"payload,omitempty"`
+	Errors   *[]ModelError                       `json:"errors,omitempty"`
 }

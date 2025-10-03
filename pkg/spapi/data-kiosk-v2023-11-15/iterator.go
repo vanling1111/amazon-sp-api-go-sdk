@@ -1,4 +1,4 @@
-﻿// Copyright 2025 Amazon SP-API Go SDK Authors.
+// Copyright 2025 Amazon SP-API Go SDK Authors.
 // Licensed under the Apache License, Version 2.0.
 
 package data_kiosk_v2023_11_15
@@ -73,4 +73,3 @@ func (c *Client) IterateQueries(ctx context.Context, query map[string]string) it
 		}
 	}
 }
-

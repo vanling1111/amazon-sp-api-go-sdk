@@ -82,4 +82,3 @@ func (s *LWASigner) Sign(ctx context.Context, req *http.Request) error {
 func (s *LWASigner) SetLWAClient(client *auth.Client) {
 	s.lwaClient = client
 }
-

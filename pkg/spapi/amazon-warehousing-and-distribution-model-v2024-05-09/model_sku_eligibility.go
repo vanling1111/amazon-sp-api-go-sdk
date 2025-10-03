@@ -11,7 +11,7 @@ package amazon_warehousing_and_distribution_model_v2024_05_09
 // Represents eligibility of one SKU.
 type SkuEligibility struct {
 	// If not eligible, these are list of error codes and descriptions.
-	IneligibilityReasons []SkuIneligibilityReason `json:"ineligibilityReasons,omitempty"`
-	PackageQuantity *DistributionPackageQuantity `json:"packageQuantity"`
-	Status *InboundEligibilityStatus `json:"status"`
+	IneligibilityReasons []SkuIneligibilityReason     `json:"ineligibilityReasons,omitempty"`
+	PackageQuantity      *DistributionPackageQuantity `json:"packageQuantity"`
+	Status               *InboundEligibilityStatus    `json:"status"`
 }

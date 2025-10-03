@@ -11,7 +11,7 @@ package customer_feedback_v2024_06_01
 // The browse node review topic.
 type BrowseNodeReviewTopic struct {
 	// The name browse node review topic.
-	Topic string `json:"topic"`
+	Topic             string                        `json:"topic"`
 	BrowseNodeMetrics *BrowseNodeReviewTopicMetrics `json:"browseNodeMetrics"`
 	// A list of up to three snippets from reviews that contain the topic. This value is `null` if there aren't enough review snippets for the topic.
 	ReviewSnippets []string `json:"reviewSnippets,omitempty"`

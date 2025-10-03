@@ -10,12 +10,12 @@ package aplus_content_v2020_11_01
 
 // A standard image with paragraphs, a bulleted list, and extra space for technical details.
 type StandardSingleImageSpecsDetailModule struct {
-	Headline *TextComponent `json:"headline,omitempty"`
-	Image *ImageComponent `json:"image,omitempty"`
-	DescriptionHeadline *TextComponent `json:"descriptionHeadline,omitempty"`
-	DescriptionBlock1 *StandardTextBlock `json:"descriptionBlock1,omitempty"`
-	DescriptionBlock2 *StandardTextBlock `json:"descriptionBlock2,omitempty"`
-	SpecificationHeadline *TextComponent `json:"specificationHeadline,omitempty"`
+	Headline               *TextComponent               `json:"headline,omitempty"`
+	Image                  *ImageComponent              `json:"image,omitempty"`
+	DescriptionHeadline    *TextComponent               `json:"descriptionHeadline,omitempty"`
+	DescriptionBlock1      *StandardTextBlock           `json:"descriptionBlock1,omitempty"`
+	DescriptionBlock2      *StandardTextBlock           `json:"descriptionBlock2,omitempty"`
+	SpecificationHeadline  *TextComponent               `json:"specificationHeadline,omitempty"`
 	SpecificationListBlock *StandardHeaderTextListBlock `json:"specificationListBlock,omitempty"`
-	SpecificationTextBlock *StandardTextBlock `json:"specificationTextBlock,omitempty"`
+	SpecificationTextBlock *StandardTextBlock           `json:"specificationTextBlock,omitempty"`
 }

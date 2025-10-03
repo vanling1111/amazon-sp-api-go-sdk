@@ -86,4 +86,3 @@ func (c *Client) IterateReports(ctx context.Context, query map[string]string) it
 		}
 	}
 }
-

@@ -10,8 +10,8 @@ package solicitations_v1
 
 // Describes a solicitation action that can be taken for an order. Provides a JSON Hypertext Application Language (HAL) link to the JSON schema document that describes the expected input.
 type GetSolicitationActionResponse struct {
-	Links *GetSolicitationActionResponseLinks `json:"_links,omitempty"`
+	Links    *GetSolicitationActionResponseLinks    `json:"_links,omitempty"`
 	Embedded *GetSolicitationActionResponseEmbedded `json:"_embedded,omitempty"`
-	Payload *SolicitationsAction `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Payload  *SolicitationsAction                   `json:"payload,omitempty"`
+	Errors   *[]ModelError                          `json:"errors,omitempty"`
 }

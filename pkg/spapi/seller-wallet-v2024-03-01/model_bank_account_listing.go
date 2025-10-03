@@ -10,6 +10,6 @@ package seller_wallet_v2024_03_01
 
 // Struct that holds collection of accounts.
 type BankAccountListing struct {
-	// Collection that holds BankAccount 
+	// Collection that holds BankAccount
 	Accounts []BankAccount `json:"accounts"`
 }

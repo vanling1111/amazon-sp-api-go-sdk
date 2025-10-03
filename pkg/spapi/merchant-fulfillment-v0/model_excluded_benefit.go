@@ -11,6 +11,6 @@ package merchant_fulfillment_v0
 // An object representing an excluded benefit that is excluded for a shipping offer or rate.
 type ExcludedBenefit struct {
 	// A benefit that is being excluded from a shipment.
-	Benefit string `json:"Benefit,omitempty"`
+	Benefit     string    `json:"Benefit,omitempty"`
 	ReasonCodes *[]string `json:"ReasonCodes,omitempty"`
 }

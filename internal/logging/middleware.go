@@ -44,8 +44,8 @@ type Options struct {
 func DefaultOptions() *Options {
 	return &Options{
 		LogHeaders:  true,
-		LogBody:     false,  // 默认不记录 body（可能很大）
-		MaxBodySize: 4096,   // 4KB
+		LogBody:     false, // 默认不记录 body（可能很大）
+		MaxBodySize: 4096,  // 4KB
 		RedactHeaders: []string{
 			"x-amz-access-token",
 			"authorization",
@@ -93,7 +93,7 @@ func (m *LoggingMiddleware) Wrap(next func(context.Context, *http.Request) (*htt
 
 		// 执行请求
 		resp, err := next(ctx, req)
-		
+
 		duration := time.Since(start)
 
 		// 记录响应
@@ -155,10 +155,10 @@ func (m *LoggingMiddleware) logResponse(req *http.Request, resp *http.Response, 
 // redactHeaders 脱敏 HTTP 头
 func (m *LoggingMiddleware) redactHeaders(headers http.Header) map[string]string {
 	result := make(map[string]string)
-	
+
 	for key, values := range headers {
 		value := values[0]
-		
+
 		// 检查是否需要脱敏
 		redact := false
 		for _, redactKey := range m.options.RedactHeaders {
@@ -177,4 +177,3 @@ func (m *LoggingMiddleware) redactHeaders(headers http.Header) map[string]string
 
 	return result
 }
-

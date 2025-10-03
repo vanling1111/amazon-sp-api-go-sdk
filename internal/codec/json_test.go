@@ -7,8 +7,8 @@ import (
 )
 
 type TestOrder struct {
-	OrderID string `json:"orderId"`
-	Status  string `json:"status"`
+	OrderID string  `json:"orderId"`
+	Status  string  `json:"status"`
 	Total   float64 `json:"total"`
 }
 
@@ -362,4 +362,3 @@ func BenchmarkDecoder_Unmarshal(b *testing.B) {
 		_ = decoder.Unmarshal(data, &order)
 	}
 }
-

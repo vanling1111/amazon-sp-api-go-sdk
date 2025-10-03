@@ -14,6 +14,6 @@ type ValueAddedService struct {
 	// The identifier for the value-added service.
 	Id string `json:"id"`
 	// The name of the value-added service.
-	Name string `json:"name"`
+	Name string    `json:"name"`
 	Cost *Currency `json:"cost"`
 }

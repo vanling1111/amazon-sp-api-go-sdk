@@ -11,7 +11,7 @@ package fulfillment_inbound_v2024_03_20
 // An MSKU and its related prep details.
 type MskuPrepDetailInput struct {
 	// The merchant SKU, a merchant-supplied identifier for a specific SKU.
-	Msku string `json:"msku"`
+	Msku         string        `json:"msku"`
 	PrepCategory *PrepCategory `json:"prepCategory"`
 	// A list of preparation types associated with a preparation category.
 	PrepTypes []PrepType `json:"prepTypes"`

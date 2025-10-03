@@ -17,7 +17,7 @@ type OrderMetricsInterval struct {
 	// The number of order items based on the specified filters.
 	OrderItemCount int32 `json:"orderItemCount"`
 	// The number of orders based on the specified filters.
-	OrderCount int32 `json:"orderCount"`
+	OrderCount       int32  `json:"orderCount"`
 	AverageUnitPrice *Money `json:"averageUnitPrice"`
-	TotalSales *Money `json:"totalSales"`
+	TotalSales       *Money `json:"totalSales"`
 }

@@ -11,7 +11,7 @@ package fulfillment_inbound_v2024_03_20
 // Appointment details for carrier pickup or fulfillment center appointments.
 type SelfShipAppointmentDetails struct {
 	// Identifier for appointment.
-	AppointmentId float64 `json:"appointmentId,omitempty"`
+	AppointmentId       float64              `json:"appointmentId,omitempty"`
 	AppointmentSlotTime *AppointmentSlotTime `json:"appointmentSlotTime,omitempty"`
 	// Status of the appointment.
 	AppointmentStatus string `json:"appointmentStatus,omitempty"`

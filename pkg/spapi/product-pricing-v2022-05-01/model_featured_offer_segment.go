@@ -11,6 +11,6 @@ package product_pricing_v2022_05_01
 // Describes the segment in which the offer is featured.
 type FeaturedOfferSegment struct {
 	// The customer membership type that makes up this segment
-	CustomerMembership string `json:"customerMembership"`
-	SegmentDetails *SegmentDetails `json:"segmentDetails"`
+	CustomerMembership string          `json:"customerMembership"`
+	SegmentDetails     *SegmentDetails `json:"segmentDetails"`
 }

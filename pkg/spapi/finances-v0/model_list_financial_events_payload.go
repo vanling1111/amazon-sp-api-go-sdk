@@ -11,6 +11,6 @@ package finances_v0
 // The payload for the listFinancialEvents operation.
 type ListFinancialEventsPayload struct {
 	// When present and not empty, pass this string token in the next request to return the next response page.
-	NextToken string `json:"NextToken,omitempty"`
+	NextToken       string           `json:"NextToken,omitempty"`
 	FinancialEvents *FinancialEvents `json:"FinancialEvents,omitempty"`
 }

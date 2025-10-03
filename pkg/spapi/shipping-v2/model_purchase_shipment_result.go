@@ -11,8 +11,8 @@ package shipping_v2
 
 // The payload for the purchaseShipment operation.
 type PurchaseShipmentResult struct {
-	ShipmentId string `json:"shipmentId"`
+	ShipmentId             string                   `json:"shipmentId"`
 	PackageDocumentDetails *[]PackageDocumentDetail `json:"packageDocumentDetails"`
-	Promise *Promise `json:"promise"`
-	Benefits *Benefits `json:"benefits,omitempty"`
+	Promise                *Promise                 `json:"promise"`
+	Benefits               *Benefits                `json:"benefits,omitempty"`
 }

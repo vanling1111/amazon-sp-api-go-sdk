@@ -11,6 +11,6 @@ package merchant_fulfillment_v0
 // The length.
 type Length struct {
 	// The value in units.
-	Value float64 `json:"value,omitempty"`
-	Unit *UnitOfLength `json:"unit,omitempty"`
+	Value float64       `json:"value,omitempty"`
+	Unit  *UnitOfLength `json:"unit,omitempty"`
 }

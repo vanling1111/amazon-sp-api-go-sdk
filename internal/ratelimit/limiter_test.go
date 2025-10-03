@@ -478,4 +478,3 @@ func TestLimiter_UpdateFromResponse(t *testing.T) {
 		})
 	}
 }
-

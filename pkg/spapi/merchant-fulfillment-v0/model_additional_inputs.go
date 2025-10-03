@@ -11,6 +11,6 @@ package merchant_fulfillment_v0
 // Maps the additional seller input to the definition. The key to the map is the field name.
 type AdditionalInputs struct {
 	// The field name.
-	AdditionalInputFieldName string `json:"AdditionalInputFieldName,omitempty"`
-	SellerInputDefinition *SellerInputDefinition `json:"SellerInputDefinition,omitempty"`
+	AdditionalInputFieldName string                 `json:"AdditionalInputFieldName,omitempty"`
+	SellerInputDefinition    *SellerInputDefinition `json:"SellerInputDefinition,omitempty"`
 }

@@ -10,10 +10,10 @@ package product_pricing_v0
 
 // An item.
 type Product struct {
-	Identifiers *IdentifierType `json:"Identifiers"`
-	AttributeSets *[]interface{} `json:"AttributeSets,omitempty"`
-	Relationships *[]interface{} `json:"Relationships,omitempty"`
+	Identifiers        *IdentifierType         `json:"Identifiers"`
+	AttributeSets      *[]interface{}          `json:"AttributeSets,omitempty"`
+	Relationships      *[]interface{}          `json:"Relationships,omitempty"`
 	CompetitivePricing *CompetitivePricingType `json:"CompetitivePricing,omitempty"`
-	SalesRankings *[]SalesRankType `json:"SalesRankings,omitempty"`
-	Offers *[]OfferType `json:"Offers,omitempty"`
+	SalesRankings      *[]SalesRankType        `json:"SalesRankings,omitempty"`
+	Offers             *[]OfferType            `json:"Offers,omitempty"`
 }

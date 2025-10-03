@@ -11,9 +11,9 @@ package vendor_direct_fulfillment_shipping_v2021_12_28
 // Shipping label information for an order, including the purchase order number, selling party, ship from party, label format, and package details.
 type ShippingLabel struct {
 	// This field will contain the Purchase Order Number for this order.
-	PurchaseOrderNumber string `json:"purchaseOrderNumber"`
-	SellingParty *PartyIdentification `json:"sellingParty"`
-	ShipFromParty *PartyIdentification `json:"shipFromParty"`
+	PurchaseOrderNumber string               `json:"purchaseOrderNumber"`
+	SellingParty        *PartyIdentification `json:"sellingParty"`
+	ShipFromParty       *PartyIdentification `json:"shipFromParty"`
 	// Format of the label.
 	LabelFormat string `json:"labelFormat"`
 	// Provides the details of the packages in this shipment.

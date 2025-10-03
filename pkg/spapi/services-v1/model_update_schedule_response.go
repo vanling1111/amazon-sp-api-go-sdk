@@ -12,5 +12,5 @@ package services_v1
 type UpdateScheduleResponse struct {
 	// Contains the `UpdateScheduleRecords` for which the error/warning has occurred.
 	Payload []UpdateScheduleRecord `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError          `json:"errors,omitempty"`
 }

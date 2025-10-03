@@ -11,6 +11,6 @@ package shipping_v2
 
 // Defines exceptions to standard operating hours for certain date ranges.
 type ExceptionOperatingHours struct {
-	DateRange *DateRange `json:"dateRange,omitempty"`
+	DateRange      *DateRange      `json:"dateRange,omitempty"`
 	OperatingHours *OperatingHours `json:"operatingHours,omitempty"`
 }

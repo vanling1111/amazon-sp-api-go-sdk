@@ -10,6 +10,6 @@ package easy_ship_model_v2022_03_23
 
 // A order which we couldn't schedule on your behalf. It contains its id, and information on the error.
 type RejectedOrder struct {
-	AmazonOrderId string `json:"amazonOrderId"`
-	Error_ *ModelError `json:"error,omitempty"`
+	AmazonOrderId string      `json:"amazonOrderId"`
+	Error_        *ModelError `json:"error,omitempty"`
 }

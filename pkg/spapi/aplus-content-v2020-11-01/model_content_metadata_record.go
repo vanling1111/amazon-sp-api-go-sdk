@@ -10,6 +10,6 @@ package aplus_content_v2020_11_01
 
 // The metadata for an A+ Content document, with additional information for content management.
 type ContentMetadataRecord struct {
-	ContentReferenceKey string `json:"contentReferenceKey"`
-	ContentMetadata *ContentMetadata `json:"contentMetadata"`
+	ContentReferenceKey string           `json:"contentReferenceKey"`
+	ContentMetadata     *ContentMetadata `json:"contentMetadata"`
 }

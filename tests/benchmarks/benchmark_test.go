@@ -50,4 +50,3 @@ func BenchmarkContextCreation(b *testing.B) {
 		_ = context.Background()
 	}
 }
-

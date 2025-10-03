@@ -10,6 +10,6 @@ package aplus_content_v2020_11_01
 
 // A standard background image with a floating text box.
 type StandardImageTextOverlayModule struct {
-	OverlayColorType *ColorType `json:"overlayColorType"`
-	Block *StandardImageTextBlock `json:"block,omitempty"`
+	OverlayColorType *ColorType              `json:"overlayColorType"`
+	Block            *StandardImageTextBlock `json:"block,omitempty"`
 }

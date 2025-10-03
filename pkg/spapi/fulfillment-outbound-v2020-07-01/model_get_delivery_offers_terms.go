@@ -10,6 +10,6 @@ package fulfillment_outbound_v2020_07_01
 
 // The delivery terms for the delivery offer.
 type GetDeliveryOffersTerms struct {
-	Origin *Origin `json:"origin"`
+	Origin      *Origin      `json:"origin"`
 	Destination *Destination `json:"destination"`
 }

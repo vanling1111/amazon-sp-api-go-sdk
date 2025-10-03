@@ -11,6 +11,6 @@ package orders_v0
 // The number of Amazon Points offered with the purchase of an item, and their monetary value.
 type PointsGrantedDetail struct {
 	// The number of Amazon Points granted with the purchase of an item.
-	PointsNumber int32 `json:"PointsNumber,omitempty"`
+	PointsNumber        int32  `json:"PointsNumber,omitempty"`
 	PointsMonetaryValue *Money `json:"PointsMonetaryValue,omitempty"`
 }

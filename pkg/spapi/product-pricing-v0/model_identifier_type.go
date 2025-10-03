@@ -10,6 +10,6 @@ package product_pricing_v0
 
 // Specifies the identifiers used to uniquely identify an item.
 type IdentifierType struct {
-	MarketplaceASIN *AsinIdentifier `json:"MarketplaceASIN"`
-	SKUIdentifier *SellerSkuIdentifier `json:"SKUIdentifier,omitempty"`
+	MarketplaceASIN *AsinIdentifier      `json:"MarketplaceASIN"`
+	SKUIdentifier   *SellerSkuIdentifier `json:"SKUIdentifier,omitempty"`
 }

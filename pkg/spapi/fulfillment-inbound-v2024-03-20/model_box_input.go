@@ -11,10 +11,10 @@ package fulfillment_inbound_v2024_03_20
 // Input information for a given box.
 type BoxInput struct {
 	ContentInformationSource *BoxContentInformationSource `json:"contentInformationSource"`
-	Dimensions *Dimensions `json:"dimensions"`
+	Dimensions               *Dimensions                  `json:"dimensions"`
 	// The items and their quantity in the box. This must be empty if the box `contentInformationSource` is `BARCODE_2D` or `MANUAL_PROCESS`.
 	Items []ItemInput `json:"items,omitempty"`
 	// The number of containers where all other properties like weight or dimensions are identical.
-	Quantity int32 `json:"quantity"`
-	Weight *Weight `json:"weight"`
+	Quantity int32   `json:"quantity"`
+	Weight   *Weight `json:"weight"`
 }

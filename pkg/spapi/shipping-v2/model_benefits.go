@@ -11,6 +11,6 @@ package shipping_v2
 
 // Benefits that are included and excluded for each shipping offer. Benefits represents services provided by Amazon (eg. CLAIMS_PROTECTED, etc.) when sellers purchase shipping through Amazon. Benefit details will be made available for any shipment placed on or after January 1st 2024 00:00 UTC.
 type Benefits struct {
-	IncludedBenefits *[]string `json:"includedBenefits"`
+	IncludedBenefits *[]string          `json:"includedBenefits"`
 	ExcludedBenefits *[]ExcludedBenefit `json:"excludedBenefits"`
 }

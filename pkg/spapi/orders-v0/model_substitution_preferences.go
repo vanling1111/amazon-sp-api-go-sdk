@@ -11,6 +11,6 @@ package orders_v0
 // Substitution preferences for an order item.
 type SubstitutionPreferences struct {
 	// The type of substitution that these preferences represent.
-	SubstitutionType string `json:"SubstitutionType"`
+	SubstitutionType    string                `json:"SubstitutionType"`
 	SubstitutionOptions *[]SubstitutionOption `json:"SubstitutionOptions,omitempty"`
 }

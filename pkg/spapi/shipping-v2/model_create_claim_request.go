@@ -11,11 +11,11 @@ package shipping_v2
 
 // The request schema for the CreateClaim operation
 type CreateClaimRequest struct {
-	TrackingId string `json:"trackingId"`
-	DeclaredValue *Currency `json:"declaredValue,omitempty"`
-	ClaimReason *ClaimReason `json:"claimReason"`
+	TrackingId    string       `json:"trackingId"`
+	DeclaredValue *Currency    `json:"declaredValue,omitempty"`
+	ClaimReason   *ClaimReason `json:"claimReason"`
 	// Applicable for only On Amazon shipments to identify if replacement was sent
-	IsReplacementPackageSent bool `json:"isReplacementPackageSent,omitempty"`
-	Proofs *[]string `json:"proofs,omitempty"`
-	SettlementType *SettlementType `json:"settlementType"`
+	IsReplacementPackageSent bool            `json:"isReplacementPackageSent,omitempty"`
+	Proofs                   *[]string       `json:"proofs,omitempty"`
+	SettlementType           *SettlementType `json:"settlementType"`
 }

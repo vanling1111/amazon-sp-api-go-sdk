@@ -12,5 +12,5 @@ package shipping_v2
 // The request schema for remove the Carrier Account associated with the provided merchant.
 type UnlinkCarrierAccountRequest struct {
 	ClientReferenceDetails *[]ClientReferenceDetail `json:"clientReferenceDetails,omitempty"`
-	AccountId string `json:"accountId,omitempty"`
+	AccountId              string                   `json:"accountId,omitempty"`
 }

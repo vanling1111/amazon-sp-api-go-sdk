@@ -11,6 +11,6 @@ package fulfillment_inbound_v2024_03_20
 // The `updateItemComplianceDetails` request.
 type UpdateItemComplianceDetailsRequest struct {
 	// The merchant SKU, a merchant-supplied identifier for a specific SKU.
-	Msku string `json:"msku"`
+	Msku       string      `json:"msku"`
 	TaxDetails *TaxDetails `json:"taxDetails"`
 }

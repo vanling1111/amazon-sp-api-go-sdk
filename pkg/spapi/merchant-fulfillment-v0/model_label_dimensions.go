@@ -10,7 +10,7 @@ package merchant_fulfillment_v0
 
 // Dimensions for printing a shipping label.
 type LabelDimensions struct {
-	Length float64 `json:"Length"`
-	Width float64 `json:"Width"`
-	Unit *UnitOfLength `json:"Unit"`
+	Length float64       `json:"Length"`
+	Width  float64       `json:"Width"`
+	Unit   *UnitOfLength `json:"Unit"`
 }

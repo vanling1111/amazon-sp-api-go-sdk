@@ -15,6 +15,6 @@ type FeesEstimateError struct {
 	// An error code that identifies the type of error that occurred.
 	Code string `json:"Code"`
 	// A message that describes the error condition.
-	Message string `json:"Message"`
-	Detail *[]interface{} `json:"Detail"`
+	Message string         `json:"Message"`
+	Detail  *[]interface{} `json:"Detail"`
 }

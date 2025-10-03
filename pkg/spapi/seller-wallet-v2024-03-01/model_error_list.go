@@ -10,6 +10,6 @@ package seller_wallet_v2024_03_01
 
 // A list of error responses returned when a request is unsuccessful.
 type ErrorList struct {
-	// List of errors 
+	// List of errors
 	Errors []ModelError `json:"errors"`
 }

@@ -11,5 +11,5 @@ package easy_ship_model_v2022_03_23
 // Request to update the time slot of a package.
 type UpdatePackageDetails struct {
 	ScheduledPackageId *ScheduledPackageId `json:"scheduledPackageId"`
-	PackageTimeSlot *TimeSlot `json:"packageTimeSlot"`
+	PackageTimeSlot    *TimeSlot           `json:"packageTimeSlot"`
 }

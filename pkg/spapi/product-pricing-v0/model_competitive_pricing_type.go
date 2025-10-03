@@ -10,7 +10,7 @@ package product_pricing_v0
 
 // Competitive pricing information for the item.
 type CompetitivePricingType struct {
-	CompetitivePrices *[]CompetitivePriceType `json:"CompetitivePrices"`
+	CompetitivePrices     *[]CompetitivePriceType  `json:"CompetitivePrices"`
 	NumberOfOfferListings *[]OfferListingCountType `json:"NumberOfOfferListings"`
-	TradeInValue *MoneyType `json:"TradeInValue,omitempty"`
+	TradeInValue          *MoneyType               `json:"TradeInValue,omitempty"`
 }

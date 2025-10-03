@@ -11,14 +11,14 @@ package product_pricing_v2022_05_01
 // The offer data of a product.
 type Offer struct {
 	// The seller identifier for the offer.
-	SellerId string `json:"sellerId"`
+	SellerId  string     `json:"sellerId"`
 	Condition *Condition `json:"condition"`
 	// The item subcondition of the offer.
-	SubCondition string `json:"subCondition,omitempty"`
+	SubCondition    string           `json:"subCondition,omitempty"`
 	FulfillmentType *FulfillmentType `json:"fulfillmentType"`
-	ListingPrice *MoneyType `json:"listingPrice"`
+	ListingPrice    *MoneyType       `json:"listingPrice"`
 	// A list of shipping options associated with this offer
 	ShippingOptions []ShippingOption `json:"shippingOptions,omitempty"`
-	Points *Points `json:"points,omitempty"`
-	PrimeDetails *PrimeDetails `json:"primeDetails,omitempty"`
+	Points          *Points          `json:"points,omitempty"`
+	PrimeDetails    *PrimeDetails    `json:"primeDetails,omitempty"`
 }

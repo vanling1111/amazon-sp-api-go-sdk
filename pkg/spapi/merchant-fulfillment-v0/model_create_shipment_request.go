@@ -11,10 +11,10 @@ package merchant_fulfillment_v0
 // Request schema.
 type CreateShipmentRequest struct {
 	ShipmentRequestDetails *ShipmentRequestDetails `json:"ShipmentRequestDetails"`
-	ShippingServiceId string `json:"ShippingServiceId"`
+	ShippingServiceId      string                  `json:"ShippingServiceId"`
 	// Identifies a shipping service order made by a carrier.
-	ShippingServiceOfferId string `json:"ShippingServiceOfferId,omitempty"`
-	HazmatType *HazmatType `json:"HazmatType,omitempty"`
-	LabelFormatOption *LabelFormatOptionRequest `json:"LabelFormatOption,omitempty"`
+	ShippingServiceOfferId        string                    `json:"ShippingServiceOfferId,omitempty"`
+	HazmatType                    *HazmatType               `json:"HazmatType,omitempty"`
+	LabelFormatOption             *LabelFormatOptionRequest `json:"LabelFormatOption,omitempty"`
 	ShipmentLevelSellerInputsList *[]AdditionalSellerInputs `json:"ShipmentLevelSellerInputsList,omitempty"`
 }

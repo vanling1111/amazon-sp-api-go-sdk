@@ -10,14 +10,14 @@ package seller_wallet_v2024_03_01
 
 // Transfer schedule details and related historical details.
 type TransferSchedule struct {
-	// The unique identifier provided by Amazon to the scheduled transfer 
-	TransferScheduleId string `json:"transferScheduleId"`
-	TransactionType *TransactionType `json:"transactionType"`
-	TransactionSourceAccount *TransactionAccount `json:"transactionSourceAccount,omitempty"`
-	TransactionDestinationAccount *TransactionAccount `json:"transactionDestinationAccount"`
-	TransferScheduleStatus *TransferScheduleStatus `json:"transferScheduleStatus"`
-	TransferScheduleInformation *TransferScheduleInformation `json:"transferScheduleInformation"`
-	PaymentPreference *PaymentPreference `json:"paymentPreference,omitempty"`
-	// Collection that holds Transfer Schedules that has been cancelled or failed due to certain reasons. 
+	// The unique identifier provided by Amazon to the scheduled transfer
+	TransferScheduleId            string                       `json:"transferScheduleId"`
+	TransactionType               *TransactionType             `json:"transactionType"`
+	TransactionSourceAccount      *TransactionAccount          `json:"transactionSourceAccount,omitempty"`
+	TransactionDestinationAccount *TransactionAccount          `json:"transactionDestinationAccount"`
+	TransferScheduleStatus        *TransferScheduleStatus      `json:"transferScheduleStatus"`
+	TransferScheduleInformation   *TransferScheduleInformation `json:"transferScheduleInformation"`
+	PaymentPreference             *PaymentPreference           `json:"paymentPreference,omitempty"`
+	// Collection that holds Transfer Schedules that has been cancelled or failed due to certain reasons.
 	TransferScheduleFailures []TransferScheduleFailures `json:"transferScheduleFailures"`
 }

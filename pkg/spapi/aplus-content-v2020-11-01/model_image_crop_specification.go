@@ -10,6 +10,6 @@ package aplus_content_v2020_11_01
 
 // The instructions for optionally cropping an image. If you don't want to crop the image, set the dimensions to the original image size. If the image is cropped and you don't include offset values, the coordinates of the top left corner of the cropped image are set to (0,0) by default.
 type ImageCropSpecification struct {
-	Size *ImageDimensions `json:"size"`
-	Offset *ImageOffsets `json:"offset,omitempty"`
+	Size   *ImageDimensions `json:"size"`
+	Offset *ImageOffsets    `json:"offset,omitempty"`
 }

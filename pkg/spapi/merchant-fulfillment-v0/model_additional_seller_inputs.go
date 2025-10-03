@@ -11,6 +11,6 @@ package merchant_fulfillment_v0
 // An additional set of seller inputs required to purchase shipping.
 type AdditionalSellerInputs struct {
 	// The name of the additional input field.
-	AdditionalInputFieldName string `json:"AdditionalInputFieldName"`
-	AdditionalSellerInput *AdditionalSellerInput `json:"AdditionalSellerInput"`
+	AdditionalInputFieldName string                 `json:"AdditionalInputFieldName"`
+	AdditionalSellerInput    *AdditionalSellerInput `json:"AdditionalSellerInput"`
 }

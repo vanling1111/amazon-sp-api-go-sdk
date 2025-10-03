@@ -129,4 +129,3 @@ const (
 	// LabelGrantType 是授权类型标签键（refresh_token / client_credentials）。
 	LabelGrantType = "grant_type"
 )
-

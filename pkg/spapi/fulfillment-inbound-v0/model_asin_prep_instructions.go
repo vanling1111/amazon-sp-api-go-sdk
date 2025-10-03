@@ -11,8 +11,8 @@ package fulfillment_inbound_v0
 // Item preparation instructions to help with item sourcing decisions.
 type AsinPrepInstructions struct {
 	// The Amazon Standard Identification Number (ASIN) of the item.
-	ASIN string `json:"ASIN,omitempty"`
-	BarcodeInstruction *BarcodeInstruction `json:"BarcodeInstruction,omitempty"`
-	PrepGuidance *PrepGuidance `json:"PrepGuidance,omitempty"`
-	PrepInstructionList *[]PrepInstruction `json:"PrepInstructionList,omitempty"`
+	ASIN                string              `json:"ASIN,omitempty"`
+	BarcodeInstruction  *BarcodeInstruction `json:"BarcodeInstruction,omitempty"`
+	PrepGuidance        *PrepGuidance       `json:"PrepGuidance,omitempty"`
+	PrepInstructionList *[]PrepInstruction  `json:"PrepInstructionList,omitempty"`
 }

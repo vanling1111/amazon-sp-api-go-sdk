@@ -13,6 +13,6 @@ type ConfirmShipmentOrderItem struct {
 	// The order item's unique identifier.
 	OrderItemId string `json:"orderItemId"`
 	// The item's quantity.
-	Quantity int32 `json:"quantity"`
+	Quantity          int32     `json:"quantity"`
 	TransparencyCodes *[]string `json:"transparencyCodes,omitempty"`
 }

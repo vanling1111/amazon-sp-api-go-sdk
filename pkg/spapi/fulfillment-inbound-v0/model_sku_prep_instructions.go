@@ -13,9 +13,9 @@ type SkuPrepInstructions struct {
 	// The seller SKU of the item.
 	SellerSKU string `json:"SellerSKU,omitempty"`
 	// The Amazon Standard Identification Number (ASIN) of the item.
-	ASIN string `json:"ASIN,omitempty"`
-	BarcodeInstruction *BarcodeInstruction `json:"BarcodeInstruction,omitempty"`
-	PrepGuidance *PrepGuidance `json:"PrepGuidance,omitempty"`
-	PrepInstructionList *[]PrepInstruction `json:"PrepInstructionList,omitempty"`
+	ASIN                      string                   `json:"ASIN,omitempty"`
+	BarcodeInstruction        *BarcodeInstruction      `json:"BarcodeInstruction,omitempty"`
+	PrepGuidance              *PrepGuidance            `json:"PrepGuidance,omitempty"`
+	PrepInstructionList       *[]PrepInstruction       `json:"PrepInstructionList,omitempty"`
 	AmazonPrepFeesDetailsList *[]AmazonPrepFeesDetails `json:"AmazonPrepFeesDetailsList,omitempty"`
 }

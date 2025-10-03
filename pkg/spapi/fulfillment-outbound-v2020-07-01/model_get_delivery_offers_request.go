@@ -11,5 +11,5 @@ package fulfillment_outbound_v2020_07_01
 // The request body schema for the `getDeliveryOffers` operation.
 type GetDeliveryOffersRequest struct {
 	Product *GetDeliveryOffersProduct `json:"product"`
-	Terms *GetDeliveryOffersTerms `json:"terms"`
+	Terms   *GetDeliveryOffersTerms   `json:"terms"`
 }

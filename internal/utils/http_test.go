@@ -342,4 +342,3 @@ func TestGetRequestID_Integration(t *testing.T) {
 		t.Errorf("GetRequestID() = %v, want 'integration-test-id'", requestID)
 	}
 }
-

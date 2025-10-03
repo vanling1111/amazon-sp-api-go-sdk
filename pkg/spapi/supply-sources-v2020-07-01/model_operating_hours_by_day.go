@@ -10,11 +10,11 @@ package supply_sources_v2020_07_01
 
 // The operating hours per day
 type OperatingHoursByDay struct {
-	Monday *[]OperatingHour `json:"monday,omitempty"`
-	Tuesday *[]OperatingHour `json:"tuesday,omitempty"`
+	Monday    *[]OperatingHour `json:"monday,omitempty"`
+	Tuesday   *[]OperatingHour `json:"tuesday,omitempty"`
 	Wednesday *[]OperatingHour `json:"wednesday,omitempty"`
-	Thursday *[]OperatingHour `json:"thursday,omitempty"`
-	Friday *[]OperatingHour `json:"friday,omitempty"`
-	Saturday *[]OperatingHour `json:"saturday,omitempty"`
-	Sunday *[]OperatingHour `json:"sunday,omitempty"`
+	Thursday  *[]OperatingHour `json:"thursday,omitempty"`
+	Friday    *[]OperatingHour `json:"friday,omitempty"`
+	Saturday  *[]OperatingHour `json:"saturday,omitempty"`
+	Sunday    *[]OperatingHour `json:"sunday,omitempty"`
 }

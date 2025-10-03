@@ -10,9 +10,9 @@ package merchant_fulfillment_v0
 
 // The dimensions of a package contained in a shipment.
 type PackageDimensions struct {
-	Length float64 `json:"Length,omitempty"`
-	Width float64 `json:"Width,omitempty"`
-	Height float64 `json:"Height,omitempty"`
-	Unit *UnitOfLength `json:"Unit,omitempty"`
+	Length                      float64                      `json:"Length,omitempty"`
+	Width                       float64                      `json:"Width,omitempty"`
+	Height                      float64                      `json:"Height,omitempty"`
+	Unit                        *UnitOfLength                `json:"Unit,omitempty"`
 	PredefinedPackageDimensions *PredefinedPackageDimensions `json:"PredefinedPackageDimensions,omitempty"`
 }

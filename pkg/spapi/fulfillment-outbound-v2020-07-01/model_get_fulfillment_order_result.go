@@ -10,10 +10,10 @@ package fulfillment_outbound_v2020_07_01
 
 // The request for the `getFulfillmentOrder` operation.
 type GetFulfillmentOrderResult struct {
-	FulfillmentOrder *FulfillmentOrder `json:"fulfillmentOrder"`
+	FulfillmentOrder      *FulfillmentOrder       `json:"fulfillmentOrder"`
 	FulfillmentOrderItems *[]FulfillmentOrderItem `json:"fulfillmentOrderItems"`
-	FulfillmentShipments *[]FulfillmentShipment `json:"fulfillmentShipments,omitempty"`
-	ReturnItems *[]ReturnItem `json:"returnItems"`
-	ReturnAuthorizations *[]ReturnAuthorization `json:"returnAuthorizations"`
-	PaymentInformation *[]PaymentInformation `json:"paymentInformation,omitempty"`
+	FulfillmentShipments  *[]FulfillmentShipment  `json:"fulfillmentShipments,omitempty"`
+	ReturnItems           *[]ReturnItem           `json:"returnItems"`
+	ReturnAuthorizations  *[]ReturnAuthorization  `json:"returnAuthorizations"`
+	PaymentInformation    *[]PaymentInformation   `json:"paymentInformation,omitempty"`
 }

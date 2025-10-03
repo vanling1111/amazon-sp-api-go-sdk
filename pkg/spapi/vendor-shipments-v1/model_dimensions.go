@@ -11,7 +11,7 @@ package vendor_shipments_v1
 // Physical dimensional measurements of a container.
 type Dimensions struct {
 	Length string `json:"length"`
-	Width string `json:"width"`
+	Width  string `json:"width"`
 	Height string `json:"height"`
 	// The unit of measure for dimensions.
 	UnitOfMeasure string `json:"unitOfMeasure"`

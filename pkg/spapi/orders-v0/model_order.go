@@ -28,20 +28,20 @@ type Order struct {
 	OrderChannel string `json:"OrderChannel,omitempty"`
 	// The order's shipment service level.
 	ShipServiceLevel string `json:"ShipServiceLevel,omitempty"`
-	OrderTotal *Money `json:"OrderTotal,omitempty"`
+	OrderTotal       *Money `json:"OrderTotal,omitempty"`
 	// The number of items shipped.
 	NumberOfItemsShipped int32 `json:"NumberOfItemsShipped,omitempty"`
 	// The number of items unshipped.
-	NumberOfItemsUnshipped int32 `json:"NumberOfItemsUnshipped,omitempty"`
+	NumberOfItemsUnshipped int32                         `json:"NumberOfItemsUnshipped,omitempty"`
 	PaymentExecutionDetail *[]PaymentExecutionDetailItem `json:"PaymentExecutionDetail,omitempty"`
 	// The payment method for the order. This property is limited to COD and CVS payment methods. Unless you need the specific COD payment information provided by the `PaymentExecutionDetailItem` object, we recommend using the `PaymentMethodDetails` property to get payment method information.
-	PaymentMethod string `json:"PaymentMethod,omitempty"`
+	PaymentMethod        string    `json:"PaymentMethod,omitempty"`
 	PaymentMethodDetails *[]string `json:"PaymentMethodDetails,omitempty"`
 	// The identifier for the marketplace where the order was placed.
 	MarketplaceId string `json:"MarketplaceId,omitempty"`
 	// The shipment service level category for the order.  **Possible values**: `Expedited`, `FreeEconomy`, `NextDay`, `Priority`, `SameDay`, `SecondDay`, `Scheduled`, and `Standard`.
-	ShipmentServiceLevelCategory string `json:"ShipmentServiceLevelCategory,omitempty"`
-	EasyShipShipmentStatus *EasyShipShipmentStatus `json:"EasyShipShipmentStatus,omitempty"`
+	ShipmentServiceLevelCategory string                  `json:"ShipmentServiceLevelCategory,omitempty"`
+	EasyShipShipmentStatus       *EasyShipShipmentStatus `json:"EasyShipShipmentStatus,omitempty"`
 	// Custom ship label for Checkout by Amazon (CBA).
 	CbaDisplayableShippingLabel string `json:"CbaDisplayableShippingLabel,omitempty"`
 	// The order's type.
@@ -73,23 +73,23 @@ type Order struct {
 	// When true, the item within this order was bought and re-sold by Amazon Business EU SARL (ABEU). By buying and instantly re-selling your items, ABEU becomes the seller of record, making your inventory available for sale to customers who would not otherwise purchase from a third-party seller.
 	IsSoldByAB bool `json:"IsSoldByAB,omitempty"`
 	// When true, the item within this order was bought and re-sold by Amazon Business EU SARL (ABEU). By buying and instantly re-selling your items, ABEU becomes the seller of record, making your inventory available for sale to customers who would not otherwise purchase from a third-party seller.
-	IsIBA bool `json:"IsIBA,omitempty"`
+	IsIBA                          bool     `json:"IsIBA,omitempty"`
 	DefaultShipFromLocationAddress *Address `json:"DefaultShipFromLocationAddress,omitempty"`
 	// The buyer's invoicing preference. Sellers can use this data to issue electronic invoices for orders in Turkey.  **Note**: This attribute is only available in the Turkey marketplace.
-	BuyerInvoicePreference string `json:"BuyerInvoicePreference,omitempty"`
-	BuyerTaxInformation *BuyerTaxInformation `json:"BuyerTaxInformation,omitempty"`
+	BuyerInvoicePreference string                  `json:"BuyerInvoicePreference,omitempty"`
+	BuyerTaxInformation    *BuyerTaxInformation    `json:"BuyerTaxInformation,omitempty"`
 	FulfillmentInstruction *FulfillmentInstruction `json:"FulfillmentInstruction,omitempty"`
 	// When true, this order is marked to be picked up from a store rather than delivered.
 	IsISPU bool `json:"IsISPU,omitempty"`
 	// When true, this order is marked to be delivered to an Access Point. The access location is chosen by the customer. Access Points include Amazon Hub Lockers, Amazon Hub Counters, and pickup points operated by carriers.
-	IsAccessPointOrder bool `json:"IsAccessPointOrder,omitempty"`
+	IsAccessPointOrder bool                `json:"IsAccessPointOrder,omitempty"`
 	MarketplaceTaxInfo *MarketplaceTaxInfo `json:"MarketplaceTaxInfo,omitempty"`
 	// The seller’s friendly name registered in the marketplace where the sale took place. Sellers can use this data to issue electronic invoices for orders in Brazil.  **Note**: This attribute is only available in the Brazil marketplace for the orders with `Pending` or `Unshipped` status.
-	SellerDisplayName string `json:"SellerDisplayName,omitempty"`
-	ShippingAddress *Address `json:"ShippingAddress,omitempty"`
-	BuyerInfo *BuyerInfo `json:"BuyerInfo,omitempty"`
+	SellerDisplayName         string                     `json:"SellerDisplayName,omitempty"`
+	ShippingAddress           *Address                   `json:"ShippingAddress,omitempty"`
+	BuyerInfo                 *BuyerInfo                 `json:"BuyerInfo,omitempty"`
 	AutomatedShippingSettings *AutomatedShippingSettings `json:"AutomatedShippingSettings,omitempty"`
 	// Whether the order contains regulated items which may require additional approval steps before being fulfilled.
-	HasRegulatedItems bool `json:"HasRegulatedItems,omitempty"`
+	HasRegulatedItems       bool                     `json:"HasRegulatedItems,omitempty"`
 	ElectronicInvoiceStatus *ElectronicInvoiceStatus `json:"ElectronicInvoiceStatus,omitempty"`
 }

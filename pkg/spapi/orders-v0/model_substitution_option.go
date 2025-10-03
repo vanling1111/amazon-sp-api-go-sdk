@@ -12,11 +12,11 @@ package orders_v0
 type SubstitutionOption struct {
 	// The item's Amazon Standard Identification Number (ASIN).
 	ASIN string `json:"ASIN,omitempty"`
-	// The number of items to be picked for this substitution option. 
+	// The number of items to be picked for this substitution option.
 	QuantityOrdered int32 `json:"QuantityOrdered,omitempty"`
 	// The item's seller stock keeping unit (SKU).
 	SellerSKU string `json:"SellerSKU,omitempty"`
 	// The item's title.
-	Title string `json:"Title,omitempty"`
+	Title       string       `json:"Title,omitempty"`
 	Measurement *Measurement `json:"Measurement,omitempty"`
 }

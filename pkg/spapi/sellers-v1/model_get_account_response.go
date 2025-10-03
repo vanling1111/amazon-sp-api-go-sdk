@@ -10,6 +10,6 @@ package sellers_v1
 
 // The response schema for the `getAccount` operation.
 type GetAccountResponse struct {
-	Payload *Account `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Payload *Account      `json:"payload,omitempty"`
+	Errors  *[]ModelError `json:"errors,omitempty"`
 }

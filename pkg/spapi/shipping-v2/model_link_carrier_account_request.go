@@ -11,8 +11,8 @@ package shipping_v2
 
 // The request schema for verify and add the merchant's account with a certain carrier.
 type LinkCarrierAccountRequest struct {
-	ClientReferenceDetails *[]ClientReferenceDetail `json:"clientReferenceDetails,omitempty"`
-	CarrierAccountType string `json:"carrierAccountType"`
-	CarrierAccountAttributes *[]CarrierAccountAttribute `json:"carrierAccountAttributes"`
+	ClientReferenceDetails            *[]ClientReferenceDetail   `json:"clientReferenceDetails,omitempty"`
+	CarrierAccountType                string                     `json:"carrierAccountType"`
+	CarrierAccountAttributes          *[]CarrierAccountAttribute `json:"carrierAccountAttributes"`
 	EncryptedCarrierAccountAttributes *[]CarrierAccountAttribute `json:"encryptedCarrierAccountAttributes,omitempty"`
 }

@@ -11,5 +11,5 @@ package merchant_fulfillment_v0
 // The payload for the `getAdditionalSellerInputs` operation.
 type GetAdditionalSellerInputsResult struct {
 	ShipmentLevelFields *[]AdditionalInputs `json:"ShipmentLevelFields,omitempty"`
-	ItemLevelFieldsList *[]ItemLevelFields `json:"ItemLevelFieldsList,omitempty"`
+	ItemLevelFieldsList *[]ItemLevelFields  `json:"ItemLevelFieldsList,omitempty"`
 }

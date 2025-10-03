@@ -10,7 +10,7 @@ package merchant_fulfillment_v0
 
 // Request schema.
 type GetAdditionalSellerInputsRequest struct {
-	ShippingServiceId string `json:"ShippingServiceId"`
-	ShipFromAddress *Address `json:"ShipFromAddress"`
-	OrderId string `json:"OrderId"`
+	ShippingServiceId string   `json:"ShippingServiceId"`
+	ShipFromAddress   *Address `json:"ShipFromAddress"`
+	OrderId           string   `json:"OrderId"`
 }

@@ -15,6 +15,6 @@ type Price struct {
 	// The seller stock keeping unit (SKU) of the item.
 	SellerSKU string `json:"SellerSKU,omitempty"`
 	// The Amazon Standard Identification Number (ASIN) of the item.
-	ASIN string `json:"ASIN,omitempty"`
+	ASIN    string   `json:"ASIN,omitempty"`
 	Product *Product `json:"Product,omitempty"`
 }

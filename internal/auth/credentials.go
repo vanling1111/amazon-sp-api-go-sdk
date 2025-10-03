@@ -122,15 +122,16 @@ var (
 //   - error: 如果参数无效，返回错误
 //
 // 示例:
-//   creds, err := auth.NewCredentials(
-//       "your-client-id",
-//       "your-client-secret",
-//       "your-refresh-token",
-//       auth.EndpointNA,
-//   )
-//   if err != nil {
-//       log.Fatal(err)
-//   }
+//
+//	creds, err := auth.NewCredentials(
+//	    "your-client-id",
+//	    "your-client-secret",
+//	    "your-refresh-token",
+//	    auth.EndpointNA,
+//	)
+//	if err != nil {
+//	    log.Fatal(err)
+//	}
 func NewCredentials(clientID, clientSecret, refreshToken, endpoint string) (*Credentials, error) {
 	creds := &Credentials{
 		ClientID:     clientID,
@@ -162,16 +163,17 @@ func NewCredentials(clientID, clientSecret, refreshToken, endpoint string) (*Cre
 //   - error: 如果参数无效，返回错误
 //
 // 示例:
-//   // Notifications API
-//   creds, err := auth.NewGrantlessCredentials(
-//       "your-client-id",
-//       "your-client-secret",
-//       []string{auth.ScopeNotifications},
-//       auth.EndpointNA,
-//   )
-//   if err != nil {
-//       log.Fatal(err)
-//   }
+//
+//	// Notifications API
+//	creds, err := auth.NewGrantlessCredentials(
+//	    "your-client-id",
+//	    "your-client-secret",
+//	    []string{auth.ScopeNotifications},
+//	    auth.EndpointNA,
+//	)
+//	if err != nil {
+//	    log.Fatal(err)
+//	}
 func NewGrantlessCredentials(clientID, clientSecret string, scopes []string, endpoint string) (*Credentials, error) {
 	creds := &Credentials{
 		ClientID:     clientID,

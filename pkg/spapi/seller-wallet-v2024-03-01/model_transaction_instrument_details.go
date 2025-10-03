@@ -8,10 +8,10 @@
  */
 package seller_wallet_v2024_03_01
 
-// Request body to create transaction instrument, Amazon performs validation and screening (anti-money laundering measuers) on all the transaction instruments before executing a transaction thus it requires transaction instrument holder's contact details as well 
+// Request body to create transaction instrument, Amazon performs validation and screening (anti-money laundering measuers) on all the transaction instruments before executing a transaction thus it requires transaction instrument holder's contact details as well
 type TransactionInstrumentDetails struct {
 	BankAccount *BankAccount `json:"bankAccount"`
-	// This field would be used to populate the bank account number of the destination payment method. The field is intentionally not included in any other Schemas since Amazon internal systems will never receive it in unencrypted format, so field won't be part of the request signature 
+	// This field would be used to populate the bank account number of the destination payment method. The field is intentionally not included in any other Schemas since Amazon internal systems will never receive it in unencrypted format, so field won't be part of the request signature
 	BankAccountNumber string `json:"bankAccountNumber"`
 	// The bank account holder's name (expected to be an Amazon customer).  **Note:** This field is encrypted before Amazon receives it, so should not be used to generate `destAccountDigitalSignature`, and should not be included in the request signature.
 	AccountHolderName string `json:"accountHolderName"`

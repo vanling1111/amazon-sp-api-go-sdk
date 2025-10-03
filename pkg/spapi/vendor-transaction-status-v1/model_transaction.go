@@ -13,6 +13,6 @@ type Transaction struct {
 	// The unique identifier returned in the 'transactionId' field in response to the post request of a specific transaction.
 	TransactionId string `json:"transactionId"`
 	// Current processing status of the transaction.
-	Status string `json:"status"`
+	Status string        `json:"status"`
 	Errors *[]ModelError `json:"errors,omitempty"`
 }

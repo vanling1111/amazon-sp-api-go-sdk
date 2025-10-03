@@ -17,10 +17,10 @@ type ItemVendorDetailsByMarketplace struct {
 	// The manufacturer code that is associated with an Amazon catalog item.
 	ManufacturerCode string `json:"manufacturerCode,omitempty"`
 	// The parent vendor code of the manufacturer code.
-	ManufacturerCodeParent string `json:"manufacturerCodeParent,omitempty"`
-	ProductCategory *ItemVendorDetailsCategory `json:"productCategory,omitempty"`
+	ManufacturerCodeParent string                     `json:"manufacturerCodeParent,omitempty"`
+	ProductCategory        *ItemVendorDetailsCategory `json:"productCategory,omitempty"`
 	// The product group that is associated with an Amazon catalog item.
-	ProductGroup string `json:"productGroup,omitempty"`
+	ProductGroup       string                     `json:"productGroup,omitempty"`
 	ProductSubcategory *ItemVendorDetailsCategory `json:"productSubcategory,omitempty"`
 	// The replenishment category that is associated with an Amazon catalog item.
 	ReplenishmentCategory string `json:"replenishmentCategory,omitempty"`

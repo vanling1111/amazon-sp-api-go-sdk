@@ -10,6 +10,6 @@ package notifications_v1
 
 // The destination resource types.
 type DestinationResource struct {
-	Sqs *SqsResource `json:"sqs,omitempty"`
+	Sqs         *SqsResource         `json:"sqs,omitempty"`
 	EventBridge *EventBridgeResource `json:"eventBridge,omitempty"`
 }

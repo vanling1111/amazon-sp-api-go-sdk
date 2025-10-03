@@ -7,7 +7,7 @@ import (
 	"context"
 	"fmt"
 	"strings"
-	
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 )
 
@@ -21,13 +21,15 @@ func NewClient(baseClient *spapi.Client) *Client {
 	return &Client{baseClient: baseClient}
 }
 
-// SubmitInventoryUpdate 
+// SubmitInventoryUpdate
 // Method: POST | Path: /vendor/directFulfillment/inventory/v1/warehouses/{warehouseId}/items
 func (c *Client) SubmitInventoryUpdate(ctx context.Context, warehouseId string, body interface{}) (interface{}, error) {
 	path := "/vendor/directFulfillment/inventory/v1/warehouses/{warehouseId}/items"
 	path = strings.Replace(path, "{warehouseId}", warehouseId, 1)
 	var result interface{}
 	err := c.baseClient.Post(ctx, path, body, &result)
-	if err != nil { return nil, fmt.Errorf("SubmitInventoryUpdate: %w", err) }
+	if err != nil {
+		return nil, fmt.Errorf("SubmitInventoryUpdate: %w", err)
+	}
 	return result, nil
 }

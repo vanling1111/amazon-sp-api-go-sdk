@@ -12,5 +12,5 @@ package vendor_shipments_v1
 type TotalWeight struct {
 	// The unit of measure for the weight of items that are ordered by cases and support pricing by weight.
 	UnitOfMeasure string `json:"unitOfMeasure"`
-	Amount string `json:"amount"`
+	Amount        string `json:"amount"`
 }

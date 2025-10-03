@@ -10,8 +10,8 @@ package replenishment_v2022_11_07
 
 // An object which represents all promotions applied to an offer.
 type OfferProgramConfigurationPromotions struct {
-	SellingPartnerFundedBaseDiscount *OfferProgramConfigurationPromotionsDiscountFunding `json:"sellingPartnerFundedBaseDiscount,omitempty"`
+	SellingPartnerFundedBaseDiscount   *OfferProgramConfigurationPromotionsDiscountFunding `json:"sellingPartnerFundedBaseDiscount,omitempty"`
 	SellingPartnerFundedTieredDiscount *OfferProgramConfigurationPromotionsDiscountFunding `json:"sellingPartnerFundedTieredDiscount,omitempty"`
-	AmazonFundedBaseDiscount *OfferProgramConfigurationPromotionsDiscountFunding `json:"amazonFundedBaseDiscount,omitempty"`
-	AmazonFundedTieredDiscount *OfferProgramConfigurationPromotionsDiscountFunding `json:"amazonFundedTieredDiscount,omitempty"`
+	AmazonFundedBaseDiscount           *OfferProgramConfigurationPromotionsDiscountFunding `json:"amazonFundedBaseDiscount,omitempty"`
+	AmazonFundedTieredDiscount         *OfferProgramConfigurationPromotionsDiscountFunding `json:"amazonFundedTieredDiscount,omitempty"`
 }

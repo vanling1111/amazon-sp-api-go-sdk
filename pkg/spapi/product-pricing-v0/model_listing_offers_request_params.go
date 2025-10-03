@@ -11,8 +11,8 @@ package product_pricing_v0
 // List of request parameters that can be accepted by `ListingOffersRequest`
 type ListingOffersRequestParams struct {
 	// The seller stock keeping unit (SKU) of the item. This is the same SKU passed as a path parameter.
-	SellerSKU string `json:"SellerSKU"`
-	MarketplaceId string `json:"MarketplaceId"`
+	SellerSKU     string         `json:"SellerSKU"`
+	MarketplaceId string         `json:"MarketplaceId"`
 	ItemCondition *ItemCondition `json:"ItemCondition"`
-	CustomerType *CustomerType `json:"CustomerType,omitempty"`
+	CustomerType  *CustomerType  `json:"CustomerType,omitempty"`
 }

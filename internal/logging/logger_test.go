@@ -41,7 +41,7 @@ func TestNewZapLogger(t *testing.T) {
 	t.Run("custom_config", func(t *testing.T) {
 		config := zap.NewProductionConfig()
 		config.Level = zap.NewAtomicLevelAt(zap.DebugLevel)
-		
+
 		logger, err := NewZapLogger(&config)
 		require.NoError(t, err)
 		assert.NotNil(t, logger)
@@ -88,7 +88,7 @@ func TestNopLogger(t *testing.T) {
 	logger.Info("test")
 	logger.Warn("test")
 	logger.Error("test")
-	
+
 	newLogger := logger.With(String("key", "value"))
 	assert.NotNil(t, newLogger)
 }
@@ -147,4 +147,3 @@ func BenchmarkNopLogger(b *testing.B) {
 		)
 	}
 }
-

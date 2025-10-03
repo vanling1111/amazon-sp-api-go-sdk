@@ -11,8 +11,8 @@ package product_fees_v0
 // An item identifier and the estimated fees for the item.
 type FeesEstimateResult struct {
 	// The status of the fee request. Possible values: Success, ClientError, ServiceError.
-	Status string `json:"Status,omitempty"`
+	Status                 string                  `json:"Status,omitempty"`
 	FeesEstimateIdentifier *FeesEstimateIdentifier `json:"FeesEstimateIdentifier,omitempty"`
-	FeesEstimate *FeesEstimate `json:"FeesEstimate,omitempty"`
-	Error_ *FeesEstimateError `json:"Error,omitempty"`
+	FeesEstimate           *FeesEstimate           `json:"FeesEstimate,omitempty"`
+	Error_                 *FeesEstimateError      `json:"Error,omitempty"`
 }

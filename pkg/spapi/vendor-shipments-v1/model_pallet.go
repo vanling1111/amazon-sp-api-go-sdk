@@ -15,9 +15,9 @@ type Pallet struct {
 	// Number of layers per pallet. Only applicable to container type Pallet.
 	Tier int32 `json:"tier,omitempty"`
 	// Number of cartons per layer on the pallet. Only applicable to container type Pallet.
-	Block int32 `json:"block,omitempty"`
-	Dimensions *Dimensions `json:"dimensions,omitempty"`
-	Weight *Weight `json:"weight,omitempty"`
+	Block                  int32                   `json:"block,omitempty"`
+	Dimensions             *Dimensions             `json:"dimensions,omitempty"`
+	Weight                 *Weight                 `json:"weight,omitempty"`
 	CartonReferenceDetails *CartonReferenceDetails `json:"cartonReferenceDetails,omitempty"`
 	// A list of container item details.
 	Items []ContainerItem `json:"items,omitempty"`

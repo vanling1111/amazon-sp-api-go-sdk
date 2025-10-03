@@ -11,6 +11,6 @@ package replenishment_v2022_11_07
 // The request body for the `listOfferMetrics` operation.
 type ListOfferMetricsRequest struct {
 	Pagination *ListOfferMetricsRequestPagination `json:"pagination"`
-	Sort *ListOfferMetricsRequestSort `json:"sort,omitempty"`
-	Filters *ListOfferMetricsRequestFilters `json:"filters"`
+	Sort       *ListOfferMetricsRequestSort       `json:"sort,omitempty"`
+	Filters    *ListOfferMetricsRequestFilters    `json:"filters"`
 }

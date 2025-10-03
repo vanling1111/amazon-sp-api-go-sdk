@@ -15,10 +15,10 @@ type InboundShipmentItem struct {
 	// The seller SKU of the item.
 	SellerSKU string `json:"SellerSKU"`
 	// Amazon's fulfillment network SKU of the item.
-	FulfillmentNetworkSKU string `json:"FulfillmentNetworkSKU,omitempty"`
-	QuantityShipped int32 `json:"QuantityShipped"`
-	QuantityReceived int32 `json:"QuantityReceived,omitempty"`
-	QuantityInCase int32 `json:"QuantityInCase,omitempty"`
-	ReleaseDate string `json:"ReleaseDate,omitempty"`
-	PrepDetailsList *[]PrepDetails `json:"PrepDetailsList,omitempty"`
+	FulfillmentNetworkSKU string         `json:"FulfillmentNetworkSKU,omitempty"`
+	QuantityShipped       int32          `json:"QuantityShipped"`
+	QuantityReceived      int32          `json:"QuantityReceived,omitempty"`
+	QuantityInCase        int32          `json:"QuantityInCase,omitempty"`
+	ReleaseDate           string         `json:"ReleaseDate,omitempty"`
+	PrepDetailsList       *[]PrepDetails `json:"PrepDetailsList,omitempty"`
 }

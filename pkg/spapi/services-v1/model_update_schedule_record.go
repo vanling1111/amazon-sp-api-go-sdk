@@ -11,6 +11,6 @@ package services_v1
 // `UpdateScheduleRecord` entity contains the `AvailabilityRecord` if there is an error/warning while performing the requested operation on it.
 type UpdateScheduleRecord struct {
 	Availability *AvailabilityRecord `json:"availability,omitempty"`
-	Warnings *[]Warning `json:"warnings,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Warnings     *[]Warning          `json:"warnings,omitempty"`
+	Errors       *[]ModelError       `json:"errors,omitempty"`
 }

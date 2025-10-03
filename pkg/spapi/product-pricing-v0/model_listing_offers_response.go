@@ -11,7 +11,7 @@ package product_pricing_v0
 // Schema for an individual `ListingOffersResponse`
 type ListingOffersResponse struct {
 	Request *ListingOffersRequestParams `json:"request,omitempty"`
-	Headers *map[string]string `json:"headers,omitempty"`
-	Status *GetOffersHttpStatusLine `json:"status,omitempty"`
-	Body *GetOffersResponse `json:"body"`
+	Headers *map[string]string          `json:"headers,omitempty"`
+	Status  *GetOffersHttpStatusLine    `json:"status,omitempty"`
+	Body    *GetOffersResponse          `json:"body"`
 }

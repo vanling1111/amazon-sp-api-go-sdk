@@ -1,4 +1,4 @@
-﻿// Copyright 2025 Amazon SP-API Go SDK Authors.
+// Copyright 2025 Amazon SP-API Go SDK Authors.
 // Licensed under the Apache License, Version 2.0.
 
 package supply_sources_v2020_07_01
@@ -73,4 +73,3 @@ func (c *Client) IterateSupplySources(ctx context.Context, query map[string]stri
 		}
 	}
 }
-

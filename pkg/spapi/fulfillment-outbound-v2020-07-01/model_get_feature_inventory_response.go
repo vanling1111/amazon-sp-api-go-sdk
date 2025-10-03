@@ -11,5 +11,5 @@ package fulfillment_outbound_v2020_07_01
 // The breakdown of eligibility inventory by feature.
 type GetFeatureInventoryResponse struct {
 	Payload *GetFeatureInventoryResult `json:"payload,omitempty"`
-	Errors *[]ModelError `json:"errors,omitempty"`
+	Errors  *[]ModelError              `json:"errors,omitempty"`
 }
