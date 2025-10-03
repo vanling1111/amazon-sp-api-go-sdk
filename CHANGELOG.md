@@ -5,6 +5,70 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2025-10-03
+
+### Added
+
+#### Go 1.25 分页迭代器
+- **27 个 API 的分页迭代器** - 覆盖所有有分页的 API（100% 覆盖率）
+- 自动处理 NextToken/pageToken 分页逻辑
+- 用户代码减少 70%
+- 支持提前退出（break）
+- 完整的错误处理
+
+支持的 API：
+- Orders API - `IterateOrders()`, `IterateOrderItems()`
+- Reports API - `IterateReports()`
+- Feeds API - `IterateFeeds()`
+- Catalog Items API (3个版本) - `IterateCatalogItems()`
+- FBA Inventory API - `IterateInventorySummaries()`
+- Finances API - `IterateFinancialEvents()`, `IterateFinancialEventGroups()`
+- Fulfillment Inbound/Outbound - 多个迭代器
+- Listings Items API - `IterateListingsItems()`
+- 所有 Vendor API - 11 个迭代器
+
+#### 报告自动解密
+- **Reports API 自动解密** - `GetReportDocumentDecrypted()` 方法
+- 自动下载报告内容
+- 自动检测并解密 AES-256-CBC 加密报告
+- 处理未加密报告
+- 完整的错误处理
+
+#### 加密模块
+- `internal/crypto` 包 - AES-256-CBC 加密/解密
+- `DecryptReport()` - 解密 Amazon 报告
+- `EncryptDocument()` - 加密上传文档
+- `ValidateEncryptionDetails()` - 验证加密参数
+- PKCS7 填充处理
+- 13 个单元测试
+
+#### 生产级示例
+- `examples/patterns/order-sync-sqs/` - SQS 订单实时同步服务
+  - 完整的 SQS 轮询器实现（可复制使用）
+  - 事件解析器
+  - Docker 部署支持
+  - 详细文档说明 SP-API 实时性限制
+- `examples/iterators/` - 迭代器使用示例
+- `examples/report-decryption/` - 报告解密完整流程
+
+#### 依赖管理
+- `github.com/pkg/errors` - 增强错误处理（错误堆栈）
+- `github.com/stretchr/testify` - 测试框架
+- `github.com/aws/aws-sdk-go-v2` - AWS SDK（示例使用，核心 SDK 不依赖）
+
+### Changed
+- **Go 版本要求** - 从 1.21 升级到 1.25
+- **错误处理** - 新代码使用 `pkg/errors` 提供错误堆栈
+- **测试数量** - 从 152 个增加到 154+ 个
+
+### Fixed
+- Go 1.25 循环变量捕获问题（自动修复，无需 `item := item`）
+
+### Documentation
+- 更新 README 添加 v1.1.0 新特性说明
+- 创建 UPGRADE_PLAN.md 详细升级计划
+- 新增 3 个示例的完整文档
+
 ## [1.0.0] - 2025-10-03
 
 ### 🎉 Initial Release
