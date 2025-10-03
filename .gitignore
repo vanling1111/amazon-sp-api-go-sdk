@@ -58,8 +58,9 @@ coverage/
 cpu.pprof
 mem.pprof
 
-# Benchmarking results
+# Benchmarking results (but keep tests/benchmarks source code)
 benchmarks/
+!tests/benchmarks/
 
 # Generated files
 *_gen.go
