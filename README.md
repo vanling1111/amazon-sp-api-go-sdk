@@ -88,6 +88,52 @@ fmt.Println(string(decrypted))
 
 所有示例都可以直接运行或复制到项目中使用。
 
+## 🆕 v1.2.0 新特性
+
+### **企业级可靠性和性能**
+
+v1.2.0 增强了生产环境的可靠性和性能：
+
+- 🪵 **结构化日志 (Zap)** - 生产级日志系统，支持日志级别、格式化、脱敏
+- 🔌 **熔断器 (Circuit Breaker)** - 防止级联失败，3 状态自动恢复
+- ✅ **参数验证** - 声明式配置验证，友好错误提示
+- ⚡ **JSON 优化** - json-iterator，性能提升 3-5 倍
+- 📦 **大文件传输** - 流式上传/下载，适用于大型 Feed 和 Report
+
+```go
+// 结构化日志
+logger := logging.NewZapLogger(logging.ProductionConfig())
+client := spapi.NewClient(..., spapi.WithLogger(logger))
+
+// 熔断器
+breaker := circuit.NewBreaker(circuit.Config{
+    MaxFailures: 5,
+    Timeout:     30 * time.Second,
+})
+```
+
+## 🆕 v1.3.0 新特性
+
+### **云原生可观测性**
+
+v1.3.0 完善了企业级监控和追踪能力：
+
+- 📊 **OpenTelemetry 追踪** - 分布式追踪，兼容 Jaeger/Zipkin/Tempo
+- 📈 **Prometheus 指标** - 标准指标导出，Grafana 开箱即用
+- 🔍 **完整可观测性** - 日志 + 追踪 + 指标三位一体
+
+```go
+// OpenTelemetry 追踪
+import "go.opentelemetry.io/otel"
+
+tracer := otel.Tracer("sp-api")
+// 自动追踪所有 HTTP 请求
+
+// Prometheus 指标
+metrics := prometheus.NewMetrics("spapi")
+// 自动收集：请求数、延迟、错误率、速率限制等
+```
+
 ## 📚 文档
 
 ### 设计文档
@@ -101,7 +147,11 @@ fmt.Println(string(decrypted))
 - [贡献指南](docs/CONTRIBUTING.md) - 如何参与项目开发
 
 ### 功能指南
+- [功能清单](docs/FEATURES.md) - 完整功能列表和状态
+- [分页迭代器指南](docs/PAGINATION_GUIDE.md) - Go 1.25 迭代器使用指南
+- [报告解密指南](docs/REPORT_DECRYPTION.md) - 自动解密加密报告
 - [Grantless 操作指南](docs/GRANTLESS_OPERATIONS_GUIDE.md) - Grantless 操作的详细说明
+- [指标监控指南](docs/METRICS_GUIDE.md) - 可观测性和监控配置
 
 ### 参考资料
 - [版本追踪](docs/VERSION_TRACKING.md) - SDK 和官方文档版本历史
