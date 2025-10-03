@@ -64,6 +64,15 @@ type Config struct {
 
 	// MetricsRecorder 是可选的指标记录器（如 Prometheus）。
 	MetricsRecorder metrics.Recorder
+
+	// Logger 是可选的日志器（如 Zap）。
+	// 如果为 nil，使用默认的 NopLogger（不输出日志）。
+	Logger interface {
+		Debug(msg string, fields ...interface{})
+		Info(msg string, fields ...interface{})
+		Warn(msg string, fields ...interface{})
+		Error(msg string, fields ...interface{})
+	}
 }
 
 // DefaultConfig 返回默认配置。
