@@ -17,7 +17,6 @@
 // Unless you have obtained a commercial license, this file is licensed
 // under AGPL-3.0. By using this software, you agree to comply with the
 // terms of the applicable license.
-// Licensed under the Apache License, Version 2.0.
 
 // +build integration
 
