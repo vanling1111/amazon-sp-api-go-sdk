@@ -149,13 +149,14 @@ defer client.Close()
 
 | API | 状态 | 版本 |
 |-----|------|------|
-| Orders API | 📅 计划中 | v0 |
-| Reports API | 📅 计划中 | v2021-06-30 |
-| Feeds API | 📅 计划中 | v2021-06-30 |
-| Listings API | 📅 计划中 | v2021-08-01 |
-| Notifications API | 📅 计划中 | v1 |
+| Orders API | ✅ 已完成 | v0 |
+| Reports API | ✅ 已完成 | v2021-06-30 |
+| Feeds API | ✅ 已完成 | v2021-06-30 |
+| Listings API | ✅ 已完成 | v2021-08-01 |
+| Notifications API | ✅ 已完成 | v1 |
+| ...更多 52 个 API | ✅ 已完成 | 多个版本 |
 
-**图例**: ✅ 已完成 | 🔄 进行中 | 📅 计划中
+**完整 API 列表**: 查看 [pkg/spapi/](pkg/spapi/) 目录
 
 ## 🔄 开发路线图
 
@@ -253,12 +254,12 @@ defer client.Close()
 - [x] Vendor Shipments API
 - [x] Vendor Transaction Status API
 
-### 📅 阶段 6: 工具和自动化（计划中）
-- [ ] API 更新监控工具
-- [ ] OpenAPI 规范同步工具
-- [ ] 代码生成器
-- [ ] 性能测试工具
-- [ ] GitHub Actions 工作流
+### ✅ 阶段 6: 工具和自动化（已完成）
+- [x] API 更新监控工具 - 每日自动监控 57 个 API
+- [x] OpenAPI 规范同步工具 - 自动检测规范变更
+- [x] 代码生成器 - 自动生成客户端和测试
+- [x] 性能测试工具 - 基准测试框架
+- [x] GitHub Actions 工作流 - CI/CD 完整配置
 
 ## 🧪 测试
 
@@ -296,10 +297,10 @@ go build ./...
 
 ## 🤝 参与贡献
 
-欢迎参与贡献！在开始之前，请务必阅读：
+欢迎参与贡献！请参考以下文档：
 
-1. **强制性约束**: [开发规范](docs/DEVELOPMENT.md) - 必须严格遵守
-2. **代码风格**: [代码风格](docs/CODE_STYLE.md) - Go 最佳实践
+1. **开发规范**: [开发指南](docs/DEVELOPMENT.md) - 开发流程和最佳实践
+2. **代码风格**: [代码风格](docs/CODE_STYLE.md) - Go 编码规范
 3. **贡献流程**: [贡献指南](docs/CONTRIBUTING.md) - 如何提交 PR
 
 ### 💡 技术亮点
