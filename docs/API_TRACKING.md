@@ -2,18 +2,18 @@
 
 ## 概述
 
-本文档说明如何追踪和同步 Amazon SP-API 官方文档的更新，确保 SDK 始终与官�?API 保持一致�?
+本文档说明如何追踪和同步 Amazon SP-API 官方文档的更新，确保 SDK 始终与官�?API 保持一致�?
 
 ## 核心原则
 
-### �?唯一权威来源
+### �?唯一权威来源
 - **官方文档**: https://developer-docs.amazon.com/sp-api/docs/
-- **官方参�?*: https://developer-docs.amazon.com/sp-api/reference/
+- **官方参�?*: https://developer-docs.amazon.com/sp-api/reference/
 - **官方 OpenAPI 规范**: https://github.com/amzn/selling-partner-api-models
 
-### �?不参考的资源
-- 其他语言的官�?SDK（Java、Python、Node.js、C#、PHP 等）
-- 第三方实�?
+### �?不参考的资源
+- 其他语言的官�?SDK（Java、Python、Node.js、C#、PHP 等）
+- 第三方实�?
 - Stack Overflow 讨论（除非引用官方文档）
 
 ---
@@ -30,7 +30,7 @@
 **监控方式**:
 - 定期访问官方文档网站
 - 提取关键章节内容
-- 计算内容哈希值检测变�?
+- 计算内容哈希值检测变�?
 
 ### 2. OpenAPI 规范更新
 **GitHub 仓库**:
@@ -38,12 +38,12 @@
 
 **监控方式**:
 - 监控 `models/` 目录下的 JSON 文件
-- 使用 GitHub API 获取最�?commit
+- 使用 GitHub API 获取最�?commit
 - 对比文件内容差异
 
 ---
 
-## 自动化工�?
+## 自动化工�?
 
 ### 1. 文档监控工具
 
@@ -52,7 +52,7 @@
 **功能**:
 - 定期访问官方文档页面
 - 提取关键信息
-- 检测内容变�?
+- 检测内容变�?
 - 发送通知
 
 **使用方式**:
@@ -62,7 +62,7 @@ go run tools/monitoring/api_monitor.go
 
 **配置** (`config/monitor.yml`):
 ```yaml
-interval: 24h  # 检查间�?
+interval: 24h  # 检查间�?
 pages:
   - url: https://developer-docs.amazon.com/sp-api/docs/connecting-to-the-selling-partner-api
     selectors:
@@ -83,7 +83,7 @@ notifications:
 **位置**: `tools/monitoring/openapi_sync.go`
 
 **功能**:
-- �?GitHub 拉取最�?OpenAPI 规范
+- �?GitHub 拉取最�?OpenAPI 规范
 - 对比本地版本
 - 标记需要更新的模型
 
@@ -95,9 +95,9 @@ go run tools/monitoring/openapi_sync.go --sync
 
 ---
 
-## GitHub Actions 工作�?
+## GitHub Actions 工作�?
 
-### 1. 文档更新检�?
+### 1. 文档更新检�?
 
 **文件**: `.github/workflows/doc-check.yml`
 
@@ -134,8 +134,8 @@ jobs:
             github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: '🚨 官方 SP-API 文档已更�?,
-              body: '检测到官方文档有更新，请检查并同步修改。\n\n详情�? ${{ steps.monitor.outputs.details }}',
+              title: '🚨 官方 SP-API 文档已更�?,
+              body: '检测到官方文档有更新，请检查并同步修改。\n\n详情�? ${{ steps.monitor.outputs.details }}',
               labels: ['documentation', 'needs-review']
             })
 ```
@@ -178,13 +178,13 @@ jobs:
           commit-message: 'chore: sync OpenAPI specifications'
           title: '🔄 同步 OpenAPI 规范'
           body: |
-            自动同步官方 OpenAPI 规范�?
+            自动同步官方 OpenAPI 规范�?
             
             **变更文件**:
             ${{ steps.check.outputs.files }}
             
-            **请审�?*:
-            - [ ] 检查模型变�?
+            **请审�?*:
+            - [ ] 检查模型变�?
             - [ ] 更新相关代码
             - [ ] 更新测试
             - [ ] 更新文档
@@ -196,21 +196,21 @@ jobs:
 
 ---
 
-## 手动检查流�?
+## 手动检查流�?
 
-### 1. 每周检查（推荐�?
+### 1. 每周检查（推荐�?
 
 **检查项**:
-- [ ] 访问官方文档首页，查�?"What's New" 部分
-- [ ] 检�?OpenAPI 规范仓库的最�?commit
-- [ ] 查看官方 SDK �?Release Notes（仅作参考，不参考代码）
+- [ ] 访问官方文档首页，查�?"What's New" 部分
+- [ ] 检�?OpenAPI 规范仓库的最�?commit
+- [ ] 查看官方 SDK �?Release Notes（仅作参考，不参考代码）
 
 **操作步骤**:
 ```bash
 # 1. 运行文档监控工具
 go run tools/monitoring/api_monitor.go
 
-# 2. 运行 OpenAPI 同步检�?
+# 2. 运行 OpenAPI 同步检�?
 go run tools/monitoring/openapi_sync.go --check
 
 # 3. 如果有变更，查看详情
@@ -219,7 +219,7 @@ go run tools/monitoring/openapi_sync.go --diff
 
 ---
 
-### 2. 发布前检查（必须�?
+### 2. 发布前检查（必须�?
 
 **发布新版本前必须执行**:
 ```bash
@@ -234,7 +234,7 @@ make test
 make test-integration
 
 # 4. 更新 CHANGELOG
-# 记录所�?API 变更
+# 记录所�?API 变更
 ```
 
 ---
@@ -244,8 +244,8 @@ make test-integration
 ### 1. 发现文档变更
 
 **步骤**:
-1. 访问变更的文档页�?
-2. 提取变更的内�?
+1. 访问变更的文档页�?
+2. 提取变更的内�?
 3. 创建 GitHub Issue 记录变更
 4. 标记需要同步的模块
 
@@ -272,7 +272,7 @@ make test-integration
 4. 更新测试
 5. 更新文档
 
-**参�?*:
+**参�?*:
 - 官方文档: [URL]
 - 变更详情: [详细描述]
 ```
@@ -308,20 +308,20 @@ go test ./api/orders/... -v
 
 ---
 
-### 3. API 新增或废�?
+### 3. API 新增或废�?
 
 **新增 API**:
-1. 获取�?API �?OpenAPI 规范
+1. 获取�?API �?OpenAPI 规范
 2. 生成 Go 模型
-3. 实现 API 客户�?
-4. 添加测试和示�?
+3. 实现 API 客户�?
+4. 添加测试和示�?
 5. 更新文档
 
 **废弃 API**:
-1. 在代码中标记�?`Deprecated`
+1. 在代码中标记�?`Deprecated`
 2. 添加弃用警告日志
 3. 更新文档说明替代方案
-4. 在下一个主版本中移�?
+4. 在下一个主版本中移�?
 
 **示例**:
 ```go
@@ -329,7 +329,7 @@ go test ./api/orders/... -v
 //
 // 官方文档: https://developer-docs.amazon.com/sp-api/docs/...
 //
-// 此方法将�?v2.0.0 中移�?
+// 此方法将�?v2.0.0 中移�?
 func (c *Client) GetOrderMetrics(ctx context.Context, req *GetOrderMetricsRequest) (*GetOrderMetricsResponse, error) {
     log.Warn("GetOrderMetrics is deprecated, use GetOrderMetricsV2 instead")
     // ...
@@ -340,19 +340,19 @@ func (c *Client) GetOrderMetrics(ctx context.Context, req *GetOrderMetricsReques
 
 ## 版本管理
 
-### 语义化版�?
+### 语义化版�?
 
 **规则**:
 - `MAJOR.MINOR.PATCH`
 - **MAJOR**: 不兼容的 API 变更
-- **MINOR**: 向后兼容的功能新�?
-- **PATCH**: 向后兼容�?Bug 修复
+- **MINOR**: 向后兼容的功能新�?
+- **PATCH**: 向后兼容�?Bug 修复
 
 **示例**:
 ```
 v1.0.0  - 初始版本
 v1.1.0  - 新增 Listings API
-v1.1.1  - 修复 Orders API �?bug
+v1.1.1  - 修复 Orders API �?bug
 v2.0.0  - 移除已弃用的 API
 ```
 
@@ -379,13 +379,13 @@ All notable changes to this project will be documented in this file.
 - 优化 Token 缓存策略 (#126)
 
 ### Fixed
-- 修复 RDT Signer �?data elements 提取逻辑 (#127)
+- 修复 RDT Signer �?data elements 提取逻辑 (#127)
 
 ### Official Documentation Changes
-- [2025-01-10] 官方文档更新�?Rate Limits 说明
+- [2025-01-10] 官方文档更新�?Rate Limits 说明
   - 链接: https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits
   - 影响: internal/ratelimit
-  - 状�? �?已同�?
+  - 状�? �?已同�?
 ```
 
 ---
@@ -393,17 +393,17 @@ All notable changes to this project will be documented in this file.
 ## 通知机制
 
 ### 1. GitHub Issues
-自动创建 Issue 追踪文档变更�?
+自动创建 Issue 追踪文档变更�?
 
 ### 2. GitHub Discussions
-重大变更�?Discussions 中讨论�?
+重大变更�?Discussions 中讨论�?
 
 ### 3. Release Notes
-每次发布时包含完整的变更说明�?
+每次发布时包含完整的变更说明�?
 
 ---
 
-## 工具实现参�?
+## 工具实现参�?
 
 ### 文档内容哈希
 
@@ -459,7 +459,7 @@ func FetchDocumentContent(ctx context.Context, url string) (string, error) {
 
 ---
 
-## 参考资�?
+## 参考资�?
 
 - [Amazon SP-API 官方文档](https://developer-docs.amazon.com/sp-api/docs/)
 - [OpenAPI 规范仓库](https://github.com/amzn/selling-partner-api-models)
