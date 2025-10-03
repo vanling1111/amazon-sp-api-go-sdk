@@ -1,166 +1,249 @@
-Amazon SP-API Go SDK - 专有软件许可证
-=====================================
+Amazon SP-API Go SDK - Dual License
+====================================
 
-版权所有 (c) 2025 Amazon SP-API Go SDK 项目贡献者
-保留所有权利。
+Copyright (c) 2025 Amazon SP-API Go SDK Contributors
 
-本软件及相关文档（以下简称"软件"）受本许可证条款约束。
-
-## 1. 许可授予
-
-### 1.1 个人非商业使用
-在遵守本许可证条款的前提下，许可方授予您有限的、非排他性的、不可转让的、
-可撤销的许可，允许您在以下情况下使用本软件：
-
-- ✅ **个人学习**：用于个人技能提升和知识学习
-- ✅ **学术研究**：用于教育机构的非盈利性学术研究
-- ✅ **非商业项目**：用于个人开源项目（非盈利性质）
-- ✅ **测试评估**：用于测试和评估软件功能
-
-### 1.2 明确禁止的用途
-未经许可方事先书面授权，严格禁止以下行为：
-
-- ❌ **任何商业使用**：不得用于任何以盈利为目的的活动
-- ❌ **企业使用**：不得在任何企业、公司、组织的生产环境中使用
-- ❌ **商业软件集成**：不得集成或嵌入到任何商业软件产品中
-- ❌ **提供商业服务**：不得使用本软件向第三方提供任何形式的商业服务
-- ❌ **再分发**：不得重新分发、出售或转让本软件
-- ❌ **托管服务**：不得作为托管服务（SaaS）提供给他人
-- ❌ **衍生商业产品**：不得基于本软件创建商业产品或服务
-- ❌ **规避限制**：不得移除、修改或规避本软件中的任何限制或保护措施
-
-## 2. 商业使用授权
-
-如需将本软件用于以下任何场景，必须获得书面商业许可：
-
-### 2.1 需要商业许可的场景
-- 在企业、公司、组织的任何环境中使用（包括内部使用）
-- 集成到任何商业软件产品中
-- 用于任何盈利性业务活动
-- 为第三方提供基于本软件的服务
-- 任何形式的间接商业利益获取
-
-### 2.2 商业许可申请
-如需获得商业使用授权，请联系：
-- **邮箱**: vanling1111@gmail.com
-- **GitHub**: https://github.com/vanling1111/amazon-sp-api-go-sdk
-
-商业许可将根据使用场景、规模和用途单独定价和协商。
-
-## 3. 知识产权
-
-### 3.1 所有权
-本软件及其所有副本的全部权利、所有权和利益（包括但不限于所有知识产权）
-均归许可方所有。本许可证不向您转让任何所有权。
-
-### 3.2 商标
-未经书面许可，不得使用许可方的商标、商号、标识或其他专有名称。
-
-## 4. 使用限制
-
-### 4.1 技术限制
-您不得：
-- 对软件进行反向工程、反编译或反汇编
-- 尝试从软件中提取源代码（如果提供的是二进制形式）
-- 绕过或破解软件中的任何技术保护措施
-- 移除或修改软件中的版权声明或许可证信息
-
-### 4.2 修改和衍生作品
-- 允许为个人学习目的修改源代码
-- 不得分发修改后的版本
-- 不得基于本软件创建衍生作品用于商业目的
-- 任何修改必须保留原始版权和许可证声明
-
-### 4.3 分发限制
-- 严禁未经授权分发本软件
-- 严禁通过包管理器、镜像站点或其他渠道公开分发
-- 仅允许通过官方渠道获取本软件
-
-## 5. 免责声明
-
-本软件按"现状"提供，不提供任何明示或暗示的保证，包括但不限于：
-- 对适销性的保证
-- 对特定用途适用性的保证
-- 对不侵权的保证
-- 对准确性、可靠性或完整性的保证
-
-许可方不保证软件无错误或不会中断运行。
-
-## 6. 责任限制
-
-在任何情况下，许可方及其贡献者均不对以下情况承担责任：
-- 因使用或无法使用本软件而产生的任何直接、间接、偶然、特殊或后果性损害
-- 利润损失、业务中断、数据丢失或其他商业损害
-- 即使已被告知可能发生此类损害
-
-您使用本软件的风险由您自行承担。
-
-## 7. 许可证终止
-
-### 7.1 自动终止
-如果您违反本许可证的任何条款，本许可证将自动终止，您必须：
-- 立即停止使用本软件
-- 删除所有软件副本
-- 销毁所有相关文档
-
-### 7.2 终止后果
-许可证终止后，您无权继续使用本软件。违反此规定可能导致法律诉讼。
-
-## 8. 合规验证
-
-许可方保留以下权利：
-- 要求您证明软件使用符合本许可证
-- 审计您对软件的使用情况
-- 对未经授权的商业使用采取法律行动
-
-## 9. 管辖法律
-
-本许可证受中华人民共和国法律管辖，不考虑其法律冲突条款。
-任何争议应提交至许可方所在地有管辖权的人民法院解决。
-
-## 10. 完整协议
-
-本许可证构成双方就软件使用达成的完整协议，取代所有先前或同期的
-口头或书面沟通、提议和陈述。
-
-## 11. 可分割性
-
-如果本许可证的任何条款被认定为无效或不可执行，其余条款将继续有效。
-
-## 12. 许可证修订
-
-许可方保留随时修改本许可证条款的权利。继续使用软件即表示接受修订后的条款。
+This software is dual-licensed. You may choose either license:
 
 ---
 
-## 📞 联系方式
+## LICENSE OPTION 1: GNU Affero General Public License v3.0 (AGPL-3.0)
 
-- **商业许可咨询**: vanling1111@gmail.com
-- **技术支持**: vanling1111@gmail.com
-- **GitHub**: https://github.com/vanling1111/amazon-sp-api-go-sdk
-- **Issues**: https://github.com/vanling1111/amazon-sp-api-go-sdk/issues
+### For Open Source Use
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+### AGPL-3.0 Key Terms:
+
+#### ✅ You CAN (for free):
+- Use this software for personal projects
+- Use this software for educational purposes
+- Use this software for open source projects
+- Modify the source code
+- Distribute modified versions
+
+#### ⚠️ YOU MUST:
+- **Release your complete source code under AGPL-3.0**
+- Include the original copyright notice
+- State all modifications you made
+- Provide installation instructions
+- Make source code available to ALL users (including network users)
+
+#### 🚨 IMPORTANT - Network Copyleft:
+If you run a modified version on a server and let users interact with it,
+you MUST provide the complete source code to those users. This is the key
+difference from GPL - AGPL closes the "SaaS loophole".
+
+### When to Use AGPL-3.0 License:
+
+Choose this license if:
+- You are an individual developer working on personal projects
+- You are working on an open source project
+- You are conducting academic research
+- You are willing to open source your entire application
+- Your project is non-commercial
+
+### When NOT to Use AGPL-3.0:
+
+You CANNOT use AGPL-3.0 if:
+- You want to keep your source code private
+- You are building a commercial product
+- You are running a SaaS business
+- Your employer/company doesn't allow AGPL software
+- You integrate this into proprietary software
+
+➡️ **In these cases, you MUST obtain a Commercial License (see below)**
 
 ---
 
-## ⚖️ 简要说明
+## LICENSE OPTION 2: Commercial License
 
-**✅ 允许（个人非商业）**：
-- 个人学习和研究
-- 学术用途
-- 非盈利开源项目
-- 测试和评估
+### For Commercial/Proprietary Use
 
-**❌ 禁止（需要商业许可）**：
-- 任何商业使用
-- 企业/公司使用
-- 集成到商业软件
-- 提供商业服务
-- 盈利性业务
+If you do not want to comply with the AGPL-3.0 terms (i.e., you don't want
+to open source your entire application), you must purchase a commercial license.
 
-**💰 商业使用**：
-必须联系我们获取商业许可证
+### Commercial License Benefits:
+
+✅ **No Open Source Requirement**
+   - Keep your source code private
+   - No obligation to release modifications
+
+✅ **Commercial Use Allowed**
+   - Use in commercial products
+   - Run SaaS/hosted services
+   - Integrate into proprietary software
+
+✅ **Enterprise Support**
+   - Priority bug fixes
+   - Direct technical support
+   - Custom feature development (negotiable)
+
+✅ **Legal Protection**
+   - Indemnification clauses
+   - Warranty options
+   - Legal compliance assistance
+
+### Who Needs a Commercial License?
+
+You need a commercial license if you:
+
+1. **Develop Commercial Software**
+   - Building a product for sale
+   - Creating proprietary applications
+   - Integrating into closed-source systems
+
+2. **Run SaaS/Cloud Services**
+   - Hosting applications for customers
+   - Providing API services
+   - Running web applications
+
+3. **Enterprise/Company Use**
+   - Using in company production systems
+   - Internal business applications
+   - Corporate software development
+
+4. **Cannot Meet AGPL Requirements**
+   - Unable to disclose source code
+   - Restricted by corporate policies
+   - Protecting business IP
+
+### Commercial License Pricing:
+
+We offer flexible pricing based on your use case:
+
+- **Startup License**: For companies with < 10 employees
+- **Business License**: For companies with 10-100 employees
+- **Enterprise License**: For companies with > 100 employees
+- **OEM License**: For redistributing with your product
+- **Perpetual License**: One-time payment option
+- **Subscription License**: Annual/monthly payment option
+
+### How to Obtain a Commercial License:
+
+**Contact us for a quote:**
+
+📧 **Email**: vanling1111@gmail.com
+💬 **GitHub**: https://github.com/vanling1111/amazon-sp-api-go-sdk/issues
+🌐 **Repository**: https://github.com/vanling1111/amazon-sp-api-go-sdk
+
+**Include in your inquiry:**
+1. Your company name and size
+2. Your use case (SaaS, internal, OEM, etc.)
+3. Expected deployment scale
+4. Requested license term (perpetual vs subscription)
+
+We typically respond within 1-2 business days.
 
 ---
 
-最后更新：2025-01-03
-许可证版本：1.0
+## Frequently Asked Questions
+
+### Q: I'm a solo developer. Do I need a commercial license?
+**A:** Not if you're willing to open source your project under AGPL-3.0.
+If you want to keep your code private, yes, you need a commercial license.
+
+### Q: Can I use this for internal company tools?
+**A:** Only with a commercial license. AGPL requires source disclosure even
+for internal network services.
+
+### Q: What if I modify the code?
+**A:** Under AGPL-3.0, you must release your modifications. Under commercial
+license, you can keep modifications private.
+
+### Q: Can I distribute this as part of my product?
+**A:** Only with a commercial license. AGPL would require your entire product
+to be AGPL-3.0.
+
+### Q: What about startups/non-profits?
+**A:** Contact us - we offer discounted rates for startups and free licenses
+for registered non-profits.
+
+### Q: How do you enforce this?
+**A:** We actively monitor usage and will pursue legal action against
+unauthorized commercial use. The AGPL's network copyleft makes detection easier.
+
+### Q: Can I try before buying?
+**A:** Yes! Use under AGPL-3.0 for evaluation. Convert to commercial license
+before production deployment.
+
+---
+
+## License Comparison
+
+| Feature | AGPL-3.0 (Free) | Commercial License |
+|---------|----------------|-------------------|
+| **Cost** | FREE | Paid |
+| **Personal Use** | ✅ Yes | ✅ Yes |
+| **Commercial Use** | ❌ No (must open source) | ✅ Yes |
+| **Keep Code Private** | ❌ No | ✅ Yes |
+| **Modify Source** | ✅ Yes | ✅ Yes |
+| **Distribute** | ✅ Yes (with source) | ✅ Yes (without source) |
+| **SaaS/Hosting** | ❌ No (must open source) | ✅ Yes |
+| **Enterprise Support** | ❌ No | ✅ Yes |
+| **Warranty** | ❌ No | ✅ Optional |
+
+---
+
+## Full License Texts
+
+### AGPL-3.0 Full Text:
+https://www.gnu.org/licenses/agpl-3.0.txt
+
+### Why AGPL-3.0?
+
+We chose AGPL-3.0 (not Apache 2.0 or MIT) because:
+
+1. **Prevents Freeloading**: Cloud providers can't use our code to compete
+   without contributing back
+2. **Encourages Contribution**: If you improve it, the community benefits
+3. **Fair Exchange**: Use for free if you give back, pay if you don't
+4. **Strong Copyleft**: Ensures improvements remain open source
+5. **Network Copyleft**: Closes the SaaS loophole (this is key!)
+
+This model is used successfully by:
+- MongoDB (Server Side Public License, similar concept)
+- GitLab (MIT + Enterprise)
+- Redis (SSPL for some modules)
+- Elastic (Elastic License v2)
+
+---
+
+## Contact & Support
+
+📧 **Commercial License**: vanling1111@gmail.com
+💬 **Issues/Questions**: https://github.com/vanling1111/amazon-sp-api-go-sdk/issues
+🌐 **GitHub**: https://github.com/vanling1111/amazon-sp-api-go-sdk
+📚 **Documentation**: https://pkg.go.dev/github.com/vanling1111/amazon-sp-api-go-sdk
+
+---
+
+## Disclaimer
+
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+This disclaimer applies to both AGPL-3.0 and commercial licenses, unless
+modified by a separate commercial agreement.
+
+---
+
+Last Updated: 2025-01-03
+License Version: 2.0 (Dual License)
