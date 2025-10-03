@@ -67,14 +67,15 @@
 
 | 类型 | 文档 | 说明 |
 |------|------|------|
-| 🚀 **快速入门** | [快速开始示例](examples/) | 10+ 可运行示例 |
+| 📘 **API 参考** | [pkg.go.dev](https://pkg.go.dev/github.com/vanling1111/amazon-sp-api-go-sdk) | 完整 API 文档 |
+| 📘 **API 参考** | [本地查看](docs/API_REFERENCE.md) | GoDoc 使用指南 |
+| 🚀 **快速入门** | [示例代码](examples/) | 10+ 可运行示例 |
 | 📖 **功能指南** | [完整功能清单](docs/FEATURES.md) | 38 项功能详解 |
 | 📖 **功能指南** | [分页迭代器](docs/PAGINATION_GUIDE.md) | Go 1.25 迭代器 |
 | 📖 **功能指南** | [报告解密](docs/REPORT_DECRYPTION.md) | AES-256 解密 |
 | 📖 **功能指南** | [Grantless 操作](docs/GRANTLESS_OPERATIONS_GUIDE.md) | 无需授权 API |
 | 🏗️ **架构设计** | [系统架构](docs/ARCHITECTURE.md) | 设计决策 |
 | 👨‍💻 **开发指南** | [开发规范](docs/DEVELOPMENT.md) | 开发流程 |
-| 👨‍💻 **开发指南** | [代码风格](docs/CODE_STYLE.md) | Go 编码规范 |
 | 🤝 **贡献** | [贡献指南](docs/CONTRIBUTING.md) | 如何提交 PR |
 
 📌 **官方文档**: [Amazon SP-API 文档](https://developer-docs.amazon.com/sp-api/docs/)
