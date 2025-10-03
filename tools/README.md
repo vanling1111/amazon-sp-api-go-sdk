@@ -1,22 +1,22 @@
-# 开发工具目录
+# 开发工具目�?
 
-本目录包含项目开发和维护所需的工具。
+本目录包含项目开发和维护所需的工具�?
 
 ## 工具列表
 
 ### monitoring/ - API 监控工具
 
-监控官方 SP-API 文档和 OpenAPI 规范的更新。
+监控官方 SP-API 文档�?OpenAPI 规范的更新�?
 
 #### api_monitor.go - 文档监控
 
-监控官方文档和API规范的变更。
+监控官方文档和API规范的变更�?
 
 **功能**:
-- ✅ 定期访问官方文档页面
-- ✅ 提取关键内容并计算哈希
-- ✅ 检测内容变更
-- ✅ 自动创建 GitHub Issue
+- �?定期访问官方文档页面
+- �?提取关键内容并计算哈�?
+- �?检测内容变�?
+- �?自动创建 GitHub Issue
 
 **用法**:
 ```bash
@@ -35,21 +35,21 @@ pages:
 notifications:
   github:
     enabled: true
-    repo: yourusername/amazon-sp-api-go-sdk
+    repo: vanling1111/amazon-sp-api-go-sdk
 ```
 
 #### openapi_sync.go - OpenAPI 规范同步
 
-同步官方 OpenAPI 规范文件。
+同步官方 OpenAPI 规范文件�?
 
 **功能**:
-- ✅ 从 GitHub 拉取最新规范
-- ✅ 对比本地版本
-- ✅ 标记需要更新的文件
+- �?�?GitHub 拉取最新规�?
+- �?对比本地版本
+- �?标记需要更新的文件
 
 **用法**:
 ```bash
-# 检查更新
+# 检查更�?
 go run tools/monitoring/openapi_sync.go --check
 
 # 同步规范
@@ -61,11 +61,11 @@ go run tools/monitoring/openapi_sync.go --diff models/orders-api-model.json
 
 ### performance/ - 性能分析工具
 
-分析和优化 SDK 性能。
+分析和优�?SDK 性能�?
 
 #### profiler.go - 性能分析
 
-CPU 和内存性能分析。
+CPU 和内存性能分析�?
 
 **用法**:
 ```bash
@@ -79,9 +79,9 @@ go run tools/performance/profiler.go -type=mem -output=mem.prof
 go tool pprof -http=:8080 cpu.prof
 ```
 
-#### memory.go - 内存泄漏检测
+#### memory.go - 内存泄漏检�?
 
-检测潜在的内存泄漏问题。
+检测潜在的内存泄漏问题�?
 
 **用法**:
 ```bash
@@ -90,7 +90,7 @@ go run tools/performance/memory.go -duration=5m
 
 ## GitHub Actions 集成
 
-### 文档监控工作流
+### 文档监控工作�?
 
 `.github/workflows/doc-check.yml`:
 ```yaml
@@ -118,7 +118,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-### OpenAPI 同步工作流
+### OpenAPI 同步工作�?
 
 `.github/workflows/openapi-sync.yml`:
 ```yaml
@@ -153,40 +153,40 @@ jobs:
           labels: openapi,automated
 ```
 
-## 工具开发指南
+## 工具开发指�?
 
-### 添加新工具
+### 添加新工�?
 
-1. 在 `tools/` 下创建新目录
+1. �?`tools/` 下创建新目录
 2. 创建 `main.go` 或相应的工具文件
 3. 添加 README 说明
-4. 在本文档中添加说明
+4. 在本文档中添加说�?
 
 ### 目录结构示例
 
 ```
 tools/
 ├── monitoring/
-│   ├── api_monitor.go
-│   ├── openapi_sync.go
-│   └── README.md
+�?  ├── api_monitor.go
+�?  ├── openapi_sync.go
+�?  └── README.md
 ├── performance/
-│   ├── profiler.go
-│   ├── memory.go
-│   └── README.md
+�?  ├── profiler.go
+�?  ├── memory.go
+�?  └── README.md
 ├── validation/
-│   ├── config_validator.go
-│   └── README.md
-└── README.md  # 本文件
+�?  ├── config_validator.go
+�?  └── README.md
+└── README.md  # 本文�?
 ```
 
-### 工具开发最佳实践
+### 工具开发最佳实�?
 
-1. **单一职责** - 每个工具专注一个任务
-2. **命令行参数** - 使用 `flag` 包处理参数
-3. **清晰输出** - 提供有意义的日志和进度信息
+1. **单一职责** - 每个工具专注一个任�?
+2. **命令行参�?* - 使用 `flag` 包处理参�?
+3. **清晰输出** - 提供有意义的日志和进度信�?
 4. **错误处理** - 完整的错误处理和退出码
-5. **文档** - 添加使用说明和示例
+5. **文档** - 添加使用说明和示�?
 
 ### 示例工具模板
 
@@ -215,7 +215,7 @@ func main() {
     }
 
     if *debug {
-        log.Println("调试模式已启用")
+        log.Println("调试模式已启�?)
     }
 
     if err := run(); err != nil {
@@ -223,7 +223,7 @@ func main() {
         os.Exit(1)
     }
 
-    fmt.Println("完成！")
+    fmt.Println("完成�?)
 }
 
 func run() error {
@@ -238,7 +238,7 @@ func run() error {
 
 ```go
 // go.mod
-module github.com/yourusername/amazon-sp-api-go-sdk
+module github.com/vanling1111/amazon-sp-api-go-sdk
 
 go 1.21
 
@@ -247,7 +247,7 @@ require (
 )
 ```
 
-## 参考资料
+## 参考资�?
 
 - [Go pprof](https://pkg.go.dev/runtime/pprof)
 - [GitHub API](https://docs.github.com/en/rest)

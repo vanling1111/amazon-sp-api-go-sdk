@@ -479,7 +479,7 @@ go tool cover -html=coverage.out
 
 ## 许可证
 
-贡献的代码将采用与项目相同的许可证 (MIT License)。
+贡献的代码将采用与项目相同的许可证 (Apache License 2.0)。
 
 ---
 

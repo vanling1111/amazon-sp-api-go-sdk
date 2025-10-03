@@ -312,12 +312,12 @@ go build ./...
 
 ## 📄 许可证
 
-本项目采用 MIT 许可证 - 详见 [LICENSE](LICENSE) 文件
+本项目采用 Apache 2.0 许可证 - 详见 [LICENSE](LICENSE) 文件
 
 ## 📞 支持与联系
 
-- **Issues**: [提交 Bug 或功能请求](https://github.com/yourusername/amazon-sp-api-go-sdk/issues)
-- **Discussions**: [技术讨论和问答](https://github.com/yourusername/amazon-sp-api-go-sdk/discussions)
+- **Issues**: [提交 Bug 或功能请求](https://github.com/vanling1111/amazon-sp-api-go-sdk/issues)
+- **Discussions**: [技术讨论和问答](https://github.com/vanling1111/amazon-sp-api-go-sdk/discussions)
 - **官方文档**: [Amazon SP-API 文档](https://developer-docs.amazon.com/sp-api/docs/)
 
 ## 🌟 致谢

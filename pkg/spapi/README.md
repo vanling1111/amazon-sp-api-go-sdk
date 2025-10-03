@@ -235,10 +235,10 @@ wg.Wait()
 ## 导入路径
 
 ```go
-import "github.com/yourusername/amazon-sp-api-go-sdk/pkg/spapi"
+import "github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 ```
 
 ## 许可证
 
-MIT License
+Apache License 2.0
 
