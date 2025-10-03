@@ -21,8 +21,10 @@
 package spapi
 
 import (
+	"fmt"
 	"time"
 
+	"github.com/go-playground/validator/v10"
 	"github.com/vanling1111/amazon-sp-api-go-sdk/internal/metrics"
 	"github.com/vanling1111/amazon-sp-api-go-sdk/internal/models"
 )
@@ -30,40 +32,41 @@ import (
 // Config 定义 SP-API 客户端的配置。
 type Config struct {
 	// Region 是 SP-API 的区域（如 NA, EU, FE）。
-	Region models.Region
+	Region models.Region `validate:"required"`
 
 	// ClientID 是 LWA 客户端 ID。
-	ClientID string
+	ClientID string `validate:"required"`
 
 	// ClientSecret 是 LWA 客户端密钥。
-	ClientSecret string
+	ClientSecret string `validate:"required"`
 
 	// RefreshToken 是 LWA 刷新令牌（用于 Regular 操作）。
-	RefreshToken string
+	// 如果使用 Grantless 操作，可以为空。
+	RefreshToken string `validate:"required_without=Scopes"`
 
 	// Scopes 是 Grantless 操作所需的权限范围。
 	// 如果为空，则使用 RefreshToken 进行 Regular 操作。
-	Scopes []string
+	Scopes []string `validate:"required_without=RefreshToken,dive,required"`
 
 	// SellerID 是卖家 ID（可选）。
 	// 用于速率限制的多维度管理。如果未设置，将使用 ClientID。
 	SellerID string
 
 	// HTTPTimeout 是 HTTP 请求超时时间。
-	HTTPTimeout time.Duration
+	HTTPTimeout time.Duration `validate:"min=1s,max=5m"`
 
 	// MaxRetries 是请求失败时的最大重试次数。
-	MaxRetries int
+	MaxRetries int `validate:"min=0,max=10"`
 
 	// RateLimitBuffer 是速率限制的缓冲比例（0.0-1.0）。
 	// 例如 0.1 表示保留 10% 的速率限制作为缓冲。
-	RateLimitBuffer float64
+	RateLimitBuffer float64 `validate:"min=0,max=1"`
 
 	// Debug 启用调试模式（详细日志）。
 	Debug bool
 
 	// MetricsRecorder 是可选的指标记录器（如 Prometheus）。
-	MetricsRecorder metrics.Recorder
+	MetricsRecorder metrics.Recorder `validate:"-"`
 
 	// Logger 是可选的日志器（如 Zap）。
 	// 如果为 nil，使用默认的 NopLogger（不输出日志）。
@@ -72,8 +75,11 @@ type Config struct {
 		Info(msg string, fields ...interface{})
 		Warn(msg string, fields ...interface{})
 		Error(msg string, fields ...interface{})
-	}
+	} `validate:"-"`
 }
+
+// validate 全局验证器实例
+var validate = validator.New()
 
 // DefaultConfig 返回默认配置。
 //
@@ -94,43 +100,58 @@ func DefaultConfig() *Config {
 
 // Validate 验证配置的有效性。
 //
+// 使用 validator 库进行声明式验证，支持丰富的验证规则。
+//
 // 返回值:
 //   - error: 如果配置无效，返回错误
 func (c *Config) Validate() error {
-	// 验证区域
+	// 使用 validator 进行结构体验证
+	if err := validate.Struct(c); err != nil {
+		if validationErrs, ok := err.(validator.ValidationErrors); ok {
+			return formatValidationErrors(validationErrs)
+		}
+		return err
+	}
+
+	// 额外的业务逻辑验证
 	if c.Region.Code == "" || c.Region.Endpoint == "" || c.Region.LWAEndpoint == "" {
 		return ErrInvalidRegion
 	}
 
-	// 验证 LWA 凭证
-	if c.ClientID == "" {
-		return ErrMissingClientID
-	}
-	if c.ClientSecret == "" {
-		return ErrMissingClientSecret
-	}
-
-	// 验证认证方式：必须有 RefreshToken 或 Scopes
-	if c.RefreshToken == "" && len(c.Scopes) == 0 {
-		return ErrMissingCredentials
-	}
-
-	// 验证超时配置
-	if c.HTTPTimeout <= 0 {
-		return ErrInvalidTimeout
-	}
-
-	// 验证重试次数
-	if c.MaxRetries < 0 {
-		return ErrInvalidMaxRetries
-	}
-
-	// 验证速率限制缓冲
-	if c.RateLimitBuffer < 0 || c.RateLimitBuffer > 1.0 {
-		return ErrInvalidRateLimitBuffer
-	}
-
 	return nil
+}
+
+// formatValidationErrors 格式化验证错误
+func formatValidationErrors(errs validator.ValidationErrors) error {
+	messages := make([]string, 0, len(errs))
+	
+	for _, err := range errs {
+		var msg string
+		field := err.Field()
+		
+		switch err.Tag() {
+		case "required":
+			msg = fmt.Sprintf("%s is required", field)
+		case "required_without":
+			msg = fmt.Sprintf("%s is required when %s is not provided", field, err.Param())
+		case "min":
+			msg = fmt.Sprintf("%s must be at least %s", field, err.Param())
+		case "max":
+			msg = fmt.Sprintf("%s must not exceed %s", field, err.Param())
+		case "dive":
+			msg = fmt.Sprintf("%s contains invalid elements", field)
+		default:
+			msg = fmt.Sprintf("%s validation failed: %s", field, err.Tag())
+		}
+		
+		messages = append(messages, msg)
+	}
+
+	if len(messages) == 1 {
+		return fmt.Errorf("config validation failed: %s", messages[0])
+	}
+	
+	return fmt.Errorf("config validation failed: %v", messages)
 }
 
 // ClientOption 定义客户端配置选项函数。
