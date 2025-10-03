@@ -1,64 +1,53 @@
 # 开发指南
 
-## 🚨 核心开发原则 - 必须严格遵守 🚨
+## 🎯 开发原则
 
-### ⚠️ 开发约束（零容忍政策）
+本项目遵循以下开发原则以确保高质量和可维护性：
 
-#### 1. ❌ **禁止参考其他语言的官方 SDK**
-- 不得查看或参考 Java、Python、Node.js、C#、PHP 等任何语言的官方 SDK 源码
-- 不得基于其他 SDK 的实现来推断 API 行为
-- 不得克隆或下载官方 SDK 仓库用于参考
+### 📚 基于官方规范
 
-#### 2. ✅ **只参考官方 SP-API 文档**
-- **唯一权威来源**: https://developer-docs.amazon.com/sp-api/docs/
-- **文档验证**: 直接访问和解析官方文档内容
-- **所有实现必须有文档依据**: 每个功能都必须能追溯到官方文档的对应章节
+- **OpenAPI 驱动**: 所有 API 模型和接口定义直接从 Amazon 官方 OpenAPI 规范自动生成
+- **文档参考**: https://developer-docs.amazon.com/sp-api/docs/
+- **规范仓库**: https://github.com/amzn/selling-partner-api-models
 
-#### 3. 🚫 **禁止猜测开发**
-- 不得基于假设、推测或个人经验进行开发
-- 如果文档不明确，查找更多官方资料和规范
-- 无法从官方文档确认时，应提出问题而不是盲目实现
+### 🐹 Go 最佳实践
 
-#### 4. 📋 **强制开发流程**
+- **惯用法**: 遵循 Go 社区公认的最佳实践和代码风格
+- **标准库优先**: 尽可能使用标准库，减少外部依赖
+- **接口设计**: 使用接口实现模块解耦
+- **Context 优先**: 所有 API 方法接受 `context.Context`
 
-**开发前**:
-1. ✅ 访问相关的官方文档章节
-2. ✅ 完整理解 API 的请求格式、响应格式、错误处理
-3. ✅ 记录官方文档的关键要求到代码审查文档
+### 🧪 质量保证
 
-**开发中**:
-1. ✅ 严格按照官方文档的 API 定义实现
-2. ✅ 使用 Go 最佳实践
-3. ✅ 不靠猜测，不参考其他 SDK
+- **测试驱动**: 核心模块测试覆盖率 > 90%
+- **代码审查**: 所有 PR 需要通过代码审查
+- **持续集成**: GitHub Actions 自动运行测试
+- **文档完整**: 每个公开函数都有完整的文档注释
 
-**开发后**:
-1. ✅ 对照官方文档创建验证清单
-2. ✅ 逐项验证实现的符合性
-3. ✅ 确保与官方规范完全一致
+### 📚 **推荐参考资源**
 
-### 📚 **允许参考的资源**
+**官方资源**:
+- [SP-API 官方文档](https://developer-docs.amazon.com/sp-api/docs/)
+- [SP-API 参考手册](https://developer-docs.amazon.com/sp-api/reference/)
+- [OpenAPI 规范仓库](https://github.com/amzn/selling-partner-api-models)
 
-✅ **允许**:
-- 官方 SP-API 文档: https://developer-docs.amazon.com/sp-api/docs/
-- 官方 SP-API 参考: https://developer-docs.amazon.com/sp-api/reference/
-- Go 官方文档: https://go.dev/doc/
-- Go 标准库文档: https://pkg.go.dev/std
-- OAuth 2.0 RFC 标准: https://oauth.net/2/
+**Go 语言资源**:
+- [Go 官方文档](https://go.dev/doc/)
+- [Go 标准库](https://pkg.go.dev/std)
+- [Effective Go](https://go.dev/doc/effective_go)
 
-❌ **禁止**:
-- 任何语言的官方 SP-API SDK 源码
-- GitHub 上的第三方 SP-API 实现
-- Stack Overflow 上关于 SP-API 实现的讨论（除非引用官方文档）
+**相关标准**:
+- [OAuth 2.0 RFC](https://oauth.net/2/)
+- [OpenAPI Specification](https://swagger.io/specification/)
 
 ### 📝 **代码审查检查清单**
 
-每次提交代码前，必须完成：
-- [ ] 已访问并阅读相关官方文档
-- [ ] 创建了文档对比清单（见 `docs/CODE_REVIEW_CHECKLIST.md`）
-- [ ] 所有实现都有官方文档依据
-- [ ] 没有参考其他语言的 SDK
-- [ ] 代码符合 Go 最佳实践
-- [ ] 测试覆盖率达标
+提交 PR 前请确认：
+- [ ] 代码遵循 Go 最佳实践和项目代码风格
+- [ ] 添加了适当的测试用例
+- [ ] 所有测试通过
+- [ ] 添加了必要的文档注释
+- [ ] 更新了相关文档（如有需要）
 
 ---
 
