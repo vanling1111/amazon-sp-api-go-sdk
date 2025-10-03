@@ -1,0 +1,70 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool
+*.out
+coverage.html
+coverage.txt
+
+# Dependency directories
+vendor/
+
+# Go workspace file
+go.work
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Build outputs
+bin/
+dist/
+build/
+
+# Log files
+*.log
+
+# Environment files (should never be committed)
+.env
+.env.local
+.env.*.local
+
+# Test coverage reports
+coverage/
+*.cover
+
+# Profiling data
+*.prof
+*.pprof
+cpu.pprof
+mem.pprof
+
+# Benchmarking results
+benchmarks/
+
+# Generated files
+*_gen.go
+# Exception: keep types_gen.go which are part of the codebase
+!*types_gen.go
+
+# API monitoring state
+api-state.json

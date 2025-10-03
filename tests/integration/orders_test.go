@@ -1,0 +1,65 @@
+// Copyright 2025 Amazon SP-API Go SDK Authors.
+// Licensed under the Apache License, Version 2.0.
+
+// +build integration
+
+package integration
+
+import (
+	"context"
+	"os"
+	"testing"
+	"time"
+
+	"github.com/vanling1111/amazon-sp-api-go-sdk/internal/models"
+	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
+	orders "github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi/orders-v0"
+)
+
+func TestOrders_Integration(t *testing.T) {
+	// 跳过集成测试（除非设置了环境变量）
+	if os.Getenv("RUN_INTEGRATION_TESTS") == "" {
+		t.Skip("跳过集成测试 (设置 RUN_INTEGRATION_TESTS=1 来运行)")
+	}
+
+	// 从环境变量获取凭证
+	clientID := os.Getenv("SP_API_CLIENT_ID")
+	clientSecret := os.Getenv("SP_API_CLIENT_SECRET")
+	refreshToken := os.Getenv("SP_API_REFRESH_TOKEN")
+
+	if clientID == "" || clientSecret == "" || refreshToken == "" {
+		t.Fatal("缺少必要的环境变量: SP_API_CLIENT_ID, SP_API_CLIENT_SECRET, SP_API_REFRESH_TOKEN")
+	}
+
+	// 创建客户端
+	baseClient, err := spapi.NewClient(
+		spapi.WithRegion(models.RegionNA),
+		spapi.WithCredentials(clientID, clientSecret, refreshToken),
+	)
+	if err != nil {
+		t.Fatalf("创建客户端失败: %v", err)
+	}
+	defer baseClient.Close()
+
+	ordersClient := orders.NewClient(baseClient)
+	ctx := context.Background()
+
+	t.Run("GetOrders", func(t *testing.T) {
+		params := map[string]string{
+			"MarketplaceIds": "ATVPDKIKX0DER",
+			"CreatedAfter":   time.Now().Add(-7 * 24 * time.Hour).Format(time.RFC3339),
+		}
+
+		result, err := ordersClient.GetOrders(ctx, params)
+		if err != nil {
+			t.Errorf("GetOrders 失败: %v", err)
+		}
+
+		if result == nil {
+			t.Error("GetOrders 返回 nil 结果")
+		}
+
+		t.Logf("✓ GetOrders 成功")
+	})
+}
+
