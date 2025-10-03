@@ -1,215 +1,166 @@
-Apache License
-Version 2.0, January 2004
-http://www.apache.org/licenses/
+Amazon SP-API Go SDK - 专有软件许可证
+=====================================
 
-TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+版权所有 (c) 2025 Amazon SP-API Go SDK 项目贡献者
+保留所有权利。
 
-1. Definitions.
+本软件及相关文档（以下简称"软件"）受本许可证条款约束。
 
-"License" shall mean the terms and conditions for use, reproduction,
-and distribution as defined by Sections 1 through 9 of this document.
+## 1. 许可授予
 
-"Licensor" shall mean the copyright owner or entity granting the License.
+### 1.1 个人非商业使用
+在遵守本许可证条款的前提下，许可方授予您有限的、非排他性的、不可转让的、
+可撤销的许可，允许您在以下情况下使用本软件：
 
-"Legal Entity" shall mean the union of the acting entity and all
-other entities that control, are controlled by, or are under common
-control with that entity. For the purposes of this definition,
-"control" means (i) the power, direct or indirect, to cause the
-direction or management of such entity, whether by contract or
-otherwise, or (ii) ownership of fifty percent (50%) or more of the
-outstanding shares, or (iii) beneficial ownership of such entity.
+- ✅ **个人学习**：用于个人技能提升和知识学习
+- ✅ **学术研究**：用于教育机构的非盈利性学术研究
+- ✅ **非商业项目**：用于个人开源项目（非盈利性质）
+- ✅ **测试评估**：用于测试和评估软件功能
 
-"You" (or "Your") shall mean an individual or Legal Entity
-exercising permissions granted by this License.
+### 1.2 明确禁止的用途
+未经许可方事先书面授权，严格禁止以下行为：
 
-"Source" form shall mean the preferred form for making modifications,
-including but not limited to software source code, documentation
-source, and configuration files.
+- ❌ **任何商业使用**：不得用于任何以盈利为目的的活动
+- ❌ **企业使用**：不得在任何企业、公司、组织的生产环境中使用
+- ❌ **商业软件集成**：不得集成或嵌入到任何商业软件产品中
+- ❌ **提供商业服务**：不得使用本软件向第三方提供任何形式的商业服务
+- ❌ **再分发**：不得重新分发、出售或转让本软件
+- ❌ **托管服务**：不得作为托管服务（SaaS）提供给他人
+- ❌ **衍生商业产品**：不得基于本软件创建商业产品或服务
+- ❌ **规避限制**：不得移除、修改或规避本软件中的任何限制或保护措施
 
-"Object" form shall mean any form resulting from mechanical
-transformation or translation of a Source form, including but
-not limited to compiled object code, generated documentation,
-and conversions to other media types.
+## 2. 商业使用授权
 
-"Work" shall mean the work of authorship, whether in Source or
-Object form, made available under the License, as indicated by a
-copyright notice that is included in or attached to the work
-(which shall not include communications that are solely written
-by contributors under the License).
+如需将本软件用于以下任何场景，必须获得书面商业许可：
 
-"Derivative Works" shall mean any work, whether in Source or Object
-form, that is based upon (or derived from) the Work and for which the
-editorial revisions, annotations, elaborations, or other modifications
-represent, as a whole, an original work of authorship. For the purposes
-of this License, Derivative Works shall not include works that remain
-separable from, or merely link (or bind by name) to the interfaces of,
-the Work and derivative works thereof.
+### 2.1 需要商业许可的场景
+- 在企业、公司、组织的任何环境中使用（包括内部使用）
+- 集成到任何商业软件产品中
+- 用于任何盈利性业务活动
+- 为第三方提供基于本软件的服务
+- 任何形式的间接商业利益获取
 
-"Contributor" shall mean Licensor and any individual or Legal Entity
-on behalf of whom a Contribution has been received by Licensor and
-subsequently incorporated within the Work.
+### 2.2 商业许可申请
+如需获得商业使用授权，请联系：
+- **邮箱**: vanling1111@gmail.com
+- **GitHub**: https://github.com/vanling1111/amazon-sp-api-go-sdk
 
-"Contribution" shall mean any work of authorship, including
-the original version of the Work and any modifications or additions
-to that Work or Derivative Works thereof, that is intentionally
-submitted to Licensor for inclusion in the Work by the copyright owner
-or by an individual or Legal Entity authorized to submit on behalf of
-the copyright owner. For the purposes of this definition, "submitted"
-means any form of electronic, verbal, or written communication sent
-to the Licensor or its representatives, including but not limited to
-communication on electronic mailing lists, source code control
-systems, and issue tracking systems that are managed by, or on behalf
-of, the Licensor for the purpose of discussing and improving the Work,
-but excluding communication that is conspicuously marked or otherwise
-designated in writing by the copyright owner as "Not a Contribution."
+商业许可将根据使用场景、规模和用途单独定价和协商。
 
-2. Grant of Copyright License. Subject to the terms and conditions of
-this License, each Contributor hereby grants to You a perpetual,
-worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-copyright license to use, reproduce, modify, distribute, and prepare
-Derivative Works of, publicly display, publicly perform, sublicense,
-and distribute the Work and such Derivative Works in Source or Object
-form.
+## 3. 知识产权
 
-3. Grant of Patent License. Subject to the terms and conditions of
-this License, each Contributor hereby grants to You a perpetual,
-worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-(except as stated in this section) patent license to make, have made,
-use, offer to sell, sell, import, and otherwise transfer the Work,
-where such license applies only to those patent claims licensable
-by such Contributor that are necessarily infringed by their
-Contribution(s) alone or by combination of their Contribution(s)
-with the Work to which such Contribution(s) was submitted. If You
-institute patent litigation against any entity (including a
-cross-claim or counterclaim in a lawsuit) alleging that the Work
-or a Contribution incorporated within the Work constitutes direct
-or contributory patent infringement, then any patent licenses
-granted to You under this License for that Work shall terminate
-as of the date such litigation is filed.
+### 3.1 所有权
+本软件及其所有副本的全部权利、所有权和利益（包括但不限于所有知识产权）
+均归许可方所有。本许可证不向您转让任何所有权。
 
-4. Redistribution. You may reproduce and distribute copies of the
-Work or Derivative Works thereof in any medium, with or without
-modifications, and in Source or Object form, provided that You
-meet the following conditions:
+### 3.2 商标
+未经书面许可，不得使用许可方的商标、商号、标识或其他专有名称。
 
-(a) You must give any other recipients of the Work or
-    Derivative Works a copy of this License; and
+## 4. 使用限制
 
-(b) You must cause any modified files to carry prominent notices
-    stating that You changed the files; and
+### 4.1 技术限制
+您不得：
+- 对软件进行反向工程、反编译或反汇编
+- 尝试从软件中提取源代码（如果提供的是二进制形式）
+- 绕过或破解软件中的任何技术保护措施
+- 移除或修改软件中的版权声明或许可证信息
 
-(c) You must retain, in the Source form of any Derivative Works
-    that You distribute, all copyright, trademark, patent,
-    attribution and other notices from the Source form of the Work,
-    excluding those notices that do not pertain to any part of
-    the Derivative Works; and
+### 4.2 修改和衍生作品
+- 允许为个人学习目的修改源代码
+- 不得分发修改后的版本
+- 不得基于本软件创建衍生作品用于商业目的
+- 任何修改必须保留原始版权和许可证声明
 
-(d) If the Work includes a "NOTICE" text file as part of its
-    distribution, then any Derivative Works that You distribute must
-    include a readable copy of the attribution notices contained
-    within such NOTICE file, excluding those notices that do not
-    pertain to any part of the Derivative Works, in at least one
-    of the following places: within a NOTICE text file distributed
-    as part of the Derivative Works; within the Source form or
-    documentation, if provided along with the Derivative Works; or,
-    within a display generated by the Derivative Works, if and
-    wherever such third-party notices normally appear. The contents
-    of the NOTICE file are for informational purposes only and
-    do not modify the License. You may add Your own attribution
-    notices within Derivative Works that You distribute, alongside
-    or as an addendum to the NOTICE text from the Work, provided
-    that such additional attribution notices cannot be construed
-    as modifying the License.
+### 4.3 分发限制
+- 严禁未经授权分发本软件
+- 严禁通过包管理器、镜像站点或其他渠道公开分发
+- 仅允许通过官方渠道获取本软件
 
-You may add Your own copyright notice to Your modifications and
-may provide additional or different license terms and conditions
-for use, reproduction, or distribution of Your modifications, or
-for any such Derivative Works as a whole, provided Your use,
-reproduction, and distribution of the Work otherwise complies with
-the conditions stated in this License.
+## 5. 免责声明
 
-5. Submission of Contributions. Unless You explicitly state otherwise,
-any Contribution intentionally submitted for inclusion in the Work
-by You to the Licensor shall be under the terms and conditions of
-this License, without any additional terms or conditions.
-Notwithstanding the above, nothing herein shall supersede or modify
-the terms of any separate license agreement you may have executed
-with Licensor regarding such Contributions.
+本软件按"现状"提供，不提供任何明示或暗示的保证，包括但不限于：
+- 对适销性的保证
+- 对特定用途适用性的保证
+- 对不侵权的保证
+- 对准确性、可靠性或完整性的保证
 
-6. Trademarks. This License does not grant permission to use the trade
-names, trademarks, service marks, or product names of the Licensor,
-except as required for reasonable and customary use in describing the
-origin of the Work and reproducing the content of the NOTICE file.
+许可方不保证软件无错误或不会中断运行。
 
-7. Disclaimer of Warranty. Unless required by applicable law or
-agreed to in writing, Licensor provides the Work (and each
-Contributor provides its Contributions) on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
-implied, including, without limitation, any warranties or conditions
-of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
-PARTICULAR PURPOSE. You are solely responsible for determining the
-appropriateness of using or redistributing the Work and assume any
-risks associated with Your exercise of permissions under this License.
+## 6. 责任限制
 
-8. Limitation of Liability. In no event and under no legal theory,
-whether in tort (including negligence), contract, or otherwise,
-unless required by applicable law (such as deliberate and grossly
-negligent acts) or agreed to in writing, shall any Contributor be
-liable to You for damages, including any direct, indirect, special,
-incidental, or consequential damages of any character arising as a
-result of this License or out of the use or inability to use the
-Work (including but not limited to damages for loss of goodwill,
-work stoppage, computer failure or malfunction, or any and all
-other commercial damages or losses), even if such Contributor
-has been advised of the possibility of such damages.
+在任何情况下，许可方及其贡献者均不对以下情况承担责任：
+- 因使用或无法使用本软件而产生的任何直接、间接、偶然、特殊或后果性损害
+- 利润损失、业务中断、数据丢失或其他商业损害
+- 即使已被告知可能发生此类损害
 
-9. Accepting Warranty or Support. You may choose to offer, and to
-charge a fee for, warranty, support, indemnity or other liability
-obligations and/or rights consistent with this License. However, in
-accepting such obligations, You may act only on Your own behalf and on
-Your sole responsibility, not on behalf of any other Contributor, and
-only if You agree to indemnify, defend, and hold each Contributor
-harmless for any liability incurred by, or claims asserted against,
-such Contributor by reason of your accepting any such warranty or support.
+您使用本软件的风险由您自行承担。
 
-END OF TERMS AND CONDITIONS
+## 7. 许可证终止
 
-Copyright 2025 Amazon SP-API Go SDK Contributors
+### 7.1 自动终止
+如果您违反本许可证的任何条款，本许可证将自动终止，您必须：
+- 立即停止使用本软件
+- 删除所有软件副本
+- 销毁所有相关文档
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+### 7.2 终止后果
+许可证终止后，您无权继续使用本软件。违反此规定可能导致法律诉讼。
 
-    http://www.apache.org/licenses/LICENSE-2.0
+## 8. 合规验证
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+许可方保留以下权利：
+- 要求您证明软件使用符合本许可证
+- 审计您对软件的使用情况
+- 对未经授权的商业使用采取法律行动
 
-## 使用限制条款
+## 9. 管辖法律
 
-### 商业使用限制
-- **个人使用**：允许个人学习和研究使用
-- **商业使用**：商业使用需要获得书面许可
-- **企业使用**：企业使用需要购买商业许可证
+本许可证受中华人民共和国法律管辖，不考虑其法律冲突条款。
+任何争议应提交至许可方所在地有管辖权的人民法院解决。
 
-### 修改和分发限制
-- **修改**：允许修改源代码，但修改版本不得用于商业用途
-- **分发**：允许分发，但必须包含原始许可证和版权声明
-- **衍生作品**：衍生作品必须使用相同的许可证
+## 10. 完整协议
 
-### 禁止用途
-- 禁止用于任何违法活动
-- 禁止用于恶意软件或病毒开发
-- 禁止用于侵犯他人权益的活动
-- 禁止用于与Amazon竞争的商业产品
+本许可证构成双方就软件使用达成的完整协议，取代所有先前或同期的
+口头或书面沟通、提议和陈述。
 
-### 许可证获取
-如需商业使用许可，请联系：
-- 邮箱：license@amazon-sp-api-go-sdk.com
-- 网站：https://amazon-sp-api-go-sdk.com/license
+## 11. 可分割性
 
-### 免责声明
-本软件按"现状"提供，不提供任何明示或暗示的保证。使用本软件的风险由用户自行承担。
+如果本许可证的任何条款被认定为无效或不可执行，其余条款将继续有效。
+
+## 12. 许可证修订
+
+许可方保留随时修改本许可证条款的权利。继续使用软件即表示接受修订后的条款。
+
+---
+
+## 📞 联系方式
+
+- **商业许可咨询**: vanling1111@gmail.com
+- **技术支持**: vanling1111@gmail.com
+- **GitHub**: https://github.com/vanling1111/amazon-sp-api-go-sdk
+- **Issues**: https://github.com/vanling1111/amazon-sp-api-go-sdk/issues
+
+---
+
+## ⚖️ 简要说明
+
+**✅ 允许（个人非商业）**：
+- 个人学习和研究
+- 学术用途
+- 非盈利开源项目
+- 测试和评估
+
+**❌ 禁止（需要商业许可）**：
+- 任何商业使用
+- 企业/公司使用
+- 集成到商业软件
+- 提供商业服务
+- 盈利性业务
+
+**💰 商业使用**：
+必须联系我们获取商业许可证
+
+---
+
+最后更新：2025-01-03
+许可证版本：1.0
