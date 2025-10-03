@@ -489,18 +489,28 @@ func (d *ChunkedDownloader) DownloadWithProgress(ctx context.Context, url string
 
 ---
 
-### 任务 3.4：通知支持（SQS 轮询器）（P0）⭐⭐⭐⭐⭐
+### 任务 3.4：生产级示例代码（P0）⭐⭐⭐⭐⭐
+
+**决策变更**：
+- ❌ 不在 SDK 核心实现 SQS 轮询器（超出边界，官方 SDK 也没实现）
+- ✅ 提供生产级、可直接使用的示例代码
 
 **新增文件**：
 ```
-pkg/notifications/
-├── poller.go          // SQS 轮询器
-├── poller_test.go
-├── parser.go          // 消息解析器
-├── parser_test.go
-├── events.go          // 事件类型定义
-├── subscription.go    // 订阅管理器
-└── README.md
+examples/patterns/
+├── order-sync-sqs/         // SQS 订单实时同步
+│   ├── main.go             // 主程序
+│   ├── poller/             // SQS 轮询器（可复制）
+│   │   ├── poller.go
+│   │   ├── parser.go
+│   │   └── events.go
+│   ├── config.yaml         // 配置示例
+│   ├── docker-compose.yml  // Docker 部署
+│   ├── Dockerfile
+│   └── README.md           // 详细文档
+├── report-processor/       // 报告处理完整示例
+├── feed-uploader/          // Feed 上传示例
+└── multi-marketplace/      // 多市场管理示例
 ```
 
 **实现功能**：

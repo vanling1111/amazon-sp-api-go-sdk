@@ -1,0 +1,41 @@
+# Amazon SP-API Order Sync Service Configuration
+
+# SP-API 凭证
+spapi:
+  client_id: "amzn1.application-oa2-client.xxxxx"
+  client_secret: "xxxxx"
+  refresh_token: "Atzr|xxxxx"
+  region: "NA"  # NA, EU, FE
+
+# SQS 配置
+sqs:
+  queue_url: "https://sqs.us-east-1.amazonaws.com/123456789/sp-api-notifications"
+  poll_interval: "10s"  # 轮询间隔
+  max_messages: 10       # 每次获取消息数
+  wait_time: 20          # Long polling 等待时间（秒）
+
+# AWS 凭证（使用 AWS CLI 配置或环境变量）
+aws:
+  region: "us-east-1"
+  # access_key_id: "xxxxx"      # 可选，建议使用 IAM Role
+  # secret_access_key: "xxxxx"  # 可选
+
+# ERP 集成配置
+erp:
+  type: "http"  # http, database, kafka
+  webhook_url: "https://your-erp.com/api/orders"
+  timeout: "30s"
+  retry_count: 3
+
+# 日志配置
+logging:
+  level: "info"  # debug, info, warn, error
+  format: "json"  # json, text
+  file: "/var/log/order-sync.log"
+
+# 监控配置（可选）
+monitoring:
+  enabled: true
+  prometheus_port: 9090
+  health_check_port: 8080
+

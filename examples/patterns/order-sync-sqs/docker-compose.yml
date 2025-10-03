@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  order-sync:
+    build: .
+    container_name: sp-api-order-sync
+    restart: unless-stopped
+    environment:
+      # SP-API
+      - SP_API_CLIENT_ID=${SP_API_CLIENT_ID}
+      - SP_API_CLIENT_SECRET=${SP_API_CLIENT_SECRET}
+      - SP_API_REFRESH_TOKEN=${SP_API_REFRESH_TOKEN}
+      
+      # AWS
+      - AWS_REGION=${AWS_REGION:-us-east-1}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      
+      # SQS
+      - SQS_QUEUE_URL=${SQS_QUEUE_URL}
+      
+      # ERP
+      - ERP_WEBHOOK_URL=${ERP_WEBHOOK_URL}
+    
+    volumes:
+      - ./logs:/var/log
+    
+    ports:
+      - "9090:9090"  # Prometheus metrics
+      - "8080:8080"  # Health check
+    
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
