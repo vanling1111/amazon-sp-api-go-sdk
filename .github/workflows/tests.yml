@@ -23,19 +23,11 @@ jobs:
         run: go vet ./...
       
       - name: Run tests
-        run: go test ./... -coverprofile=coverage.out -covermode=atomic
+        run: go test ./...
       
       - name: Build project
         run: go build ./...
       
       - name: Build examples
         run: go build ./examples/...
-      
-      - name: Upload coverage to Codecov
-        if: success()
-        uses: codecov/codecov-action@v3
-        with:
-          file: ./coverage.out
-          fail_ci_if_error: false
-        continue-on-error: true
 
