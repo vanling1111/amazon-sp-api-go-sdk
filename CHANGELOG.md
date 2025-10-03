@@ -5,6 +5,44 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2025-10-03
+
+### Added
+
+#### OpenTelemetry 分布式追踪
+- `internal/tracing` 包 - OpenTelemetry 集成
+- HTTP 请求自动追踪
+- Span 创建和管理
+- 错误记录到 trace
+- 属性支持
+- 兼容 Jaeger、Zipkin 等追踪系统
+
+#### Prometheus 指标导出
+- `internal/metrics/prometheus` 包 - Prometheus 指标收集
+- 请求计数器（按 API/方法/状态）
+- 请求延迟直方图
+- 错误计数器（按 API/错误类型）
+- 速率限制等待时间直方图
+- 标准 Prometheus 格式
+
+### Dependencies Added
+- `go.opentelemetry.io/otel` v1.33.0
+- `go.opentelemetry.io/otel/trace` v1.33.0  
+- `go.opentelemetry.io/otel/sdk` v1.33.0
+- `github.com/prometheus/client_golang` v1.23.2
+
+### Features
+- 云原生可观测性
+- 微服务就绪
+- 生产监控支持
+- 性能分析
+- 故障排查
+
+### Tests
+- OpenTelemetry: 5 个测试
+- Prometheus: 5 个测试
+- 总计 77 个测试包，全部通过
+
 ## [1.2.0] - 2025-10-03
 
 ### Added
