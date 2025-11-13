@@ -24,7 +24,6 @@ import (
 	"testing"
 	"time"
 
-	"github.com/vanling1111/amazon-sp-api-go-sdk/internal/models"
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 )
 
@@ -38,7 +37,7 @@ func TestNewClient(t *testing.T) {
 		{
 			name: "valid regular credentials",
 			opts: []spapi.ClientOption{
-				spapi.WithRegion(models.RegionNA),
+				spapi.WithRegion(spapi.RegionNA),
 				spapi.WithCredentials("test-client-id", "test-client-secret", "test-refresh-token"),
 			},
 			wantErr: false,
@@ -46,7 +45,7 @@ func TestNewClient(t *testing.T) {
 		{
 			name: "valid grantless credentials",
 			opts: []spapi.ClientOption{
-				spapi.WithRegion(models.RegionEU),
+				spapi.WithRegion(spapi.RegionEU),
 				spapi.WithGrantlessCredentials("test-client-id", "test-client-secret", []string{
 					"sellingpartnerapi::notifications",
 				}),
@@ -63,14 +62,14 @@ func TestNewClient(t *testing.T) {
 		{
 			name: "missing credentials",
 			opts: []spapi.ClientOption{
-				spapi.WithRegion(models.RegionNA),
+				spapi.WithRegion(spapi.RegionNA),
 			},
 			wantErr: true, // 没有提供客户端凭据
 		},
 		{
 			name: "custom timeout",
 			opts: []spapi.ClientOption{
-				spapi.WithRegion(models.RegionNA),
+				spapi.WithRegion(spapi.RegionNA),
 				spapi.WithCredentials("test-client-id", "test-client-secret", "test-refresh-token"),
 				spapi.WithHTTPTimeout(60 * time.Second),
 			},
@@ -79,7 +78,7 @@ func TestNewClient(t *testing.T) {
 		{
 			name: "with retries",
 			opts: []spapi.ClientOption{
-				spapi.WithRegion(models.RegionFE),
+				spapi.WithRegion(spapi.RegionFE),
 				spapi.WithCredentials("test-client-id", "test-client-secret", "test-refresh-token"),
 				spapi.WithMaxRetries(5),
 			},
@@ -88,7 +87,7 @@ func TestNewClient(t *testing.T) {
 		{
 			name: "with debug mode",
 			opts: []spapi.ClientOption{
-				spapi.WithRegion(models.RegionNA),
+				spapi.WithRegion(spapi.RegionNA),
 				spapi.WithCredentials("test-client-id", "test-client-secret", "test-refresh-token"),
 				spapi.WithDebug(),
 			},
@@ -123,7 +122,7 @@ func TestNewClient(t *testing.T) {
 // TestClient_Config 测试配置获取。
 func TestClient_Config(t *testing.T) {
 	client, err := spapi.NewClient(
-		spapi.WithRegion(models.RegionNA),
+		spapi.WithRegion(spapi.RegionNA),
 		spapi.WithCredentials("test-client-id", "test-client-secret", "test-refresh-token"),
 		spapi.WithHTTPTimeout(45*time.Second),
 	)
@@ -157,7 +156,7 @@ func TestClient_Config(t *testing.T) {
 // 主要测试方法签名和返回值类型。
 func TestClient_GetAccessToken(t *testing.T) {
 	client, err := spapi.NewClient(
-		spapi.WithRegion(models.RegionNA),
+		spapi.WithRegion(spapi.RegionNA),
 		spapi.WithCredentials("test-client-id", "test-client-secret", "test-refresh-token"),
 	)
 	if err != nil {
@@ -182,7 +181,7 @@ func TestClient_GetAccessToken(t *testing.T) {
 // TestClient_RateLimitManager 测试速率限制管理器获取。
 func TestClient_RateLimitManager(t *testing.T) {
 	client, err := spapi.NewClient(
-		spapi.WithRegion(models.RegionNA),
+		spapi.WithRegion(spapi.RegionNA),
 		spapi.WithCredentials("test-client-id", "test-client-secret", "test-refresh-token"),
 	)
 	if err != nil {
@@ -205,7 +204,7 @@ func TestClient_RateLimitManager(t *testing.T) {
 // TestClient_HTTPClient 测试 HTTP 客户端获取。
 func TestClient_HTTPClient(t *testing.T) {
 	client, err := spapi.NewClient(
-		spapi.WithRegion(models.RegionNA),
+		spapi.WithRegion(spapi.RegionNA),
 		spapi.WithCredentials("test-client-id", "test-client-secret", "test-refresh-token"),
 	)
 	if err != nil {
@@ -222,7 +221,7 @@ func TestClient_HTTPClient(t *testing.T) {
 // TestClient_Signer 测试签名器获取。
 func TestClient_Signer(t *testing.T) {
 	client, err := spapi.NewClient(
-		spapi.WithRegion(models.RegionNA),
+		spapi.WithRegion(spapi.RegionNA),
 		spapi.WithCredentials("test-client-id", "test-client-secret", "test-refresh-token"),
 	)
 	if err != nil {
@@ -240,7 +239,7 @@ func TestClient_Signer(t *testing.T) {
 func TestClient_MultipleInstances(t *testing.T) {
 	// 创建多个客户端
 	client1, err := spapi.NewClient(
-		spapi.WithRegion(models.RegionNA),
+		spapi.WithRegion(spapi.RegionNA),
 		spapi.WithCredentials("client-1", "secret-1", "refresh-1"),
 	)
 	if err != nil {
@@ -249,7 +248,7 @@ func TestClient_MultipleInstances(t *testing.T) {
 	defer client1.Close()
 
 	client2, err := spapi.NewClient(
-		spapi.WithRegion(models.RegionEU),
+		spapi.WithRegion(spapi.RegionEU),
 		spapi.WithCredentials("client-2", "secret-2", "refresh-2"),
 	)
 	if err != nil {
@@ -273,7 +272,7 @@ func TestClient_MultipleInstances(t *testing.T) {
 // BenchmarkNewClient 基准测试客户端创建性能。
 func BenchmarkNewClient(b *testing.B) {
 	opts := []spapi.ClientOption{
-		spapi.WithRegion(models.RegionNA),
+		spapi.WithRegion(spapi.RegionNA),
 		spapi.WithCredentials("test-client-id", "test-client-secret", "test-refresh-token"),
 	}
 
@@ -291,7 +290,7 @@ func BenchmarkNewClient(b *testing.B) {
 func ExampleNewClient() {
 	// 创建 Regular 操作的客户端
 	client, err := spapi.NewClient(
-		spapi.WithRegion(models.RegionNA),
+		spapi.WithRegion(spapi.RegionNA),
 		spapi.WithCredentials("your-client-id", "your-client-secret", "your-refresh-token"),
 		spapi.WithHTTPTimeout(60*time.Second),
 		spapi.WithMaxRetries(3),
@@ -309,7 +308,7 @@ func ExampleNewClient() {
 func ExampleNewClient_grantless() {
 	// 创建 Grantless 操作的客户端
 	client, err := spapi.NewClient(
-		spapi.WithRegion(models.RegionEU),
+		spapi.WithRegion(spapi.RegionEU),
 		spapi.WithGrantlessCredentials(
 			"your-client-id",
 			"your-client-secret",
@@ -328,7 +327,7 @@ func ExampleNewClient_grantless() {
 // TestClient_DoRequest 测试通用 HTTP 请求方法
 func TestClient_DoRequest(t *testing.T) {
 	client, err := spapi.NewClient(
-		spapi.WithRegion(models.RegionNA),
+		spapi.WithRegion(spapi.RegionNA),
 		spapi.WithCredentials("test-client-id", "test-client-secret", "test-refresh-token"),
 	)
 	if err != nil {
@@ -392,7 +391,7 @@ func TestClient_DoRequest(t *testing.T) {
 // TestClient_RequestWithQueryParams 测试带查询参数的请求
 func TestClient_RequestWithQueryParams(t *testing.T) {
 	client, err := spapi.NewClient(
-		spapi.WithRegion(models.RegionNA),
+		spapi.WithRegion(spapi.RegionNA),
 		spapi.WithCredentials("test-client-id", "test-client-secret", "test-refresh-token"),
 	)
 	if err != nil {
@@ -416,7 +415,7 @@ func TestClient_RequestWithQueryParams(t *testing.T) {
 // TestClient_ContextCancellation 测试上下文取消
 func TestClient_ContextCancellation(t *testing.T) {
 	client, err := spapi.NewClient(
-		spapi.WithRegion(models.RegionNA),
+		spapi.WithRegion(spapi.RegionNA),
 		spapi.WithCredentials("test-client-id", "test-client-secret", "test-refresh-token"),
 	)
 	if err != nil {
@@ -440,10 +439,10 @@ func TestClient_ContextCancellation(t *testing.T) {
 
 // TestClient_AllRegions 测试所有区域的客户端创建
 func TestClient_AllRegions(t *testing.T) {
-	regions := []models.Region{
-		models.RegionNA,
-		models.RegionEU,
-		models.RegionFE,
+	regions := []spapi.Region{
+		spapi.RegionNA,
+		spapi.RegionEU,
+		spapi.RegionFE,
 	}
 
 	for _, region := range regions {
