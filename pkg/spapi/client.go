@@ -48,7 +48,7 @@ import (
 // 示例:
 //
 //	client, err := spapi.NewClient(
-//	    spapi.WithRegion(models.RegionNorthAmerica),
+//	    spapi.WithRegion(spapi.RegionNA),
 //	    spapi.WithCredentials("client-id", "client-secret", "refresh-token"),
 //	)
 //	if err != nil {
@@ -84,13 +84,13 @@ type Client struct {
 //
 //	// Regular 操作（使用 refresh token）
 //	client, err := spapi.NewClient(
-//	    spapi.WithRegion(models.RegionNorthAmerica),
+//	    spapi.WithRegion(spapi.RegionNA),
 //	    spapi.WithCredentials("client-id", "client-secret", "refresh-token"),
 //	)
 //
 //	// Grantless 操作
 //	client, err := spapi.NewClient(
-//	    spapi.WithRegion(models.RegionEurope),
+//	    spapi.WithRegion(spapi.RegionEU),
 //	    spapi.WithGrantlessCredentials("client-id", "client-secret", []string{
 //	        "sellingpartnerapi::notifications",
 //	    }),
@@ -98,7 +98,7 @@ type Client struct {
 //
 //	// 自定义配置
 //	client, err := spapi.NewClient(
-//	    spapi.WithRegion(models.RegionNorthAmerica),
+//	    spapi.WithRegion(spapi.RegionNA),
 //	    spapi.WithCredentials("client-id", "client-secret", "refresh-token"),
 //	    spapi.WithHTTPTimeout(60 * time.Second),
 //	    spapi.WithMaxRetries(5),

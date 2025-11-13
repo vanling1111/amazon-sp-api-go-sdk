@@ -32,13 +32,13 @@ import (
 
 	"github.com/go-playground/validator/v10"
 	"github.com/vanling1111/amazon-sp-api-go-sdk/internal/metrics"
-	"github.com/vanling1111/amazon-sp-api-go-sdk/internal/models"
 )
 
 // Config 定义 SP-API 客户端的配置。
 type Config struct {
 	// Region 是 SP-API 的区域（如 NA, EU, FE）。
-	Region models.Region `validate:"required"`
+	// 使用公开的 Region 类型，例如: spapi.RegionNA
+	Region Region `validate:"required"`
 
 	// ClientID 是 LWA 客户端 ID。
 	ClientID string `validate:"required"`
@@ -163,15 +163,15 @@ func formatValidationErrors(errs validator.ValidationErrors) error {
 // ClientOption 定义客户端配置选项函数。
 type ClientOption func(*Config)
 
-// WithRegion 设置 API 区域。
+// WithRegion 设置 SP-API 区域。
 //
 // 参数:
-//   - region: SP-API 区域（NA, EU, FE）
+//   - region: SP-API 区域（使用 spapi.RegionNA, spapi.RegionEU, spapi.RegionFE）
 //
 // 示例:
 //
-//	client := spapi.NewClient(spapi.WithRegion(models.RegionNorthAmerica))
-func WithRegion(region models.Region) ClientOption {
+//	client := spapi.NewClient(spapi.WithRegion(spapi.RegionNA))
+func WithRegion(region Region) ClientOption {
 	return func(c *Config) {
 		c.Region = region
 	}

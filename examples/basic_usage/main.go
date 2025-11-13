@@ -44,7 +44,6 @@ import (
 	"log"
 	"time"
 
-	"github.com/vanling1111/amazon-sp-api-go-sdk/internal/models"
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 )
 
@@ -55,7 +54,7 @@ func main() {
 	// - Client Secret
 	// - Refresh Token
 	client, err := spapi.NewClient(
-		spapi.WithRegion(models.RegionNA),
+		spapi.WithRegion(spapi.RegionNA),
 		spapi.WithCredentials(
 			"your-client-id",
 			"your-client-secret",
