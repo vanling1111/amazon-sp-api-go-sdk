@@ -1,7 +1,7 @@
 // Copyright 2025 Amazon SP-API Go SDK Authors.
 package application_integrations_v2024_04_01_test
 
-import (
+import (
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 	api "github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi/application-integrations-v2024-04-01"
 	"testing"

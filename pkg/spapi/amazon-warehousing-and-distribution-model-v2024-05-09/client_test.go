@@ -1,7 +1,7 @@
 // Copyright 2025 Amazon SP-API Go SDK Authors.
 package amazon_warehousing_and_distribution_model_v2024_05_09_test
 
-import (
+import (
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 	api "github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi/amazon-warehousing-and-distribution-model-v2024-05-09"
 	"testing"

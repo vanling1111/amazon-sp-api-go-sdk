@@ -70,16 +70,16 @@ func LoggingMiddleware(logger Logger) Middleware {
 	return func(next Handler) Handler {
 		return func(ctx context.Context, req *http.Request) (*http.Response, error) {
 			start := time.Now()
-			
+
 			logger.Info("request started",
 				Field{"method", req.Method},
 				Field{"url", req.URL.String()},
 			)
-			
+
 			resp, err := next(ctx, req)
-			
+
 			duration := time.Since(start)
-			
+
 			if err != nil {
 				logger.Error("request failed",
 					Field{"method", req.Method},
@@ -95,7 +95,7 @@ func LoggingMiddleware(logger Logger) Middleware {
 					Field{"status", resp.StatusCode},
 				)
 			}
-			
+
 			return resp, err
 		}
 	}
@@ -121,17 +121,17 @@ func MetricsMiddleware(metrics MetricsCollector) Middleware {
 	return func(next Handler) Handler {
 		return func(ctx context.Context, req *http.Request) (*http.Response, error) {
 			start := time.Now()
-			
+
 			resp, err := next(ctx, req)
-			
+
 			duration := time.Since(start)
-			
+
 			if err != nil {
 				metrics.RecordError(req.URL.Path, "request_error")
 			} else {
 				metrics.RecordRequest(req.URL.Path, req.Method, duration, resp.StatusCode)
 			}
-			
+
 			return resp, err
 		}
 	}
@@ -158,18 +158,18 @@ func TracingMiddleware(tracer Tracer) Middleware {
 		return func(ctx context.Context, req *http.Request) (*http.Response, error) {
 			ctx, span := tracer.StartSpan(ctx, "sp-api.request")
 			defer span.End()
-			
+
 			span.SetAttribute("http.method", req.Method)
 			span.SetAttribute("http.url", req.URL.String())
-			
+
 			resp, err := next(ctx, req)
-			
+
 			if err != nil {
 				span.RecordError(err)
 			} else {
 				span.SetAttribute("http.status_code", resp.StatusCode)
 			}
-			
+
 			return resp, err
 		}
 	}

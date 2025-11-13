@@ -30,38 +30,38 @@ func TestWithSandbox(t *testing.T) {
 // TestRegionSandboxMethods 测试Region的Sandbox方法
 func TestRegionSandboxMethods(t *testing.T) {
 	tests := []struct {
-		name       string
-		region     spapi.Region
-		isSandbox  bool
-		toSandbox  spapi.Region
+		name         string
+		region       spapi.Region
+		isSandbox    bool
+		toSandbox    spapi.Region
 		toProduction spapi.Region
 	}{
 		{
-			name:       "NA production",
-			region:     spapi.RegionNA,
-			isSandbox:  false,
-			toSandbox:  spapi.RegionNASandbox,
+			name:         "NA production",
+			region:       spapi.RegionNA,
+			isSandbox:    false,
+			toSandbox:    spapi.RegionNASandbox,
 			toProduction: spapi.RegionNA,
 		},
 		{
-			name:       "NA sandbox",
-			region:     spapi.RegionNASandbox,
-			isSandbox:  true,
-			toSandbox:  spapi.RegionNASandbox,
+			name:         "NA sandbox",
+			region:       spapi.RegionNASandbox,
+			isSandbox:    true,
+			toSandbox:    spapi.RegionNASandbox,
 			toProduction: spapi.RegionNA,
 		},
 		{
-			name:       "EU production",
-			region:     spapi.RegionEU,
-			isSandbox:  false,
-			toSandbox:  spapi.RegionEUSandbox,
+			name:         "EU production",
+			region:       spapi.RegionEU,
+			isSandbox:    false,
+			toSandbox:    spapi.RegionEUSandbox,
 			toProduction: spapi.RegionEU,
 		},
 		{
-			name:       "FE production",
-			region:     spapi.RegionFE,
-			isSandbox:  false,
-			toSandbox:  spapi.RegionFESandbox,
+			name:         "FE production",
+			region:       spapi.RegionFE,
+			isSandbox:    false,
+			toSandbox:    spapi.RegionFESandbox,
 			toProduction: spapi.RegionFE,
 		},
 	}

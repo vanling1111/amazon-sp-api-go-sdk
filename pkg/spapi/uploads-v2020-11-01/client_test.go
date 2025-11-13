@@ -1,7 +1,7 @@
 // Copyright 2025 Amazon SP-API Go SDK Authors.
 package uploads_v2020_11_01_test
 
-import (
+import (
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 	api "github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi/uploads-v2020-11-01"
 	"testing"

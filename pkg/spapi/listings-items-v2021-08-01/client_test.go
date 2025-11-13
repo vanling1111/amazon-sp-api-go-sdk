@@ -1,7 +1,7 @@
 // Copyright 2025 Amazon SP-API Go SDK Authors.
 package listings_items_v2021_08_01_test
 
-import (
+import (
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 	api "github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi/listings-items-v2021-08-01"
 	"testing"

@@ -1,7 +1,7 @@
 // Copyright 2025 Amazon SP-API Go SDK Authors.
 package fulfillment_inbound_v2024_03_20_test
 
-import (
+import (
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 	api "github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi/fulfillment-inbound-v2024-03-20"
 	"testing"

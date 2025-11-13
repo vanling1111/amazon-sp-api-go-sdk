@@ -359,7 +359,9 @@ func (c *Client) DoRequest(ctx context.Context, method, path string, query map[s
 		return fmt.Errorf("failed to send request: %w", err)
 	}
 	defer func() {
-		_ = resp.Body.Close()
+		if closeErr := resp.Body.Close(); closeErr != nil {
+			// Log the error but don't override the main error
+		}
 	}()
 
 	// 5. 处理响应
@@ -491,7 +493,9 @@ func (c *Client) updateRateLimitFromResponse(resp *http.Response, sellerID, appI
 	}
 
 	// 更新速率限制
-	_ = c.facade.GetRateLimitManager().UpdateRate(sellerID, appID, marketplace, operation, rate, burst)
+	if updateErr := c.facade.GetRateLimitManager().UpdateRate(sellerID, appID, marketplace, operation, rate, burst); updateErr != nil {
+		// Log the error but don't fail the request
+	}
 }
 
 // extractSellerID 提取 Seller ID。
@@ -582,7 +586,7 @@ func (c *Client) extractMarketplaceID(query map[string]string) string {
 //   - string: 标准化的操作名称
 func (c *Client) extractOperationName(method, path string) string {
 	// 移除开头的 "/"
-	if len(path) > 0 && path[0] == '/' {
+	if path != "" && path[0] == '/' {
 		path = path[1:]
 	}
 

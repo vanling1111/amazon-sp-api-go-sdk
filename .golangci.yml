@@ -107,6 +107,19 @@ issues:
       linters:
         - golint
     
+    # 忽略生成的API代码的风格警告
+    - path: pkg/spapi/.+-v\d+/
+      linters:
+        - stylecheck
+        - goconst
+        - gocritic
+        - lll
+    
+    # 忽略depguard对internal包的警告（这是正常的）
+    - text: "import.*internal.*is not allowed"
+      linters:
+        - depguard
+    
     - text: "G404:"
       linters:
         - gosec
