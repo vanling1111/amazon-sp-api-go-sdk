@@ -1,8 +1,7 @@
 // Copyright 2025 Amazon SP-API Go SDK Authors.
 package vendor_direct_fulfillment_shipping_v2021_12_28_test
 
-import (
-	"github.com/vanling1111/amazon-sp-api-go-sdk/internal/models"
+import (
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 	api "github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi/vendor-direct-fulfillment-shipping-v2021-12-28"
 	"testing"
@@ -10,7 +9,7 @@ import (
 
 func TestNewClient(t *testing.T) {
 	baseClient, err := spapi.NewClient(
-		spapi.WithRegion(models.RegionNA),
+		spapi.WithRegion(spapi.RegionNA),
 		spapi.WithCredentials("test", "test", "test"),
 	)
 	if err != nil {

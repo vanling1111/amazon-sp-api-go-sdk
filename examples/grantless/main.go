@@ -43,8 +43,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
-
-	"github.com/vanling1111/amazon-sp-api-go-sdk/internal/models"
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 	notifications "github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi/notifications-v1"
 )
@@ -54,7 +53,7 @@ func main() {
 	// Grantless 操作不需要卖家的 refresh token
 	// 只需要应用的 Client ID 和 Client Secret，以及相应的 scopes
 	client, err := spapi.NewClient(
-		spapi.WithRegion(models.RegionNA),
+		spapi.WithRegion(spapi.RegionNA),
 		spapi.WithGrantlessCredentials(
 			"your-client-id",
 			"your-client-secret",

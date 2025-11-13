@@ -46,8 +46,7 @@ import (
 	"fmt"
 	"log"
 	"os"
-
-	"github.com/vanling1111/amazon-sp-api-go-sdk/internal/models"
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi/catalog-items-v2022-04-01"
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi/orders-v0"
@@ -66,7 +65,7 @@ func main() {
 
 	// 创建客户端
 	baseClient, err := spapi.NewClient(
-		spapi.WithRegion(models.RegionNA),
+		spapi.WithRegion(spapi.RegionNA),
 		spapi.WithCredentials(clientID, clientSecret, refreshToken),
 	)
 	if err != nil {

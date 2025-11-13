@@ -68,8 +68,7 @@ import (
 
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/sqs"
-	"github.com/vanling1111/amazon-sp-api-go-sdk/examples/patterns/order-sync-sqs/poller"
-	"github.com/vanling1111/amazon-sp-api-go-sdk/internal/models"
+	"github.com/vanling1111/amazon-sp-api-go-sdk/examples/patterns/order-sync-sqs/poller"
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi/orders-v0"
 )
@@ -96,7 +95,7 @@ func main() {
 
 	// 2. 创建 SP-API 客户端
 	spapiClient, err := spapi.NewClient(
-		spapi.WithRegion(models.RegionNA),
+		spapi.WithRegion(spapi.RegionNA),
 		spapi.WithCredentials(
 			spapiConfig.ClientID,
 			spapiConfig.ClientSecret,

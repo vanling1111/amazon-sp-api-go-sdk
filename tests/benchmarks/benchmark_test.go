@@ -41,8 +41,7 @@ package benchmarks
 import (
 	"context"
 	"testing"
-
-	"github.com/vanling1111/amazon-sp-api-go-sdk/internal/models"
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 	orders "github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi/orders-v0"
 )
@@ -57,7 +56,7 @@ func BenchmarkClientCreation(b *testing.B) {
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		client, _ := spapi.NewClient(
-			spapi.WithRegion(models.RegionNA),
+			spapi.WithRegion(spapi.RegionNA),
 			spapi.WithCredentials("test", "test", "test"),
 		)
 		client.Close()
@@ -67,7 +66,7 @@ func BenchmarkClientCreation(b *testing.B) {
 // BenchmarkAPIClientCreation benchmarks API client creation
 func BenchmarkAPIClientCreation(b *testing.B) {
 	baseClient, _ := spapi.NewClient(
-		spapi.WithRegion(models.RegionNA),
+		spapi.WithRegion(spapi.RegionNA),
 		spapi.WithCredentials("test", "test", "test"),
 	)
 	defer baseClient.Close()

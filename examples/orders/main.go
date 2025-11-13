@@ -44,8 +44,7 @@ import (
 	"fmt"
 	"log"
 	"time"
-
-	"github.com/vanling1111/amazon-sp-api-go-sdk/internal/models"
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 	orders "github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi/orders-v0"
 )
@@ -53,7 +52,7 @@ import (
 func main() {
 	// 创建基础客户端
 	baseClient, err := spapi.NewClient(
-		spapi.WithRegion(models.RegionNA),
+		spapi.WithRegion(spapi.RegionNA),
 		spapi.WithCredentials(
 			"your-client-id",
 			"your-client-secret",

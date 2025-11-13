@@ -1,8 +1,7 @@
 // Copyright 2025 Amazon SP-API Go SDK Authors.
 package fulfillment_outbound_v2020_07_01_test
 
-import (
-	"github.com/vanling1111/amazon-sp-api-go-sdk/internal/models"
+import (
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 	api "github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi/fulfillment-outbound-v2020-07-01"
 	"testing"
@@ -10,7 +9,7 @@ import (
 
 func TestNewClient(t *testing.T) {
 	baseClient, err := spapi.NewClient(
-		spapi.WithRegion(models.RegionNA),
+		spapi.WithRegion(spapi.RegionNA),
 		spapi.WithCredentials("test", "test", "test"),
 	)
 	if err != nil {

@@ -27,8 +27,7 @@ import (
 	"os"
 	"testing"
 	"time"
-
-	"github.com/vanling1111/amazon-sp-api-go-sdk/internal/models"
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 	orders "github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi/orders-v0"
 )
@@ -50,7 +49,7 @@ func TestOrders_Integration(t *testing.T) {
 
 	// 创建客户端
 	baseClient, err := spapi.NewClient(
-		spapi.WithRegion(models.RegionNA),
+		spapi.WithRegion(spapi.RegionNA),
 		spapi.WithCredentials(clientID, clientSecret, refreshToken),
 	)
 	if err != nil {

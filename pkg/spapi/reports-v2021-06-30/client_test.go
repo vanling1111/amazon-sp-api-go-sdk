@@ -1,8 +1,7 @@
 // Copyright 2025 Amazon SP-API Go SDK Authors.
 package reports_v2021_06_30_test
 
-import (
-	"github.com/vanling1111/amazon-sp-api-go-sdk/internal/models"
+import (
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 	api "github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi/reports-v2021-06-30"
 	"testing"
@@ -10,7 +9,7 @@ import (
 
 func TestNewClient(t *testing.T) {
 	baseClient, err := spapi.NewClient(
-		spapi.WithRegion(models.RegionNA),
+		spapi.WithRegion(spapi.RegionNA),
 		spapi.WithCredentials("test", "test", "test"),
 	)
 	if err != nil {

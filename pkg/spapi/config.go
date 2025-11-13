@@ -230,7 +230,7 @@ func WithGrantlessCredentials(clientID, clientSecret string, scopes []string) Cl
 // 示例:
 //
 //	client := spapi.NewClient(
-//	    spapi.WithRegion(models.RegionNA),
+//	    spapi.WithRegion(spapi.RegionNA),
 //	    spapi.WithCredentials("client-id", "client-secret", "refresh-token"),
 //	    spapi.WithSellerID("AXXXXXXXXXXXXX"),
 //	)

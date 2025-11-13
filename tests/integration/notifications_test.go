@@ -26,8 +26,7 @@ import (
 	"context"
 	"os"
 	"testing"
-
-	"github.com/vanling1111/amazon-sp-api-go-sdk/internal/models"
+
 	"github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
 	notifications "github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi/notifications-v1"
 )
@@ -47,7 +46,7 @@ func TestNotifications_Grantless_Integration(t *testing.T) {
 
 	// 创建 Grantless 客户端
 	baseClient, err := spapi.NewClient(
-		spapi.WithRegion(models.RegionNA),
+		spapi.WithRegion(spapi.RegionNA),
 		spapi.WithGrantlessCredentials(clientID, clientSecret, []string{
 			"sellingpartnerapi::notifications",
 		}),
