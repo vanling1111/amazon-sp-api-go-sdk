@@ -17,7 +17,7 @@
 
 填补官方 SDK 空白，提供 Go 语言的完整 SP-API 实现。基于 [Amazon SP-API 官方文档](https://developer-docs.amazon.com/sp-api/docs/) 和 Go 最佳实践开发。
 
-**当前版本**: v1.3.0 | **Go 要求**: 1.25+ | **状态**: ✅ 生产就绪
+**当前版本**: v2.0.0 | **Go 要求**: 1.25+ | **状态**: ✅ 生产就绪
 
 ## ✨ 核心特性
 
@@ -43,6 +43,7 @@
 4. 🔒 **类型安全** - 完整的类型定义和编译时检查
 5. 🧪 **高质量** - 完整的测试覆盖和错误处理
 6. ⚡ **Go 1.25** - 使用最新 Go 特性（迭代器、性能优化）
+7. 🔧 **精选依赖** - 只依赖业界最佳实践库，不重复造轮子
 
 ## 🌟 最新特性
 
@@ -103,7 +104,6 @@ import (
     "log"
     "time"
 
-    "github.com/vanling1111/amazon-sp-api-go-sdk/internal/models"
     "github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
     orders "github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi/orders-v0"
 )
@@ -111,7 +111,7 @@ import (
 func main() {
     // 1. 创建基础 SP-API 客户端
     baseClient, err := spapi.NewClient(
-        spapi.WithRegion(models.RegionNA),
+        spapi.WithRegion(spapi.RegionNA),
         spapi.WithCredentials(
             "your-client-id",
             "your-client-secret",
@@ -129,7 +129,7 @@ func main() {
     // 3. 调用 API 方法
     ctx := context.Background()
     params := map[string]string{
-        "MarketplaceIds": "ATVPDKIKX0DER",
+        "MarketplaceIds": string(spapi.MarketplaceUS), // 使用公开的MarketplaceID常量
         "CreatedAfter":   time.Now().Add(-7 * 24 * time.Hour).Format(time.RFC3339),
     }
 
@@ -147,7 +147,7 @@ func main() {
 ```go
 // 创建 Grantless 操作的客户端
 client, err := spapi.NewClient(
-    spapi.WithRegion(models.RegionEU),
+    spapi.WithRegion(spapi.RegionEU),
     spapi.WithGrantlessCredentials(
         "your-client-id",
         "your-client-secret",
@@ -176,6 +176,24 @@ defer client.Close()
 - ⚡ **高级功能**: A+ Content, Replenishment, AWD, Data Kiosk 等
 
 **📋 完整列表**: [pkg/spapi/](pkg/spapi/) 目录 | **🤖 自动监控**: 每日检测官方 API 更新
+
+## 📚 依赖说明
+
+本SDK采用**精选依赖**策略，只依赖业界最佳实践库：
+
+### 核心依赖
+- **AWS SDK** - AWS服务集成（SQS等）
+- **json-iterator** - 高性能JSON处理（比标准库快3-5倍）
+
+### 企业级功能（推荐）
+- **Zap** - Uber开源的高性能日志库
+- **Prometheus** - CNCF监控标准
+- **OpenTelemetry** - CNCF分布式追踪标准
+
+### 设计理念
+- ✅ 不重复造轮子，使用成熟方案
+- ✅ 接口化设计，允许用户替换实现
+- ✅ 所有依赖都是可选的（除核心功能）
 
 ## 🧪 测试
 

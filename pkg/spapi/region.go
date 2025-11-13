@@ -20,8 +20,6 @@
 
 package spapi
 
-import "github.com/vanling1111/amazon-sp-api-go-sdk/internal/models"
-
 // Region 表示 Amazon SP-API 的区域。
 //
 // Amazon SP-API 在全球有三个主要区域，每个区域有不同的端点和市场。
@@ -118,26 +116,3 @@ func (r Region) IsValid() bool {
 	return r.Code != "" && r.Endpoint != "" && r.LWAEndpoint != ""
 }
 
-// toInternal 将公开的 Region 转换为内部的 models.Region。
-//
-// 这是一个内部方法，用于在 SDK 内部进行类型转换。
-func (r Region) toInternal() models.Region {
-	return models.Region{
-		Code:        r.Code,
-		Name:        r.Name,
-		Endpoint:    r.Endpoint,
-		LWAEndpoint: r.LWAEndpoint,
-	}
-}
-
-// regionFromInternal 将内部的 models.Region 转换为公开的 Region。
-//
-// 这是一个内部方法，用于在 SDK 内部进行类型转换。
-func regionFromInternal(r models.Region) Region {
-	return Region{
-		Code:        r.Code,
-		Name:        r.Name,
-		Endpoint:    r.Endpoint,
-		LWAEndpoint: r.LWAEndpoint,
-	}
-}

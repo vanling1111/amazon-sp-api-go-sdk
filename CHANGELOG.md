@@ -5,6 +5,94 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] - 2025-11-13
+
+### 🚨 Breaking Changes
+
+#### Region和Marketplace类型公开化
+- **移除**: `internal/models.Region` 重复定义
+- **新增**: `pkg/spapi.Region` 作为唯一的公开Region类型
+- **新增**: `pkg/spapi.Marketplace` 公开API，包含所有市场常量
+- **新增**: `pkg/spapi.GetMarketplaceByID()` - 根据ID查找市场
+- **新增**: `pkg/spapi.GetMarketplacesByRegion()` - 获取区域所有市场
+
+**迁移指南**:
+```go
+// v1.x (旧)
+import "github.com/vanling1111/amazon-sp-api-go-sdk/internal/models"
+spapi.WithRegion(models.RegionNA)
+
+// v2.0 (新)
+import "github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
+spapi.WithRegion(spapi.RegionNA)
+
+// v2.0 新增：公开的MarketplaceID常量
+marketplaceID := spapi.MarketplaceUS
+fmt.Println(string(marketplaceID)) // "ATVPDKIKX0DER"
+region := marketplaceID.Region()   // 自动获取所属区域
+```
+
+### Added
+
+#### 公开API增强
+- 新增 `MarketplaceID` 类型（字符串类型的市场ID）
+- 新增19个预定义的MarketplaceID常量（US, CA, MX, BR, UK, DE, FR, IT, ES, NL, SE, PL, TR, AE, IN, JP, SG, AU）
+- MarketplaceID支持 `.Region()` 方法，自动返回所属区域
+
+#### 文档改进
+- 更新README示例代码，移除internal包导入
+- 添加"依赖说明"章节，明确依赖策略
+- 更新设计原则，添加"精选依赖"说明
+- 创建 `docs/REFACTORING_PLAN.md` 长期重构计划
+
+### Changed
+
+#### 内部重构
+- 重命名 `internal/models/common.go` → `internal/models/internal.go`
+- 清理internal/models包，只保留真正的内部类型
+- 移除Region和Marketplace的重复定义
+
+#### 文档更新
+- 版本号更新为v2.0.0
+- 修正"零依赖"错误声明
+- 添加依赖说明和设计理念
+
+### Removed
+- 移除 `internal/models.Region`（已公开为 `pkg/spapi.Region`）
+- 移除 `internal/models.Marketplace`（已公开为 `pkg/spapi.Marketplace`）
+- 移除 `internal/models.RegionNA/EU/FE`（已公开为 `pkg/spapi.RegionNA/EU/FE`）
+- 移除 `internal/models.MarketplaceUS/CA/...`（已公开为 `pkg/spapi.MarketplaceUS/CA/...`）
+
+### Migration Guide
+
+从v1.x升级到v2.0的完整指南：
+
+1. **更新导入**:
+   ```go
+   // 移除
+   - import "github.com/vanling1111/amazon-sp-api-go-sdk/internal/models"
+   
+   // 保留
+   import "github.com/vanling1111/amazon-sp-api-go-sdk/pkg/spapi"
+   ```
+
+2. **更新Region引用**:
+   ```go
+   // 替换所有
+   models.RegionNA → spapi.RegionNA
+   models.RegionEU → spapi.RegionEU
+   models.RegionFE → spapi.RegionFE
+   ```
+
+3. **使用新的MarketplaceID常量**:
+   ```go
+   // 新功能
+   marketplaceID := spapi.MarketplaceUS
+   region := marketplaceID.Region() // 自动获取所属区域
+   ```
+
+---
+
 ## [1.3.0] - 2025-10-03
 
 ### Added
