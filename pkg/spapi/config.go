@@ -86,6 +86,10 @@ type Config struct {
 	// Tracer 是可选的分布式追踪器。
 	// 如果为 nil，使用默认的 NoOpTracer（不进行追踪）。
 	Tracer Tracer `validate:"-"`
+
+	// Middlewares 是可选的中间件列表。
+	// 中间件按顺序执行，可用于日志、指标、追踪等。
+	Middlewares []Middleware `validate:"-"`
 }
 
 // validate 全局验证器实例
@@ -364,5 +368,47 @@ func WithMetrics(metrics MetricsCollector) ClientOption {
 func WithTracer(tracer Tracer) ClientOption {
 	return func(c *Config) {
 		c.Tracer = tracer
+	}
+}
+
+// WithSandbox 启用Sandbox模式（测试环境）。
+//
+// 自动将当前区域转换为对应的Sandbox区域。
+// 必须在WithRegion之后调用。
+//
+// 示例:
+//
+//	client := spapi.NewClient(
+//	    spapi.WithRegion(spapi.RegionNA),
+//	    spapi.WithSandbox(),  // 自动切换到 RegionNASandbox
+//	    spapi.WithCredentials(...),
+//	)
+func WithSandbox() ClientOption {
+	return func(c *Config) {
+		c.Region = c.Region.ToSandbox()
+	}
+}
+
+// WithMiddleware 添加中间件。
+//
+// 中间件按添加顺序执行，可用于日志、指标、追踪等自定义逻辑。
+//
+// 参数:
+//   - middlewares: 中间件列表
+//
+// 示例:
+//
+//	client := spapi.NewClient(
+//	    spapi.WithRegion(spapi.RegionNA),
+//	    spapi.WithCredentials(...),
+//	    spapi.WithMiddleware(
+//	        spapi.LoggingMiddleware(logger),
+//	        spapi.MetricsMiddleware(metrics),
+//	        CustomMiddleware,
+//	    ),
+//	)
+func WithMiddleware(middlewares ...Middleware) ClientOption {
+	return func(c *Config) {
+		c.Middlewares = append(c.Middlewares, middlewares...)
 	}
 }

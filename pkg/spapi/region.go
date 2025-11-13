@@ -104,6 +104,42 @@ var (
 		Endpoint:    "https://sellingpartnerapi-fe.amazon.com",
 		LWAEndpoint: "https://api.amazon.com/auth/o2/token",
 	}
+
+	// RegionNASandbox 北美Sandbox区域（测试环境）
+	//
+	// 端点: https://sandbox.sellingpartnerapi-na.amazon.com
+	//
+	// 用于测试和开发，不会影响生产数据
+	RegionNASandbox = Region{
+		Code:        "na-sandbox",
+		Name:        "North America Sandbox",
+		Endpoint:    "https://sandbox.sellingpartnerapi-na.amazon.com",
+		LWAEndpoint: "https://api.amazon.com/auth/o2/token",
+	}
+
+	// RegionEUSandbox 欧洲Sandbox区域（测试环境）
+	//
+	// 端点: https://sandbox.sellingpartnerapi-eu.amazon.com
+	//
+	// 用于测试和开发，不会影响生产数据
+	RegionEUSandbox = Region{
+		Code:        "eu-sandbox",
+		Name:        "Europe Sandbox",
+		Endpoint:    "https://sandbox.sellingpartnerapi-eu.amazon.com",
+		LWAEndpoint: "https://api.amazon.com/auth/o2/token",
+	}
+
+	// RegionFESandbox 远东Sandbox区域（测试环境）
+	//
+	// 端点: https://sandbox.sellingpartnerapi-fe.amazon.com
+	//
+	// 用于测试和开发，不会影响生产数据
+	RegionFESandbox = Region{
+		Code:        "fe-sandbox",
+		Name:        "Far East Sandbox",
+		Endpoint:    "https://sandbox.sellingpartnerapi-fe.amazon.com",
+		LWAEndpoint: "https://api.amazon.com/auth/o2/token",
+	}
 )
 
 // String 返回区域的字符串表示。
@@ -114,5 +150,42 @@ func (r Region) String() string {
 // IsValid 检查区域是否有效。
 func (r Region) IsValid() bool {
 	return r.Code != "" && r.Endpoint != "" && r.LWAEndpoint != ""
+}
+
+// IsSandbox 检查是否为Sandbox区域。
+func (r Region) IsSandbox() bool {
+	return r.Code == "na-sandbox" || r.Code == "eu-sandbox" || r.Code == "fe-sandbox"
+}
+
+// ToSandbox 将生产区域转换为对应的Sandbox区域。
+//
+// 如果已经是Sandbox区域，返回自身。
+func (r Region) ToSandbox() Region {
+	switch r.Code {
+	case "na":
+		return RegionNASandbox
+	case "eu":
+		return RegionEUSandbox
+	case "fe":
+		return RegionFESandbox
+	default:
+		return r // 已经是sandbox或未知区域
+	}
+}
+
+// ToProduction 将Sandbox区域转换为对应的生产区域。
+//
+// 如果已经是生产区域，返回自身。
+func (r Region) ToProduction() Region {
+	switch r.Code {
+	case "na-sandbox":
+		return RegionNA
+	case "eu-sandbox":
+		return RegionEU
+	case "fe-sandbox":
+		return RegionFE
+	default:
+		return r // 已经是生产区域或未知区域
+	}
 }
 

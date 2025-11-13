@@ -5,6 +5,59 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.2.0] - 2025-11-13
+
+### Added
+
+#### Sandbox完整支持
+- 新增 `RegionNASandbox` - 北美Sandbox区域
+- 新增 `RegionEUSandbox` - 欧洲Sandbox区域
+- 新增 `RegionFESandbox` - 远东Sandbox区域
+- 新增 `WithSandbox()` - 一键切换到Sandbox环境
+- 新增 `Region.IsSandbox()` - 检查是否为Sandbox区域
+- 新增 `Region.ToSandbox()` - 转换为Sandbox区域
+- 新增 `Region.ToProduction()` - 转换为生产区域
+
+#### 中间件机制
+- 新增 `Middleware` 类型 - 中间件定义
+- 新增 `Handler` 类型 - 请求处理器定义
+- 新增 `LoggingMiddleware()` - 内置日志中间件
+- 新增 `MetricsMiddleware()` - 内置指标中间件
+- 新增 `TracingMiddleware()` - 内置追踪中间件
+- 新增 `ChainMiddlewares()` - 链接多个中间件
+- 新增 `WithMiddleware()` - 添加自定义中间件
+
+### Benefits
+
+- ✅ **测试友好** - Sandbox环境不影响生产数据
+- ✅ **灵活扩展** - 中间件机制支持自定义逻辑
+- ✅ **开箱即用** - 内置常用中间件
+- ✅ **易于调试** - 日志和追踪中间件
+
+### 示例
+
+```go
+// Sandbox模式
+client := spapi.NewClient(
+    spapi.WithRegion(spapi.RegionNA),
+    spapi.WithSandbox(),  // 自动切换到测试环境
+    spapi.WithCredentials(...),
+)
+
+// 使用中间件
+client := spapi.NewClient(
+    spapi.WithRegion(spapi.RegionNA),
+    spapi.WithCredentials(...),
+    spapi.WithMiddleware(
+        spapi.LoggingMiddleware(logger),
+        spapi.MetricsMiddleware(metrics),
+        CustomMiddleware,
+    ),
+)
+```
+
+---
+
 ## [2.1.0] - 2025-11-13
 
 ### Added

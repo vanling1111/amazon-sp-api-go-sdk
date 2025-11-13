@@ -17,7 +17,7 @@
 
 填补官方 SDK 空白，提供 Go 语言的完整 SP-API 实现。基于 [Amazon SP-API 官方文档](https://developer-docs.amazon.com/sp-api/docs/) 和 Go 最佳实践开发。
 
-**当前版本**: v2.1.0 | **Go 要求**: 1.25+ | **状态**: ✅ 生产就绪
+**当前版本**: v2.2.0 | **Go 要求**: 1.25+ | **状态**: ✅ 生产就绪
 
 ## ✨ 核心特性
 
@@ -176,6 +176,34 @@ client, err := spapi.NewClient(
 
 // 默认情况下，SDK使用no-op实现（不输出日志、不收集指标）
 // 这样可以保持零依赖，用户可以根据需要选择性启用
+```
+
+### Sandbox测试环境（v2.2.0新增）
+
+```go
+// 使用Sandbox环境进行测试
+client, err := spapi.NewClient(
+    spapi.WithRegion(spapi.RegionNA),
+    spapi.WithSandbox(),  // 自动切换到测试环境
+    spapi.WithCredentials("your-client-id", "your-client-secret", "your-refresh-token"),
+)
+
+// Sandbox环境不会影响生产数据，适合开发和测试
+```
+
+### 中间件扩展（v2.2.0新增）
+
+```go
+// 使用中间件添加自定义逻辑
+client, err := spapi.NewClient(
+    spapi.WithRegion(spapi.RegionNA),
+    spapi.WithCredentials("your-client-id", "your-client-secret", "your-refresh-token"),
+    spapi.WithMiddleware(
+        spapi.LoggingMiddleware(logger),    // 日志记录
+        spapi.MetricsMiddleware(metrics),   // 指标收集
+        CustomMiddleware,                    // 自定义中间件
+    ),
+)
 ```
 
 更多示例请查看 [examples/](examples/) 目录。
