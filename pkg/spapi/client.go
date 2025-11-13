@@ -358,7 +358,9 @@ func (c *Client) DoRequest(ctx context.Context, method, path string, query map[s
 	if err != nil {
 		return fmt.Errorf("failed to send request: %w", err)
 	}
-	defer resp.Body.Close()
+	defer func() {
+		_ = resp.Body.Close()
+	}()
 
 	// 5. 处理响应
 	if err := c.handleResponse(resp, result); err != nil {

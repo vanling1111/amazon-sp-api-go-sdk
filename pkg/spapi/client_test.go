@@ -431,9 +431,9 @@ func TestClient_ContextCancellation(t *testing.T) {
 	err = client.Get(ctx, "/test/path", nil, &result)
 
 	if err == nil {
-		t.Error("Expected error with cancelled context, got nil")
+		t.Error("Expected error with canceled context, got nil")
 	} else {
-		t.Logf("Request with cancelled context correctly failed: %v", err)
+		t.Logf("Request with canceled context correctly failed: %v", err)
 	}
 }
 
