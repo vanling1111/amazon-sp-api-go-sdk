@@ -17,7 +17,7 @@
 
 填补官方 SDK 空白，提供 Go 语言的完整 SP-API 实现。基于 [Amazon SP-API 官方文档](https://developer-docs.amazon.com/sp-api/docs/) 和 Go 最佳实践开发。
 
-**当前版本**: v2.0.0 | **Go 要求**: 1.25+ | **状态**: ✅ 生产就绪
+**当前版本**: v2.1.0 | **Go 要求**: 1.25+ | **状态**: ✅ 生产就绪
 
 ## ✨ 核心特性
 
@@ -160,6 +160,22 @@ if err != nil {
 defer client.Close()
 
 // 使用客户端访问 Grantless API...
+```
+
+### 自定义日志和指标（v2.1.0新增）
+
+```go
+// 使用自定义Logger和Metrics
+client, err := spapi.NewClient(
+    spapi.WithRegion(spapi.RegionNA),
+    spapi.WithCredentials("your-client-id", "your-client-secret", "your-refresh-token"),
+    spapi.WithLogger(myLogger),      // 可选：自定义日志
+    spapi.WithMetrics(myMetrics),    // 可选：自定义指标收集
+    spapi.WithTracer(myTracer),      // 可选：自定义分布式追踪
+)
+
+// 默认情况下，SDK使用no-op实现（不输出日志、不收集指标）
+// 这样可以保持零依赖，用户可以根据需要选择性启用
 ```
 
 更多示例请查看 [examples/](examples/) 目录。

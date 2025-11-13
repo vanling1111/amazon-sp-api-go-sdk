@@ -72,16 +72,20 @@ type Config struct {
 	Debug bool
 
 	// MetricsRecorder 是可选的指标记录器（如 Prometheus）。
+	// 已废弃：使用 Metrics 代替
 	MetricsRecorder metrics.Recorder `validate:"-"`
 
-	// Logger 是可选的日志器（如 Zap）。
-	// 如果为 nil，使用默认的 NopLogger（不输出日志）。
-	Logger interface {
-		Debug(msg string, fields ...interface{})
-		Info(msg string, fields ...interface{})
-		Warn(msg string, fields ...interface{})
-		Error(msg string, fields ...interface{})
-	} `validate:"-"`
+	// Logger 是可选的日志器。
+	// 如果为 nil，使用默认的 NoOpLogger（不输出日志）。
+	Logger Logger `validate:"-"`
+
+	// Metrics 是可选的指标收集器。
+	// 如果为 nil，使用默认的 NoOpMetrics（不收集指标）。
+	Metrics MetricsCollector `validate:"-"`
+
+	// Tracer 是可选的分布式追踪器。
+	// 如果为 nil，使用默认的 NoOpTracer（不进行追踪）。
+	Tracer Tracer `validate:"-"`
 }
 
 // validate 全局验证器实例
@@ -293,7 +297,9 @@ func WithDebug() ClientOption {
 	}
 }
 
-// WithMetrics 设置指标记录器。
+// WithMetricsRecorder 设置指标记录器（已废弃）。
+//
+// 已废弃：请使用 WithMetrics 代替。
 //
 // 参数:
 //   - recorder: 指标记录器实现（如 Prometheus）
@@ -301,11 +307,62 @@ func WithDebug() ClientOption {
 // 示例:
 //
 //	promRecorder := NewPrometheusRecorder()
-//	client := spapi.NewClient(spapi.WithMetrics(promRecorder))
-func WithMetrics(recorder metrics.Recorder) ClientOption {
+//	client := spapi.NewClient(spapi.WithMetricsRecorder(promRecorder))
+func WithMetricsRecorder(recorder metrics.Recorder) ClientOption {
 	return func(c *Config) {
 		if recorder != nil {
 			c.MetricsRecorder = recorder
 		}
+	}
+}
+
+// WithLogger 设置日志器。
+//
+// 参数:
+//   - logger: 日志器实现（如 Zap）
+//
+// 示例:
+//
+//	zapLogger := NewZapLogger(zap.NewProduction())
+//	client := spapi.NewClient(
+//	    spapi.WithLogger(zapLogger),
+//	)
+func WithLogger(logger Logger) ClientOption {
+	return func(c *Config) {
+		c.Logger = logger
+	}
+}
+
+// WithMetrics 设置指标收集器。
+//
+// 参数:
+//   - metrics: 指标收集器实现（如 Prometheus）
+//
+// 示例:
+//
+//	prometheusMetrics := NewPrometheusMetrics()
+//	client := spapi.NewClient(
+//	    spapi.WithMetrics(prometheusMetrics),
+//	)
+func WithMetrics(metrics MetricsCollector) ClientOption {
+	return func(c *Config) {
+		c.Metrics = metrics
+	}
+}
+
+// WithTracer 设置分布式追踪器。
+//
+// 参数:
+//   - tracer: 追踪器实现（如 OpenTelemetry）
+//
+// 示例:
+//
+//	otelTracer := NewOpenTelemetryTracer()
+//	client := spapi.NewClient(
+//	    spapi.WithTracer(otelTracer),
+//	)
+func WithTracer(tracer Tracer) ClientOption {
+	return func(c *Config) {
+		c.Tracer = tracer
 	}
 }

@@ -116,6 +116,17 @@ func NewClient(opts ...ClientOption) (*Client, error) {
 		opt(config)
 	}
 
+	// 2.5. 设置默认的no-op实现（如果用户未提供）
+	if config.Logger == nil {
+		config.Logger = NewNoOpLogger()
+	}
+	if config.Metrics == nil {
+		config.Metrics = NewNoOpMetrics()
+	}
+	if config.Tracer == nil {
+		config.Tracer = NewNoOpTracer()
+	}
+
 	// 3. 验证配置
 	if err := config.Validate(); err != nil {
 		return nil, fmt.Errorf("invalid configuration: %w", err)

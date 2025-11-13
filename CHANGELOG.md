@@ -5,6 +5,70 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 2025-11-13
+
+### Added
+
+#### 接口抽象层
+- 新增 `Logger` 接口 - 允许用户提供自定义日志实现
+- 新增 `MetricsCollector` 接口 - 允许用户提供自定义指标收集实现
+- 新增 `Tracer` 接口 - 允许用户提供自定义分布式追踪实现
+- 新增 `HTTPClient` 接口 - 允许用户提供自定义HTTP客户端
+- 新增 `Signer` 接口 - 内部签名器抽象
+- 新增 `RateLimiter` 接口 - 内部速率限制器抽象
+
+#### 默认No-Op实现
+- 新增 `NoOpLogger` - 默认日志实现（不输出）
+- 新增 `NoOpMetrics` - 默认指标实现（不收集）
+- 新增 `NoOpTracer` - 默认追踪实现（不追踪）
+
+#### 可选依赖配置
+- 新增 `WithLogger()` - 设置自定义日志器
+- 新增 `WithMetrics()` - 设置自定义指标收集器
+- 新增 `WithTracer()` - 设置自定义追踪器
+
+### Changed
+
+#### 配置优化
+- `Config.Logger` 改为接口类型
+- `Config.Metrics` 新增字段（MetricsCollector接口）
+- `Config.Tracer` 新增字段（Tracer接口）
+- `WithMetrics()` 重命名为 `WithMetricsRecorder()`（已废弃）
+
+#### 默认行为
+- 如果用户未提供Logger，自动使用NoOpLogger
+- 如果用户未提供Metrics，自动使用NoOpMetrics
+- 如果用户未提供Tracer，自动使用NoOpTracer
+
+### Benefits
+
+- ✅ **易于测试** - 可以mock所有依赖
+- ✅ **灵活扩展** - 用户可以提供自己的实现
+- ✅ **零依赖默认** - 默认不输出日志、不收集指标
+- ✅ **向后兼容** - 旧的API仍然可用
+
+### 示例
+
+```go
+// 使用自定义Logger
+client := spapi.NewClient(
+    spapi.WithRegion(spapi.RegionNA),
+    spapi.WithCredentials(...),
+    spapi.WithLogger(myLogger),      // 可选
+    spapi.WithMetrics(myMetrics),    // 可选
+    spapi.WithTracer(myTracer),      // 可选
+)
+
+// 默认情况（no-op实现）
+client := spapi.NewClient(
+    spapi.WithRegion(spapi.RegionNA),
+    spapi.WithCredentials(...),
+    // 自动使用no-op实现
+)
+```
+
+---
+
 ## [2.0.0] - 2025-11-13
 
 ### 🚨 Breaking Changes
