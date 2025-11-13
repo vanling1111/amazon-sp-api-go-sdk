@@ -30,6 +30,7 @@ import (
 	"strconv"
 
 	"github.com/vanling1111/amazon-sp-api-go-sdk/internal/auth"
+	"github.com/vanling1111/amazon-sp-api-go-sdk/internal/core"
 	"github.com/vanling1111/amazon-sp-api-go-sdk/internal/ratelimit"
 	"github.com/vanling1111/amazon-sp-api-go-sdk/internal/signer"
 	"github.com/vanling1111/amazon-sp-api-go-sdk/internal/transport"
@@ -58,17 +59,8 @@ type Client struct {
 	// config 是客户端配置
 	config *Config
 
-	// lwaClient 是 LWA 认证客户端
-	lwaClient *auth.Client
-
-	// httpClient 是 HTTP 传输客户端
-	httpClient *transport.Client
-
-	// signer 是请求签名器
-	signer signer.Signer
-
-	// rateLimitManager 是速率限制管理器
-	rateLimitManager *ratelimit.Manager
+	// facade 是核心门面，封装所有内部组件
+	facade *core.Facade
 }
 
 // NewClient 创建新的 SP-API 客户端。
@@ -202,13 +194,13 @@ func NewClient(opts ...ClientOption) (*Client, error) {
 		ratelimit.WithDefaultRate(1.0, 5), // 保守的默认值
 	)
 
-	// 11. 构建客户端
+	// 11. 创建核心门面，封装所有内部组件
+	facade := core.NewFacade(lwaClient, httpClient, lwaSigner, rateLimitManager)
+
+	// 12. 构建客户端
 	client := &Client{
-		config:           config,
-		lwaClient:        lwaClient,
-		httpClient:       httpClient,
-		signer:           lwaSigner,
-		rateLimitManager: rateLimitManager,
+		config: config,
+		facade: facade,
 	}
 
 	return client, nil
@@ -261,7 +253,7 @@ func (c *Client) Close() error {
 //	}
 //	fmt.Println("Access Token:", token)
 func (c *Client) GetAccessToken(ctx context.Context) (string, error) {
-	token, err := c.lwaClient.GetAccessToken(ctx)
+	token, err := c.facade.GetLWAClient().GetAccessToken(ctx)
 	if err != nil {
 		return "", fmt.Errorf("get access token: %w", err)
 	}
@@ -282,7 +274,7 @@ func (c *Client) GetAccessToken(ctx context.Context) (string, error) {
 //	count := manager.Count()
 //	fmt.Printf("Active limiters: %d\n", count)
 func (c *Client) RateLimitManager() *ratelimit.Manager {
-	return c.rateLimitManager
+	return c.facade.GetRateLimitManager()
 }
 
 // HTTPClient 返回底层的 HTTP 传输客户端。
@@ -298,7 +290,7 @@ func (c *Client) RateLimitManager() *ratelimit.Manager {
 //	httpClient := client.HTTPClient()
 //	httpClient.Use(myCustomMiddleware)
 func (c *Client) HTTPClient() *transport.Client {
-	return c.httpClient
+	return c.facade.GetHTTPClient()
 }
 
 // Signer 返回请求签名器。
@@ -308,7 +300,7 @@ func (c *Client) HTTPClient() *transport.Client {
 // 返回值:
 //   - signer.Signer: 请求签名器
 func (c *Client) Signer() signer.Signer {
-	return c.signer
+	return c.facade.GetSigner()
 }
 
 // ==================== 通用 HTTP 请求方法 ====================
@@ -344,50 +336,38 @@ func (c *Client) Signer() signer.Signer {
 //	    "CreatedAfter": "2023-01-01T00:00:00Z",
 //	}, nil, &response)
 func (c *Client) DoRequest(ctx context.Context, method, path string, query map[string]string, body, result interface{}) error {
-	// 1. 获取 access token
-	accessToken, err := c.lwaClient.GetAccessToken(ctx)
+	// 1. 获取access token
+	accessToken, err := c.facade.GetLWAClient().GetAccessToken(ctx)
 	if err != nil {
 		return fmt.Errorf("failed to get access token: %w", err)
 	}
 
-	// 2. 速率限制检查
-	if c.rateLimitManager != nil {
-		sellerID := c.extractSellerID()
-		appID := c.config.ClientID
-		marketplace := c.extractMarketplaceID(query)
-		operation := c.extractOperationName(method, path)
-
-		allowed := c.rateLimitManager.Allow(sellerID, appID, marketplace, operation)
-		if !allowed {
-			return ErrRateLimitExceeded
-		}
-	}
-
-	// 3. 构建请求
+	// 2. 构建请求
 	req, err := c.buildRequest(ctx, method, path, query, body, accessToken)
 	if err != nil {
 		return fmt.Errorf("failed to build request: %w", err)
 	}
 
-	// 4. 签名请求
-	if err := c.signer.Sign(ctx, req); err != nil {
+	// 3. 签名请求
+	if err := c.facade.GetSigner().Sign(ctx, req); err != nil {
 		return fmt.Errorf("failed to sign request: %w", err)
 	}
 
-	// 5. 发送请求
-	resp, err := c.httpClient.Do(ctx, req)
+	// 4. 发送请求
+	resp, err := c.facade.GetHTTPClient().Do(ctx, req)
 	if err != nil {
 		return fmt.Errorf("failed to send request: %w", err)
 	}
 	defer resp.Body.Close()
 
-	// 6. 处理响应
+	// 5. 处理响应
 	if err := c.handleResponse(resp, result); err != nil {
 		return err
 	}
 
-	// 7. 更新速率限制（从响应头提取）
-	if c.rateLimitManager != nil {
+	// 6. 更新速率限制（从响应头提取）
+	rateLimitManager := c.facade.GetRateLimitManager()
+	if rateLimitManager != nil {
 		sellerID := c.extractSellerID()
 		appID := c.config.ClientID
 		marketplace := c.extractMarketplaceID(query)
@@ -509,7 +489,7 @@ func (c *Client) updateRateLimitFromResponse(resp *http.Response, sellerID, appI
 	}
 
 	// 更新速率限制
-	_ = c.rateLimitManager.UpdateRate(sellerID, appID, marketplace, operation, rate, burst)
+	_ = c.facade.GetRateLimitManager().UpdateRate(sellerID, appID, marketplace, operation, rate, burst)
 }
 
 // extractSellerID 提取 Seller ID。

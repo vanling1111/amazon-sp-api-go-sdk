@@ -5,6 +5,42 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.3.0] - 2025-11-13
+
+### Added
+
+#### Facade设计模式
+- 新增 `internal/core/facade.go` - 核心门面层
+- 封装所有内部组件（auth, transport, signer, ratelimit）
+- 提供统一的访问接口
+
+### Changed
+
+#### 架构优化
+- `Client` 结构简化，使用Facade封装内部组件
+- 降低 `pkg/spapi` 与 `internal/*` 的耦合度
+- 提高代码可维护性和可测试性
+
+### Benefits
+
+- ✅ **更清晰的分层** - Facade模式隐藏内部复杂性
+- ✅ **更低的耦合** - 公开包不直接依赖多个内部包
+- ✅ **更易测试** - 可以轻松mock Facade
+- ✅ **符合Go最佳实践** - 遵循单一职责原则
+
+### 示例
+
+```go
+// 内部结构优化，外部API保持不变
+client := spapi.NewClient(
+    spapi.WithRegion(spapi.RegionNA),
+    spapi.WithCredentials(...),
+)
+// 使用方式完全相同，但内部架构更优雅
+```
+
+---
+
 ## [2.2.0] - 2025-11-13
 
 ### Added
