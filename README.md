@@ -208,6 +208,16 @@ client, err := spapi.NewClient(
 
 更多示例请查看 [examples/](examples/) 目录。
 
+## 📚 文档
+
+- 📖 [快速开始指南](docs/QUICKSTART.md) - 5分钟上手
+- 🔄 [迁移指南](docs/MIGRATION.md) - 从v1.x迁移到v2.x
+- 🏗️ [架构设计](docs/ARCHITECTURE.md) - SDK架构说明
+- 📁 [项目结构](docs/PROJECT_STRUCTURE.md) - 目录组织
+- 🔧 [重构计划](docs/REFACTORING_PLAN.md) - 长期优化计划
+- 💡 [功能特性](docs/FEATURES.md) - 详细功能说明
+- 📄 [变更日志](CHANGELOG.md) - 版本历史
+
 ## 📦 支持的 API
 
 本 SDK 完整支持 **57 个 Amazon SP-API 版本**，包括：
